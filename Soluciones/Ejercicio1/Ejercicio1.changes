@@ -1,0 +1,24 @@
+
+
+----STARTUP---- (29 September 2021 22:42:27) as /home/tin-gprieto/Documentos/programacion/trabajos_practicos/algo3/repo/Soluciones/Ejercicio1/Ejercicio1.image!
+
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'MG 9/29/2021 22:44:31' prior: 50862911!
+                  interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	^ self responderSegunCantidadDeInteraccionesCon: unPersonaje.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'MG 9/29/2021 22:45:37' prior: 50862784!
+  recordarInteraccionCon: unPersonaje
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorPersonaje
+		at: unPersonaje
+		ifAbsent: [ 0 ].
+	cantidadDeInteraccionesPorPersonaje
+		at: unPersonaje
+		put: cantidadInteracciones + 1.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'MG 9/29/2021 22:46:13' prior: 50862897!
+              responderSegunCantidadDeInteraccionesCon: unPersonaje
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorPersonaje at: unPersonaje.
+	^ frases at: (cantidadInteracciones min: frases size).! !
+
+----QUIT----(29 September 2021 22:49:19) Ejercicio1.image priorSource: 247!
