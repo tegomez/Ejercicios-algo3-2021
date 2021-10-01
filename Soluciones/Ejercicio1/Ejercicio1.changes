@@ -22,3 +22,840 @@
 	^ frases at: (cantidadInteracciones min: frases size).! !
 
 ----QUIT----(29 September 2021 22:49:19) Ejercicio1.image priorSource: 247!
+
+----STARTUP---- (30 September 2021 18:14:20) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Soluciones/Ejercicio1/Ejercicio1.image!
+
+
+TreborElGuardiaDeSkyrim
+	collaboratorNames: 'frases frasesPersonajePrometedor cantidadDeInteraccionesPorPersonaje'
+	in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #TreborElGuardiaDeSkyrim category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:16:18'!
+DenotativeObject subclass: #TreborElGuardiaDeSkyrim
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'TreborElGuardiaDeSkyrim class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:16:18'!
+TreborElGuardiaDeSkyrim class
+	instanceVariableNames: 'frases frasesPersonajePrometedor cantidadDeInteraccionesPorPersonaje'!
+
+TreborElGuardiaDeSkyrim
+	collaboratorNames: 'frases frasesPersonajePrometedor frasesPersonajeDesconocio cantidadDeInteraccionesPorPersonaje'
+	in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #TreborElGuardiaDeSkyrim category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:18:31'!
+DenotativeObject subclass: #TreborElGuardiaDeSkyrim
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'TreborElGuardiaDeSkyrim class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:18:31'!
+TreborElGuardiaDeSkyrim class
+	instanceVariableNames: 'frases frasesPersonajePrometedor frasesPersonajeDesconocio cantidadDeInteraccionesPorPersonaje'!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 18:21:54' prior: 50862957!
+                             hacerQueRiverwoodVeaPrometedorAHamilton
+	Assert
+		isTrue: false
+		description: ''.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 18:22:48' prior: 50331741!
+     hacerQueRiverwoodVeaPrometedorAHamilton
+	^true.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 18:22:59' prior: 50331748!
+        hacerQueRiverwoodVeaPrometedorAHamilton
+	^true.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 18:26:36' prior: 50331754!
+        hacerQueRiverwoodVeaPrometedorAHamilton
+	"self hamilton esPrometedor."! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'tg 9/30/2021 18:29:51'!
+                 responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorPersonaje at: unPersonaje.
+	^ frasesPersonajePrometedor at: (cantidadInteracciones min: frasesPersonajePrometedor size).! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 18:32:33' prior: 50331760!
+        hacerQueRiverwoodVeaPrometedorAHamilton
+	"self hamilton esPrometedor."
+	Assert
+		isTrue: false
+		description: 'Reemplazar esto por la implementación correspondiente'.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'tg 9/30/2021 18:34:52' prior: 50331766!
+ responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorPersonaje at: unPersonaje.
+	^ frasesPersonajePrometedor at: (cantidadInteracciones min: frasesPersonajePrometedor size).! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 9/30/2021 18:36:02' prior: 50331657!
+  interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'tg 9/30/2021 18:37:31' prior: 50862495!
+              tirion
+	^ #Tirion.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 18:39:52'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 18:39:52'!
+ERROR!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 18:40:43' prior: 50331779!
+           hacerQueRiverwoodVeaPrometedorAHamilton
+	"self hamilton esPrometedor."
+	Assert
+		isTrue: false
+		description: (self hamilton esPrometedor).! !
+
+ObjectBuilder create: #Hamilton asChildOf: DenotativeObject collaboratorNames: '' in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #Hamilton category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:41:09'!
+DenotativeObject subclass: #Hamilton
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'Hamilton class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:41:09'!
+Hamilton class
+	instanceVariableNames: ''!
+!Hamilton class methodsFor: 'no messages' stamp: 'tg 9/30/2021 18:42:07'!
+         esPrometedor
+	^true.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 9/30/2021 18:43:43' prior: 50331800!
+                             interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	unPersonaje preguntarARiverwoodSiEsPrometedor.
+	^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.! !
+
+!classRenamed: #Hamilton as: #Riverwood stamp: 'tg 9/30/2021 18:44:49'!
+Smalltalk renameClassNamed: #Hamilton as: #Riverwood!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 18:44:49' prior: 50862490!
+                      hamilton
+	^ #Riverwood.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'tg 9/30/2021 18:45:27' prior: 50331863!
+               hamilton
+	^ #Hamilton.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 18:46:38'!
+                   esPrometedor: unPersonaje
+	#(self unPersonaje )! !
+
+Riverwood
+	collaboratorNames: ''
+	in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #Riverwood category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:47:44'!
+DenotativeObject subclass: #Riverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'Riverwood class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:47:44'!
+Riverwood class
+	instanceVariableNames: ''!
+
+Riverwood
+	collaboratorNames: 'personajesPrometedores personajesDesconocidos'
+	in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #Riverwood category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:48:09'!
+DenotativeObject subclass: #Riverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'Riverwood class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 18:48:09'!
+Riverwood class
+	instanceVariableNames: 'personajesPrometedores personajesDesconocidos'!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 18:52:14' prior: 50331872!
+            esPrometedor: unPersonaje
+	personajesDesconocidos value: unPersonaje.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 18:52:24' prior: 50331909!
+                    esPrometedor: unPersonaje
+	personajesDesconocidos value: unPersonaje.! !
+
+Riverwood esPrometedor: #Hamilton.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 18:54:23' prior: 50331915!
+               esPrometedor: unPersonaje
+	personajesPrometedores put: unPersonaje .! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 18:54:28' prior: 50331922!
+                     esPrometedor: unPersonaje
+	personajesPrometedores put: unPersonaje.! !
+
+----QUIT----(30 September 2021 18:54:54) Ejercicio1.image priorSource: 1145!
+
+----STARTUP---- (30 September 2021 21:53:26) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Soluciones/Ejercicio1/Ejercicio1.image!
+
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:05:13' prior: 50331928!
+     esPrometedor: unPersonaje
+	personajesPrometedores put: unPersonaje.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:05:44'!
+      considerarUnPersonajeComoPrometedor: unPersonaje
+	personajesPrometedores put: unPersonaje.! !
+
+!methodRemoval: Riverwood class #esPrometedor stamp: 'tg 9/30/2021 23:05:51'!
+esPrometedor
+	^true.!
+
+!methodRemoval: Riverwood class #esPrometedor: stamp: 'tg 9/30/2021 23:05:55'!
+esPrometedor: unPersonaje
+	personajesPrometedores put: unPersonaje.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:06:49' prior: 50331947!
+     considerarUnPersonajeComoPrometedor: unPersonaje
+	personajesPrometedores put: unPersonaje.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:07:45' prior: 50331961!
+                               considerarUnPersonajeComoPrometedor: unPersonaje
+	personajesPrometedores includes: unPersonaje.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:10:47' prior: 50331968!
+                          considerarUnPersonajeComoPrometedor: unPersonaje
+	personajesPrometedores add: unPersonaje.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:10:51' prior: 50331975!
+                               considerarUnPersonajeComoPrometedor: unPersonaje
+	personajesPrometedores add: unPersonaje.
+	! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 23:12:43' prior: 50331820!
+                           hacerQueRiverwoodVeaPrometedorAHamilton
+	"self hamilton esPrometedor."
+	Assert
+		isTrue: false
+		description: (Riverwood considerarUnPersonajeComoPrometedor: self hamilton).
+	! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 23:12:48' prior: 50331990!
+        hacerQueRiverwoodVeaPrometedorAHamilton
+	Assert
+		isTrue: false
+		description: (Riverwood considerarUnPersonajeComoPrometedor: self hamilton).
+	! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:12:57'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:12:57'!
+ERROR!
+
+Riverwood considerarUnPersonajeComoPrometedor: self hamilton.!
+
+Riverwood considerarUnPersonajeComoPrometedor: #Hamilton.!
+
+Riverwood!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:17:07'!
+                       preguntarSiUnPersonajeEsPrometedor: unPersonaje
+	personajesPrometedores includes: unPersonaje.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:19:25' prior: 50331982!
+                           considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+		]
+	
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:20:06' prior: 50332025!
+                   considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+		].
+	
+	! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 9/30/2021 23:21:23' prior: 50331848!
+          interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	self preguntarSiUnPersonajeEsPrometedor: unPersonaje.
+	^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 9/30/2021 23:21:32' prior: 50332043!
+  interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	Riverwood preguntarSiUnPersonajeEsPrometedor: unPersonaje.
+	^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:22:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:22:30'!
+ERROR!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:23:33' prior: 50332034!
+           considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+		^true].
+	
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:23:44' prior: 50332069!
+             considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+		^true].
+	^false.
+	! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:23:52'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:23:52'!
+ERROR!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:24:10' prior: 50332078!
+            considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+	].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:28:06' prior: 50332093!
+                     considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifTrue: [
+		personajesPrometedores add: unPersonaje.
+	].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:28:21' prior: 50332102!
+                      considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifTrue: [
+		personajesPrometedores add: unPersonaje.
+	^false].
+	! !
+
+personajesPrometedores!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:30:22' prior: 50332111!
+                       considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifTrue: [
+		personajesPrometedores add: unPersonaje.
+	^false].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:30:49' prior: 50332121!
+                considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+	].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:30:54' prior: 50332130!
+                     considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+	].
+	! !
+
+Riverwood preguntarSiUnPersonajeEsPrometedor: #Hamilton.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:31:50' prior: 50332018!
+                          preguntarSiUnPersonajeEsPrometedor: unPersonaje
+	^personajesPrometedores includes: unPersonaje.! !
+
+Riverwood preguntarSiUnPersonajeEsPrometedor: #Hamilton.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:32:23' prior: 50332139!
+                               considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		^personajesPrometedores add: unPersonaje.
+	].
+	! !
+
+personajesPrometedores!
+
+personajesPrometedores!
+
+Riverwood
+	collaboratorNames: ' personajesDesconocidos'
+	in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #Riverwood category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 23:34:14'!
+DenotativeObject subclass: #Riverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'Riverwood class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 23:34:21'!
+Riverwood class
+	instanceVariableNames: 'personajesDesconocidos'!
+
+Riverwood
+	collaboratorNames: 'personajesPrometedores personajesDesconocidos'
+	in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #Riverwood category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 23:34:27'!
+DenotativeObject subclass: #Riverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'Riverwood class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 23:34:27'!
+Riverwood class
+	instanceVariableNames: 'personajesPrometedores personajesDesconocidos'!
+
+Riverwood preguntarSiUnPersonajeEsPrometedor: #Hamilton.!
+
+Riverwood preguntarSiUnPersonajeEsPrometedor: #Hamilton.  !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:36:21'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:36:21'!
+ERROR!
+
+Riverwood preguntarSiUnPersonajeEsPrometedor: #Hamilton.!
+
+Riverwood considerarUnPersonajeComoPrometedor: #Tirion.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:39:13' prior: 50332159!
+                considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+	].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:39:24' prior: 50332216!
+                     considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+		^true.
+	].
+	! !
+
+Riverwood considerarUnPersonajeComoPrometedor: #Tirion.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:40:15' prior: 50332225!
+                  considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+		^true.
+	]ifTrue: [^false].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:40:28' prior: 50332236!
+                            considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	! !
+
+Riverwood considerarUnPersonajeComoPrometedor: #Hamilton.!
+
+Riverwood preguntarSiUnPersonajeEsPrometedor: #Hamilton.!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:42:35'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:42:35'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:42:45'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:42:45'!
+ERROR!
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 9/30/2021 23:43:42' prior: 50332053!
+     interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	Riverwood preguntarSiUnPersonajeEsPrometedor: unPersonaje.
+	^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 9/30/2021 23:45:40' prior: 50332271!
+                             interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	Riverwood preguntarSiUnPersonajeEsPrometedor: unPersonaje ifTrue:[
+		^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.	
+	] ifFalse: [
+		^ self responderSegunCantidadDeInteraccionesCon: unPersonaje].
+	! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 9/30/2021 23:45:58' prior: 50332282!
+  interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	(Riverwood preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifTrue:[
+		^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.	
+	] ifFalse: [
+		^ self responderSegunCantidadDeInteraccionesCon: unPersonaje].
+	! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:47:07'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:47:11'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:47:15'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:47:15'!
+ERROR!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 9/30/2021 23:48:05' prior: 50332000!
+                hacerQueRiverwoodVeaPrometedorAHamilton
+	^Riverwood considerarUnPersonajeComoPrometedor: self hamilton
+	! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:48:14'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:48:23'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:48:23'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:49:20'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:49:41'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:49:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:49:53'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:49:53'!
+ERROR!
+
+TreborElGuardiaDeSkyrim
+	collaboratorNames: 'frasesPersonajeDesconocido frasesPersonajePrometedor cantidadDeInteraccionesPorPersonaje'
+	in: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #TreborElGuardiaDeSkyrim category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 23:52:15'!
+DenotativeObject subclass: #TreborElGuardiaDeSkyrim
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: 'TreborElGuardiaDeSkyrim class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'tg 9/30/2021 23:52:18'!
+TreborElGuardiaDeSkyrim class
+	instanceVariableNames: 'frasesPersonajeDesconocido frasesPersonajePrometedor cantidadDeInteraccionesPorPersonaje'!
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'tg 9/30/2021 23:52:57'!
+                           responderSegunCantidadDeInteraccionesConPersonajeDesconocido: unPersonaje
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorPersonaje at: unPersonaje.
+	^ frasesPersonajeDesconocido at: (cantidadInteracciones min: frasesPersonajeDesconocido size).! !
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #responderSegunCantidadDeInteraccionesCon: stamp: 'tg 9/30/2021 23:53:08'!
+responderSegunCantidadDeInteraccionesCon: unPersonaje
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorPersonaje at: unPersonaje.
+	^ frases at: (cantidadInteracciones min: frases size).!
+
+treborElGuardia olvidar.!
+
+TreborElGuardiaDeSkyrim olvidar.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 9/30/2021 23:58:06' prior: 50332246!
+                       considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		personajesDesconocidos remove: unPersonaje.
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	! !
+
+personajesPrometedores remove: #Hamilton.!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:59:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 9/30/2021 23:59:30'!
+ERROR!
+
+personajesPrometedores add: #Hamilton!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:00:46'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:00:50'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:00:50'!
+ERROR!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:01:55'!
+                    olvidarTodasLasCalificaciones
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:05:52' prior: 50332427!
+                          olvidarTodasLasCalificaciones
+	"cantidadDeInteraccionesPorPersonaje _ Dictionary new."! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:09:04'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:09:04'!
+ERROR!
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 10/1/2021 00:09:31' prior: 50332295!
+ interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	(Riverwood preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifTrue:[
+		^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.	
+	] ifFalse: [
+		^ self responderSegunCantidadDeInteraccionesConPersonajeDesconocido: unPersonaje].
+	! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:09:39'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:09:39'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:11:54'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:12:09'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:12:09'!
+ERROR!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:14:19' prior: 50332432!
+  olvidarTodasLasCalificaciones
+	personajesPrometedores _ OrderedCollection new.! !
+
+personajesDesconocidos add: #Hamilton.!
+
+personajesDesconocidos add: #Tirion.!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:17:13'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:17:17'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:17:17'!
+ERROR!
+
+personajesPrometedores remove: #Hamilton.
+!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:18:03'!
+PASSED!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 10/1/2021 00:18:26' prior: 50862513!
+                        hacerQueRiverwoodOlvideTodasSusCalificaciones
+	^ Riverwood olvidarTodasLasCalificaciones .! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'tg 10/1/2021 00:18:28' prior: 50332498!
+                             hacerQueRiverwoodOlvideTodasSusCalificaciones
+	^ Riverwood olvidarTodasLasCalificaciones.! !
+
+personajesPrometedores add: #Hamilton.!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:23'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:27'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:32'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:41'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:46'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:50'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:54'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:57'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:19:57'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:20:26'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:20:26'!
+ERROR!
+
+personajesPrometedores add: #Hamilton.
+!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:21:36'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:21:36'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:22:17'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:22:17'!
+ERROR!
+
+personajesPrometedores add: #Hamilton.!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:23:06'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:23:06'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:27:09'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:27:09'!
+ERROR!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:28:40' prior: 50332399!
+                        considerarUnPersonajeComoPrometedor: unPersonaje
+	(self preguntarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		"personajesDesconocidos remove: unPersonaje."
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:28:55'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:00'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:04'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:08'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:14'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:17'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:25'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:29:30'!
+PASSED!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:34:49'!
+          calificarSiUnPersonajeEsPrometedor: unPersonaje
+	^personajesPrometedores includes: unPersonaje.! !
+
+!methodRemoval: Riverwood class #calificarSiUnPersonajeEsPrometedor: stamp: 'tg 10/1/2021 00:35:02'!
+calificarSiUnPersonajeEsPrometedor: unPersonaje
+	^personajesPrometedores includes: unPersonaje.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:35:24'!
+   calificarSiUnPersonajeEsPrometedor: unPersonaje
+	^personajesPrometedores includes: unPersonaje.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:35:24' prior: 50332575!
+                          considerarUnPersonajeComoPrometedor: unPersonaje
+	(self calificarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		"personajesDesconocidos remove: unPersonaje."
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	! !
+
+!methodRemoval: Riverwood class #preguntarSiUnPersonajeEsPrometedor: stamp: 'tg 10/1/2021 00:35:24'!
+preguntarSiUnPersonajeEsPrometedor: unPersonaje
+	^personajesPrometedores includes: unPersonaje.!
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'tg 10/1/2021 00:36:05' prior: 50332444!
+                         interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	(Riverwood calificarSiUnPersonajeEsPrometedor: unPersonaje) ifTrue:[
+		^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.	
+	] ifFalse: [
+		^ self responderSegunCantidadDeInteraccionesConPersonajeDesconocido: unPersonaje].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:39:23'!
+    calificarUnPersonajeComoPrometedor: unPersonaje
+	(self calificarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		"personajesDesconocidos remove: unPersonaje."
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	! !
+
+!methodRemoval: Riverwood class #calificarUnPersonajeComoPrometedor: stamp: 'tg 10/1/2021 00:39:33'!
+calificarUnPersonajeComoPrometedor: unPersonaje
+	(self calificarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		"personajesDesconocidos remove: unPersonaje."
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:40:13'!
+ calificarUnPersonajeComoPrometedor: unPersonaje
+	(self calificarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		"personajesDesconocidos remove: unPersonaje."
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:40:13' prior: 50332321!
+             hacerQueRiverwoodVeaPrometedorAHamilton
+	^Riverwood calificarUnPersonajeComoPrometedor: self hamilton
+	! !
+
+!methodRemoval: Riverwood class #considerarUnPersonajeComoPrometedor: stamp: 'tg 10/1/2021 00:40:13'!
+considerarUnPersonajeComoPrometedor: unPersonaje
+	(self calificarSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		"personajesDesconocidos remove: unPersonaje."
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:41:05'!
+        responderSiUnPersonajeEsPrometedor: unPersonaje
+	^personajesPrometedores includes: unPersonaje.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:41:05' prior: 50332649!
+            interactuarCon: unPersonaje
+	self recordarInteraccionCon: unPersonaje.
+	(Riverwood responderSiUnPersonajeEsPrometedor: unPersonaje) ifTrue:[
+		^ self responderSegunCantidadDeInteraccionesConPersonajePrometedor: unPersonaje.	
+	] ifFalse: [
+		^ self responderSegunCantidadDeInteraccionesConPersonajeDesconocido: unPersonaje].
+	! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/1/2021 00:41:05' prior: 50332683!
+                    calificarUnPersonajeComoPrometedor: unPersonaje
+	(self responderSiUnPersonajeEsPrometedor: unPersonaje) ifFalse: [
+		"personajesDesconocidos remove: unPersonaje."
+		personajesPrometedores add: unPersonaje.
+		^true.
+		]ifTrue: [
+		^false].
+	! !
+
+!methodRemoval: Riverwood class #calificarSiUnPersonajeEsPrometedor: stamp: 'tg 10/1/2021 00:41:05'!
+calificarSiUnPersonajeEsPrometedor: unPersonaje
+	^personajesPrometedores includes: unPersonaje.!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:07'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:11'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:16'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:20'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:32'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:36'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:39'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:43'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:42:58'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:43:02'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/1/2021 00:43:04'!
+PASSED!
+
+----QUIT----(1 October 2021 00:43:52) Ejercicio1.image priorSource: 9030!
