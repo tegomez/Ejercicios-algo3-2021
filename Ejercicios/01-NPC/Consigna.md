@@ -79,4 +79,3 @@ unDiccionario at: 'unaClave' ifAbsent: [ 'unValorPorDefecto' ]
 unBooleano ifTrue: [ "envios de mensajes para cuando unBooleano es true" ] ifFalse: [ "envios de mensajes para cuando unBooleano es false"  ]
 ```
 
-
