@@ -1264,3 +1264,47 @@ PASSED!
 PASSED!
 
 ----QUIT----(4 October 2021 14:31:39) Ejercicio1.image priorSource: 51535!
+
+----STARTUP---- (4 October 2021 14:31:56) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Soluciones/Ejercicio1/Ejercicio1.image!
+
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'tg 10/4/2021 14:34:05' overrides: 50849241!
+                     initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := ((OrderedCollection new) add: #Hamilton; yourself).! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'tg 10/4/2021 14:34:05' overrides: 50849241!
+                        initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->2); yourself).
+	frasesJugadorDesconocido := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	frasesJugadorPrometedor := #('Bienvenido aventurero!!' 'Espero que tengas una buena estadia en Riverwood' ).! !
+!CarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'tg 10/4/2021 14:34:05' overrides: 50333482!
+                initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->1); yourself).
+	frasesJugadorDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).
+	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).! !
+
+!methodRemoval: Riverwood class #initializeCollaboratorsFromFile stamp: 'tg 10/4/2021 14:34:05'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := ((OrderedCollection new) add: #Hamilton; yourself).!
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #initializeCollaboratorsFromFile stamp: 'tg 10/4/2021 14:34:05'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->2); yourself).
+	frasesJugadorDesconocido := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	frasesJugadorPrometedor := #('Bienvenido aventurero!!' 'Espero que tengas una buena estadia en Riverwood' ).!
+
+!methodRemoval: CarolinaLaCurandera class #initializeCollaboratorsFromFile stamp: 'tg 10/4/2021 14:34:05'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->1); yourself).
+	frasesJugadorDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).
+	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).!
