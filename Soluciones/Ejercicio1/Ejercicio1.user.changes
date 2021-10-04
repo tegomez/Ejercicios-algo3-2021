@@ -1132,3 +1132,210 @@ initializeCollaboratorsFromFile
 	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).!
 
 ----QUIT----(3 October 2021 17:12:49) Ejercicio1.image priorSource: 46488!
+
+----STARTUP---- (4 October 2021 13:50:03) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Soluciones/Ejercicio1/Ejercicio1.image!
+
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:32'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:39'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:42'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:44'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:45'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:47'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:50:52'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:02'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:04'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:06'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:08'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:14'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:16'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:18'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'TG 10/4/2021 13:51:27'!
+PASSED!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'TG 10/4/2021 13:54:18' prior: 50332947!
+tirion
+	^#Tirion.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'TG 10/4/2021 13:55:03' prior: 50332942!
+hamilton
+	^#Hamilton.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'TG 10/4/2021 13:55:27' prior: 50332936!
+carolinaLaCurandera
+	^#CarolinaLaCurandera.! !
+
+----STARTUP---- (4 October 2021 14:07:56) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Soluciones/Ejercicio1/Ejercicio1.image!
+
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'tg 10/4/2021 14:09:45' prior: 50332947!
+tirion
+	^ #Tirion.! !
+
+----STARTUP---- (4 October 2021 14:20:24) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Soluciones/Ejercicio1/Ejercicio1.image!
+
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'tg 10/4/2021 14:24:39' prior: 50332989!
+test09CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaSuHiloDeDialogoConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: 'Salud aventurero!!!!'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'tg 10/4/2021 14:24:54' prior: 50333007!
+test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaElHiloDeDialogoDelGuardiaConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+
+	Assert that: (self treborElGuardia interactuarCon: self hamilton) isEqualTo: 'Bienvenido aventurero!!!!'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'tg 10/4/2021 14:26:04' prior: 50332973!
+hacerQueRiverwoodOlvideTodasSusCalificaciones
+	^Riverwood olvidarTodasLasCalificaciones.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'tg 10/4/2021 14:26:58' prior: 50332958!
+hacerQueLaCuranderaOlvideSusInteracciones
+	^CarolinaLaCurandera olvidar.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'tg 10/4/2021 14:27:37' prior: 50332096!
+esVistoPorElPuebloComoPrometedor: unPersonajeJugador
+	^ Riverwood evaluarSiUnJugadorEsPrometedor: unPersonajeJugador.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'tg 10/4/2021 14:28:01' prior: 50332947!
+tirion
+	^#Tirion! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'tg 10/4/2021 14:28:02' prior: 50333332!
+tirion
+	^#Tirion.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'tg 10/4/2021 14:28:25' prior: 50332942!
+hamilton
+	^#Hamilton.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'tg 10/4/2021 14:28:43' prior: 50332936!
+carolinaLaCurandera
+	^#CarolinaLaCurandera.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'tg 10/4/2021 14:28:55' prior: 50333347!
+carolinaLaCurandera
+	^CarolinaLaCurandera.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:45'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:47'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:50'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:52'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:54'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:56'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:58'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:29:59'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:01'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:01'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:15'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:15'!
+ERROR!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'tg 10/4/2021 14:30:25' prior: 50333289!
+test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaElHiloDeDialogoDelGuardiaConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+
+	Assert that: (self treborElGuardia interactuarCon: self hamilton) isEqualTo: 'Bienvenido aventurero!!'.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:27'!
+PASSED!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'tg 10/4/2021 14:30:34' prior: 50333271!
+test09CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaSuHiloDeDialogoConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: 'Salud aventurero!!'.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:38'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:44'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:46'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:48'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:50'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:52'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:53'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:55'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:56'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'tg 10/4/2021 14:30:58'!
+PASSED!
+
+----QUIT----(4 October 2021 14:31:39) Ejercicio1.image priorSource: 51535!
