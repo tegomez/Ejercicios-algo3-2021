@@ -1308,3 +1308,1216 @@ initializeCollaboratorsFromFile
 	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->1); yourself).
 	frasesJugadorDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).
 	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).!
+
+----STARTUP---- (4 October 2021 18:00:45) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio1/Ejercicio1.image!
+
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:15'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:15'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:15'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:23'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:23'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:25'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:25'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:25'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:33'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:33'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:33'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:33'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:33'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:36'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:01:36'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:28'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:31'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:31'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:33'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:33'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:35'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:17:51'!
+PASSED!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:17:55' overrides: 50849241!
+                            initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := ((OrderedCollection new)).! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:17:55' overrides: 50849241!
+                 initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->4); yourself).
+	frasesJugadorDesconocido := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	frasesJugadorPrometedor := #('Bienvenido aventurero!!' 'Espero que tengas una buena estadia en Riverwood' ).! !
+!CarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:17:55' overrides: 50333737!
+                initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->0); yourself).
+	frasesJugadorDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).
+	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).! !
+
+!methodRemoval: Riverwood class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:17:55'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := ((OrderedCollection new)).!
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:17:55'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->4); yourself).
+	frasesJugadorDesconocido := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	frasesJugadorPrometedor := #('Bienvenido aventurero!!' 'Espero que tengas una buena estadia en Riverwood' ).!
+
+!methodRemoval: CarolinaLaCurandera class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:17:55'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->0); yourself).
+	frasesJugadorDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).
+	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).!
+!CarolinaLaCurandera class methodsFor: 'interacciones - privado' stamp: 'MG 10/4/2021 18:22:52' prior: 50332540 overrides: 50332415!
+    responderSegunCantidadDeInteraccionesConJugadorDesconocido: unPersonajeJugador
+	| cantidadInteracciones | 
+	cantidadInteracciones _ cantidadDeInteraccionesPorJugador at: unPersonajeJugador.
+	cantidadInteracciones = frasesJugadorDesconocido size ifTrue: [
+		Riverwood calificarUnJugadorComoPrometedor: unPersonajeJugador.
+		Riverwood olvidarJugador: unPersonajeJugador ].
+	^ frasesJugadorDesconocido at: (cantidadInteracciones min: frasesJugadorDesconocido size).! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:25:08' overrides: 50849241!
+       initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := nil.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:25:08' overrides: 50849241!
+       initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.! !
+!CarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:25:08' overrides: 50333839!
+                            initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.! !
+
+!methodRemoval: Riverwood class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:25:08'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := nil.!
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:25:08'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.!
+
+!methodRemoval: CarolinaLaCurandera class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:25:08'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:31:38' overrides: 50849241!
+    initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := nil.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:31:38' overrides: 50849241!
+       initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.! !
+!CarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:31:38' overrides: 50333895!
+                            initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.! !
+
+!methodRemoval: Riverwood class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:31:38'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := nil.!
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:31:38'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.!
+
+!methodRemoval: CarolinaLaCurandera class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:31:38'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.!
+
+!classRenamed: #PruebasInteracionesConCarolinaLaCurandera as: #PruebasInteracionesConCarolinaLaCuranderaxx stamp: 'MG 10/4/2021 18:34:31'!
+Smalltalk renameClassNamed: #PruebasInteracionesConCarolinaLaCurandera as: #PruebasInteracionesConCarolinaLaCuranderaxx!
+
+!classRenamed: #PruebasInteracionesConTreborElGuardia as: #PruebasInteracionesConTreborElGuardiaxx stamp: 'MG 10/4/2021 18:34:47'!
+Smalltalk renameClassNamed: #PruebasInteracionesConTreborElGuardia as: #PruebasInteracionesConTreborElGuardiaxx!
+
+DenotativeObject subclass: #PruebasInteracionesConCarolinaLaCurandera
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #PruebasInteracionesConCarolinaLaCurandera category: 'Ejercicio1-PNJ-Episodio2' stamp: 'MG 10/4/2021 18:35:34'!
+DenotativeObject subclass: #PruebasInteracionesConCarolinaLaCurandera
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+PruebasInteracionesConCarolinaLaCurandera class
+	instanceVariableNames: ''!
+
+!classDefinition: 'PruebasInteracionesConCarolinaLaCurandera class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'MG 10/4/2021 18:35:34'!
+PruebasInteracionesConCarolinaLaCurandera class
+	instanceVariableNames: ''!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 12:48:36'!
+    test01CuandoLaCuranderaInteractuaPorPrimeraVezConUnPersonajeLeRespondeConSuPrimerFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	
+	mensaje := self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: '¿Estás enfermo forastero?'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 12:48:37'!
+              test02CuandoLaCuranderaInteractuaPorSegundaVezConUnPersonajeLeRespondeConSuSegundaFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	mensaje := self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Ah, solo quieres conversar'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 12:49:16'!
+                   test03CuandoLaCuranderaInteractuaPorTerceraVezConUnPersonajeLeRespondeConSuTercerFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	mensaje := self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Cuando tengas una aflicción, ven a verme'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'interacciones con mas de un personaje' stamp: 'JMB 9/25/2021 12:50:11'!
+      test04LaCuranderaMantieneDosInteraccionesConDiferentesPersonajes
+	self olvidarInteraccionesYOpiniones.
+	
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: '¿Estás enfermo forastero?'.
+	Assert that: (self carolinaLaCurandera interactuarCon: self tirion) isEqualTo: '¿Estás enfermo forastero?'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'interacciones con mas de un personaje' stamp: 'JMB 9/25/2021 12:50:18'!
+                  test05LaCuranderaMantieneDosInteraccionesCompletasConDiferentesPersonajes
+	self olvidarInteraccionesYOpiniones.
+	
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: '¿Estás enfermo forastero?'.
+	
+	Assert that: (self carolinaLaCurandera interactuarCon: self tirion) isEqualTo: '¿Estás enfermo forastero?'.
+	Assert that: (self carolinaLaCurandera interactuarCon: self tirion) isEqualTo: 'Ah, solo quieres conversar'.
+	Assert that: (self carolinaLaCurandera interactuarCon: self tirion) isEqualTo: 'Cuando tengas una aflicción, ven a verme'.
+	
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: 'Ah, solo quieres conversar'.
+	Assert that: (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: 'Cuando tengas una aflicción, ven a verme'.
+	! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'interacciones con personajes prometedores' stamp: 'JMB 9/25/2021 12:50:32'!
+       test06CuandoLaCuranderaInteractuaPorPrimeraVezConUnPersonajeCalificadoPorElPuebloComoPrometedorLeRespondeConSuPrimerFrase
+	| mensaje |	
+	self olvidarInteraccionesYOpiniones.
+	self hacerQueRiverwoodVeaPrometedorAHamilton.
+	
+	mensaje := self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Salud aventurero!!'.
+! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'interacciones con personajes prometedores' stamp: 'JMB 9/25/2021 12:50:39'!
+                      test07CuandoLaCuranderaInteractuaPorSegundaVezConUnPersonajeCalificadoPorElPuebloComoPrometedorLeRespondeConSuSegundaFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self hacerQueRiverwoodVeaPrometedorAHamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	mensaje := self carolinaLaCurandera interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme'.
+! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/25/2021 12:50:52'!
+              test08CuandoLaCuranderaTerminaSuRepertorioDeFrasesConUnPersonajeCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedor
+	self olvidarInteraccionesYOpiniones.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	
+	Assert isTrue: (self esVistoPorElPuebloComoPrometedor: self hamilton).! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/25/2021 12:51:00'!
+                        test09CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaSuHiloDeDialogoConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	
+	Assert that: 'Salud aventurero!!' isEqualTo: (self carolinaLaCurandera interactuarCon: self hamilton)! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'JMB 9/25/2021 12:51:06'!
+                             test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaElHiloDeDialogoDelGuardiaConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+
+	Assert that: 'Bienvenido aventurero!!' isEqualTo: (self treborElGuardia interactuarCon: self hamilton)! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/25/2021 12:41:48'!
+     carolinaLaCurandera
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/22/2021 00:09:00'!
+  hamilton
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/22/2021 00:09:16'!
+             tirion
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'JMB 9/21/2021 20:52:20'!
+               treborElGuardia
+	^ TreborElGuardiaDeSkyrim ! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/22/2021 00:09:33'!
+                       esVistoPorElPuebloComoPrometedor: unPersonaje
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/21/2021 21:01:46'!
+                         hacerQueLaCuranderaOlvideSusInteracciones
+	"Implementar cuando sea necesario"! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/21/2021 21:02:50'!
+                     hacerQueRiverwoodOlvideTodasSusCalificaciones
+	"Implementar cuando sea necesario"! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/22/2021 00:09:48'!
+                 hacerQueRiverwoodVeaPrometedorAHamilton
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/25/2021 12:48:36'!
+                               olvidarInteraccionesYOpiniones
+	self hacerQueLaCuranderaOlvideSusInteracciones.	
+	self hacerQueRiverwoodOlvideTodasSusCalificaciones.
+! !
+
+DenotativeObject subclass: #PruebasInteracionesConTreborElGuardia
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #PruebasInteracionesConTreborElGuardia category: 'Ejercicio1-PNJ-Episodio2' stamp: 'MG 10/4/2021 18:35:34'!
+DenotativeObject subclass: #PruebasInteracionesConTreborElGuardia
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+PruebasInteracionesConTreborElGuardia class
+	instanceVariableNames: ''!
+
+!classDefinition: 'PruebasInteracionesConTreborElGuardia class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'MG 10/4/2021 18:35:34'!
+PruebasInteracionesConTreborElGuardia class
+	instanceVariableNames: ''!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 13:03:53'!
+     test01CuandoElGuardiaInteractuaPorPrimeraVezConUnPersonajeLeRespondeConSuPrimerFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	
+	mensaje := self treborElGuardia interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Hola forastero'.
+! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 13:04:08'!
+  test02CuandoElGuardiaInteractuaPorSegundaVezConUnPersonajeLeRespondeConSuSegundaFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	mensaje := self treborElGuardia interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: '¿Todo bien?'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 13:04:25'!
+                test03CuandoElGuardiaOlvidaInteraccionesPreviasConUnPersonajeAlVolverAInteractuarLeRespondeConSuPrimerFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	self treborElGuardia olvidar.
+	
+	mensaje := self treborElGuardia interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Hola forastero'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 13:04:35'!
+                        test04CuandoElGuardiaInteractuaPorTerceraVezConUnPersonajeLeRespondeConSuTercerFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	mensaje := self treborElGuardia interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: '¿Algún problema?'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con un personaje' stamp: 'JMB 9/25/2021 13:04:44'!
+                       test05CuandoElGuardiaInterctuaYTerminoSuRepertorioDeFrasesConUnPersonajeLeRespondeConSuUltimaFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	self treborElGuardia interactuarCon: self hamilton.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	mensaje := self treborElGuardia interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: '¿Algún problema?'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con mas de un personaje' stamp: 'JMB 9/25/2021 12:53:36'!
+             test06ElGuardiaMantieneDosInteraccionesConDiferentesPersonajes
+	self olvidarInteraccionesYOpiniones.
+
+	Assert that: (self treborElGuardia interactuarCon: self hamilton) isEqualTo: 'Hola forastero'.
+	Assert that: (self treborElGuardia interactuarCon: self tirion) isEqualTo: 'Hola forastero'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con mas de un personaje' stamp: 'JMB 9/25/2021 12:53:43'!
+                       test07ElGuardiaMantieneDosInteraccionesCompletasConDiferentesPersonajes
+	self olvidarInteraccionesYOpiniones.
+	
+	Assert that: (self treborElGuardia interactuarCon: self hamilton) isEqualTo: 'Hola forastero'.
+	
+	Assert that: (self treborElGuardia interactuarCon: self tirion) isEqualTo: 'Hola forastero'.
+	Assert that: (self treborElGuardia interactuarCon: self tirion) isEqualTo: '¿Todo bien?'.
+	Assert that: (self treborElGuardia interactuarCon: self tirion) isEqualTo: '¿Algún problema?'.
+	
+	Assert that: (self treborElGuardia interactuarCon: self hamilton) isEqualTo: '¿Todo bien?'.
+	Assert that: (self treborElGuardia interactuarCon: self hamilton) isEqualTo: '¿Algún problema?'.
+	! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con personajes prometedores' stamp: 'JMB 9/25/2021 12:54:46'!
+         test08CuandoElGuardiaInteractuaPorPrimeraVezConUnPersonajeCalificadoPorElPuebloComoPrometedorLeRespondeConSuPrimerFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self hacerQueRiverwoodVeaPrometedorAHamilton.
+	
+	mensaje := self treborElGuardia interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Bienvenido aventurero!!'.
+! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'interacciones con personajes prometedores' stamp: 'JMB 9/25/2021 12:55:02'!
+                            test09CuandoElGuardiaInteractuaPorSegundaVezConUnPersonajeCalificadoPorElPuebloComoPrometedorLeRespondeConSuSegundaFrase
+	| mensaje |
+	self olvidarInteraccionesYOpiniones.
+	self hacerQueRiverwoodVeaPrometedorAHamilton.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	mensaje := self treborElGuardia interactuarCon: self hamilton.
+	
+	Assert that: mensaje isEqualTo: 'Espero que tengas una buena estadia en Riverwood'.
+! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'JMB 9/22/2021 00:06:18'!
+            hamilton
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'JMB 9/22/2021 00:06:29'!
+                 tirion
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'JMB 9/21/2021 20:42:44'!
+                   treborElGuardia
+	^ TreborElGuardiaDeSkyrim ! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/21/2021 20:49:11'!
+                           hacerQueElGuardiaOlvideSusInteracciones
+	TreborElGuardiaDeSkyrim olvidar.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/21/2021 20:53:36'!
+                             hacerQueRiverwoodOlvideTodasSusCalificaciones
+	"Implementar cuando sea necesario"! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/22/2021 00:06:53'!
+                     hacerQueRiverwoodVeaPrometedorAHamilton
+	Assert isTrue: false description: 'Reemplazar esto por la implementación correspondiente'.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'JMB 9/25/2021 12:52:12'!
+   olvidarInteraccionesYOpiniones
+	self hacerQueElGuardiaOlvideSusInteracciones. 	
+	self hacerQueRiverwoodOlvideTodasSusCalificaciones.
+! !
+
+DenotativeObject subclass: #TreborElGuardiaDeSkyrim
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+!classDefinition: #TreborElGuardiaDeSkyrim category: 'Ejercicio1-PNJ-Episodio2' stamp: 'MG 10/4/2021 18:35:34'!
+DenotativeObject subclass: #TreborElGuardiaDeSkyrim
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+TreborElGuardiaDeSkyrim class
+	instanceVariableNames: 'frases cantidadDeInteracciones'!
+
+!classDefinition: 'TreborElGuardiaDeSkyrim class' category: 'Ejercicio1-PNJ-Episodio2' stamp: 'MG 10/4/2021 18:35:34'!
+TreborElGuardiaDeSkyrim class
+	instanceVariableNames: 'frases cantidadDeInteracciones'!
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'JMB 9/18/2021 11:24:55'!
+                             interactuar
+	self recordarInteraccion.
+	^ self responderSegunCantidadDeInteracciones! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'JMB 9/18/2021 11:24:19' prior: 50332292!
+                            olvidar
+	cantidadDeInteracciones := 0! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'JMB 9/18/2021 11:25:28'!
+                 recordarInteraccion
+	cantidadDeInteracciones := cantidadDeInteracciones + 1.
+! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'JMB 9/18/2021 11:35:15'!
+         responderSegunCantidadDeInteracciones
+	^ frases at: (cantidadDeInteracciones min: frases size)! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'JMB 9/25/2021 13:08:25' overrides: 50849241!
+        initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	frases := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	cantidadDeInteracciones := 0.! !
+
+TreborElGuardiaDeSkyrim initializeAfterFileIn!
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:35:34'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	frases := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	cantidadDeInteracciones := 0.!
+
+----End fileIn of /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Ejercicios/01-NPC/03 - Ejercicio1-PNJ-Episodio2.CodigoInicial.st----!
+
+!classRenamed: #TreborElGuardiaDeSkyrim as: #TreborElGuardia stamp: 'MG 10/4/2021 18:36:18'!
+Smalltalk renameClassNamed: #TreborElGuardiaDeSkyrim as: #TreborElGuardia!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:36:18' prior: 50334421!
+                 treborElGuardia
+	^ TreborElGuardia ! !
+!PruebasInteracionesConTreborElGuardiaxx class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:36:18' prior: 50862500!
+                        treborElGuardia
+	^ TreborElGuardia.! !
+!PruebasInteracionesConTreborElGuardiaxx class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:36:18' prior: 50862506!
+                        hacerQueElGuardiaOlvideSusInteracciones
+	TreborElGuardia olvidar.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:36:18' prior: 50332621!
+                        olvidarJugador: unPersonajeJugador
+	TreborElGuardia olvidarJugador: unPersonajeJugador.
+	CarolinaLaCurandera olvidarJugador: unPersonajeJugador.
+	^ self! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:36:18' prior: 50334186!
+ treborElGuardia
+	^ TreborElGuardia ! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:36:18' prior: 50334427!
+                          hacerQueElGuardiaOlvideSusInteracciones
+	TreborElGuardia olvidar.! !
+!PruebasInteracionesConCarolinaLaCuranderaxx class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:36:18' prior: 50862264!
+                      treborElGuardia
+	^ TreborElGuardia.! !
+
+!classRemoval: #CarolinaLaCurandera stamp: 'MG 10/4/2021 18:36:37'!
+TreborElGuardia subclass: #CarolinaLaCurandera
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+!classRemoval: #Riverwood stamp: 'MG 10/4/2021 18:36:37'!
+DenotativeObject subclass: #Riverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+DenotativeObject subclass: #Riverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+!classDefinition: #Riverwood category: 'xx' stamp: 'MG 10/4/2021 18:36:48'!
+DenotativeObject subclass: #Riverwood
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+Riverwood class
+	instanceVariableNames: 'jugadoresPrometedores'!
+
+!classDefinition: 'Riverwood class' category: 'xx' stamp: 'MG 10/4/2021 18:36:48'!
+Riverwood class
+	instanceVariableNames: 'jugadoresPrometedores'!
+!Riverwood class methodsFor: 'opiniones' stamp: 'MG 10/3/2021 17:06:04'!
+       calificarUnJugadorComoPrometedor: unPersonajeJugador
+	(self evaluarSiUnJugadorEsPrometedor: unPersonajeJugador) ifFalse: [ 
+		jugadoresPrometedores add: unPersonajeJugador.
+	].
+	! !
+!Riverwood class methodsFor: 'opiniones' stamp: 'MG 10/3/2021 16:52:30'!
+ evaluarSiUnJugadorEsPrometedor: unPersonajeJugador
+	^ jugadoresPrometedores includes: unPersonajeJugador.! !
+!Riverwood class methodsFor: 'opiniones' stamp: 'MG 10/3/2021 16:53:40'!
+          olvidarJugador: unPersonajeJugador
+	TreborElGuardiaDeSkyrim olvidarJugador: unPersonajeJugador.
+	CarolinaLaCurandera olvidarJugador: unPersonajeJugador.
+	^ self! !
+!Riverwood class methodsFor: 'opiniones' stamp: 'MG 10/3/2021 17:09:19'!
+                   olvidarTodasLasCalificaciones
+	^ jugadoresPrometedores _ OrderedCollection new.! !
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:31:38' overrides: 50849241!
+      initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := nil.! !
+
+DenotativeObject subclass: #TreborElGuardiaDeSkyrim
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+!classDefinition: #TreborElGuardiaDeSkyrim category: 'xx' stamp: 'MG 10/4/2021 18:36:49'!
+DenotativeObject subclass: #TreborElGuardiaDeSkyrim
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+TreborElGuardiaDeSkyrim class
+	instanceVariableNames: 'cantidadDeInteraccionesPorJugador frasesJugadorDesconocido frasesJugadorPrometedor'!
+
+!classDefinition: 'TreborElGuardiaDeSkyrim class' category: 'xx' stamp: 'MG 10/4/2021 18:36:49'!
+TreborElGuardiaDeSkyrim class
+	instanceVariableNames: 'cantidadDeInteraccionesPorJugador frasesJugadorDesconocido frasesJugadorPrometedor'!
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'MG 10/3/2021 16:32:22'!
+                   interactuarCon: unPersonajeJugador
+	self recordarInteraccionCon: unPersonajeJugador.
+	(Riverwood evaluarSiUnJugadorEsPrometedor: unPersonajeJugador) ifTrue: [ ^ self responderSegunCantidadDeInteraccionesConJugadorPrometedor: unPersonajeJugador ].
+	^ self responderSegunCantidadDeInteraccionesConJugadorDesconocido: unPersonajeJugador.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'MG 10/3/2021 16:32:59'!
+                   olvidar
+	cantidadDeInteraccionesPorJugador _ Dictionary new.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones' stamp: 'MG 10/3/2021 16:33:18'!
+     olvidarJugador: unPersonajeJugador
+	^ cantidadDeInteraccionesPorJugador
+		at: unPersonajeJugador
+		put: 0.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'MG 10/3/2021 16:33:25'!
+             recordarInteraccionCon: unPersonajeJugador
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorJugador
+		at: unPersonajeJugador
+		ifAbsent: [ 0 ].
+	cantidadDeInteraccionesPorJugador
+		at: unPersonajeJugador
+		put: cantidadInteracciones + 1.! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'MG 10/3/2021 16:38:02'!
+             responderSegunCantidadDeInteraccionesConJugadorDesconocido: unPersonajeJugador
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorJugador at: unPersonajeJugador.
+	^ frasesJugadorDesconocido at: (cantidadInteracciones min: frasesJugadorDesconocido size).! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'interacciones - privado' stamp: 'MG 10/3/2021 16:46:58'!
+                               responderSegunCantidadDeInteraccionesConJugadorPrometedor: unPersonajeJugador
+	| cantidadInteracciones |
+	cantidadInteracciones _ cantidadDeInteraccionesPorJugador at: unPersonajeJugador.
+	^ frasesJugadorPrometedor at: (cantidadInteracciones min: frasesJugadorPrometedor size).! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:31:38' overrides: 50849241!
+                  initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.! !
+
+TreborElGuardiaDeSkyrim subclass: #CarolinaLaCurandera
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+!classDefinition: #CarolinaLaCurandera category: 'xx' stamp: 'MG 10/4/2021 18:36:49'!
+TreborElGuardiaDeSkyrim subclass: #CarolinaLaCurandera
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'xx'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+CarolinaLaCurandera class
+	instanceVariableNames: ''!
+
+!classDefinition: 'CarolinaLaCurandera class' category: 'xx' stamp: 'MG 10/4/2021 18:36:49'!
+CarolinaLaCurandera class
+	instanceVariableNames: ''!
+!CarolinaLaCurandera class methodsFor: 'interacciones - privado' stamp: 'MG 10/4/2021 18:22:52' overrides: 50334713!
+                        responderSegunCantidadDeInteraccionesConJugadorDesconocido: unPersonajeJugador
+	| cantidadInteracciones | 
+	cantidadInteracciones _ cantidadDeInteraccionesPorJugador at: unPersonajeJugador.
+	cantidadInteracciones = frasesJugadorDesconocido size ifTrue: [
+		Riverwood calificarUnJugadorComoPrometedor: unPersonajeJugador.
+		Riverwood olvidarJugador: unPersonajeJugador ].
+	^ frasesJugadorDesconocido at: (cantidadInteracciones min: frasesJugadorDesconocido size).! !
+!CarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:31:38' overrides: 50334739!
+                             initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.! !
+
+Riverwood initializeAfterFileIn!
+
+!methodRemoval: Riverwood class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:36:49'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := nil.!
+
+TreborElGuardiaDeSkyrim initializeAfterFileIn!
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:36:49'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.!
+
+CarolinaLaCurandera initializeAfterFileIn!
+
+!methodRemoval: CarolinaLaCurandera class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:36:49'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := nil.
+	frasesJugadorDesconocido := nil.
+	frasesJugadorPrometedor := nil.!
+
+----End fileIn of /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio1/xx.st----!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'MG 10/4/2021 18:40:19' prior: 50334407!
+                             hamilton
+	^#Hamilton.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'MG 10/4/2021 18:40:30' prior: 50334414!
+                 tirion
+	^#Tirion.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'personajes' stamp: 'MG 10/4/2021 18:40:39' prior: 50334539!
+                     treborElGuardia
+	^ TreborElGuardiaDeSkyrim.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:40:56' prior: 50334434!
+            hacerQueRiverwoodOlvideTodasSusCalificaciones
+	^Riverwood olvidarTodasLasCalificaciones.! !
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:41:18' prior: 50334441!
+                               hacerQueRiverwoodVeaPrometedorAHamilton
+	^Riverwood calificarUnJugadorComoPrometedor: self hamilton.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:30'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:41:36'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:34'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:42:40'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:43:37'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:43:37'!
+ERROR!
+!PruebasInteracionesConTreborElGuardia class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:44:42' prior: 50334572!
+                 hacerQueElGuardiaOlvideSusInteracciones
+	self treborElGuardia olvidar.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'MG 10/4/2021 18:45:08' prior: 50334566!
+                            treborElGuardia
+	^ TreborElGuardiaDeSkyrim. ! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:21'!
+ERROR!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:45:57'!
+PASSED!
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'MG 10/4/2021 18:46:19' prior: 50334165!
+                              carolinaLaCurandera
+	 ^CarolinaLaCurandera.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'MG 10/4/2021 18:46:29' prior: 50334172!
+                       hamilton
+	^#Hamilton.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'personajes' stamp: 'MG 10/4/2021 18:46:48' prior: 50334179!
+             tirion
+	^#Tirion.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:47:14' prior: 50334192!
+  esVistoPorElPuebloComoPrometedor: unPersonaje
+	^Riverwood evaluarSiUnJugadorEsPrometedor: unPersonaje.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:47:41' prior: 50334201!
+             hacerQueLaCuranderaOlvideSusInteracciones
+	^ self carolinaLaCurandera olvidar.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:48:01' prior: 50334208!
+     hacerQueRiverwoodOlvideTodasSusCalificaciones
+	^Riverwood olvidarTodasLasCalificaciones.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:48:21' prior: 50334215!
+                           hacerQueRiverwoodVeaPrometedorAHamilton
+	^Riverwood calificarUnJugadorComoPrometedor: self hamilton .! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'opiniones e interacciones' stamp: 'MG 10/4/2021 18:48:22' prior: 50335039!
+              hacerQueRiverwoodVeaPrometedorAHamilton
+	^Riverwood calificarUnJugadorComoPrometedor: self hamilton.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'MG 10/4/2021 18:48:59' prior: 50334146!
+                     test10CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaElHiloDeDialogoDelGuardiaConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self treborElGuardia interactuarCon: self hamilton.
+	
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+
+	Assert that:  (self treborElGuardia interactuarCon: self hamilton) isEqualTo: 'Bienvenido aventurero!!'.! !
+!PruebasInteracionesConCarolinaLaCurandera class methodsFor: 'cambio de opiniones' stamp: 'MG 10/4/2021 18:49:16' prior: 50334128!
+           test09CuandoLaCuranderaCambiaLaOpinionDelPuebloSobreElPersonajeAPrometedorReiniciaSuHiloDeDialogoConElPersonaje
+	self olvidarInteraccionesYOpiniones.
+	self carolinaLaCurandera interactuarCon: self hamilton.
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	self carolinaLaCurandera interactuarCon: self hamilton.	
+	
+	Assert that:  (self carolinaLaCurandera interactuarCon: self hamilton) isEqualTo: 'Salud aventurero!!'.! !
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:19'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:49:21'!
+PASSED!
+!Riverwood class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:49:53' overrides: 50849241!
+              initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := ((OrderedCollection new)).! !
+!TreborElGuardiaDeSkyrim class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:49:53' overrides: 50849241!
+                 initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->4); yourself).
+	frasesJugadorDesconocido := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	frasesJugadorPrometedor := #('Bienvenido aventurero!!' 'Espero que tengas una buena estadia en Riverwood' ).! !
+!CarolinaLaCurandera class methodsFor: 'as yet unclassified' stamp: 'MG 10/4/2021 18:49:53' overrides: 50335157!
+                initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->0); yourself).
+	frasesJugadorDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).
+	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).! !
+
+!methodRemoval: Riverwood class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:49:53'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	jugadoresPrometedores := ((OrderedCollection new)).!
+
+!methodRemoval: TreborElGuardiaDeSkyrim class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:49:53'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->4); yourself).
+	frasesJugadorDesconocido := #('Hola forastero' '¿Todo bien?' '¿Algún problema?' ).
+	frasesJugadorPrometedor := #('Bienvenido aventurero!!' 'Espero que tengas una buena estadia en Riverwood' ).!
+
+!methodRemoval: CarolinaLaCurandera class #initializeCollaboratorsFromFile stamp: 'MG 10/4/2021 18:49:53'!
+initializeCollaboratorsFromFile
+	"Auto generated method for loading purposes - Do not modify it"
+
+	cantidadDeInteraccionesPorJugador := ((Dictionary new) add: (#Hamilton->0); yourself).
+	frasesJugadorDesconocido := #('¿Estás enfermo forastero?' 'Ah, solo quieres conversar' 'Cuando tengas una aflicción, ven a verme' ).
+	frasesJugadorPrometedor := #('Salud aventurero!!' 'Toma esta pócima que te hará crecer el pelo. Y cuando tengas una aflicción, ven a verme' ).!
+
+!classRemoval: #TreborElGuardia stamp: 'MG 10/4/2021 18:52:45'!
+DenotativeObject subclass: #TreborElGuardia
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2xx'!
+
+!classRemoval: #PruebasInteracionesConTreborElGuardiaxx stamp: 'MG 10/4/2021 18:52:45'!
+DenotativeObject subclass: #PruebasInteracionesConTreborElGuardiaxx
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2xx'!
+
+!classRemoval: #PruebasInteracionesConCarolinaLaCuranderaxx stamp: 'MG 10/4/2021 18:52:45'!
+DenotativeObject subclass: #PruebasInteracionesConCarolinaLaCuranderaxx
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio1-PNJ-Episodio2xx'!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
+
+!testRun: #DenotativeObjectTestCase #performRealTest stamp: 'MG 10/4/2021 18:52:49'!
+PASSED!
