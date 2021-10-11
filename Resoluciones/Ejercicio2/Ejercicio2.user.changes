@@ -1940,3 +1940,594 @@ test0708
 !
 
 ----QUIT----(10 October 2021 17:07:17) Ejercicio2.image priorSource: 26828!
+
+----STARTUP---- (11 October 2021 16:16:19) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+!testRun: #CustomerBookTest #test07Pruebas stamp: 'tg 10/11/2021 16:19:16'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08Pruebas stamp: 'tg 10/11/2021 16:19:19'!
+PASSED!
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:20:45' prior: 50333660!
+testCanNotSuspendIfisValid: includes Customer: aCustomerName
+	| customerBook johnLennon aName|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	(includes) ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	] ifFalse: [
+		aName := aCustomerName.
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:21:09' prior: 50334161!
+testCanNotSuspendIfisValid: isValid Customer: aCustomerName
+	| customerBook johnLennon aName|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	customerBook addCustomerNamed: johnLennon.
+	(isValid) ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	] ifFalse: [
+		aName := aCustomerName.
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 16:21:59' prior: 50333812!
+test07Pruebas
+	"self test0708: 'Ringo Starr'."
+	self testCanNotSuspendIfisValid: false Customer: 'Ringo Starr'. ! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:22:43' prior: 50334182!
+testCanNotSuspendIfisValid: isValid Customer: aCustomerName
+	| customerBook johnLennon aName ringoStarr|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	ringoStarr  := 'Ringo Starr'.
+	customerBook addCustomerNamed: johnLennon.
+	(isValid) ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	] ifFalse: [
+		aName := aCustomerName.
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:23:06' prior: 50334210!
+testCanNotSuspendIfisValid: isValid Customer: aCustomerName
+	| customerBook johnLennon aName ringoStarr|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	ringoStarr  := 'Ringo Starr'.
+	customerBook addCustomerNamed: johnLennon.
+	(isValid) ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	] ifFalse: [
+		aName := ringoStarr .
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:23:33'!
+testCanNotSuspendIfisValid: isValid
+	| customerBook johnLennon aName ringoStarr|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	ringoStarr  := 'Ringo Starr'.
+	customerBook addCustomerNamed: johnLennon.
+	(isValid) ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	] ifFalse: [
+		aName := ringoStarr .
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+
+!methodRemoval: CustomerBookTest #testCanNotSuspendIfisValid:Customer: stamp: 'tg 10/11/2021 16:23:40'!
+testCanNotSuspendIfisValid: isValid Customer: aCustomerName
+	| customerBook johnLennon aName ringoStarr|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	ringoStarr  := 'Ringo Starr'.
+	customerBook addCustomerNamed: johnLennon.
+	(isValid) ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	] ifFalse: [
+		aName := ringoStarr .
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+!
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 16:23:50' prior: 50334203!
+test07Pruebas
+	"self test0708: 'Ringo Starr'."
+	self testCanNotSuspendIfisValid: false. ! !
+
+!testRun: #CustomerBookTest #test07Pruebas stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test01Pruebas stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02Pruebas stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test0506 stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05Pruebas stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06Pruebas stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07Pruebas stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08Pruebas stamp: 'tg 10/11/2021 16:23:59'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07Pruebas stamp: 'tg 10/11/2021 16:24:03'!
+PASSED!
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 16:24:34' prior: 50333817!
+test08Pruebas
+	"self test0708: 'John Lennon'".
+	self testCanNotSuspendIfisValid: true. ! !
+
+!testRun: #CustomerBookTest #test08Pruebas stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test01Pruebas stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02Pruebas stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test0506 stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05Pruebas stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06Pruebas stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07Pruebas stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08Pruebas stamp: 'tg 10/11/2021 16:24:36'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08Pruebas stamp: 'tg 10/11/2021 16:24:40'!
+PASSED!
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:26:40' prior: 50334255!
+testCanNotSuspendIfisValid: isValid
+
+	| customerBook johnLennon aName ringoStarr|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	ringoStarr  := 'Ringo Starr'.
+	customerBook addCustomerNamed: johnLennon.
+	(isValid) ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	] ifFalse: [
+		aName := ringoStarr .
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'tests' stamp: 'tg 10/11/2021 16:28:22' prior: 50331757!
+test05SuspendingACustomerShouldNotRemoveItFromCustomerBook
+
+	| customerBook paulMcCartney|
+	
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	customerBook suspendCustomerNamed: paulMcCartney.
+	
+	self assert: 0 equals: customerBook numberOfActiveCustomers.
+	self assert: 1 equals: customerBook numberOfSuspendedCustomers.
+	self assert: 1 equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.
+	
+
+	
+! !
+!CustomerBookTest methodsFor: 'tests' stamp: 'tg 10/11/2021 16:28:25' prior: 50334439!
+test05SuspendingACustomerShouldNotRemoveItFromCustomerBook
+
+	| customerBook paulMcCartney|
+	
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	customerBook suspendCustomerNamed: paulMcCartney.
+	
+	self assert: 0 equals: customerBook numberOfActiveCustomers.
+	self assert: 1 equals: customerBook numberOfSuspendedCustomers.
+	self assert: 1 equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney).
+	
+
+	
+! !
+
+array := #(1 2 3).
+!
+
+array at: 2.!
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:47:29'!
+test0506: block xxx: array
+"RemovingASuspendingCustomerShouldRemoveItFromCustomerBook"
+"testCheck: anAction : With: aCondition"
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:50:47' prior: 50334480!
+test0506: block xxx: array
+"RemovingASuspendingCustomerShouldRemoveItFromCustomerBook"
+"testCheck: anAction : With: aCondition"
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook.
+		
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:55:33'!
+xxx: number xx: block
+	self assert: number equals: block value.! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 16:58:01' prior: 50334503!
+test0506: block xxx: array
+"RemovingASuspendingCustomerShouldRemoveItFromCustomerBook"
+"testCheck: anAction : With: aCondition"
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:01:54' prior: 50334531!
+test0506: block xxx: array
+"RemovingASuspendingCustomerShouldRemoveItFromCustomerBook"
+"testCheck: anAction : With: aCondition"
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook value: paulMcCartney .
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:01:56' prior: 50334554!
+test0506: block xxx: array
+"RemovingASuspendingCustomerShouldRemoveItFromCustomerBook"
+"testCheck: anAction : With: aCondition"
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook value: paulMcCartney.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:02:04' prior: 50334577!
+test0506: block xxx: array
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook value: paulMcCartney.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:02:27' prior: 50334600!
+test0506: block xxx: array
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook value: paulMcCartney.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney).! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:02:51' prior: 50334126!
+test05Pruebas
+	self ! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:05:40' prior: 50334639!
+test05Pruebas
+	self test0506: [: customerBook : customerName | customerBook suspendCustomerNamed: customerName] xxx: #(0 0 0).
+! !
+
+!testRun: #CustomerBookTest #test05Pruebas stamp: 'tg 10/11/2021 17:05:44'!
+FAILURE!
+
+!testRun: #CustomerBookTest #test05Pruebas stamp: 'tg 10/11/2021 17:05:44'!
+FAILURE!
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:06:14' prior: 50334643!
+test05Pruebas
+	self test0506: [: customerBook : customerName | customerBook suspendCustomerNamed: customerName] xxx: #(0 1 1).
+! !
+
+!testRun: #CustomerBookTest #test05Pruebas stamp: 'tg 10/11/2021 17:06:18'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/11/2021 17:06:23'!
+PASSED!
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:06:43' prior: 50334129!
+test06Pruebas
+	self test0506: [: customerBook : customerName | customerBook suspendCustomerNamed: customerName] xxx: #(0 0 0).! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:08:34' prior: 50334670!
+test06Pruebas
+	self test0506:
+	[: customerBook : customerName |
+		 customerBook suspendCustomerNamed: customerName. 
+		customerBook removeCustomerNamed: customerName] xxx: #(0 0 0).
+	! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:08:39' prior: 50334677!
+test06Pruebas
+	self test0506:
+	[: customerBook : customerName |
+		customerBook suspendCustomerNamed: customerName. 
+		customerBook removeCustomerNamed: customerName] xxx: #(0 0 0).
+	! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:08:58' prior: 50334620!
+test0506: block xxx: array
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook value: paulMcCartney.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.! !
+
+!testRun: #CustomerBookTest #test06Pruebas stamp: 'tg 10/11/2021 17:09:05'!
+PASSED!
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:09:16' prior: 50334696!
+test0506: block xxx: array
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook value: paulMcCartney.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney).! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:11:46' prior: 50334719!
+test0506: block xxx: array
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	block value: customerBook value: paulMcCartney.
+	
+	self assert: (array at: 1) equals: customerBook numberOfActiveCustomers.
+	self assert: (array at: 2) equals: customerBook numberOfSuspendedCustomers.
+	self assert: (array at: 3) equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney).! !
+
+!methodRemoval: CustomerBookTest #xxx:xx: stamp: 'tg 10/11/2021 17:11:52'!
+xxx: number xx: block
+	self assert: number equals: block value.!
+
+!methodRemoval: CustomerBookTest #test0506 stamp: 'tg 10/11/2021 17:11:58'!
+test0506
+"RemovingASuspendingCustomerShouldRemoveItFromCustomerBook"
+"testCheck: anAction : With: aCondition"
+	| customerBook paulMcCartney |
+	customerBook := CustomerBook new.
+	paulMcCartney := 'Paul McCartney'.
+	
+	customerBook addCustomerNamed: paulMcCartney.
+	customerBook suspendCustomerNamed: paulMcCartney.
+	customerBook removeCustomerNamed: paulMcCartney.
+	
+	self assert: 0 equals: customerBook numberOfActiveCustomers.
+	self assert: 0 equals: customerBook numberOfSuspendedCustomers.
+	self assert: 0 equals: customerBook numberOfCustomers.
+	self assert: (customerBook includesCustomerNamed: paulMcCartney) not.!
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:24:20' prior: 50334418!
+testCanNotSuspendIfisValid: state
+
+	| customerBook johnLennon aName ringoStarr|
+			
+	customerBook := CustomerBook new.
+	johnLennon := 'John Lennon'.
+	ringoStarr  := 'Ringo Starr'.
+	customerBook addCustomerNamed: johnLennon.
+	(state = 'suspended') ifTrue:[
+		customerBook suspendCustomerNamed: johnLennon.
+		aName := johnLennon.
+	]. (state = 'invalid') ifTrue: [
+		aName := ringoStarr .
+	].
+	[ customerBook suspendCustomerNamed: aName.
+	self fail ]
+		on: CantSuspend 
+		do: [ :anError | 
+			self assert: customerBook numberOfCustomers = 1.
+			self assert: (customerBook includesCustomerNamed: johnLennon) ]
+! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:24:46' prior: 50334298!
+test07Pruebas
+	"self test0708: 'Ringo Starr'."
+	self testCanNotSuspendIfisValid: 'invalid'. ! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:25:09' prior: 50334358!
+test08Pruebas
+	"self test0708: 'John Lennon'".
+	self testCanNotSuspendIfisValid: 'suspended'. ! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:45:08' prior: 50333000!
+testModified: aCustomerBook With: anAction shouldNotTakeMoreThan: milliseconds
+	
+	|millisecondsBeforeRunning millisecondsAfterRunning |
+	
+	millisecondsBeforeRunning := Time millisecondClockValue * millisecond.
+	anAction value. 
+	millisecondsAfterRunning := Time millisecondClockValue * millisecond.
+	
+	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < (milliseconds * millisecond)! !
+!CustomerBookTest methodsFor: 'testsSinCodigoRepetido' stamp: 'tg 10/11/2021 17:45:28'!
+testModifiedWith: anAction shouldNotTakeMoreThan: milliseconds
+	
+	|millisecondsBeforeRunning millisecondsAfterRunning |
+	
+	millisecondsBeforeRunning := Time millisecondClockValue * millisecond.
+	anAction value. 
+	millisecondsAfterRunning := Time millisecondClockValue * millisecond.
+	
+	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < (milliseconds * millisecond)! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:47:10' prior: 50332318!
+test02Pruebas
+	|aCustomerBook|
+	aCustomerBook := CustomerBook new.
+	aCustomerBook addCustomerNamed: 'Paul McCartney'.
+	self testModifiedWith: [aCustomerBook removeCustomerNamed: 'Paul McCartney']  shouldNotTakeMoreThan: 100.! !
+
+!testRun: #CustomerBookTest #test02Pruebas stamp: 'tg 10/11/2021 17:47:16'!
+PASSED!
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:47:38' prior: 50332267!
+test01Pruebas
+	|aCustomerBook|
+	aCustomerBook := CustomerBook new.
+	self testModified: aCustomerBook With: [ aCustomerBook addCustomerNamed: 'John Lennon']  shouldNotTakeMoreThan: 50.! !
+!CustomerBookTest methodsFor: 'Pruebas' stamp: 'tg 10/11/2021 17:47:47' prior: 50334864!
+test01Pruebas
+	|aCustomerBook|
+	aCustomerBook := CustomerBook new.
+	self testModifiedWith: [ aCustomerBook addCustomerNamed: 'John Lennon']  shouldNotTakeMoreThan: 50.! !
+
+----QUIT----(11 October 2021 17:58:17) Ejercicio2.image priorSource: 79865!
