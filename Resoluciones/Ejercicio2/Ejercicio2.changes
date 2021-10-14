@@ -1875,3 +1875,122 @@ PASSED!
 PASSED!
 
 ----QUIT----(13 October 2021 23:29:09) Ejercicio2.image priorSource: 64769!
+
+----STARTUP---- (13 October 2021 23:46:43) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'MG 10/13/2021 23:47:21'!
+PASSED!
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'MG 10/13/2021 23:47:23'!
+PASSED!
+
+----QUIT----(13 October 2021 23:47:28) Ejercicio2.image priorSource: 66130!
+
+----STARTUP---- (13 October 2021 23:47:33) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+----QUIT----(13 October 2021 23:47:53) Ejercicio2.image priorSource: 67454!
+
+----STARTUP---- (13 October 2021 23:48:18) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'MG 10/13/2021 23:48:26'!
+PASSED!
+
+----QUIT----(13 October 2021 23:51:53) Ejercicio2.image priorSource: 67689!
+
+----STARTUP---- (14 October 2021 00:32:23) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+!CustomerBookTest methodsFor: 'toolboxForTesting' stamp: 'MG 10/14/2021 00:36:24' prior: 50333078!
+                           modificationWith: anAction shouldNotTakeMoreThan: milliseconds
+	
+	|millisecondsBeforeRunning millisecondsAfterRunning |
+	
+	millisecondsBeforeRunning := Time millisecondClockValue * millisecond.
+	
+	anAction value. 
+	
+	millisecondsAfterRunning := Time millisecondClockValue * millisecond.
+	
+	self assert: (millisecondsAfterRunning-millisecondsBeforeRunning) < (milliseconds * millisecond).! !
+
+----QUIT----(14 October 2021 00:39:06) Ejercicio2.image priorSource: 68886!
+
+----STARTUP---- (14 October 2021 00:54:32) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+!classRemoval: #anObject stamp: 'MG 10/14/2021 00:54:44'!
+DenotativeObject subclass: #anObject
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Workspace'!
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'MG 10/14/2021 00:55:03'!
+PASSED!
+
+----QUIT----(14 October 2021 00:55:34) Ejercicio2.image priorSource: 69638!
