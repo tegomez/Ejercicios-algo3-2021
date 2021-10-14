@@ -1994,3 +1994,128 @@ PASSED!
 PASSED!
 
 ----QUIT----(14 October 2021 00:55:34) Ejercicio2.image priorSource: 69638!
+
+----STARTUP---- (14 October 2021 10:54:36) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'tg 10/14/2021 10:55:03'!
+PASSED!
+!CustomerBookTest methodsFor: 'toolboxForTesting' stamp: 'tg 10/14/2021 11:23:57' overrides: 16927572!
+                  setUp
+	JohnLennon := 'John Lennon'. 
+	PaulMcCartney := 'Paul McCartney'. 
+	RingoStarr := 'Ringo Starr'.! !
+
+TestCase subclass: #CustomerBookTest
+	instanceVariableNames: 'JohnLennon PaulMcCartney RingoStarr'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CodigoRepetido-Ejercicio'!
+
+!classDefinition: #CustomerBookTest category: 'CodigoRepetido-Ejercicio' stamp: 'tg 10/14/2021 11:24:20'!
+TestCase subclass: #CustomerBookTest
+	instanceVariableNames: 'JohnLennon PaulMcCartney RingoStarr'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'CodigoRepetido-Ejercicio'!
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'tg 10/14/2021 11:24:23'!
+PASSED!
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/14/2021 11:24:27'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'tg 10/14/2021 11:24:29'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'tg 10/14/2021 11:24:30'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/14/2021 11:24:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/14/2021 11:24:41'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/14/2021 11:24:43'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'tg 10/14/2021 11:24:45'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'tg 10/14/2021 11:24:47'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'tg 10/14/2021 11:24:49'!
+PASSED!
+
+----QUIT----(14 October 2021 11:25:26) Ejercicio2.image priorSource: 71028!
+
+----STARTUP---- (14 October 2021 11:26:48) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'tg 10/14/2021 11:27:00'!
+PASSED!
