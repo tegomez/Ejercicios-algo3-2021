@@ -1570,3 +1570,35 @@ PASSED!
 PASSED!
 
 ----QUIT----(13 October 2021 23:15:47) Ejercicio2.image priorSource: 63572!
+
+----STARTUP---- (13 October 2021 23:19:47) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio2/Ejercicio2.image!
+
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/13/2021 23:20:27'!
+PASSED!
+
+!testRun: #CustomerBookTest #test01AddingCustomerShouldNotTakeMoreThan50Milliseconds stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test02RemovingCustomerShouldNotTakeMoreThan100Milliseconds stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test03CanNotAddACustomerWithEmptyName stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test04CanNotRemoveAnInvalidCustomer stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test05SuspendingACustomerShouldNotRemoveItFromCustomerBook stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test06RemovingASuspendedCustomerShouldRemoveItFromCustomerBook stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test07CanNotSuspendAnInvalidCustomer stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+!testRun: #CustomerBookTest #test08CanNotSuspendAnAlreadySuspendedCustomer stamp: 'tg 10/13/2021 23:20:32'!
+PASSED!
+
+----QUIT----(13 October 2021 23:29:09) Ejercicio2.image priorSource: 64769!
