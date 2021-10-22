@@ -1,0 +1,641 @@
+
+
+----STARTUP---- (21 October 2021 19:41:42) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio3/Ejercicio3Parte2.image!
+
+
+----End fileIn of /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio3/Numeros-Parte2-Ejercicio.st----!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 19:46:50' prior: 50332044 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+		
+		].
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 19:51:59' prior: 50332285 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+	
+		newNumerator := (anAdder denominator) * (self value).
+		newDenominator :=  anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 19:54:10' prior: 50332294 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((anAdder denominator) * (self value)) + anAdder numerator.
+		newDenominator :=  anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+! !
+
+!testRun: #NumeroTest #test11EnteroAddsFraccionCorrectly stamp: 'tg 10/21/2021 19:54:21'!
+PASSED!
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 19:57:03' prior: 50332169 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+	
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+	(anAdder isKindOf: Entero) ifTrue: [
+		^anAdder + self.
+		].
+		
+! !
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 19:57:36'!
+PASSED!
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 19:58:35' prior: 50332326 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+	
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+	(anAdder isKindOf: Entero) ifTrue: [
+		^anAdder + self.
+		].
+		
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:00:13' prior: 50332038 overrides: 50331968!
+* aMultiplier 
+
+	^self class with: value * aMultiplier integerValue
+	! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:01:46' prior: 50332359 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((aMultiplier denominator) * (self value)) + aMultiplier numerator.
+		newDenominator :=  aMultiplier denominator.
+	
+		^newNumerator / newDenominator 
+		].
+
+	^self class with: value * aMultiplier integerValue
+	! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:02:24' prior: 50332365 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((aMultiplier denominator) * (self value)) + (aMultiplier numerator).
+		newDenominator :=  aMultiplier denominator.
+	
+		^newNumerator / newDenominator 
+		].
+
+	^self class with: value * aMultiplier integerValue
+	! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:03:32' prior: 50332382 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((aMultiplier denominator) * (self value)) * (aMultiplier numerator).
+		newDenominator :=  aMultiplier denominator.
+	
+		^newNumerator / newDenominator 
+		].
+
+	^self class with: value * aMultiplier integerValue
+	! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:03:56' prior: 50332400 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((aMultiplier denominator) * (self value)) * (aMultiplier numerator).
+		newDenominator :=  aMultiplier denominator.
+	
+		^newNumerator / newDenominator 
+		].	! !
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:04:03'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:04:03'!
+FAILURE!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:04:42' prior: 50332418 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((aMultiplier denominator) * (self value)) * aMultiplier numerator.
+		newDenominator :=  aMultiplier denominator.
+	
+		^newNumerator / newDenominator 
+		].	! !
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:04:50'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:04:50'!
+FAILURE!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:07:22' prior: 50332440 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((aMultiplier denominator) * (self value)) * aMultiplier numerator.
+		newDenominator :=  aMultiplier denominator.
+	
+		^newNumerator / newDenominator 
+		].	! !
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:09:51'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:09:51'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:11:11'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:11:11'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:11:34'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:11:34'!
+FAILURE!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:18:16' prior: 50332308 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((anAdder denominator) * (self value)) + anAdder numerator.
+		newDenominator :=  anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		"^Fraccion with:(anAdder denominaror) + anAddr numerator over: anAdder denominator "
+		].
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:19:34' prior: 50332498 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((anAdder denominator) * (self value)) + anAdder numerator.
+		newDenominator :=  anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		"^Fraccion with:(anAdder denominaror  * self) + anAddr numerator over: anAdder denominator "
+		].
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:21:43' prior: 50332462 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := (aMultiplier denominator * self) * aMultiplier numerator.
+		newDenominator :=  aMultiplier denominator.
+	
+		^newNumerator / newDenominator 
+		].	! !
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:21:53'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:21:53'!
+FAILURE!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:23:01' prior: 50332534 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := (aMultiplier denominator * self) * aMultiplier numerator.
+		newDenominator :=  aMultiplier denominator.
+		^newNumerator / newDenominator 
+		].	! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:24:54' prior: 50332556 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := (aMultiplier denominator * self) * aMultiplier numerator.
+		newDenominator := self * aMultiplier denominator.
+		^newNumerator / newDenominator 
+		].	! !
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:24:59'!
+FAILURE!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:24:59'!
+FAILURE!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:25:35' prior: 50332571 overrides: 50331968!
+* aMultiplier 
+	(aMultiplier isKindOf: Entero) ifTrue: [
+		^self class with: value * aMultiplier 		integerValue.
+		].
+ 	(aMultiplier isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := (aMultiplier denominator * self) * aMultiplier numerator.
+		newDenominator := aMultiplier denominator * aMultiplier denominator.
+		^newNumerator / newDenominator 
+		].	! !
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:25:41'!
+PASSED!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:25:46'!
+PASSED!
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 20:25:49'!
+PASSED!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:25:52'!
+PASSED!
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test07EnteroDividesEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test08FraccionAddsWithFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test09FraccionMultipliesWithFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test10FraccionDividesFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test11EnteroAddsFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test14FraccionMultipliesEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+
+!testRun: #NumeroTest #test15EnteroDividesFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+
+!testRun: #NumeroTest #test16FraccionDividesEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+
+!testRun: #NumeroTest #test17AFraccionCanBeEqualToAnEntero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test18AparentFraccionesAreEqual stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test19AddingFraccionesCanReturnAnEntero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test20MultiplyingFraccionesCanReturnAnEntero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test21DividingFraccionesCanReturnAnEntero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test22DividingEnterosCanReturnAFraccion stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test23CanNotDivideEnteroByZero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test24CanNotDivideFraccionByZero stamp: 'tg 10/21/2021 20:39:41'!
+FAILURE!
+
+!testRun: #NumeroTest #test25AFraccionCanNotBeZero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test26AFraccionCanNotBeOne stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test27EnteroSubstractsEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test28FraccionSubstractsFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test29EnteroSubstractsFraccionCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+
+!testRun: #NumeroTest #test30FraccionSubstractsEnteroCorrectly stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+
+!testRun: #NumeroTest #test31SubstractingFraccionesCanReturnAnEntero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test32SubstractingSameEnterosReturnsZero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test33SubstractingSameFraccionesReturnsZero stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test34SubstractingAHigherValueToANumberReturnsANegativeNumber stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+
+!testRun: #NumeroTest #test35FibonacciZeroIsOne stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test36FibonacciOneIsOne stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test37FibonacciEnteroReturnsAddingPreviousTwoFibonacciEnteros stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test38FibonacciNotDefinedForNegativeNumbers stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test39NegationOfEnteroIsCorrect stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test40NegationOfFraccionIsCorrect stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+
+!testRun: #NumeroTest #test41SignIsCorrectlyAssignedToFractionWithTwoNegatives stamp: 'tg 10/21/2021 20:39:41'!
+PASSED!
+
+!testRun: #NumeroTest #test42SignIsCorrectlyAssignedToFractionWithNegativeDivisor stamp: 'tg 10/21/2021 20:39:41'!
+ERROR!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 20:46:15' prior: 50332516 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+		
+		newNumerator := ((anAdder denominator) * (self value)) + anAdder numerator.
+		newDenominator :=  anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		"^self * anAdder denominator + anAdder numerator / anAdder denominator".
+		].
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:05:23' prior: 50332759 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+		"| newNumerator newDenominator |
+		
+		newNumerator := ((anAdder denominator) * (self value)) + anAdder numerator.
+		newDenominator :=  anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		"
+		^self * anAdder denominator + anAdder numerator / anAdder denominator.
+		].
+! !
+
+!testRun: #NumeroTest #test11EnteroAddsFraccionCorrectly stamp: 'tg 10/21/2021 21:05:30'!
+PASSED!
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 21:05:33'!
+PASSED!
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 21:05:35'!
+PASSED!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 21:05:37'!
+PASSED!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:05:58' prior: 50332776 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+
+		^self * anAdder denominator + anAdder numerator / anAdder denominator.
+		].
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:07:23' prior: 50332806 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+	
+		^self * anAdder denominator + anAdder numerator / anAdder denominator.
+		].
+! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:09:28'!
+mmmm: anEnteroAugend
+
+	^anEnteroAugend * self denominator + self numerator / self denominator
+		
+! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:10:21' prior: 50332827!
+mmmm: anEnteroAugend
+
+	^anEnteroAugend * self denominator + self numerator / self denominator.
+		
+! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:12:30'!
+beAddedTo: anEnteroAugend
+
+	^anEnteroAugend * self denominator + self numerator / self denominator.
+		
+! !
+
+!methodRemoval: Fraccion #mmmm: stamp: 'tg 10/21/2021 21:12:30'!
+mmmm: anEnteroAugend
+
+	^anEnteroAugend * self denominator + self numerator / self denominator.
+		
+!
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:13:36' prior: 50332344 overrides: 50331973!
++ anAdder 
+	"(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+	
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+	(anAdder isKindOf: Entero) ifTrue: [
+		^anAdder + self.
+		].
+	"
+	anAdder beAddedTo: self.
+! !
+
+!testRun: #NumeroTest #test11EnteroAddsFraccionCorrectly stamp: 'tg 10/21/2021 21:13:45'!
+PASSED!
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:15:25' prior: 50332840!
+beAddedTo: anAugend
+
+	^anAugend * self denominator + self numerator / self denominator.
+		
+! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:15:46' prior: 50332853 overrides: 50331973!
++ anAdder 
+	"(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+	
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+	(anAdder isKindOf: Entero) ifTrue: [
+		^anAdder + self.
+		].
+	"
+	anAdder beAddedTo: self.
+! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:16:09'!
+beAddedToAnEntero: anAugend
+
+	^anAugend * self denominator + self numerator / self denominator.
+		
+! !
+
+!methodRemoval: Fraccion #beAddedTo: stamp: 'tg 10/21/2021 21:16:14'!
+beAddedTo: anAugend
+
+	^anAugend * self denominator + self numerator / self denominator.
+		
+!
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:17:22'!
+beAddedToAnEntero: anAugend
+	
+	^Entero with: anAugend integerValue + self integerValue.
+! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:17:44' prior: 50332817 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Entero) ifTrue: [
+		^self class with: value + anAdder integerValue.
+		].
+ 	(anAdder isKindOf: Fraccion) ifTrue: [
+	
+		^self * anAdder denominator + anAdder numerator / anAdder denominator.
+		].
+	^anAdder beAddedToAnEntero: self.! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:17:49' prior: 50332910 overrides: 50331973!
++ anAdder 
+
+	^anAdder beAddedToAnEntero: self.! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:18:04' prior: 50332878 overrides: 50331973!
++ anAdder 
+	"(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+	
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+	(anAdder isKindOf: Entero) ifTrue: [
+		^anAdder + self.
+		].
+	"
+	anAdder beAddedToAnEntero: self.
+! !
+
+!testRun: #NumeroTest #test11EnteroAddsFraccionCorrectly stamp: 'tg 10/21/2021 21:18:20'!
+PASSED!
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 21:18:22'!
+ERROR!
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 21:18:22'!
+ERROR!
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'tg 10/21/2021 21:19:11' prior: 50332928 overrides: 50331973!
++ anAdder 
+	(anAdder isKindOf: Fraccion) ifTrue: [
+		| newNumerator newDenominator |
+	
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+	
+		^newNumerator / newDenominator 
+		].
+	(anAdder isKindOf: Entero) ifTrue: [
+		^anAdder + self.
+		].
+! !
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/21/2021 21:19:24'!
+PASSED!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/21/2021 21:19:26'!
+PASSED!
+
+!testRun: #NumeroTest #test11EnteroAddsFraccionCorrectly stamp: 'tg 10/21/2021 21:24:19'!
+PASSED!
+
+----QUIT----(21 October 2021 21:25:58) Ejercicio3Parte2.image priorSource: 325!

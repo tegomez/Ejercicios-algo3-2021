@@ -1826,3 +1826,5 @@ Object subclass: #XXX
 	denominator isOne ifTrue: [ ^numerator ].
 
 	^Fraccion new initializeWith: numerator over: denominator! !
+
+----QUIT----(21 October 2021 18:14:45) Ejercicio3.image priorSource: 26895!
