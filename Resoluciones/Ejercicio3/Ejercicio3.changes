@@ -1827,4 +1827,1396 @@ Object subclass: #XXX
 
 	^Fraccion new initializeWith: numerator over: denominator! !
 
+<<<<<<< HEAD
 ----QUIT----(21 October 2021 18:14:45) Ejercicio3.image priorSource: 26895!
+=======
+----STARTUP---- (21 October 2021 18:09:54) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio3/Ejercicio3.image!
+
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:01:28' prior: 50332465!
+   initializeWith: aValue
+	"type := #Entero.
+	value := aValue."! !
+
+----STARTUP---- (21 October 2021 18:15:15) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio3/Ejercicio3.image!
+
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:01:28' prior: 50332465!
+       initializeWith: aValue
+	"type := #Entero.
+	value := aValue."! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'type valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'type valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:02:46' prior: 50333670!
+   initializeWith: aValue
+	type := #Entero.
+	valued := aValue.! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:03:12' prior: 50333691!
+                          initializeWith: aValue
+"	type := #Entero.
+	valued := aValue."! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:07:39'!
+                            isZero
+	 ^valued = 0.! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!methodRemoval: Entero #isZero stamp: 'MG 10/21/2021 18:15:24'!
+isZero
+	 ^valued = 0.!
+
+!methodRemoval: Entero #isOne: stamp: 'MG 10/21/2021 18:15:24'!
+isOne: value
+	 ^value = 1.!
+
+!methodRemoval: Entero #initializeWith: stamp: 'MG 10/21/2021 18:15:24'!
+initializeWith: aValue
+"	type := #Entero.
+	valued := aValue."!
+!Numero methodsFor: 'testing' stamp: 'NR 9/8/2019 22:00:23' prior: 50332371!
+                isZero
+
+	type = #Entero ifTrue:
+		[ ^value = 0 ].
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+
+!methodRemoval: Fraccion #isOne: stamp: 'MG 10/21/2021 18:15:24'!
+isOne: value
+	^false!
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:15:50' prior: 50333762!
+                           isZero
+
+	type isZero.
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:16:43'!
+isZero: aValue
+
+	type isZero: aValue.
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:17:07' prior: 50333771!
+isZero
+
+	type isZero: value.! !
+
+!methodRemoval: Numero #isZero: stamp: 'MG 10/21/2021 18:15:24'!
+isZero: aValue
+
+	type isZero: aValue.
+	type = #Fraccion ifTrue:
+		[ ^false ].!
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:22:06' prior: 50332185!
+                         initializeWith: aValue
+	
+	type := Entero..
+	value := aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:22:12' prior: 50333789!
+           initializeWith: aValue
+	
+	type := Entero.
+	value := aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:23:54' prior: 50333794!
+            initializeWith: aValue
+	
+	type := Entero.
+	value := aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:25:27' prior: 50331955!
+   with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [  self error: 'aValue debe ser anInteger' ].
+	
+	^self new initializeWith: aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:26:08' prior: 50333799!
+                 initializeWith: aValue
+	
+	type := Entero new.
+	value := aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:26:12' prior: 50333815!
+        initializeWith: aValue
+	
+	type := Entero new.
+	value := aValue.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:26:38' prior: 50332343!
+       initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= Fraccion new.
+	numerator := aNumerator.
+	denominator := aDenominator ! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:27:48' prior: 50333780!
+                         isZero
+
+	^type isZero: value.! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:30:06' prior: 50332256!
+                isNegative
+	
+	type = #Entero ifTrue:
+		[ ^value < 0 ].
+	type = #Fraccion ifTrue:
+		[ ^denominator < 0 ].! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:33:20' prior: 50332281!
+     isOne
+
+	type = #Entero ifTrue:
+		[ ^value = 1 ].
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:24'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:36:52' prior: 50333820!
+              initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:37:04' prior: 50333825!
+          initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= #Fraccion.
+	numerator := aNumerator.
+	denominator := aDenominator ! !
+
+!classRemoval: #Entero stamp: 'MG 10/21/2021 18:15:24'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classRemoval: #Fraccion stamp: 'MG 10/21/2021 18:15:25'!
+TipoDeNumero subclass: #Fraccion
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classRemoval: #TipoDeNumero stamp: 'MG 10/21/2021 18:15:25'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!methodRemoval: AAA #mmm stamp: 'MG 10/21/2021 18:15:25'!
+mmm
+	"^self  * (self class with: -1)."!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:25'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:25'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Fraccion category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:25'!
+Numero subclass: #Fraccion
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Fraccion category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:25'!
+Numero subclass: #Fraccion
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'nil' stamp: 'tg 10/20/2021 23:38:43' overrides: 50333841!
+       isZero
+! !
+!Fraccion methodsFor: 'nil' stamp: 'tg 10/20/2021 23:38:54' overrides: 50333841!
+    isZero
+! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:39:39' prior: 50333841!
+      isZero
+
+	self subclassResponsibility.! !
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:39:54' prior: 50333959 overrides: 50333965!
+        isZero
+	^value = 0.
+! !
+!Fraccion methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:40:08' prior: 50333962 overrides: 50333965!
+                       isZero
+	^false.! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:41:15' prior: 50333804!
+              with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [  self error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:41:27' prior: 50331966!
+      with: aDividend over: aDivisor
+
+	| greatestCommonDivisor numerator denominator |
+	
+	aDivisor isZero ifTrue: [ self error: self canNotDivideByZeroErrorDescription ].
+	aDividend isZero ifTrue: [ ^aDividend ].
+	
+	aDivisor isNegative ifTrue: [ ^self with: aDividend negated over: aDivisor negated].
+	
+	greatestCommonDivisor := aDividend greatestCommonDivisorWith: aDivisor. 
+	numerator := aDividend // greatestCommonDivisor.
+	denominator := aDivisor // greatestCommonDivisor.
+	
+	denominator isOne ifTrue: [ ^numerator ].
+
+	^Fraccion new initializeWith: numerator over: denominator! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:41:45' prior: 50333990!
+                             with: aDividend over: aDivisor
+
+	| greatestCommonDivisor numerator denominator |
+	
+	aDivisor isZero ifTrue: [ self error: self canNotDivideByZeroErrorDescription ].
+	aDividend isZero ifTrue: [ ^aDividend ].
+	
+	aDivisor isNegative ifTrue: [ ^self with: aDividend negated over: aDivisor negated].
+	
+	greatestCommonDivisor := aDividend greatestCommonDivisorWith: aDivisor. 
+	numerator := aDividend // greatestCommonDivisor.
+	denominator := aDivisor // greatestCommonDivisor.
+	
+	denominator isOne ifTrue: [ ^numerator ].
+
+	^self new initializeWith: numerator over: denominator! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:42:01' prior: 50333979!
+ with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [  Entero error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:42:12' prior: 50334033!
+    with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^self new initializeWith: aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:42:58' prior: 50333887!
+                  initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.
+	^Entero new.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:43:25' prior: 50333892!
+                            initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= #Fraccion.
+	numerator := aNumerator.
+	denominator := aDenominator.
+	^Fraccion new.! !
+!Entero class methodsFor: 'nil' stamp: 'tg 10/20/2021 23:46:26'!
+                          initializeWith: aValue
+	
+	"type := #Entero.
+	value := aValue."! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:46:34' prior: 50334044!
+                               with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Entero class methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:47:07' prior: 50334077!
+     initializeWith: aValue
+	
+	"type := Entero.
+	value := aValue."! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:47:15' prior: 50334083!
+with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^self new initializeWith: aValue! !
+!Entero class methodsFor: 'as yet unclassified' stamp: 'tg 10/21/2021 00:03:53' prior: 50334094!
+       initializeWith: aValue
+	
+	"type := #Entero.
+	value := aValue."! !
+!Entero methodsFor: 'nil' stamp: 'tg 10/21/2021 00:04:12' overrides: 50334055!
+               initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.
+	^Entero new.! !
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/21/2021 00:04:18' prior: 50334115 overrides: 50334055!
+   initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.! !
+!Fraccion methodsFor: 'nil' stamp: 'tg 10/21/2021 00:04:50' overrides: 50334061!
+               initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= #Fraccion.
+	numerator := aNumerator.
+	denominator := aDenominator.
+! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/21/2021 00:05:34' prior: 50334061!
+                    initializeWith: aNumerator over: aDenominator
+	self subclassResponsibility.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/21/2021 00:05:47' prior: 50334055!
+                           initializeWith: aValue
+	self subclassResponsibility.! !
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:25'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:25'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classRemoval: #AAA stamp: 'MG 10/21/2021 18:15:25'!
+XXX subclass: #AAA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classRemoval: #BBB stamp: 'MG 10/21/2021 18:15:25'!
+XXX subclass: #BBB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classRemoval: #XXX stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #XXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/21/2021 00:10:15' prior: 50334099!
+       with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/21/2021 00:10:27' prior: 50334012!
+       with: aDividend over: aDivisor
+
+	| greatestCommonDivisor numerator denominator |
+	
+	aDivisor isZero ifTrue: [ self error: self canNotDivideByZeroErrorDescription ].
+	aDividend isZero ifTrue: [ ^aDividend ].
+	
+	aDivisor isNegative ifTrue: [ ^self with: aDividend negated over: aDivisor negated].
+	
+	greatestCommonDivisor := aDividend greatestCommonDivisorWith: aDivisor. 
+	numerator := aDividend // greatestCommonDivisor.
+	denominator := aDivisor // greatestCommonDivisor.
+	
+	denominator isOne ifTrue: [ ^numerator ].
+
+	^Fraccion new initializeWith: numerator over: denominator! !
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:01:28' prior: 50334121 overrides: 50334148!
+             initializeWith: aValue
+	"type := #Entero.
+	value := aValue."! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'type valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'type valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:02:46' prior: 50334218 overrides: 50334148!
+               initializeWith: aValue
+	type := #Entero.
+	valued := aValue.! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:03:12' prior: 50334240 overrides: 50334148!
+      initializeWith: aValue
+"	type := #Entero.
+	valued := aValue."! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: 'valued'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:07:39' prior: 50333970 overrides: 50333965!
+                        isZero
+	 ^valued = 0.! !
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #TipoDeNumero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!methodRemoval: Entero #isZero stamp: 'MG 10/21/2021 18:15:26'!
+isZero
+	 ^valued = 0.!
+
+!methodRemoval: Entero #initializeWith: stamp: 'MG 10/21/2021 18:15:26'!
+initializeWith: aValue
+"	type := #Entero.
+	valued := aValue."!
+!Numero methodsFor: 'testing' stamp: 'NR 9/8/2019 22:00:23' prior: 50333965!
+             isZero
+
+	type = #Entero ifTrue:
+		[ ^value = 0 ].
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:15:50' prior: 50334309!
+                    isZero
+
+	type isZero.
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:16:43'!
+isZero: aValue
+
+	type isZero: aValue.
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:17:07' prior: 50334315!
+isZero
+
+	type isZero: value.! !
+
+!methodRemoval: Numero #isZero: stamp: 'MG 10/21/2021 18:15:26'!
+isZero: aValue
+
+	type isZero: aValue.
+	type = #Fraccion ifTrue:
+		[ ^false ].!
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:22:06' prior: 50334148!
+                         initializeWith: aValue
+	
+	type := Entero..
+	value := aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:22:12' prior: 50334333!
+           initializeWith: aValue
+	
+	type := Entero.
+	value := aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:23:54' prior: 50334338!
+            initializeWith: aValue
+	
+	type := Entero.
+	value := aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:25:27' prior: 50334185!
+   with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [  self error: 'aValue debe ser anInteger' ].
+	
+	^self new initializeWith: aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:26:08' prior: 50334343!
+                 initializeWith: aValue
+	
+	type := Entero new.
+	value := aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:26:12' prior: 50334359!
+        initializeWith: aValue
+	
+	type := Entero new.
+	value := aValue.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:26:38' prior: 50334142!
+       initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= Fraccion new.
+	numerator := aNumerator.
+	denominator := aDenominator ! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:27:48' prior: 50334324!
+                         isZero
+
+	^type isZero: value.! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:30:06' prior: 50333845!
+                isNegative
+	
+	type = #Entero ifTrue:
+		[ ^value < 0 ].
+	type = #Fraccion ifTrue:
+		[ ^denominator < 0 ].! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:33:20' prior: 50333851!
+     isOne
+
+	type = #Entero ifTrue:
+		[ ^value = 1 ].
+	type = #Fraccion ifTrue:
+		[ ^false ].! !
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:36:52' prior: 50334364!
+              initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:37:04' prior: 50334369!
+          initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= #Fraccion.
+	numerator := aNumerator.
+	denominator := aDenominator ! !
+
+!classRemoval: #Entero stamp: 'MG 10/21/2021 18:15:26'!
+TipoDeNumero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classRemoval: #Fraccion stamp: 'MG 10/21/2021 18:15:26'!
+Numero subclass: #Fraccion
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classRemoval: #TipoDeNumero stamp: 'MG 10/21/2021 18:15:26'!
+Object subclass: #TipoDeNumero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Fraccion category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Numero subclass: #Fraccion
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Fraccion category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:26'!
+Numero subclass: #Fraccion
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Entero methodsFor: 'nil' stamp: 'tg 10/20/2021 23:38:43' overrides: 50334385!
+                isZero
+! !
+!Fraccion methodsFor: 'nil' stamp: 'tg 10/20/2021 23:38:54' overrides: 50334385!
+    isZero
+! !
+!Numero methodsFor: 'testing' stamp: 'tg 10/20/2021 23:39:39' prior: 50334385!
+      isZero
+
+	self subclassResponsibility.! !
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:39:54' prior: 50334500 overrides: 50334506!
+        isZero
+	^value = 0.
+! !
+!Fraccion methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:40:08' prior: 50334503 overrides: 50334506!
+                       isZero
+	^false.! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:41:15' prior: 50334348!
+              with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [  self error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:41:27' prior: 50334196!
+      with: aDividend over: aDivisor
+
+	| greatestCommonDivisor numerator denominator |
+	
+	aDivisor isZero ifTrue: [ self error: self canNotDivideByZeroErrorDescription ].
+	aDividend isZero ifTrue: [ ^aDividend ].
+	
+	aDivisor isNegative ifTrue: [ ^self with: aDividend negated over: aDivisor negated].
+	
+	greatestCommonDivisor := aDividend greatestCommonDivisorWith: aDivisor. 
+	numerator := aDividend // greatestCommonDivisor.
+	denominator := aDivisor // greatestCommonDivisor.
+	
+	denominator isOne ifTrue: [ ^numerator ].
+
+	^Fraccion new initializeWith: numerator over: denominator! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:41:45' prior: 50334531!
+                             with: aDividend over: aDivisor
+
+	| greatestCommonDivisor numerator denominator |
+	
+	aDivisor isZero ifTrue: [ self error: self canNotDivideByZeroErrorDescription ].
+	aDividend isZero ifTrue: [ ^aDividend ].
+	
+	aDivisor isNegative ifTrue: [ ^self with: aDividend negated over: aDivisor negated].
+	
+	greatestCommonDivisor := aDividend greatestCommonDivisorWith: aDivisor. 
+	numerator := aDividend // greatestCommonDivisor.
+	denominator := aDivisor // greatestCommonDivisor.
+	
+	denominator isOne ifTrue: [ ^numerator ].
+
+	^self new initializeWith: numerator over: denominator! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:42:01' prior: 50334520!
+ with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [  Entero error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:42:12' prior: 50334574!
+    with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^self new initializeWith: aValue! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:42:58' prior: 50334431!
+                  initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.
+	^Entero new.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/20/2021 23:43:25' prior: 50334436!
+                            initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= #Fraccion.
+	numerator := aNumerator.
+	denominator := aDenominator.
+	^Fraccion new.! !
+!Entero class methodsFor: 'nil' stamp: 'tg 10/20/2021 23:46:26'!
+                          initializeWith: aValue
+	
+	"type := #Entero.
+	value := aValue."! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:46:34' prior: 50334585!
+                               with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Entero class methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:47:07' prior: 50334618!
+     initializeWith: aValue
+	
+	"type := Entero.
+	value := aValue."! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/20/2021 23:47:15' prior: 50334624!
+with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^self new initializeWith: aValue! !
+!Entero class methodsFor: 'as yet unclassified' stamp: 'tg 10/21/2021 00:03:53' prior: 50334635!
+       initializeWith: aValue
+	
+	"type := #Entero.
+	value := aValue."! !
+!Entero methodsFor: 'nil' stamp: 'tg 10/21/2021 00:04:12' overrides: 50334596!
+               initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.
+	^Entero new.! !
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/21/2021 00:04:18' prior: 50334656 overrides: 50334596!
+   initializeWith: aValue
+	
+	type := #Entero.
+	value := aValue.! !
+!Fraccion methodsFor: 'nil' stamp: 'tg 10/21/2021 00:04:50' overrides: 50334602!
+               initializeWith: aNumerator over: aDenominator
+
+	"Estas precondiciones estan por si se comenten errores en la implementacion - Hernan"
+	aNumerator isZero ifTrue: [ self error: 'una fraccion no puede ser cero' ].
+	aDenominator isOne ifTrue: [ self error: 'una fraccion no puede tener denominador 1 porque sino es un entero' ].
+	
+	type:= #Fraccion.
+	numerator := aNumerator.
+	denominator := aDenominator.
+! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/21/2021 00:05:34' prior: 50334602!
+                    initializeWith: aNumerator over: aDenominator
+	self subclassResponsibility.! !
+!Numero methodsFor: 'initialization' stamp: 'tg 10/21/2021 00:05:47' prior: 50334596!
+                           initializeWith: aValue
+	self subclassResponsibility.! !
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:27'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+
+!classDefinition: #Entero category: 'Numeros-Parte1-Ejercicio' stamp: 'MG 10/21/2021 18:15:27'!
+Numero subclass: #Entero
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Numeros-Parte1-Ejercicio'!
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/21/2021 00:10:15' prior: 50334640!
+                     with: aValue 
+	
+	"Esta verificacion esta puesta por si se equivocan y quieren crear un Entero pasando otra cosa que un Integer - Hernan"
+	aValue isInteger ifFalse: [ self error: 'aValue debe ser anInteger' ].
+	
+	^Entero new initializeWith: aValue! !
+!Numero class methodsFor: 'instance creation' stamp: 'tg 10/21/2021 00:10:27' prior: 50334553!
+       with: aDividend over: aDivisor
+
+	| greatestCommonDivisor numerator denominator |
+	
+	aDivisor isZero ifTrue: [ self error: self canNotDivideByZeroErrorDescription ].
+	aDividend isZero ifTrue: [ ^aDividend ].
+	
+	aDivisor isNegative ifTrue: [ ^self with: aDividend negated over: aDivisor negated].
+	
+	greatestCommonDivisor := aDividend greatestCommonDivisorWith: aDivisor. 
+	numerator := aDividend // greatestCommonDivisor.
+	denominator := aDivisor // greatestCommonDivisor.
+	
+	denominator isOne ifTrue: [ ^numerator ].
+
+	^Fraccion new initializeWith: numerator over: denominator! !
+!Entero methodsFor: 'as yet unclassified' stamp: 'tg 10/20/2021 23:01:28' prior: 50334662 overrides: 50334689!
+             initializeWith: aValue
+	"type := #Entero.
+	value := aValue."! !
+
+----QUIT----(21 October 2021 18:18:31) Ejercicio3.image priorSource: 26895!
+
+----STARTUP---- (21 October 2021 18:18:34) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio3/Ejercicio3.image!
+
+!Entero methodsFor: 'nil' stamp: 'MG 10/21/2021 18:19:06' overrides: 50334395!
+      isOne
+	^value = 1.
+! !
+!Entero methodsFor: 'nil' stamp: 'MG 10/21/2021 18:19:18' overrides: 50334389!
+                          isNegative
+	^value < 0.
+! !
+!Fraccion methodsFor: 'nil' stamp: 'MG 10/21/2021 18:19:38' overrides: 50334395!
+                   isOne
+	^false.! !
+!Fraccion methodsFor: 'nil' stamp: 'MG 10/21/2021 18:19:52' overrides: 50334389!
+                             isNegative
+	^denominator < 0.! !
+!Numero methodsFor: 'testing' stamp: 'MG 10/21/2021 18:20:11' prior: 50334395!
+                isOne
+
+	self subclassResponsibility.! !
+!Numero methodsFor: 'testing' stamp: 'MG 10/21/2021 18:20:17' prior: 50334389!
+         isNegative
+	
+	self subclassResponsibility.! !
+!Entero methodsFor: 'nil' stamp: 'MG 10/21/2021 18:23:02' prior: 50334742 overrides: 50334689!
+                   initializeWith: aValue
+	type := #Entero.
+	value := aValue.! !
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test07FraccionAddsWithFraccionCorrectly stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test08FraccionMultipliesWithFraccionCorrectly stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test09AparentFraccionesAreEqual stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test10AddingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test11MultiplyingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test12AFraccionCanNotBeZero stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test13AFraccionCanNotBeOne stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test14NegationOfEnteroIsCorrect stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test15NegationOfFraccionIsCorrect stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test16SignIsCorrectlyAssignedToFractionWithTwoNegatives stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+
+!testRun: #NumeroTest #test17SignIsCorrectlyAssignedToFractionWithNegativeDivisor stamp: 'MG 10/21/2021 18:23:17'!
+PASSED!
+!Entero methodsFor: 'nil' stamp: 'MG 10/21/2021 18:26:15' overrides: 50332324!
+                         negated
+! !
+!Fraccion methodsFor: 'nil' stamp: 'MG 10/21/2021 18:26:29' overrides: 50332324!
+   negated! !
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:27:00' prior: 50332324!
+                        negated
+	
+	type = #Entero ifTrue:
+		[ ^self * (self class with: -1) ].
+		
+	type = #Fraccion ifTrue:
+		[ ^self class with: numerator * (self class with: -1) over: denominator ].! !
+!Entero methodsFor: 'nil' stamp: 'MG 10/21/2021 18:29:22' overrides: 50332263!
+                             * aMultiplier
+! !
+!Fraccion methodsFor: 'nil' stamp: 'MG 10/21/2021 18:29:37' overrides: 50332263!
+                             * aMultiplier! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:31:58' overrides: 50332287!
+              + anAdder 
+! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:32:08' overrides: 50332287!
+              + anAdder ! !
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:32:25' prior: 50332263!
+                     * aMultiplier 
+		
+	type = #Fraccion ifTrue:
+		[ ^self class with: (numerator * aMultiplier numerator) over: (denominator * aMultiplier denominator) ].
+		
+	self error: 'Tipo de número no soportado'
+	! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:33:46' prior: 50334856 overrides: 50334872!
+     * aMultiplier
+	^super class with: value * aMultiplier integerValue .
+! !
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:34:17' prior: 50334872!
+                          * aMultiplier 
+		
+	self error: 'Tipo de número no soportado'
+	! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:34:34' prior: 50334860 overrides: 50334888!
+           * aMultiplier
+	^super class with: (numerator * aMultiplier numerator) over: (denominator * aMultiplier denominator).! !
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:35:28' prior: 50334888!
+           * aMultiplier 
+
+	self subclassResponsibility.
+	self error: 'Tipo de número no soportado'
+	! !
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:35:57' prior: 50334901!
+     * aMultiplier 
+
+	self subclassResponsibility.
+	! !
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'MG 10/21/2021 18:36:02'!
+FAILURE!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test07FraccionAddsWithFraccionCorrectly stamp: 'MG 10/21/2021 18:36:02'!
+FAILURE!
+
+!testRun: #NumeroTest #test08FraccionMultipliesWithFraccionCorrectly stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test09AparentFraccionesAreEqual stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test10AddingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:36:02'!
+FAILURE!
+
+!testRun: #NumeroTest #test11MultiplyingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test12AFraccionCanNotBeZero stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test13AFraccionCanNotBeOne stamp: 'MG 10/21/2021 18:36:02'!
+PASSED!
+
+!testRun: #NumeroTest #test14NegationOfEnteroIsCorrect stamp: 'MG 10/21/2021 18:36:02'!
+FAILURE!
+
+!testRun: #NumeroTest #test15NegationOfFraccionIsCorrect stamp: 'MG 10/21/2021 18:36:02'!
+FAILURE!
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'MG 10/21/2021 18:36:48'!
+FAILURE!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test07FraccionAddsWithFraccionCorrectly stamp: 'MG 10/21/2021 18:36:48'!
+FAILURE!
+
+!testRun: #NumeroTest #test08FraccionMultipliesWithFraccionCorrectly stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test09AparentFraccionesAreEqual stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test10AddingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:36:48'!
+FAILURE!
+
+!testRun: #NumeroTest #test11MultiplyingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test12AFraccionCanNotBeZero stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test13AFraccionCanNotBeOne stamp: 'MG 10/21/2021 18:36:48'!
+PASSED!
+
+!testRun: #NumeroTest #test14NegationOfEnteroIsCorrect stamp: 'MG 10/21/2021 18:36:48'!
+FAILURE!
+
+!testRun: #NumeroTest #test15NegationOfFraccionIsCorrect stamp: 'MG 10/21/2021 18:36:48'!
+FAILURE!
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:38:25' prior: 50334847!
+                            negated
+	
+	type = #Fraccion ifTrue:
+		[ ^self class with: numerator * (self class with: -1) over: denominator ].! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:38:52' prior: 50334840 overrides: 50335009!
+                           negated
+	^self * (super class with: -1)
+		! !
+
+!methodRemoval: Entero class #initializeWith: stamp: 'MG 10/21/2021 18:39:05'!
+initializeWith: aValue
+	
+	"type := #Entero.
+	value := aValue."!
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:40:03' prior: 50335009!
+     negated
+	self subclassResponsibility.! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:40:21' prior: 50334843 overrides: 50335026!
+    negated
+	^super class with: numerator * (super class with: -1) over: denominator.! !
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'MG 10/21/2021 18:42:19'!
+FAILURE!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test07FraccionAddsWithFraccionCorrectly stamp: 'MG 10/21/2021 18:42:19'!
+FAILURE!
+
+!testRun: #NumeroTest #test08FraccionMultipliesWithFraccionCorrectly stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test09AparentFraccionesAreEqual stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test10AddingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:42:19'!
+FAILURE!
+
+!testRun: #NumeroTest #test11MultiplyingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test12AFraccionCanNotBeZero stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test13AFraccionCanNotBeOne stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test14NegationOfEnteroIsCorrect stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test15NegationOfFraccionIsCorrect stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test16SignIsCorrectlyAssignedToFractionWithTwoNegatives stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test17SignIsCorrectlyAssignedToFractionWithNegativeDivisor stamp: 'MG 10/21/2021 18:42:19'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'MG 10/21/2021 18:42:37'!
+FAILURE!
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:44:01' prior: 50332287!
+           + anAdder 
+	
+	type = #Fraccion ifTrue:
+		[ | newNumerator newDenominator |
+		
+		newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+		newDenominator := denominator * anAdder denominator.
+		
+		^ self class with: newNumerator over: newDenominator ].
+	
+	self error: 'Tipo de número no soportado'
+	! !
+!Entero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:44:31' prior: 50334864 overrides: 50335096!
+  + anAdder
+	^super class with: value + anAdder integerValue.
+! !
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:45:08' prior: 50335096!
+   + anAdder 
+	self subclassResponsibility.
+	! !
+!Fraccion methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:46:27' prior: 50334868 overrides: 50335115!
+                               + anAdder
+	 | newNumerator newDenominator |
+	
+	newNumerator := (numerator * anAdder denominator) + (denominator * anAdder numerator).
+	newDenominator := denominator * anAdder denominator.
+		
+	^ super class with: newNumerator over: newDenominator. ! !
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test07FraccionAddsWithFraccionCorrectly stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test08FraccionMultipliesWithFraccionCorrectly stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test09AparentFraccionesAreEqual stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test10AddingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test11MultiplyingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test12AFraccionCanNotBeZero stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test13AFraccionCanNotBeOne stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test14NegationOfEnteroIsCorrect stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test15NegationOfFraccionIsCorrect stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test16SignIsCorrectlyAssignedToFractionWithTwoNegatives stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test17SignIsCorrectlyAssignedToFractionWithNegativeDivisor stamp: 'MG 10/21/2021 18:48:36'!
+PASSED!
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test07FraccionAddsWithFraccionCorrectly stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test08FraccionMultipliesWithFraccionCorrectly stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test09AparentFraccionesAreEqual stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test10AddingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test11MultiplyingFraccionesCanReturnAnEntero stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test12AFraccionCanNotBeZero stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test13AFraccionCanNotBeOne stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test14NegationOfEnteroIsCorrect stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test15NegationOfFraccionIsCorrect stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test16SignIsCorrectlyAssignedToFractionWithTwoNegatives stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+
+!testRun: #NumeroTest #test17SignIsCorrectlyAssignedToFractionWithNegativeDivisor stamp: 'MG 10/21/2021 18:48:40'!
+PASSED!
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:49:08' prior: 50335115!
+                    + anAdder 
+
+	self subclassResponsibility.
+	! !
+!Numero methodsFor: 'arithmetic operations' stamp: 'MG 10/21/2021 18:49:13' prior: 50335026!
+                    negated
+
+	self subclassResponsibility.! !
+!Numero methodsFor: 'initialization' stamp: 'MG 10/21/2021 18:50:43' prior: 50334689!
+initializeWith: aValue
+
+	self subclassResponsibility.! !
+!Numero methodsFor: 'initialization' stamp: 'MG 10/21/2021 18:50:48' prior: 50334683!
+                 initializeWith: aNumerator over: aDenominator
+
+	self subclassResponsibility.! !
+
+----QUIT----(21 October 2021 18:51:09) Ejercicio3.image priorSource: 99071!
+>>>>>>> cfb7aecaca710175994aed8c1ff39f414ca3739e
