@@ -10537,3 +10537,132 @@ beSubtrahedToAFraccion: aMinuend
 	^ Fraccion with: newNumerator over: newDenominator.! !
 
 ----QUIT----(25 October 2021 00:21:39) Ejercicio3Parte2.image priorSource: 380222!
+
+----STARTUP---- (25 October 2021 18:13:06) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio3/Parte2/Ejercicio3Parte2.image!
+
+
+!testRun: #NumeroTest #test01isZeroReturnsTrueWhenAskToZero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test02isZeroReturnsFalseWhenAskToOthersButZero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test03isOneReturnsTrueWhenAskToOne stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test04isOneReturnsFalseWhenAskToOtherThanOne stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test05EnteroAddsWithEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test06EnteroMultipliesWithEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test07EnteroDividesEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test08FraccionAddsWithFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test09FraccionMultipliesWithFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test10FraccionDividesFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test11EnteroAddsFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test12FraccionAddsEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test13EnteroMultipliesFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test14FraccionMultipliesEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test15EnteroDividesFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test16FraccionDividesEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test17AFraccionCanBeEqualToAnEntero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test18AparentFraccionesAreEqual stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test19AddingFraccionesCanReturnAnEntero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test20MultiplyingFraccionesCanReturnAnEntero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test21DividingFraccionesCanReturnAnEntero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test22DividingEnterosCanReturnAFraccion stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test23CanNotDivideEnteroByZero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test24CanNotDivideFraccionByZero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test25AFraccionCanNotBeZero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test26AFraccionCanNotBeOne stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test27EnteroSubstractsEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test28FraccionSubstractsFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test29EnteroSubstractsFraccionCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test30FraccionSubstractsEnteroCorrectly stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test31SubstractingFraccionesCanReturnAnEntero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test32SubstractingSameEnterosReturnsZero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test33SubstractingSameFraccionesReturnsZero stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test34SubstractingAHigherValueToANumberReturnsANegativeNumber stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test35FibonacciZeroIsOne stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test36FibonacciOneIsOne stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test37FibonacciEnteroReturnsAddingPreviousTwoFibonacciEnteros stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test38FibonacciNotDefinedForNegativeNumbers stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test39NegationOfEnteroIsCorrect stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test40NegationOfFraccionIsCorrect stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test41SignIsCorrectlyAssignedToFractionWithTwoNegatives stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
+
+!testRun: #NumeroTest #test42SignIsCorrectlyAssignedToFractionWithNegativeDivisor stamp: 'tg 10/25/2021 18:28:02'!
+PASSED!
