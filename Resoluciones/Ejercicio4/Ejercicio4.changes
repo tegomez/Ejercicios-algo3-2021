@@ -1,0 +1,2559 @@
+
+
+----STARTUP---- (31 October 2021 16:30:07) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/template.image!
+
+
+TestCase subclass: #OOStackTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStackTest category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:30:57'!
+TestCase subclass: #OOStackTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStackTest methodsFor: 'test' stamp: 'HernanWilkinson 5/7/2012 11:30'!
+    test01StackShouldBeEmptyWhenCreated
+
+	| stack |
+	
+	stack := OOStack new.
+	
+	self assert: stack isEmpty! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:29:55'!
+                      test02PushAddElementsToTheStack
+
+	| stack |
+	
+	stack := OOStack new.
+	stack push: 'something'.
+	
+	self deny: stack isEmpty! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:01'!
+  test03PopRemovesElementsFromTheStack
+
+	| stack |
+	
+	stack := OOStack new.
+	stack push: 'something'.
+	stack pop.
+	
+	self assert: stack isEmpty! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:09'!
+               test04PopReturnsLastPushedObject
+
+	| stack pushedObject |
+	
+	stack := OOStack new.
+	pushedObject := 'something'.
+	stack push: pushedObject.
+	
+	self assert: stack pop = pushedObject! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:48'!
+        test05StackBehavesLIFO
+
+	| stack firstPushedObject secondPushedObject |
+	
+	stack := OOStack new.
+	firstPushedObject := 'first'.
+	secondPushedObject := 'second'.
+	
+	stack push: firstPushedObject.
+	stack push: secondPushedObject.
+	
+	self assert: stack pop = secondPushedObject.
+	self assert: stack pop = firstPushedObject.
+	self assert: stack isEmpty 
+	! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:20'!
+                             test06TopReturnsLastPushedObject
+
+	| stack pushedObject |
+	
+	stack := OOStack new.
+	pushedObject := 'something'.
+	
+	stack push: pushedObject.
+	
+	self assert: stack top = pushedObject.
+	! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:24'!
+   test07TopDoesNotRemoveObjectFromStack
+
+	| stack pushedObject |
+	
+	stack := OOStack new.
+	pushedObject := 'something'.
+	
+	stack push: pushedObject.
+	
+	self assert: stack size = 1.
+	stack top.
+	self assert: stack size = 1.
+	! !
+!OOStackTest methodsFor: 'test' stamp: 'HAW 4/14/2017 22:48:26'!
+                             test08CanNotPopWhenThereAreNoObjectsInTheStack
+
+	| stack  |
+	
+	stack := OOStack new.
+	self
+		should: [ stack pop ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = OOStack stackEmptyErrorDescription ]
+		
+! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:31'!
+                    test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects
+
+	| stack  |
+	
+	stack := OOStack new.
+	stack push: 'something'.
+	stack pop.
+	
+	self
+		should: [ stack pop ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = OOStack stackEmptyErrorDescription ]
+		
+! !
+!OOStackTest methodsFor: 'test' stamp: 'HAW 4/14/2017 22:48:44'!
+                      test10CanNotTopWhenThereAreNoObjectsInTheStack
+
+	| stack  |
+	
+	stack := OOStack new.
+	self
+		should: [ stack top ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = OOStack stackEmptyErrorDescription ]
+		
+! !
+
+TestCase subclass: #SentenceFinderByPrefixTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #SentenceFinderByPrefixTest category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:30:57'!
+TestCase subclass: #SentenceFinderByPrefixTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:30:57'!
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+"-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
+
+OOStack class
+	instanceVariableNames: ''!
+
+!classDefinition: 'OOStack class' category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:30:57'!
+OOStack class
+	instanceVariableNames: ''!
+!OOStack class methodsFor: 'error descriptions' stamp: 'HernanWilkinson 5/7/2012 11:51'!
+                             stackEmptyErrorDescription
+	
+	^ 'Stack is empty'! !
+
+Object subclass: #SentenceFinderByPrefix
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #SentenceFinderByPrefix category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:30:57'!
+Object subclass: #SentenceFinderByPrefix
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+----End fileIn of /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Consignas/04-Stack/Stack-Exercise.st----!
+
+----STARTUP---- (31 October 2021 16:33:31) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio4/ejercicio4.image!
+
+
+!classDefinition: #OOStackTest category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:37'!
+TestCase subclass: #OOStackTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStackTest methodsFor: 'test' stamp: 'HernanWilkinson 5/7/2012 11:30'!
+                  test01StackShouldBeEmptyWhenCreated
+
+	| stack |
+	
+	stack := OOStack new.
+	
+	self assert: stack isEmpty! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:29:55'!
+                      test02PushAddElementsToTheStack
+
+	| stack |
+	
+	stack := OOStack new.
+	stack push: 'something'.
+	
+	self deny: stack isEmpty! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:01'!
+  test03PopRemovesElementsFromTheStack
+
+	| stack |
+	
+	stack := OOStack new.
+	stack push: 'something'.
+	stack pop.
+	
+	self assert: stack isEmpty! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:09'!
+               test04PopReturnsLastPushedObject
+
+	| stack pushedObject |
+	
+	stack := OOStack new.
+	pushedObject := 'something'.
+	stack push: pushedObject.
+	
+	self assert: stack pop = pushedObject! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:48'!
+        test05StackBehavesLIFO
+
+	| stack firstPushedObject secondPushedObject |
+	
+	stack := OOStack new.
+	firstPushedObject := 'first'.
+	secondPushedObject := 'second'.
+	
+	stack push: firstPushedObject.
+	stack push: secondPushedObject.
+	
+	self assert: stack pop = secondPushedObject.
+	self assert: stack pop = firstPushedObject.
+	self assert: stack isEmpty 
+	! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:20'!
+                             test06TopReturnsLastPushedObject
+
+	| stack pushedObject |
+	
+	stack := OOStack new.
+	pushedObject := 'something'.
+	
+	stack push: pushedObject.
+	
+	self assert: stack top = pushedObject.
+	! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:24'!
+   test07TopDoesNotRemoveObjectFromStack
+
+	| stack pushedObject |
+	
+	stack := OOStack new.
+	pushedObject := 'something'.
+	
+	stack push: pushedObject.
+	
+	self assert: stack size = 1.
+	stack top.
+	self assert: stack size = 1.
+	! !
+!OOStackTest methodsFor: 'test' stamp: 'HAW 4/14/2017 22:48:26'!
+                             test08CanNotPopWhenThereAreNoObjectsInTheStack
+
+	| stack  |
+	
+	stack := OOStack new.
+	self
+		should: [ stack pop ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = OOStack stackEmptyErrorDescription ]
+		
+! !
+!OOStackTest methodsFor: 'test' stamp: 'NR 5/13/2020 13:30:31'!
+                    test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects
+
+	| stack  |
+	
+	stack := OOStack new.
+	stack push: 'something'.
+	stack pop.
+	
+	self
+		should: [ stack pop ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = OOStack stackEmptyErrorDescription ]
+		
+! !
+!OOStackTest methodsFor: 'test' stamp: 'HAW 4/14/2017 22:48:44'!
+                      test10CanNotTopWhenThereAreNoObjectsInTheStack
+
+	| stack  |
+	
+	stack := OOStack new.
+	self
+		should: [ stack top ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = OOStack stackEmptyErrorDescription ]
+		
+! !
+
+!classDefinition: #SentenceFinderByPrefixTest category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+TestCase subclass: #SentenceFinderByPrefixTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #SentenceFinderByPrefixTest category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+TestCase subclass: #SentenceFinderByPrefixTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: 'OOStack class' category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+OOStack class
+	instanceVariableNames: ''!
+
+!classDefinition: 'OOStack class' category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+OOStack class
+	instanceVariableNames: ''!
+!OOStack class methodsFor: 'error descriptions' stamp: 'HernanWilkinson 5/7/2012 11:51'!
+                         stackEmptyErrorDescription
+	
+	^ 'Stack is empty'! !
+
+!classDefinition: #SentenceFinderByPrefix category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+Object subclass: #SentenceFinderByPrefix
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #SentenceFinderByPrefix category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:33:38'!
+Object subclass: #SentenceFinderByPrefix
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+----QUIT----(31 October 2021 16:35:24) ejercicio4.image priorSource: 325!
+
+----STARTUP---- (31 October 2021 16:37:40) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio4/ejercicio4.image!
+
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 16:43:11'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 16:43:11'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 16:44:26'!
+                            isEmpty
+	self shouldBeImplemented.! !
+
+!methodRemoval: OOStack #isEmpty stamp: 'tg 10/31/2021 16:46:07'!
+isEmpty
+	self shouldBeImplemented.!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 16:59:06'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 16:59:06'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 16:59:11'!
+                             isEmpty
+	self shouldBeImplemented.! !
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 16:59:25'!
+Object subclass: #OOStack
+	instanceVariableNames: 'isEmpty'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 16:59:23' prior: 50332010!
+                               isEmpty
+	isEmpty := True.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 16:59:34'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 16:59:34'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 16:59:52'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:01:00' prior: 50332022!
+                        isEmpty
+	^True.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:01:04'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:01:04'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:01:33' prior: 50332036!
+       isEmpty
+	^self! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:01:38'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:01:38'!
+ERROR!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:01:45'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:01:45'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 17:01:45'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 17:01:45'!
+ERROR!
+
+!methodRemoval: OOStack #isEmpty stamp: 'tg 10/31/2021 17:01:52'!
+isEmpty
+	^self!
+
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 17:01:56'!
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:19:51'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:19:51'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:20:40'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:21:05'!
+                         isEmpty
+	self shouldBeImplemented.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:21:28' prior: 50332091!
+                              isEmpty
+	^True.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:21:39'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:21:39'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:21:53' prior: 50332096!
+       isEmpty
+	^true.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:22:00'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:22:35'!
+ERROR!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:22:35'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:22:43'!
+                         push: aString 
+	self shouldBeImplemented.! !
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 17:23:21'!
+Object subclass: #OOStack
+	instanceVariableNames: 'push'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:23:19' prior: 50332119!
+                           push: aString 
+	push := aString.! !
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:23:54'!
+FAILURE!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:23:54'!
+FAILURE!
+
+!methodRemoval: OOStack #push: stamp: 'tg 10/31/2021 17:24:49'!
+push: aString 
+	push := aString.!
+
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 17:24:54'!
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+Object subclass: #OOStack
+	instanceVariableNames: 'push'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 17:25:35'!
+Object subclass: #OOStack
+	instanceVariableNames: 'push'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 17:26:13'!
+Object subclass: #OOStack
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:26:59'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:27:06'!
+                   push: aString 
+	self shouldBeImplemented.! !
+
+!methodRemoval: OOStack #push: stamp: 'tg 10/31/2021 17:27:45'!
+push: aString 
+	self shouldBeImplemented.!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:28:17' overrides: 16896425!
+       initialize
+	 ! !
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'tg 10/31/2021 17:30:53'!
+Object subclass: #OOStack
+	instanceVariableNames: 'stack'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:30:50' prior: 50332188 overrides: 16896425!
+  initialize
+	 stack := OrderedCollection new.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:31:24' prior: 50332106!
+                    isEmpty
+	^stack isEmpty.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:31:27'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:31:27'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:31:31'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:31:35'!
+ERROR!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:31:35'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:31:48'!
+                           push: aString 
+	self shouldBeImplemented.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:32:24' prior: 50332250!
+                       push: aString 
+	stack add: aString.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:32:35' prior: 50332255!
+                             push: aString 
+	^stack add: aString.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:33:20' prior: 50332260!
+                            push: aString 
+	^stack add: aString.! !
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:33:23'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 17:33:51'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:33:59'!
+    pop
+	self shouldBeImplemented.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:34:31' prior: 50332275!
+  pop
+	stack remove.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:35:08' prior: 50332279!
+              pop
+	stack removeLast.! !
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 17:35:15'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:38:11'!
+FAILURE!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:38:11'!
+FAILURE!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:38:50' prior: 50332283!
+                           pop
+	^stack removeLast.! !
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 17:38:57'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:39:07'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 17:42:01'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:43:20'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:43:20'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:43:52'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:43:57'!
+                top
+	self shouldBeImplemented.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:44:35' prior: 50332319!
+  top
+	^stack at: self lastPosition.! !
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:44:48'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:44:48'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:44:54'!
+          lastPosition
+	self shouldBeImplemented.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:45:13' prior: 50332333!
+                         lastPosition
+	^stack size.! !
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:45:28'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 17:46:15'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 17:46:15'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 17:46:44'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 17:47:10'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:47:52' prior: 50332338!
+       lastPosition
+	^self size.! !
+!OOStack methodsFor: 'nil' stamp: 'tg 10/31/2021 17:48:12' overrides: 16880927!
+                   size
+	^stack size.! !
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:48:25'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 17:48:28'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 17:48:34'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 17:48:34'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 17:48:34'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:48:34'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 17:48:34'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 17:48:34'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 17:48:34'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:48:34'!
+FAILURE!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 17:48:34'!
+FAILURE!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:48:34'!
+FAILURE!
+!OOStackTest methodsFor: 'test' stamp: 'tg 10/31/2021 17:51:01'!
+                             stackEmpyErrorDescription: anError
+
+	^ self assert: anError messageText = OOStack stackEmptyErrorDescription! !
+!OOStackTest methodsFor: 'test' stamp: 'tg 10/31/2021 17:51:01' prior: 50331887!
+                               test08CanNotPopWhenThereAreNoObjectsInTheStack
+
+	| stack  |
+	
+	stack := OOStack new.
+	self
+		should: [ stack pop ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self stackEmpyErrorDescription: anError ]
+		
+! !
+!OOStackTest methodsFor: 'test' stamp: 'tg 10/31/2021 17:51:13' prior: 50332405!
+ stackEmpyErrorDescription: anError
+
+	^ self assert: anError messageText = OOStack stackEmptyErrorDescription.! !
+
+!methodRemoval: OOStackTest #stackEmpyErrorDescription: stamp: 'tg 10/31/2021 17:52:26'!
+stackEmpyErrorDescription: anError
+
+	^ self assert: anError messageText = OOStack stackEmptyErrorDescription.!
+!OOStackTest methodsFor: 'test' stamp: 'tg 10/31/2021 17:51:01' prior: 50332412!
+                     test08CanNotPopWhenThereAreNoObjectsInTheStack
+
+	| stack  |
+	
+	stack := OOStack new.
+	self
+		should: [ stack pop ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self stackEmpyErrorDescription: anError ]
+		
+! !
+!OOStackTest methodsFor: 'test' stamp: 'HAW 4/14/2017 22:48:26' prior: 50332435!
+ test08CanNotPopWhenThereAreNoObjectsInTheStack
+
+	| stack  |
+	
+	stack := OOStack new.
+	self
+		should: [ stack pop ]
+		raise: Error - MessageNotUnderstood 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = OOStack stackEmptyErrorDescription ]
+		
+! !
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:53:19'!
+FAILURE!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:53:19'!
+FAILURE!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:58:57' prior: 50332297!
+                    pop
+	(self isEmpty) ifTrue :[
+		
+		].
+	^stack removeLast.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:59:08' prior: 50332464!
+       pop
+	(self isEmpty) ifTrue :[
+		^self.
+		].
+	^stack removeLast.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:59:24' prior: 50332469!
+ pop
+	self isEmpty ifTrue: [
+		^self.
+		].
+	^stack removeLast.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 17:59:51' prior: 50332474!
+   pop
+	self isEmpty ifTrue: [
+		^self stackEmptyErrorDescription.
+		].
+	^stack removeLast.! !
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:59:58'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 17:59:58'!
+ERROR!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:00:05'!
+                        stackEmptyErrorDescription
+	self shouldBeImplemented.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:00:49' prior: 50332492!
+           stackEmptyErrorDescription
+	^'No es posible eliminar si el stack esta vacio'.! !
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:00:55'!
+FAILURE!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:00:55'!
+FAILURE!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:01:26' prior: 50332479!
+               pop
+	self isEmpty ifTrue: [
+		^self stackEmptyErrorDescription.
+	].
+	^stack removeLast.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:01:38' prior: 50332510!
+         pop
+	self isEmpty ifTrue: [
+		^Error.
+	].
+	^stack removeLast.! !
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:01:46'!
+FAILURE!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:01:46'!
+FAILURE!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:10:16' prior: 50332497!
+                               stackEmptyErrorDescription
+	^self error: self class stackEmptyErrorDescription.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:10:30' prior: 50332529!
+                 stackEmptyErrorDescription
+	self error: self class stackEmptyErrorDescription.! !
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:10:35'!
+FAILURE!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:10:35'!
+FAILURE!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:11:12' prior: 50332535!
+              stackEmptyErrorDescription
+	^self error: self class stackEmptyErrorDescription.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 18:11:14'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 18:11:14'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 18:11:14'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:11:14'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 18:11:14'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:11:14'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:11:14'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:11:14'!
+FAILURE!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:11:14'!
+FAILURE!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:11:14'!
+FAILURE!
+
+OOStack new.!
+
+OOStack new.!
+
+OOStack stackObject new.!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:15:29' prior: 50332516!
+                       pop
+	self isEmpty ifTrue: [
+		Error.
+	].
+	^stack removeLast.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 18:15:32'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 18:15:32'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 18:15:32'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:15:32'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 18:15:32'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:15:32'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:15:32'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:15:32'!
+FAILURE!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:15:32'!
+FAILURE!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:15:32'!
+FAILURE!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:16:27' prior: 50332589!
+   pop
+	self isEmpty ifTrue: [
+		^self stackEmptyErrorDescription.
+	].
+	^stack removeLast.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:16:51' prior: 50332627!
+         pop
+	self isEmpty ifTrue: [
+		^self class stackEmptyErrorDescription.
+	].
+	^stack removeLast.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:17:02' prior: 50332633!
+   pop
+	self isEmpty ifTrue: [
+		^self stackEmptyErrorDescription.
+	].
+	^stack removeLast.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:17:05'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:05'!
+FAILURE!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:05'!
+FAILURE!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:17:11'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:11'!
+FAILURE!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:11'!
+FAILURE!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:16'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:17:20'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:17:23'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:23'!
+FAILURE!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:17:23'!
+FAILURE!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:17:31'!
+PASSED!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'tg 10/31/2021 18:20:13' prior: 50332323!
+                       top
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stack at: self lastPosition.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:20:18'!
+PASSED!
+!OOStack methodsFor: 'stack operations' stamp: 'tg 10/31/2021 18:27:56' prior: 50332639!
+    pop
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stack removeLast.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'tg 10/31/2021 18:27:58'!
+PASSED!
+
+----QUIT----(31 October 2021 19:10:13) ejercicio4.image priorSource: 10559!
+
+----STARTUP---- (1 November 2021 20:14:16) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio4/ejercicio4.image!
+
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'MG 11/1/2021 20:16:12'!
+Object subclass: #OOStack
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:16:12' prior: 50332362 overrides: 16880927!
+           size
+	^stackContent size.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:16:12' prior: 50332204!
+        isEmpty
+	^stackContent isEmpty.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:16:12' prior: 50332265!
+  push: aString 
+	^stackContent add: aString.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:16:12' prior: 50332199 overrides: 16896425!
+  initialize
+	 stackContent := OrderedCollection new.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:16:12' prior: 50332766!
+              top
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stackContent at: self lastPosition.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:16:12' prior: 50332805!
+                         pop
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stackContent removeLast.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:16:33' prior: 50332877!
+       top
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stackContent last.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:16:37'!
+PASSED!
+
+!methodRemoval: OOStack #lastPosition stamp: 'MG 11/1/2021 20:16:57'!
+lastPosition
+	^self size.!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:17:00'!
+PASSED!
+
+OrderedCollection subclass: #StackContent
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #StackContent category: 'Stack-Exercise' stamp: 'MG 11/1/2021 20:17:57'!
+OrderedCollection subclass: #StackContent
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+OrderedCollection subclass: #EmptyStackContent
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #EmptyStackContent category: 'Stack-Exercise' stamp: 'MG 11/1/2021 20:18:20'!
+OrderedCollection subclass: #EmptyStackContent
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!EmptyStackContent methodsFor: 'no messages' stamp: 'MG 11/1/2021 20:19:41' overrides: 16884129!
+ removeLast
+	^self! !
+!EmptyStackContent methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:20:54'!
+                      stackEmptyErrorDescription
+	^self error: self class stackEmptyErrorDescription.! !
+!EmptyStackContent class methodsFor: 'no messages' stamp: 'MG 11/1/2021 20:21:12'!
+                          stackEmptyErrorDescription
+	^''! !
+!EmptyStackContent class methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:21:28' prior: 50333000!
+                  stackEmptyErrorDescription
+	^'Stack is empty'! !
+!EmptyStackContent methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:21:46' prior: 50332990 overrides: 16884129!
+                      removeLast
+	^self stackEmptyErrorDescription.! !
+!EmptyStackContent methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:22:19' overrides: 16905811!
+      last
+	^self stackEmptyErrorDescription.! !
+!OOStack methodsFor: 'initialization' stamp: 'MG 11/1/2021 20:23:45' prior: 50332872 overrides: 16896425!
+           initialize
+	 stackContent := EmptyStackContent new.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:28:16' prior: 50332867!
+                 push: aString 
+	^stackContent add: aString.! !
+!EmptyStackContent methodsFor: 'as yet unclassified' stamp: 'MG 11/1/2021 20:29:26' overrides: 16883788!
+        add: anObject
+	^StackContent new add: anObject.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:31:08' prior: 50333026!
+                     push: aString 
+	^stackContent add: aString.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:37:17' prior: 50333036!
+                         push: aString 
+	(stackContent class = EmptyStackContent) ifTrue: [
+		stackContent := StackContent.
+		 ^stackContent add: aString.
+	].
+	^stackContent add: aString.
+! !
+
+!methodRemoval: EmptyStackContent #add: stamp: 'MG 11/1/2021 20:37:24'!
+add: anObject
+	^StackContent new add: anObject.!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:37:44' prior: 50332884!
+       pop
+	^stackContent removeLast.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:38:14' prior: 50332890!
+      top
+	^stackContent last.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:38:24' prior: 50333053!
+            pop
+	stackContent removeLast.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:39:31' prior: 50333061!
+       pop
+	stackContent removeLast.
+	(stackContent isEmpty) ifTrue: [
+		stackContent := EmptyStackContent new.
+	].
+! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:41:12' prior: 50333065!
+                       pop
+	stackContent removeLast.
+	(stackContent isEmpty) ifTrue: [
+		stackContent := EmptyStackContent new.
+	].
+! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:41:17' prior: 50333072!
+                       pop
+	stackContent removeLast.
+	(stackContent isEmpty) ifTrue: [
+		stackContent := EmptyStackContent new.
+	].
+! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:41:36'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:41:36'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:41:36'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:41:36'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:41:36'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:41:36'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:41:36'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:41:36'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:41:36'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:41:36'!
+PASSED!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:42:39' prior: 50333041!
+          push: aString 
+	(stackContent class = EmptyStackContent) ifTrue: [
+		stackContent := StackContent new.
+		 ^stackContent add: aString.
+	].
+	^stackContent add: aString.
+! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:42:42'!
+FAILURE!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:42:42'!
+FAILURE!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:42:42'!
+PASSED!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:43:42' prior: 50333079!
+       pop
+	|lastElement|
+	lastElement := stackContent removeLast.
+	(stackContent isEmpty) ifTrue: [
+		stackContent := EmptyStackContent new.
+	].
+	^lastElement.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:43:44'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:47:13'!
+PASSED!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:53:10' prior: 50333057!
+   top
+	^stackContent last.! !
+
+Object subclass: #OOStack
+	instanceVariableNames: 'stackContent state'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'MG 11/1/2021 20:53:37'!
+Object subclass: #OOStack
+	instanceVariableNames: 'stackContent state'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStack methodsFor: 'stack operations' stamp: 'tg 10/31/2021 18:27:56' prior: 50333159!
+               pop
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stack removeLast.! !
+!OOStack methodsFor: 'stack operations' stamp: 'tg 10/31/2021 17:33:20' prior: 50333118!
+             push: aString 
+	^stack add: aString.! !
+!OOStack methodsFor: 'stack operations' stamp: 'tg 10/31/2021 18:20:13' prior: 50333232!
+                               top
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stack at: self lastPosition.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:54:51' prior: 50333259!
+   top
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stackContent at: self lastPosition.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:54:58' prior: 50333265!
+                            top
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stackContent last.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:55:05' prior: 50333254!
+             push: aString 
+	^stackContent add: aString.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:55:10'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:55:10'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:55:10'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:10'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:55:10'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:10'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:55:10'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:10'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:55:10'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:10'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:55:12'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:55:12'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:55:12'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:12'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:55:12'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:12'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:55:12'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:12'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:55:12'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:12'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:55:16'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:55:16'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:55:16'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:16'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:55:16'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:16'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:55:16'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:16'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:55:16'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:16'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:55:17'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:55:17'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:55:17'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:17'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:55:17'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:17'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:55:17'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:17'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:55:17'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:17'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:55:23'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:55:23'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:55:23'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:23'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:55:23'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:55:23'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:55:23'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:23'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:55:23'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:55:23'!
+PASSED!
+
+!classRemoval: #StackContent stamp: 'MG 11/1/2021 20:55:49'!
+OrderedCollection subclass: #StackContent
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStack methodsFor: 'initialization' stamp: 'MG 11/1/2021 20:56:00' prior: 50333021 overrides: 16896425!
+       initialize
+	 stackContent := OrderedCollection new.! !
+
+!classRemoval: #EmptyStackContent stamp: 'MG 11/1/2021 20:56:04'!
+OrderedCollection subclass: #EmptyStackContent
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:56:06'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:56:06'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:56:06'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:56:06'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:56:06'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:56:06'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:56:06'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:56:06'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:56:06'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:56:06'!
+PASSED!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:56:26' prior: 50333248!
+                             pop
+	self isEmpty ifTrue: [
+		self stackEmptyErrorDescription.
+	].
+	^stackContent removeLast.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/1/2021 20:56:29'!
+PASSED!
+
+Object subclass: #StackState
+	instanceVariableNames: 'stackContent state'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #StackState category: 'Stack-Exercise' stamp: 'MG 11/1/2021 20:56:55'!
+Object subclass: #StackState
+	instanceVariableNames: 'stackContent state'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!StackState methodsFor: 'no messages' stamp: 'MG 11/1/2021 20:58:00'!
+addWhenIsEmpty: aStackContent! !
+
+!methodRemoval: StackState #addWhenIsEmpty: stamp: 'MG 11/1/2021 20:58:14'!
+addWhenIsEmpty: aStackContent!
+!OOStack methodsFor: 'nil' stamp: 'MG 11/1/2021 20:58:59'!
+                        state
+	^state! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 20:59:49' prior: 50333497!
+                       pop
+	^self state removeLast.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 21:00:16' prior: 50333272!
+        top
+	^self state last.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/1/2021 21:01:38' prior: 50333278!
+              push: aString 
+	^self state add: aString in: stackContent.! !
+
+----QUIT----(2 November 2021 00:35:51) ejercicio4.image priorSource: 38167!
+
+----STARTUP---- (2 November 2021 18:14:55) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio4/ejercicio4.image!
+
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 18:20:37'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 18:20:37'!
+ERROR!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:23:01' prior: 50333558!
+                    pop
+	^state removeLast: stackContent.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:23:16' prior: 50333566!
+                               push: aString 
+	^state add: aString in: stackContent.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:23:29' prior: 50333562!
+               top
+	^state last.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:23:37' prior: 50333621!
+                   top
+	^state last: stackContent .! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:23:41' prior: 50333625!
+    top
+	^state last: stackContent.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:24:37' prior: 50333629!
+     top
+	^state last: stackContent.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:24:56' prior: 50333633!
+     top
+	^state last: self.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:25:34' prior: 50333616!
+             push: aString 
+	^state add: aString in: self.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 18:26:42' prior: 50333611!
+                       pop
+	^state removeLast: self.! !
+!StackState methodsFor: 'no messages' stamp: 'MG 11/2/2021 18:27:04'!
+                         last: aStack! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:28:00'!
+  removeLast: aStack
+! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:28:24'!
+                           add: aString in: aStack
+! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:29:20' prior: 50333657!
+      add: aString in: aStack! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:30:06' prior: 50333661!
+       add: aString in: aStack
+	(aStack isEmpty) ifTrue:[
+			
+	]! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:31:37' prior: 50333665!
+     add: aString in: aStack! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:32:35' prior: 50333650!
+       last: aStack
+	(aStack isEmpty) ifTrue:[
+		aStack 	
+	] ! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:33:00' prior: 50333674!
+        last: aStack
+	(aStack isEmpty) ifTrue:[
+		^aStack 	stackEmptyErrorDescription.
+	] ! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:33:58' prior: 50333679!
+            last: aStack
+	(aStack isEmpty) ifTrue:[
+		^aStack 	stackEmptyErrorDescription.
+	].
+	^aStack content last.! !
+!OOStack methodsFor: 'accesing' stamp: 'MG 11/2/2021 18:34:12'!
+                   content
+	^stackContent ! !
+!OOStack methodsFor: 'accesing' stamp: 'MG 11/2/2021 18:34:13' prior: 50333691!
+                     content
+	^stackContent.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:35:48' prior: 50333653!
+       removeLast: aStack
+	(aStack isEmpty) ifTrue:[
+		^aStack 	stackEmptyErrorDescription.
+	].
+	^aStack content removeLast.! !
+
+StackState subclass: #StateEmpty
+	instanceVariableNames: 'stackContent state'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+StackState subclass: #StateEmpty
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #StateEmpty category: 'Stack-Exercise' stamp: 'MG 11/2/2021 18:37:14'!
+StackState subclass: #StateEmpty
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+StackState subclass: #StateNotEmpty
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #StateNotEmpty category: 'Stack-Exercise' stamp: 'MG 11/2/2021 18:37:30'!
+StackState subclass: #StateNotEmpty
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!StateEmpty methodsFor: 'nil' stamp: 'MG 11/2/2021 18:37:58' overrides: 50333685!
+last: aStack
+	^aStack 	stackEmptyErrorDescription.! !
+!StateNotEmpty methodsFor: 'nil' stamp: 'MG 11/2/2021 18:38:11' overrides: 50333685!
+                     last: aStack
+	^aStack content last.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:38:24' prior: 50333685!
+                           last: aStack
+	self subclassResponsibility.! !
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:38:49' overrides: 50333699!
+                removeLast: aStack
+	^aStack 	stackEmptyErrorDescription.! !
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:39:08' overrides: 50333699!
+                               removeLast: aStack
+	^aStack content removeLast.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:39:32' prior: 50333699!
+               removeLast: aStack
+	self subclassResponsibility.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:40:16' prior: 50333759!
+              removeLast: aStack! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:40:48' prior: 50333764!
+            removeLast: aStack
+	self subclassResponsibility.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:43:56' prior: 50333670!
+              add: aString in: aStack
+	aStack isEmpty ifTrue: [
+		aStack 	content add: aString.
+		" Cambiar a estado no vacío" 
+	].! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:44:16' prior: 50333773!
+         add: aString in: aStack
+	aStack isEmpty ifTrue: [
+		" Cambiar a estado no vacío" 
+	].
+	aStack 	content add: aString.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:44:20' prior: 50333780!
+          add: aString in: aStack
+	aStack isEmpty ifTrue: [
+		" Cambiar a estado no vacío" 
+	].
+	^aStack 	content add: aString.! !
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:47:04' prior: 50333754 overrides: 50333768!
+                  removeLast: aStack
+	(aStack size = 1)ifTrue:[
+		"Cambiar a estado vacío"	
+	].	
+	^aStack content removeLast.! !
+!OOStack methodsFor: 'accesing' stamp: 'MG 11/2/2021 18:48:50'!
+                 changeState: aNewSubClassState
+	state := aNewSubClassState new.! !
+!OOStack methodsFor: 'accesing' stamp: 'MG 11/2/2021 18:49:30' prior: 50333801!
+             changeState: aNewSubClassState
+	^state := aNewSubClassState new.
+	! !
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:50:22' overrides: 50333787!
+                        add: aString in: aStack
+	aStack changeState: StateNotEmpty.
+	^aStack 	content add: aString.! !
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:52:08' prior: 50333795 overrides: 50333768!
+            removeLast: aStack
+	(aStack size = 1)ifTrue:[
+		aStack changeState: StateEmpty.
+	].	
+	^aStack content removeLast.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 18:52:20'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 18:52:20'!
+ERROR!
+!OOStack methodsFor: 'initialization' stamp: 'MG 11/2/2021 18:52:48' prior: 50333452 overrides: 16896425!
+                      initialize
+	 stackContent := OrderedCollection new.
+	 state:= StateEmpty new.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 18:52:58'!
+PASSED!
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 18:55:05' prior: 50333787!
+                             add: aString in: aStack
+	self subclassResponsibility.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:14:22' prior: 50333641!
+               push: aString 
+
+	StackState subclasses do:[ :aSubclass |  (aSubclass isValidFor: self)  ifTrue:[ aSubclass add: aString ]].! !
+!StackState methodsFor: 'nil' stamp: 'MG 11/2/2021 19:14:46'!
+   isValidFor: aStack
+	self subclassResponsibility.
+	! !
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:15:18' overrides: 50333909!
+        isValidFor: aStack
+	^aStack isEmpty.! !
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:16:05' overrides: 50333909!
+                   isValidFor: aStack
+	^(aStack isEmpty) not.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:16:35'!
+    add: aString
+	self subclassResponsibility.! !
+
+!methodRemoval: StackState #add:in: stamp: 'MG 11/2/2021 19:16:36'!
+add: aString in: aStack
+	self subclassResponsibility.!
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:17:29' prior: 50333812!
+                        add: aString in: aStack
+	^aStack 	content add: aString.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:17:38'!
+                       add: aString in: aStack
+	self subclassResponsibility.! !
+
+!methodRemoval: StackState #add: stamp: 'MG 11/2/2021 19:17:42'!
+add: aString
+	self subclassResponsibility.!
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:18:04' overrides: 50333937!
+                    add: aString in: aStack
+	^aStack 	content add: aString.! !
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:18:13' prior: 50333932 overrides: 50333937!
+                   add: aString in: aStack
+	^aStack 	stackEmptyErrorDescription.! !
+
+!methodRemoval: StackState #add:in: stamp: 'MG 11/2/2021 19:19:02'!
+add: aString in: aStack
+	self subclassResponsibility.!
+
+!methodRemoval: StateEmpty #add:in: stamp: 'MG 11/2/2021 19:19:07'!
+add: aString in: aStack
+	^aStack 	stackEmptyErrorDescription.!
+
+!methodRemoval: StateNotEmpty #add:in: stamp: 'MG 11/2/2021 19:19:09'!
+add: aString in: aStack
+	^aStack 	content add: aString.!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:22:40' prior: 50333903!
+      push: aString 
+	^self content add: aString! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:22:59' prior: 50333646!
+                          pop
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  (aSubclass isValidFor: self)].
+	^stackStateSelected removeLast: self.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:23:20' prior: 50333637!
+                               top
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  (aSubclass isValidFor: self)].
+	^stackStateSelected last: self.! !
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:23:36' prior: 50333819 overrides: 50333768!
+        removeLast: aStack	
+	^aStack content removeLast.! !
+
+!methodRemoval: OOStack #changeState: stamp: 'MG 11/2/2021 19:24:01'!
+changeState: aNewSubClassState
+	^state := aNewSubClassState new.
+	!
+
+!methodRemoval: OOStack #size stamp: 'MG 11/2/2021 19:25:28'!
+size
+	^stackContent size.!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:25:32'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:25:32'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:25:32'!
+ERROR!
+!OOStack methodsFor: 'initialization' stamp: 'MG 11/2/2021 19:25:58' prior: 50333859 overrides: 16896425!
+                 initialize
+	 stackContent := OrderedCollection new.! !
+
+Object subclass: #OOStack
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'MG 11/2/2021 19:26:05'!
+Object subclass: #OOStack
+	instanceVariableNames: 'stackContent'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!methodRemoval: OOStack #state stamp: 'MG 11/2/2021 19:26:16'!
+state
+	^state!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:26:28'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:26:28'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:26:28'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:26:31'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:27:06'!
+ERROR!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:27:26' prior: 50333983!
+                            top
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected last: self.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:27:36' prior: 50333974!
+       pop
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected removeLast: self.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:28:21'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:28:21'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:28:21'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:28:23'!
+ERROR!
+
+aSubclass isValidFor: self!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:29:35'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:29:35'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:29:35'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:29:43'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:29:47'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:30:15'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:30:15'!
+ERROR!
+
+Object subclass: #StackState
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #StackState category: 'Stack-Exercise' stamp: 'MG 11/2/2021 19:31:51'!
+Object subclass: #StackState
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:32:10'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:32:10'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:32:10'!
+ERROR!
+
+StateEmpty isValidFor: (OOStack new)!
+
+StateEmpty isValidFor: (OOStack new). !
+
+stack isEmpty.!
+
+|stack|
+stack := OOStack new.
+stack isEmpty.!
+!StackState class methodsFor: 'no messages' stamp: 'MG 11/2/2021 19:35:44'!
+      isValidFor: aStack
+	self subclassResponsibility.! !
+
+!methodRemoval: StackState #isValidFor: stamp: 'MG 11/2/2021 19:35:58'!
+isValidFor: aStack
+	self subclassResponsibility.
+	!
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/2/2021 19:36:10' prior: 50333914!
+                 isValidFor: aStack
+	^aStack isEmpty.! !
+!StateEmpty class methodsFor: 'no messages' stamp: 'MG 11/2/2021 19:36:17' overrides: 50334240!
+                        isValidFor: aStack
+	^aStack isEmpty.! !
+
+!methodRemoval: StateEmpty #isValidFor: stamp: 'MG 11/2/2021 19:36:21'!
+isValidFor: aStack
+	^aStack isEmpty.!
+!StateNotEmpty class methodsFor: 'no messages' stamp: 'MG 11/2/2021 19:36:31' overrides: 50334240!
+      isValidFor: aStack
+	^(aStack isEmpty) not.! !
+
+!methodRemoval: StateNotEmpty #isValidFor: stamp: 'MG 11/2/2021 19:36:39'!
+isValidFor: aStack
+	^(aStack isEmpty) not.!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:37:14'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:37:14'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:37:14'!
+ERROR!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:37:17'!
+ERROR!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:38:18' prior: 50334095!
+                 top
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected new last: self.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:38:34' prior: 50334103!
+   pop
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected new removeLast: self.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:38:44'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:38:44'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:38:44'!
+ERROR!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:38:47'!
+ERROR!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:38:47'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:38:47'!
+ERROR!
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:39:19' overrides: 16880927!
+       size
+	^self! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:39:31' prior: 50334394 overrides: 16880927!
+     size
+	^self content size! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/2/2021 19:39:34' prior: 50334398 overrides: 16880927!
+                        size
+	^self content size.! !
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/2/2021 19:39:38'!
+PASSED!
+
+----QUIT----(2 November 2021 20:06:52) ejercicio4.image priorSource: 61437!
