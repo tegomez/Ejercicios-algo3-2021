@@ -5421,3 +5421,3520 @@ FAILURE!
 FAILURE!
 
 ----QUIT----(3 November 2021 21:41:24) Ejercicio4.image priorSource: 124206!
+
+----STARTUP---- (3 November 2021 23:20:03) as /home/tin-gprieto/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio4/Ejercicio4.image!
+
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:21:55' prior: 50337153!
+                      test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+		[sentenceFinder find: '' in: stack.
+		self fail.]
+		on: Error
+		do: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix prefixShouldNotBeEmpty 
+		].
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:23:12' prior: 50337339!
+                              test04ASentenceToFindIsCaseSensitive
+	
+	stack push: 'Winter is comming'.
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack. self fail]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix notFound 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:23:20' prior: 50337464!
+                               test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	[sentenceFinder find: '' in: stack.
+	self fail.]
+	on: Error
+	do: [ :anError |
+		self assert: anError messageText = SentenceFinderByPrefix prefixShouldNotBeEmpty 
+	].
+	
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:23:22'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:23:22'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:24:06' prior: 50337489!
+            test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	[sentenceFinder find: '' in: stack.
+	self fail ]
+	on: Error
+	do: [ :anError |
+		self assert: anError messageText = SentenceFinderByPrefix prefixShouldNotBeEmpty 
+	].
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:26:41' prior: 50337476!
+    test04ASentenceToFindIsCaseSensitive
+	
+	stack push: 'Winter is comming'.
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix notFound 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:27:31' prior: 50337507!
+          test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self should: [sentenceFinder find: '' in: stack]
+	raise: Error
+	withExceptionDo: [ :anError |
+		self assert: anError messageText = SentenceFinderByPrefix prefixShouldNotBeEmpty 
+	].
+	
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:27:34'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:27:34'!
+FAILURE!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/3/2021 23:28:42' prior: 50337205!
+         find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [
+		^self prefixShouldNotBeEmpty.
+	].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:28:45'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:28:53'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:28:53'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:29:06' prior: 50337262!
+             test02APrefixDoesNotHaveASentenceToFind
+	
+	stack  push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'abc' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix notFound 
+		].
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:29:08'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:29:08'!
+FAILURE!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/3/2021 23:29:46'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:29:51'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:29:51'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/3/2021 23:30:42'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:30:46'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:30:48'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:30:48'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/3/2021 23:30:53'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/3/2021 23:30:53'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/3/2021 23:31:20'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/3/2021 23:31:20'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:31:42'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:31:42'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:31:57'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:31:57'!
+FAILURE!
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/3/2021 23:32:53' prior: 50337111!
+ notFound
+	self error: self class notFound.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/3/2021 23:33:15'!
+                              aPrefixShoulNotContainASpaceMessage
+	self error: self class aPrefixShoulNotContainASpace.
+! !
+!SentenceFinderByPrefix class methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:33:15'!
+  aPrefixShoulNotContainASpaceMessage
+	^'Prefix shoul not contain a space'.! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:33:15' prior: 50335964!
+     test06APrefixShouldNotContainSpaces
+	
+	stack push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'Wint er' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix aPrefixShoulNotContainASpaceMessage
+		].
+	
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:33:15' prior: 50335087!
+                  aPrefixShoulNotContainASpace
+	self error: self class aPrefixShoulNotContainASpaceMessage.
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:33:15' prior: 50337668!
+                        aPrefixShoulNotContainASpaceMessage
+	self error: self class aPrefixShoulNotContainASpaceMessage.
+! !
+
+!methodRemoval: SentenceFinderByPrefix #aPrefixShoulNotContainASpace stamp: 'MG 11/3/2021 23:33:15'!
+aPrefixShoulNotContainASpace
+	self error: self class aPrefixShoulNotContainASpaceMessage.
+!
+
+!methodRemoval: SentenceFinderByPrefix class #aPrefixShoulNotContainASpace stamp: 'MG 11/3/2021 23:33:15'!
+aPrefixShoulNotContainASpace
+	^'Prefix shoul not contain a space'.!
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/3/2021 23:34:00'!
+       canNotFindIfIsEmptyMessage
+	^'the stack is empty to find a sentence'.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/3/2021 23:34:00'!
+   canNotFindIfIsEmptyMessage
+	self error: self class canNotFindIfIsEmpty.! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:00' prior: 50335953!
+       test05CanNotFindASentenceWithEmptyStack
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix canNotFindIfIsEmptyMessage
+		].
+	
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:00' prior: 50335003!
+                              canNotFindIfIsEmpty
+	self error: self class canNotFindIfIsEmptyMessage.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:00' prior: 50337723!
+           canNotFindIfIsEmptyMessage
+	self error: self class canNotFindIfIsEmptyMessage.! !
+
+!methodRemoval: SentenceFinderByPrefix class #canNotFindIfIsEmpty stamp: 'MG 11/3/2021 23:34:00'!
+canNotFindIfIsEmpty
+	^'the stack is empty to find a sentence'.!
+
+!methodRemoval: SentenceFinderByPrefix #canNotFindIfIsEmpty stamp: 'MG 11/3/2021 23:34:00'!
+canNotFindIfIsEmpty
+	self error: self class canNotFindIfIsEmptyMessage.!
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/3/2021 23:34:10'!
+                 notFoundMessage
+	self error: self class notFound.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/3/2021 23:34:10'!
+         notFoundMessage
+	^'Not found an element with this prefix'.! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:10' prior: 50337518!
+                    test04ASentenceToFindIsCaseSensitive
+	
+	stack push: 'Winter is comming'.
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix notFoundMessage 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:10' prior: 50337589!
+   test02APrefixDoesNotHaveASentenceToFind
+	
+	stack  push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'abc' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix notFoundMessage 
+		].
+	! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:10' prior: 50337663!
+        notFound
+	self error: self class notFoundMessage.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:10' prior: 50337548!
+ find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [
+		^self prefixShouldNotBeEmpty.
+	].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:10' prior: 50337763!
+       notFoundMessage
+	self error: self class notFoundMessage.! !
+
+!methodRemoval: SentenceFinderByPrefix #notFound stamp: 'MG 11/3/2021 23:34:10'!
+notFound
+	self error: self class notFoundMessage.!
+
+!methodRemoval: SentenceFinderByPrefix class #notFound stamp: 'MG 11/3/2021 23:34:10'!
+notFound
+	^'Not found an element with this prefix'.!
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/3/2021 23:34:29'!
+                              prefixShouldNotBeEmptyMessage
+	self error: self class prefixShouldNotBeEmpty.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/3/2021 23:34:29'!
+             prefixShouldNotBeEmptyMessage
+	^'Prefix shoul not be empty'.! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:29' prior: 50337530!
+                  test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self should: [sentenceFinder find: '' in: stack]
+	raise: Error
+	withExceptionDo: [ :anError |
+		self assert: anError messageText = SentenceFinderByPrefix prefixShouldNotBeEmptyMessage 
+	].
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:29' prior: 50334713!
+                 prefixShouldNotBeEmpty
+	self error: self class prefixShouldNotBeEmptyMessage.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:29' prior: 50337803!
+     find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [
+		^self prefixShouldNotBeEmptyMessage.
+	].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:34:29' prior: 50337847!
+prefixShouldNotBeEmptyMessage
+	self error: self class prefixShouldNotBeEmptyMessage.! !
+
+!methodRemoval: SentenceFinderByPrefix #prefixShouldNotBeEmpty stamp: 'MG 11/3/2021 23:34:29'!
+prefixShouldNotBeEmpty
+	self error: self class prefixShouldNotBeEmptyMessage.!
+
+!methodRemoval: SentenceFinderByPrefix class #prefixShouldNotBeEmpty stamp: 'MG 11/3/2021 23:34:29'!
+prefixShouldNotBeEmpty
+	^'Prefix shoul not be empty'.!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:34:40'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/3/2021 23:34:41'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/3/2021 23:36:39' prior: 50337877!
+              find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [
+		^self prefixShouldNotBeEmptyMessage.
+	].
+
+	(aStack isEmpty) ifTrue:[
+		^self canNotFindIfIsEmptyMessage. 
+	].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/3/2021 23:37:58' prior: 50337931!
+    find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self prefixShouldNotBeEmptyMessage.].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/3/2021 23:40:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:40:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:40:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/3/2021 23:40:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/3/2021 23:40:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/3/2021 23:40:55'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:40:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/3/2021 23:40:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/3/2021 23:40:55'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:41:20'!
+PASSED!
+
+stack!
+
+originalStack!
+
+originalStack!
+
+stack!
+
+originalStack!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/3/2021 23:48:26'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/3/2021 23:49:13' prior: 50337963!
+                  find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self prefixShouldNotBeEmptyMessage.].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/3/2021 23:49:24'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/3/2021 23:49:24'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/3/2021 23:49:24'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/3/2021 23:49:24'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/3/2021 23:49:24'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/3/2021 23:49:24'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:49:24'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/3/2021 23:49:24'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/3/2021 23:49:24'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:51:18' prior: 50336053!
+                    test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	originalStack := OOStack new.
+	
+	stack  push: 'Winter is comming'.
+	originalStack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	originalStack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	originalStack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	originalStack  push: 'Winter is here'.
+	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack  = originalStack.
+	! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/3/2021 23:51:43' prior: 50338040!
+                          find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self prefixShouldNotBeEmptyMessage.].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:51:48'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:51:48'!
+FAILURE!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/3/2021 23:52:16' prior: 50338128!
+                 find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self prefixShouldNotBeEmptyMessage.].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:52:19'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:52:19'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:52:28'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:52:28'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:53:14' prior: 50338108!
+     test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	originalStack := OOStack new.
+	
+	stack  push: 'Winter is comming'.
+	originalStack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	originalStack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	originalStack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	originalStack  push: 'Winter is here'.
+	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack equals: originalStack.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:53:17'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:53:17'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:54:42' prior: 50338220!
+            test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	originalStack := OOStack new.
+	
+	stack  push: 'Winter is comming'.
+	originalStack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	originalStack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	originalStack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	originalStack  push: 'Winter is here'.
+	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack == originalStack.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:54:43'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:54:43'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'tg 11/3/2021 20:02:51' prior: 50338249!
+                 test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	
+	originalStack := 	stack.	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack  = originalStack.
+	! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:55:17' prior: 50338278!
+ test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	
+	originalStack := 	stack.	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack  == originalStack.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:55:19'!
+PASSED!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:55:23' prior: 50338292!
+                   test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	
+	originalStack := 	stack.	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack == originalStack.
+	! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:55:55' prior: 50338311!
+ test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	
+	originalStack := 	stack.	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack = originalStack.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/3/2021 23:55:57'!
+PASSED!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/3/2021 23:53:14' prior: 50338325!
+                     test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	originalStack := OOStack new.
+	
+	stack  push: 'Winter is comming'.
+	originalStack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	originalStack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	originalStack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	originalStack  push: 'Winter is here'.
+	
+	sentenceFinder find: 'Wint' in: stack.
+	
+	self assert: stack equals: originalStack.
+	! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:02:55' prior: 50338344!
+        test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	originalStack := OOStack new.
+	
+	stack  push: 'Winter is comming'.
+	originalStack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	originalStack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	originalStack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	originalStack  push: 'Winter is here'.
+	
+	sentenceFinder find: 'Wint' in: stack.
+
+	self assert: stack content equals: originalStack content.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:02:57'!
+PASSED!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:03:41' prior: 50338364!
+            test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	originalStack := OOStack new.
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+	
+	originalStack  push: 'Winter is comming'.
+	originalStack  push: 'Winning is everything'.
+	originalStack  push: 'The wind of Winter'.
+	originalStack  push: 'Winter is here'.
+	
+	sentenceFinder find: 'Wint' in: stack.
+
+	self assert: stack content equals: originalStack content.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:03:42'!
+PASSED!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:04:26' prior: 50338389!
+          test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+
+	originalStack := stack content.
+	
+	sentenceFinder find: 'Wint' in: stack.
+
+	self assert: stack content equals: originalStack content.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:04:28'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:04:28'!
+ERROR!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:04:41' prior: 50338414!
+              test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+
+	originalStack := stack content.
+	
+	sentenceFinder find: 'Wint' in: stack.
+
+	self assert: stack content equals: originalStack.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:04:46'!
+PASSED!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:05:11' prior: 50338438!
+ test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded
+	|originalStack |
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winning is everything'.
+	stack  push: 'The wind of Winter'.
+	stack  push: 'Winter is here'.
+
+	originalStack := stack content.
+	
+	sentenceFinder find: 'Wint' in: stack.
+
+	self assert: stack content equals: originalStack.
+	! !
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:05:12'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 00:05:29'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 00:05:29'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 00:05:29'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 00:05:29'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 00:05:29'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 00:05:29'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:05:29'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:05:29'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:05:29'!
+FAILURE!
+
+g inclu!
+
+|aString|
+aString := 'jajajaja'.
+aString includes: ' '.!
+
+|aString|
+aString := 'jaja jaja'.
+aString includes: ' '.  !
+
+|aString|
+aString := 'jaja jaja'.
+aString includes: ' '.!
+
+|aString|
+aString := 'jaja jaja'.
+aString includes: 'j'.!
+
+|aString|
+aString := 'jaja jaja'.
+aString includes: 'j'. !
+
+|aString|
+aString := 'jaja jaja'.
+aString includes: 'j'. !
+
+|aString|
+aString := 'jaja jaja'.
+aString includes: 'ja'.  !
+
+|aString|
+aString := 'jaja jaja'.
+aString includesSubString: 'ja'. !
+
+|aString|
+aString := 'jaja jaja'.
+aString includesSubString: 'z'. !
+
+|aString|
+aString := 'jaja jaja'.
+aString includesSubString: ' '. !
+
+|aString|
+aString := 'jajajaja '.
+aString includesSubString: ' '. !
+
+|aString|
+aString := 'jajajaja'.
+aString includesSubString: ' '. !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 00:12:03' prior: 50338169!
+                               find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self prefixShouldNotBeEmptyMessage.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self aPrefixShoulNotContainASpaceMessage].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:13:05'!
+                        aPrefixShouldNotBeEmptyMessage
+	self error: self class prefixShouldNotBeEmptyMessage.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:13:05'!
+     aPrefixShouldNotBeEmptyMessage
+	^'Prefix shoul not be empty'.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:05' prior: 50338535!
+                     find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self aPrefixShouldNotBeEmptyMessage.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self aPrefixShoulNotContainASpaceMessage].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:05' prior: 50337907!
+ prefixShouldNotBeEmptyMessage
+	self error: self class aPrefixShouldNotBeEmptyMessage.! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:05' prior: 50337859!
+                         test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self should: [sentenceFinder find: '' in: stack]
+	raise: Error
+	withExceptionDo: [ :anError |
+		self assert: anError messageText = SentenceFinderByPrefix aPrefixShouldNotBeEmptyMessage 
+	].
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:05' prior: 50338571!
+                aPrefixShouldNotBeEmptyMessage
+	self error: self class aPrefixShouldNotBeEmptyMessage.! !
+
+!methodRemoval: SentenceFinderByPrefix #prefixShouldNotBeEmptyMessage stamp: 'MG 11/4/2021 00:13:05'!
+prefixShouldNotBeEmptyMessage
+	self error: self class aPrefixShouldNotBeEmptyMessage.!
+
+!methodRemoval: SentenceFinderByPrefix class #prefixShouldNotBeEmptyMessage stamp: 'MG 11/4/2021 00:13:05'!
+prefixShouldNotBeEmptyMessage
+	^'Prefix shoul not be empty'.!
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:13:26'!
+                           canNotFindIfStackIsEmptyMessage
+	^'the stack is empty to find a sentence'.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:13:26'!
+                              canNotFindIfStackIsEmptyMessage
+	self error: self class canNotFindIfIsEmptyMessage.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:26' prior: 50337747!
+                               canNotFindIfIsEmptyMessage
+	self error: self class canNotFindIfStackIsEmptyMessage.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:26' prior: 50338583!
+                               find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self aPrefixShouldNotBeEmptyMessage.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self aPrefixShoulNotContainASpaceMessage].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfStackIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:26' prior: 50337729!
+                        test05CanNotFindASentenceWithEmptyStack
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix canNotFindIfStackIsEmptyMessage
+		].
+	
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:26' prior: 50338662!
+                         canNotFindIfStackIsEmptyMessage
+	self error: self class canNotFindIfStackIsEmptyMessage.! !
+
+!methodRemoval: SentenceFinderByPrefix class #canNotFindIfIsEmptyMessage stamp: 'MG 11/4/2021 00:13:26'!
+canNotFindIfIsEmptyMessage
+	^'the stack is empty to find a sentence'.!
+
+!methodRemoval: SentenceFinderByPrefix #canNotFindIfIsEmptyMessage stamp: 'MG 11/4/2021 00:13:26'!
+canNotFindIfIsEmptyMessage
+	self error: self class canNotFindIfStackIsEmptyMessage.!
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:13:48'!
+                        aPrefixShouldNotContainASpaceMessage
+	^'Prefix shoul not contain a space'.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:13:48'!
+                              aPrefixShouldNotContainASpaceMessage
+	self error: self class aPrefixShoulNotContainASpaceMessage.
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:48' prior: 50337680!
+            test06APrefixShouldNotContainSpaces
+	
+	stack push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'Wint er' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix aPrefixShouldNotContainASpaceMessage
+		].
+	
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:48' prior: 50337700!
+                 aPrefixShoulNotContainASpaceMessage
+	self error: self class aPrefixShouldNotContainASpaceMessage.
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:48' prior: 50338676!
+                find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self aPrefixShouldNotBeEmptyMessage.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self aPrefixShouldNotContainASpaceMessage].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfStackIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:13:48' prior: 50338749!
+                           aPrefixShouldNotContainASpaceMessage
+	self error: self class aPrefixShouldNotContainASpaceMessage.
+! !
+
+!methodRemoval: SentenceFinderByPrefix class #aPrefixShoulNotContainASpaceMessage stamp: 'MG 11/4/2021 00:13:48'!
+aPrefixShoulNotContainASpaceMessage
+	^'Prefix shoul not contain a space'.!
+
+!methodRemoval: SentenceFinderByPrefix #aPrefixShoulNotContainASpaceMessage stamp: 'MG 11/4/2021 00:13:48'!
+aPrefixShoulNotContainASpaceMessage
+	self error: self class aPrefixShouldNotContainASpaceMessage.
+!
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:14:22'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:14:22'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:14:22'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:14:51' prior: 50337422!
+                  test09APrefixIsPartOfASentenceButNotTheBeginning
+	
+	stack push: 'Winter is comming'.
+
+	self
+		should: [sentenceFinder find: 'ter' in: stack.]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = NotFound prefixNotFound
+		].
+	
+	
+
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:14:57'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:14:57'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:15:01' prior: 50338871!
+    test09APrefixIsPartOfASentenceButNotTheBeginning
+	
+	stack push: 'Winter is comming'.
+
+	self
+		should: [sentenceFinder find: 'ter' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = NotFound prefixNotFound
+		].
+	
+	
+
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:15:03'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:15:06'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:15:06'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:15:53' prior: 50338626!
+   test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self 
+		should: [sentenceFinder find: '' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix aPrefixShouldNotBeEmptyMessage 
+		].
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:16:21' prior: 50338891!
+     test09APrefixIsPartOfASentenceButNotTheBeginning
+	
+	stack push: 'Winter is comming'.
+
+	self
+		should: [sentenceFinder find: 'ter' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix notFoundMessage 
+		].
+	
+	
+
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:16:23'!
+PASSED!
+
+!classRemoval: #NotFound stamp: 'MG 11/4/2021 00:16:28'!
+Error subclass: #NotFound
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:19:24' prior: 50335631 overrides: 50333743!
+                       last: aStack
+	^aStack last.! !
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:20:45'!
+                   getLastElementOf: aStack
+	^aStack 	stackEmptyErrorDescription.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:20:45'!
+                getLastElementOf: aStack
+	self subclassResponsibility.! !
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:20:45' overrides: 50338959!
+ getLastElementOf: aStack
+	^aStack last.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:20:45' prior: 50335656!
+                          top
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected new getLastElementOf: self.! !
+
+!methodRemoval: StateEmpty #last: stamp: 'MG 11/4/2021 00:20:45'!
+last: aStack
+	^aStack 	stackEmptyErrorDescription.!
+
+!methodRemoval: StackState #last: stamp: 'MG 11/4/2021 00:20:45'!
+last: aStack
+	self subclassResponsibility.!
+
+!methodRemoval: StateNotEmpty #last: stamp: 'MG 11/4/2021 00:20:45'!
+last: aStack
+	^aStack last.!
+!StateNotEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:21:20'!
+                     removeLastElementOf: aStack
+	^aStack removeLast.! !
+!StackState methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:21:20'!
+                              removeLastElementOf: aStack
+	self subclassResponsibility.! !
+!StateEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:21:20' overrides: 50338993!
+ removeLastElementOf: aStack
+	^aStack 	stackEmptyErrorDescription.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:21:20' prior: 50335647!
+pop
+	|stackStateSelected|	
+	stackStateSelected := StackState subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected new removeLastElementOf: self.! !
+
+!methodRemoval: StateNotEmpty #removeLast: stamp: 'MG 11/4/2021 00:21:20'!
+removeLast: aStack
+	^aStack removeLast.!
+
+!methodRemoval: StackState #removeLast: stamp: 'MG 11/4/2021 00:21:20'!
+removeLast: aStack
+	self subclassResponsibility.!
+
+!methodRemoval: StateEmpty #removeLast: stamp: 'MG 11/4/2021 00:21:20'!
+removeLast: aStack
+	^aStack 	stackEmptyErrorDescription.!
+
+!classRenamed: #StackState as: #StackCollectionType stamp: 'MG 11/4/2021 00:32:42'!
+Smalltalk renameClassNamed: #StackState as: #StackCollectionType!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:32:42' prior: 50339003!
+       pop
+	|stackStateSelected|	
+	stackStateSelected := StackCollectionType subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected new removeLastElementOf: self.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:32:42' prior: 50338969!
+        top
+	|stackStateSelected|	
+	stackStateSelected := StackCollectionType subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^stackStateSelected new getLastElementOf: self.! !
+
+!classRenamed: #StateEmpty as: #StackEmptyCollection stamp: 'MG 11/4/2021 00:33:34'!
+Smalltalk renameClassNamed: #StateEmpty as: #StackEmptyCollection!
+
+!classRenamed: #StateNotEmpty as: #StackNotEmptyCollection stamp: 'MG 11/4/2021 00:33:53'!
+Smalltalk renameClassNamed: #StateNotEmpty as: #StackNotEmptyCollection!
+
+!classDefinition: #OOStack category: 'Stack-Exercise' stamp: 'MG 11/4/2021 00:35:01'!
+Object subclass: #OOStack
+	instanceVariableNames: 'stackCollection'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:35:01' prior: 50332863!
+       isEmpty
+	^stackCollection isEmpty.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:35:01' prior: 50335546!
+                               push: aString 
+	^stackCollection add: aString! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:35:01' prior: 50334037 overrides: 16896425!
+initialize
+	 stackCollection := OrderedCollection new.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:35:01' prior: 50335626!
+           last
+	^stackCollection last.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:35:01' prior: 50335621!
+     removeLast
+	^stackCollection removeLast.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:35:01' prior: 50333695!
+                         content
+	^stackCollection.! !
+!OOStack methodsFor: 'stack operations' stamp: 'MG 11/4/2021 00:36:14' prior: 50339068!
+          push: aString 
+	^self content add: aString! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:36:22' prior: 50339078!
+                       last
+	^self content last.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:36:25' prior: 50339082!
+        removeLast
+	^self content removeLast.! !
+!OOStack methodsFor: 'initialization' stamp: 'MG 11/4/2021 00:36:53' prior: 50339073 overrides: 16896425!
+             initialize
+	 stackCollection := OrderedCollection new.! !
+!OOStack methodsFor: 'operations' stamp: 'MG 11/4/2021 00:39:23' prior: 50339028!
+                    pop
+	|stackStateSelected|	
+	stackStateSelected := StackCollectionType subclasses detect: [: aType |  aType isValidFor: self].
+	^stackStateSelected new removeLastElementOf: self.! !
+!OOStack methodsFor: 'operations' stamp: 'MG 11/4/2021 00:39:47' prior: 50339110!
+                         pop
+	|TypeCollectionSelected|	
+	TypeCollectionSelected := StackCollectionType subclasses detect: [: aType |  aType isValidFor: self].
+	^TypeCollectionSelected new removeLastElementOf: self.! !
+!OOStack methodsFor: 'operations' stamp: 'MG 11/4/2021 00:40:24' prior: 50339037!
+             top
+	|typeCollectionSelected|	
+	typeCollectionSelected := StackCollectionType subclasses detect: [: aSubclass |  aSubclass isValidFor: self].
+	^typeCollectionSelected new getLastElementOf: self.! !
+!OOStack methodsFor: 'operations' stamp: 'MG 11/4/2021 00:40:47' prior: 50339119!
+        pop
+	|typeCollectionSelected|	
+	typeCollectionSelected := StackCollectionType subclasses detect: [: aType |  aType isValidFor: self].
+	^typeCollectionSelected new removeLastElementOf: self.! !
+!OOStack methodsFor: 'operations' stamp: 'MG 11/4/2021 00:41:02' prior: 50339128!
+             top
+	|typeCollectionSelected|	
+	typeCollectionSelected := StackCollectionType subclasses detect: [: aType |  aType isValidFor: self].
+	^typeCollectionSelected new getLastElementOf: self.! !
+!StackEmptyCollection class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:41:20'!
+    isValidTypeOf: aStack
+	^aStack isEmpty.! !
+!StackCollectionType class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:41:20'!
+                        isValidTypeOf: aStack
+	self subclassResponsibility.! !
+!StackNotEmptyCollection class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:41:20' overrides: 50339160!
+                    isValidTypeOf: aStack
+	^(aStack isEmpty) not.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:41:20' prior: 50339137!
+                    pop
+	|typeCollectionSelected|	
+	typeCollectionSelected := StackCollectionType subclasses detect: [: aType |  aType isValidTypeOf: self].
+	^typeCollectionSelected new removeLastElementOf: self.! !
+!OOStack methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:41:20' prior: 50339146!
+ top
+	|typeCollectionSelected|	
+	typeCollectionSelected := StackCollectionType subclasses detect: [: aType |  aType isValidTypeOf: self].
+	^typeCollectionSelected new getLastElementOf: self.! !
+
+!methodRemoval: StackEmptyCollection class #isValidFor: stamp: 'MG 11/4/2021 00:41:20'!
+isValidFor: aStack
+	^aStack isEmpty.!
+
+!methodRemoval: StackCollectionType class #isValidFor: stamp: 'MG 11/4/2021 00:41:20'!
+isValidFor: aStack
+	self subclassResponsibility.!
+
+!methodRemoval: StackNotEmptyCollection class #isValidFor: stamp: 'MG 11/4/2021 00:41:20'!
+isValidFor: aStack
+	^(aStack isEmpty) not.!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/4/2021 00:41:32'!
+PASSED!
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:45:21'!
+                        signalPrefixShouldNotBeEmpty
+	^'Prefix shoul not be empty'.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:45:21'!
+             signalPrefixShouldNotBeEmpty
+	self error: self class aPrefixShouldNotBeEmptyMessage.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:21' prior: 50338638!
+                              aPrefixShouldNotBeEmptyMessage
+	self error: self class signalPrefixShouldNotBeEmpty.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:21' prior: 50338776!
+                              find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self aPrefixShouldNotContainASpaceMessage].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfStackIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self notFoundMessage ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:21' prior: 50338915!
+                         test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self 
+		should: [sentenceFinder find: '' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix signalPrefixShouldNotBeEmpty 
+		].
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:21' prior: 50339240!
+           signalPrefixShouldNotBeEmpty
+	self error: self class signalPrefixShouldNotBeEmpty.! !
+
+!methodRemoval: SentenceFinderByPrefix class #aPrefixShouldNotBeEmptyMessage stamp: 'MG 11/4/2021 00:45:21'!
+aPrefixShouldNotBeEmptyMessage
+	^'Prefix shoul not be empty'.!
+
+!methodRemoval: SentenceFinderByPrefix #aPrefixShouldNotBeEmptyMessage stamp: 'MG 11/4/2021 00:45:21'!
+aPrefixShouldNotBeEmptyMessage
+	self error: self class signalPrefixShouldNotBeEmpty.!
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:45:48'!
+           signalNotFound
+	self error: self class notFoundMessage.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:45:48'!
+   signalNotFound
+	^'Not found an element with this prefix'.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:48' prior: 50337833!
+                         notFoundMessage
+	self error: self class signalNotFound.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:48' prior: 50339254!
+                           find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self aPrefixShouldNotContainASpaceMessage].
+
+	(aStack isEmpty) ifTrue:[ ^self canNotFindIfStackIsEmptyMessage. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:48' prior: 50337774!
+                          test04ASentenceToFindIsCaseSensitive
+	
+	stack push: 'Winter is comming'.
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix signalNotFound 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:48' prior: 50337786!
+    test02APrefixDoesNotHaveASentenceToFind
+	
+	stack  push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'abc' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix signalNotFound 
+		].
+	! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:48' prior: 50338927!
+     test09APrefixIsPartOfASentenceButNotTheBeginning
+	
+	stack push: 'Winter is comming'.
+
+	self
+		should: [sentenceFinder find: 'ter' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix signalNotFound 
+		].
+	
+	
+
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:45:48' prior: 50339320!
+                              signalNotFound
+	self error: self class signalNotFound.! !
+
+!methodRemoval: SentenceFinderByPrefix #notFoundMessage stamp: 'MG 11/4/2021 00:45:48'!
+notFoundMessage
+	self error: self class signalNotFound.!
+
+!methodRemoval: SentenceFinderByPrefix class #notFoundMessage stamp: 'MG 11/4/2021 00:45:48'!
+notFoundMessage
+	^'Not found an element with this prefix'.!
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:46:24'!
+     signalStackIsEmpty
+	self error: self class canNotFindIfStackIsEmptyMessage.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:46:24'!
+               signalStackIsEmpty
+	^'the stack is empty to find a sentence'.! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:24' prior: 50338713!
+                 test05CanNotFindASentenceWithEmptyStack
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix signalStackIsEmpty
+		].
+	
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:24' prior: 50339337!
+      find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self aPrefixShouldNotContainASpaceMessage].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:24' prior: 50338725!
+           canNotFindIfStackIsEmptyMessage
+	self error: self class signalStackIsEmpty.! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:24' prior: 50339425!
+       signalStackIsEmpty
+	self error: self class signalStackIsEmpty.! !
+
+!methodRemoval: SentenceFinderByPrefix #canNotFindIfStackIsEmptyMessage stamp: 'MG 11/4/2021 00:46:24'!
+canNotFindIfStackIsEmptyMessage
+	self error: self class signalStackIsEmpty.!
+
+!methodRemoval: SentenceFinderByPrefix class #canNotFindIfStackIsEmptyMessage stamp: 'MG 11/4/2021 00:46:24'!
+canNotFindIfStackIsEmptyMessage
+	^'the stack is empty to find a sentence'.!
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:46:49'!
+           signalPrefixShouldNotContainASpace
+	^'Prefix shoul not contain a space'.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:46:49'!
+signalPrefixShouldNotContainASpace
+	self error: self class aPrefixShouldNotContainASpaceMessage.
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:49' prior: 50339448!
+                 find: aPrefixString in: aStack
+	|auxiliarOrderedCollection anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarOrderedCollection := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarOrderedCollection add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarOrderedCollection isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarOrderedCollection last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarOrderedCollection removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:49' prior: 50338756!
+         test06APrefixShouldNotContainSpaces
+	
+	stack push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'Wint er' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix signalPrefixShouldNotContainASpace
+		].
+	
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:49' prior: 50338813!
+                   aPrefixShouldNotContainASpaceMessage
+	self error: self class signalPrefixShouldNotContainASpace.
+! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:46:49' prior: 50339512!
+                 signalPrefixShouldNotContainASpace
+	self error: self class signalPrefixShouldNotContainASpace.
+! !
+
+!methodRemoval: SentenceFinderByPrefix class #aPrefixShouldNotContainASpaceMessage stamp: 'MG 11/4/2021 00:46:49'!
+aPrefixShouldNotContainASpaceMessage
+	^'Prefix shoul not contain a space'.!
+
+!methodRemoval: SentenceFinderByPrefix #aPrefixShouldNotContainASpaceMessage stamp: 'MG 11/4/2021 00:46:49'!
+aPrefixShouldNotContainASpaceMessage
+	self error: self class signalPrefixShouldNotContainASpace.
+!
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:47:04' prior: 50339411!
+        signalNotFound
+	self error: self class signalNotFoundMessage.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:47:16' prior: 50339594!
+                           signalNotFound
+	self error: self class NotFoundMessage.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:47:28' prior: 50339303!
+ signalPrefixShouldNotBeEmpty
+	self error: self class PrefixShouldNotBeEmptyMessage.! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:47:39' prior: 50339575!
+     signalPrefixShouldNotContainASpace
+	self error: self class PrefixShouldNotContainASpaceMessage.
+! !
+!SentenceFinderByPrefix methodsFor: 'signal errors' stamp: 'MG 11/4/2021 00:47:53' prior: 50339490!
+                        signalStackIsEmpty
+	self error: self class StackIsEmptyMessage.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:48:41'!
+                           NotFoundMessage
+	^'Not found an element with this prefix'.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:49:01'!
+PrefixShouldNotBeEmptyMessage
+	^'Prefix shoul not be empty'.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:49:14' prior: 50339507!
+              signalPrefixShouldNotContainASpace
+	^'Prefix shoul not contain a space'.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:49:37'!
+                  PrefixShouldNotContainASpaceMessage
+	^'Prefix shoul not contain a space'.! !
+!SentenceFinderByPrefix class methodsFor: 'signal error messages' stamp: 'MG 11/4/2021 00:49:51'!
+                 StackIsEmptyMessage
+	^'The stack is empty to find a sentence'.! !
+
+!methodRemoval: SentenceFinderByPrefix class #signalNotFound stamp: 'MG 11/4/2021 00:49:57'!
+signalNotFound
+	^'Not found an element with this prefix'.!
+
+!methodRemoval: SentenceFinderByPrefix class #signalPrefixShouldNotBeEmpty stamp: 'MG 11/4/2021 00:49:58'!
+signalPrefixShouldNotBeEmpty
+	^'Prefix shoul not be empty'.!
+
+!methodRemoval: SentenceFinderByPrefix class #signalPrefixShouldNotContainASpace stamp: 'MG 11/4/2021 00:50:00'!
+signalPrefixShouldNotContainASpace
+	^'Prefix shoul not contain a space'.!
+
+!methodRemoval: SentenceFinderByPrefix class #signalStackIsEmpty stamp: 'MG 11/4/2021 00:50:02'!
+signalStackIsEmpty
+	^'the stack is empty to find a sentence'.!
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 00:50:15'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 00:50:15'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 00:50:15'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 00:50:15'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 00:50:15'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 00:50:15'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:50:15'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:50:15'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:50:15'!
+ERROR!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:50:38' prior: 50339386!
+                test02APrefixDoesNotHaveASentenceToFind
+	
+	stack  push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'abc' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix NotFoundMessage 
+		].
+	! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:50:51' prior: 50339291!
+    test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self 
+		should: [sentenceFinder find: '' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix PrefixShouldNotBeEmptyMessage 
+		].
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:50:59' prior: 50339374!
+      test04ASentenceToFindIsCaseSensitive
+	
+	stack push: 'Winter is comming'.
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix NotFoundMessage 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:51:12' prior: 50339437!
+   test05CanNotFindASentenceWithEmptyStack
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix StackIsEmptyMessage 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:51:23' prior: 50339555!
+test06APrefixShouldNotContainSpaces
+	
+	stack push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'Wint er' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix PrefixShouldNotContainASpaceMessage 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 00:51:32' prior: 50339398!
+             test09APrefixIsPartOfASentenceButNotTheBeginning
+	
+	stack push: 'Winter is comming'.
+
+	self
+		should: [sentenceFinder find: 'ter' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = SentenceFinderByPrefix NotFoundMessage 
+		].
+	
+	
+
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:51:36'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 00:56:19' prior: 50339519!
+                               find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarStack := OrderedCollection new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarStack removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 00:56:29' prior: 50339815!
+                              find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack last.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarStack removeLast.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 00:56:38' prior: 50339849!
+        find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack add: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 00:56:51' prior: 50339882!
+                find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:56:56'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 00:58:53' prior: 50339915!
+        find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		auxiliarStack push: anAuxiliarElement.
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:58:55'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:58:55'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:58:55'!
+FAILURE!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 00:59:22' prior: 50339982!
+ find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements|
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:59:25'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 00:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 00:59:25'!
+FAILURE!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:00:09' prior: 50336148!
+                    test08DoNotReturnTheFirstSentenceThatMatchWithPrefix
+	|findedSentenceCollection|
+	
+	stack  push: 'Winter is comming'.
+	stack  push: 'Winter is Here'.
+	
+	findedSentenceCollection := sentenceFinder find: 'Wint' in: stack. 
+	
+	self assert: findedSentenceCollection class equals: OrderedCollection.
+	self assert: (findedSentenceCollection at: 1) equals: 'Winter is Here'.
+	self assert: (findedSentenceCollection at: 2) equals: 'Winter is comming'.
+	
+	
+! !
+
+Object subclass: #XXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #XXXX category: 'Stack-Exercise' stamp: 'MG 11/4/2021 01:07:09'!
+Object subclass: #XXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+XXXX subclass: #AAAA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #AAAA category: 'Stack-Exercise' stamp: 'MG 11/4/2021 01:07:33'!
+XXXX subclass: #AAAA
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+XXXX subclass: #BBBB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #BBBB category: 'Stack-Exercise' stamp: 'MG 11/4/2021 01:07:44'!
+XXXX subclass: #BBBB
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+XXXX subclass: #CCCC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+
+!classDefinition: #CCCC category: 'Stack-Exercise' stamp: 'MG 11/4/2021 01:07:53'!
+XXXX subclass: #CCCC
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Stack-Exercise'!
+!XXXX methodsFor: 'no messages' stamp: 'MG 11/4/2021 01:10:17'!
+            signalError
+	self subclassResponsibility.! !
+!AAAA methodsFor: 'no messages' stamp: 'MG 11/4/2021 01:12:02' overrides: 50340183!
+                               signalError
+	^SentenceFinderByPrefix new signalPrefixShouldNotBeEmpty.! !
+!BBBB methodsFor: 'no messages' stamp: 'MG 11/4/2021 01:13:18' overrides: 50340183!
+  signalError
+	^SentenceFinderByPrefix new signalPrefixShouldNotContainASpace! !
+!CCCC methodsFor: 'no messages' stamp: 'MG 11/4/2021 01:15:06' overrides: 50340183!
+                             signalError
+	 ^SentenceFinderByPrefix new signalStackIsEmpty. ! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:21:23' prior: 50340053!
+                             find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	[XXXX subclasses detect: [: SSSS |  SSSS verifiedAnErrorWith: aPrefixString or: aStack]]
+		on: XXXX
+		do:[:SSSS |   ^SSSS signalError].
+	
+	(aPrefixString isEmpty) ifTrue: [^self signalPrefixShouldNotBeEmpty.].
+	
+	(aPrefixString includesSubString: ' ') ifTrue: [^self signalPrefixShouldNotContainASpace].
+
+	(aStack isEmpty) ifTrue:[ ^self signalStackIsEmpty. ].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!XXXX class methodsFor: 'no messages' stamp: 'MG 11/4/2021 01:21:58'!
+                               verifiedAnErrorWith: aPrefixString or: aStack
+	self subclassResponsibility.! !
+!AAAA class methodsFor: 'nil' stamp: 'MG 11/4/2021 01:22:17' overrides: 50340242!
+                               verifiedAnErrorWith: aPrefixString or: aStack
+	^self! !
+!BBBB class methodsFor: 'no messages' stamp: 'MG 11/4/2021 01:22:24' overrides: 50340242!
+              verifiedAnErrorWith: aPrefixString or: aStack
+	^self! !
+!CCCC class methodsFor: 'no messages' stamp: 'MG 11/4/2021 01:22:29' overrides: 50340242!
+              verifiedAnErrorWith: aPrefixString or: aStack
+	^self! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:22:58' prior: 50340205!
+       find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	[XXXX subclasses detect: [: SSSS |  SSSS verifiedAnErrorWith: aPrefixString or: aStack]]
+		on: XXXX
+		do:[:SSSS |   ^SSSS signalError].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!AAAA class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:23:12' prior: 50340248 overrides: 50340242!
+                    verifiedAnErrorWith: aPrefixString or: aStack
+	^aPrefixString isEmpty! !
+!BBBB class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:23:32' prior: 50340253 overrides: 50340242!
+     verifiedAnErrorWith: aPrefixString or: aStack
+	^aPrefixString includesSubString: ' '.! !
+!CCCC class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:23:46' prior: 50340258 overrides: 50340242!
+                     verifiedAnErrorWith: aPrefixString or: aStack
+	^aStack isEmpty.! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:24:37' prior: 50340263!
+                            find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	[XXXX subclasses detect: [: SSSS |  SSSS verifiedAnErrorWith: aPrefixString or: aStack]]
+		on: XXXX
+		do:[:SSSS |	 ^SSSS signalError].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:25:01'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:25:01'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:25:01'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:25:01'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:25:01'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:25:01'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:25:01'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:25:01'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:25:01'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:25:11'!
+ERROR!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:28:48' prior: 50340313!
+             find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	XXXX subclasses do: [: SSSS |  (SSSS verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^SSSS signalError]].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:28:52'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:28:52'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:28:52'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:28:52'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:28:52'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:28:52'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:28:52'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:28:52'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:28:52'!
+PASSED!
+
+!classRenamed: #CCCC as: #StackIsEmpty stamp: 'MG 11/4/2021 01:30:59'!
+Smalltalk renameClassNamed: #CCCC as: #StackIsEmpty!
+
+!classRenamed: #BBBB as: #PrefixWithSpace stamp: 'MG 11/4/2021 01:31:14'!
+Smalltalk renameClassNamed: #BBBB as: #PrefixWithSpace!
+
+!classRenamed: #AAAA as: #PrefixIsEmpty stamp: 'MG 11/4/2021 01:31:39'!
+Smalltalk renameClassNamed: #AAAA as: #PrefixIsEmpty!
+
+!classRenamed: #XXXX as: #SentenceFinderErros stamp: 'MG 11/4/2021 01:32:03'!
+Smalltalk renameClassNamed: #XXXX as: #SentenceFinderErros!
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:32:03' prior: 50340381!
+                              find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	SentenceFinderErros subclasses do: [: SSSS |  (SSSS verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^SSSS signalError]].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!classRenamed: #SentenceFinderErros as: #SentenceFinderErrors stamp: 'MG 11/4/2021 01:32:18'!
+Smalltalk renameClassNamed: #SentenceFinderErros as: #SentenceFinderErrors!
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:32:19' prior: 50340462!
+                        find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	SentenceFinderErrors subclasses do: [: SSSS |  (SSSS verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^SSSS signalError]].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:32:44' prior: 50340498!
+           find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass signalError]].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:33:04'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:33:04'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:33:04'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:33:04'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:33:04'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:33:04'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:33:04'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:33:04'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:33:04'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:33:08'!
+FAILURE!
+!PrefixIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:34:50'!
+          signalPrefixShouldNotBeEmpty
+	self error: self class PrefixShouldNotBeEmptyMessage.! !
+!PrefixIsEmpty class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:35:12'!
+                  PrefixShouldNotBeEmptyMessage
+	^''! !
+!PrefixWithSpace methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:35:36'!
+       signalPrefixShouldNotContainASpace
+	self error: self class PrefixShouldNotContainASpaceMessage! !
+!PrefixWithSpace class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:35:48'!
+     PrefixShouldNotContainASpaceMessage
+	^''! !
+!StackIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:36:10'!
+    signalStackIsEmpty
+	self error: self class StackIsEmptyMessage.! !
+!StackIsEmpty class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:36:27'!
+       StackIsEmptyMessage
+	^''! !
+
+!methodRemoval: SentenceFinderByPrefix #signalPrefixShouldNotBeEmpty stamp: 'MG 11/4/2021 01:36:39'!
+signalPrefixShouldNotBeEmpty
+	self error: self class PrefixShouldNotBeEmptyMessage.!
+
+!methodRemoval: SentenceFinderByPrefix #signalPrefixShouldNotContainASpace stamp: 'MG 11/4/2021 01:36:41'!
+signalPrefixShouldNotContainASpace
+	self error: self class PrefixShouldNotContainASpaceMessage.
+!
+
+!methodRemoval: SentenceFinderByPrefix #signalStackIsEmpty stamp: 'MG 11/4/2021 01:36:43'!
+signalStackIsEmpty
+	self error: self class StackIsEmptyMessage.!
+!PrefixIsEmpty class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:37:01' prior: 50340602!
+                       PrefixShouldNotBeEmptyMessage
+	^'Prefix shoul not be empty'! !
+
+!methodRemoval: SentenceFinderByPrefix class #PrefixShouldNotBeEmptyMessage stamp: 'MG 11/4/2021 01:37:08'!
+PrefixShouldNotBeEmptyMessage
+	^'Prefix shoul not be empty'.!
+!PrefixWithSpace class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:37:28' prior: 50340612!
+             PrefixShouldNotContainASpaceMessage
+	^'Prefix shoul not contain a space'.! !
+
+!methodRemoval: SentenceFinderByPrefix class #PrefixShouldNotContainASpaceMessage stamp: 'MG 11/4/2021 01:37:37'!
+PrefixShouldNotContainASpaceMessage
+	^'Prefix shoul not contain a space'.!
+!StackIsEmpty class methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:37:49' prior: 50340621!
+               StackIsEmptyMessage
+	^'The stack is empty to find a sentence'! !
+
+!methodRemoval: SentenceFinderByPrefix class #StackIsEmptyMessage stamp: 'MG 11/4/2021 01:37:54'!
+StackIsEmptyMessage
+	^'The stack is empty to find a sentence'.!
+!PrefixIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:38:03' prior: 50340188 overrides: 50340183!
+       signalError
+	^self signalPrefixShouldNotBeEmpty.! !
+!PrefixWithSpace methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:38:11' prior: 50340193 overrides: 50340183!
+                     signalError
+	^self signalPrefixShouldNotContainASpace! !
+!StackIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:38:19' prior: 50340199 overrides: 50340183!
+                   signalError
+	 ^self signalStackIsEmpty. ! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:38:31'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:38:31'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:38:31'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:38:31'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:38:31'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:38:31'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:38:31'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:38:31'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:38:31'!
+PASSED!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:38:43' prior: 50339720!
+  test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self 
+		should: [sentenceFinder find: '' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = PrefixIsEmpty PrefixShouldNotBeEmptyMessage 
+		].
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:38:57' prior: 50339744!
+               test05CanNotFindASentenceWithEmptyStack
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = StackIsEmpty StackIsEmptyMessage 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:39:12' prior: 50339755!
+          test06APrefixShouldNotContainSpaces
+	
+	stack push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'Wint er' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = PrefixWithSpace PrefixShouldNotContainASpaceMessage 
+		].
+	
+	
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:39:16'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:39:16'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:39:16'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:39:16'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:39:16'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:39:16'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:39:16'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:39:16'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:39:16'!
+PASSED!
+!PrefixIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:40:15' prior: 50340677 overrides: 50340183!
+   signalError
+	^self signalPrefixShouldNotBeEmpty.! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:40:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:40:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:40:49'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:40:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:40:49'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:40:49'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:40:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:40:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:40:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:40:50'!
+FAILURE!
+!PrefixIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:42:02' prior: 50340798 overrides: 50340183!
+ signalError
+	self signalPrefixShouldNotBeEmpty.! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:42:08'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:42:08'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:42:08'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:42:08'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:42:08'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:42:08'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:42:08'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:42:08'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:42:08'!
+PASSED!
+!PrefixIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:42:15' prior: 50340841 overrides: 50340183!
+              signalError
+	^self signalPrefixShouldNotBeEmpty.! !
+!PrefixIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:42:32' prior: 50340881 overrides: 50340183!
+                       signalError
+	self error: self class PrefixShouldNotBeEmptyMessage.! !
+
+!methodRemoval: PrefixIsEmpty #signalPrefixShouldNotBeEmpty stamp: 'MG 11/4/2021 01:42:34'!
+signalPrefixShouldNotBeEmpty
+	self error: self class PrefixShouldNotBeEmptyMessage.!
+!PrefixWithSpace methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:42:48' prior: 50340606!
+     signalPrefixShouldNotContainASpace
+	self error: self class PrefixShouldNotContainASpaceMessage! !
+!PrefixWithSpace methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:42:55' prior: 50340683 overrides: 50340183!
+       signalError
+	self error: self class PrefixShouldNotContainASpaceMessage! !
+
+!methodRemoval: PrefixWithSpace #signalPrefixShouldNotContainASpace stamp: 'MG 11/4/2021 01:42:56'!
+signalPrefixShouldNotContainASpace
+	self error: self class PrefixShouldNotContainASpaceMessage!
+!StackIsEmpty methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:43:07' prior: 50340689 overrides: 50340183!
+                            signalError
+	self error: self class StackIsEmptyMessage.! !
+
+!methodRemoval: StackIsEmpty #signalStackIsEmpty stamp: 'MG 11/4/2021 01:43:09'!
+signalStackIsEmpty
+	self error: self class StackIsEmptyMessage.!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:43:47' prior: 50340528!
+                find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:43:49'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:44:42' prior: 50340928!
+     find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+	
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:44:52' prior: 50340993!
+          find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:45:48' prior: 50341024!
+         find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:45:50'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:46:36' prior: 50341055!
+ find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	[aStack isEmpty not] whileTrue: [
+		anAuxiliarElement := aStack top.
+		auxiliarStack push: anAuxiliarElement.
+		(anAuxiliarElement beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: anAuxiliarElement].
+		aStack pop.
+ 	].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!classRenamed: #PrefixIsEmpty as: #PrefixIsEmptyError stamp: 'MG 11/4/2021 01:46:51'!
+Smalltalk renameClassNamed: #PrefixIsEmpty as: #PrefixIsEmptyError!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:46:52' prior: 50340728!
+                               test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self 
+		should: [sentenceFinder find: '' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = PrefixIsEmptyError PrefixShouldNotBeEmptyMessage 
+		].
+	
+! !
+
+!classRenamed: #PrefixWithSpace as: #PrefixWithSpaceError stamp: 'MG 11/4/2021 01:47:01'!
+Smalltalk renameClassNamed: #PrefixWithSpace as: #PrefixWithSpaceError!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:47:02' prior: 50340751!
+       test06APrefixShouldNotContainSpaces
+	
+	stack push: 'Winter is comming'.	
+	
+	self
+		should: [sentenceFinder find: 'Wint er' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = PrefixWithSpaceError PrefixShouldNotContainASpaceMessage 
+		].
+	
+	
+! !
+
+!classRenamed: #StackIsEmpty as: #StackIsEmptyError stamp: 'MG 11/4/2021 01:47:15'!
+Smalltalk renameClassNamed: #StackIsEmpty as: #StackIsEmptyError!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:47:15' prior: 50340740!
+                        test05CanNotFindASentenceWithEmptyStack
+		
+	self
+		should: [sentenceFinder find: 'wint' in: stack]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = StackIsEmptyError StackIsEmptyMessage 
+		].
+	
+	
+! !
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:47:52' prior: 50341157!
+     test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self 
+		should: [sentenceFinder find: '' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = PrefixIsEmptyError new signalError 
+		].
+	
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:47:53'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:47:53'!
+ERROR!
+!SentenceFinderByPrefixTest methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 01:48:14' prior: 50341203!
+    test03APrefixCanNotBeEmpty
+	
+	stack push: 'Winter is comming'.
+	
+	self 
+		should: [sentenceFinder find: '' in: stack]
+		raise: Error
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = PrefixIsEmptyError PrefixShouldNotBeEmptyMessage 
+		].
+	
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:51:42'!
+       xxxx
+	! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:54:19'!
+     xxxx: aStack xxx: anAuxiliarStack xxx: aBlock
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aBlock value.
+		aStack pop.
+ 	].
+	! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:55:59' prior: 50341120!
+find: aPrefixString in: aStack
+	|auxiliarStack anAuxiliarElement orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self xxxx: aStack xxx: auxiliarStack xxx: [:aux | (aux beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: aux]].
+	
+	[auxiliarStack isEmpty not] whileTrue: [
+		anAuxiliarElement := auxiliarStack top.
+		aStack push: anAuxiliarElement .
+		auxiliarStack pop.
+ 	].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:56:20' prior: 50341235!
+                   xxxx: aStack xxx: anAuxiliarStack xxx: aBlock
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aBlock value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	! !
+
+!methodRemoval: SentenceFinderByPrefix #xxxx stamp: 'MG 11/4/2021 01:56:23'!
+xxxx
+	!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:57:42' prior: 50341245!
+                       find: aPrefixString in: aStack
+	|auxiliarStack orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self xxxx: aStack xxx: auxiliarStack xxx: [:aux | (aux beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: aux]].
+	
+	self xxxx: auxiliarStack xxx: aStack xxx: [:aux |  "NO hace nada"].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:57:51'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 01:59:23' prior: 50341287!
+          find: aPrefixString in: aStack
+	|auxiliarStack orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self xxxx: aStack xxx: auxiliarStack xxx: [:aux | (aux beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: aux]].
+	
+	self xxxx: auxiliarStack xxx: aStack xxx: [:aux |  "NO hace nada"].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 01:59:25'!
+PASSED!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:01:10'!
+                          goOver: aStack copyIn: anAuxiliarStack Doing: aBlock
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aBlock value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 02:01:10' prior: 50341346!
+                             find: aPrefixString in: aStack
+	|auxiliarStack orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self goOver: aStack copyIn: auxiliarStack Doing: [:aux | (aux beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: aux]].
+	
+	self goOver: auxiliarStack copyIn: aStack Doing: [:aux |  "NO hace nada"].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!methodRemoval: SentenceFinderByPrefix #xxxx:xxx:xxx: stamp: 'MG 11/4/2021 02:01:10'!
+xxxx: aStack xxx: anAuxiliarStack xxx: aBlock
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aBlock value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:01:26' prior: 50341405!
+                            goOver: aStack copyIn: anAuxiliarStack Doing: aAction
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aAction value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:07:01' prior: 50341453!
+    goOver: aStack copyIn: anAuxiliarStack Doing: aAction
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aAction value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:08:04'!
+                    copy: aStack using: anAuxiliarStack doing: aAction
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aAction value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 02:08:04' prior: 50341417!
+                              find: aPrefixString in: aStack
+	|auxiliarStack orderedCollectionWithFindedElements |
+	
+	auxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack using: auxiliarStack doing: [:aux | (aux beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: aux]].
+	
+	self copy: auxiliarStack using: aStack doing: [:aux |  "NO hace nada"].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+
+!methodRemoval: SentenceFinderByPrefix #goOver:copyIn:Doing: stamp: 'MG 11/4/2021 02:08:04'!
+goOver: aStack copyIn: anAuxiliarStack Doing: aAction
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aAction value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:08:39' prior: 50341487!
+                  find: aPrefixString in: aStack
+	|anAuxiliarStack orderedCollectionWithFindedElements |
+	
+	anAuxiliarStack := OOStack new.
+	orderedCollectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack using: anAuxiliarStack doing: [:aux | (aux beginsWith: aPrefixString) ifTrue: [orderedCollectionWithFindedElements add: aux]].
+	
+	self copy: anAuxiliarStack using: aStack doing: [:aux |  "NO hace nada"].
+		
+	(orderedCollectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^orderedCollectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:08:53' prior: 50341523!
+ find: aPrefixString in: aStack
+	|anAuxiliarStack collectionWithFindedElements |
+	
+	anAuxiliarStack := OOStack new.
+	collectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack using: anAuxiliarStack doing: [:aux | (aux beginsWith: aPrefixString) ifTrue: [collectionWithFindedElements add: aux]].
+	
+	self copy: anAuxiliarStack using: aStack doing: [:aux |  "NO hace nada"].
+		
+	(collectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^collectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:09:03' prior: 50341548!
+    find: aPrefixString in: aStack
+
+	|anAuxiliarStack collectionWithFindedElements |
+	
+	anAuxiliarStack := OOStack new.
+	collectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack using: anAuxiliarStack doing: [:aux | (aux beginsWith: aPrefixString) ifTrue: [collectionWithFindedElements add: aux]].
+	
+	self copy: anAuxiliarStack using: aStack doing: [:aux |  "NO hace nada"].
+		
+	(collectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^collectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:09:30' prior: 50341572!
+   find: aPrefixString in: aStack
+
+	|anAuxiliarStack collectionWithFindedElements |
+	
+	anAuxiliarStack := OOStack new.
+	collectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack using: anAuxiliarStack doing: [:aux | (aux beginsWith: aPrefixString) ifTrue: [collectionWithFindedElements add: aux]].
+	
+	self copy: anAuxiliarStack using: aStack doing: [].
+		
+	(collectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^collectionWithFindedElements. 
+! !
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 02:09:34'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 02:09:34'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 02:09:34'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 02:09:34'!
+FAILURE!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 02:09:34'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 02:09:34'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 02:09:34'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 02:09:34'!
+ERROR!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 02:09:34'!
+FAILURE!
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:09:55' prior: 50341596!
+                  find: aPrefixString in: aStack
+
+	|anAuxiliarStack collectionWithFindedElements |
+	
+	anAuxiliarStack := OOStack new.
+	collectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack using: anAuxiliarStack doing: [:aux | (aux beginsWith: aPrefixString) ifTrue: [collectionWithFindedElements add: aux]].
+	
+	self copy: anAuxiliarStack using: aStack doing: [:aux | "No hace nada"].
+		
+	(collectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^collectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:10:22' prior: 50341654!
+    find: aPrefixString in: aStack
+
+	|anAuxiliarStack collectionWithFindedElements |
+	
+	anAuxiliarStack := OOStack new.
+	collectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack using: anAuxiliarStack doing: [:currentElement | (currentElement beginsWith: aPrefixString) ifTrue: [collectionWithFindedElements add: currentElement]].
+	
+	self copy: anAuxiliarStack using: aStack doing: [:aux | "No hace nada"].
+		
+	(collectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^collectionWithFindedElements. 
+! !
+!SentenceFinderByPrefix methodsFor: 'operations' stamp: 'MG 11/4/2021 02:11:37'!
+                   copy: aStack in: anAuxiliarStack doing: aAction
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aAction value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	! !
+!SentenceFinderByPrefix methodsFor: 'as yet unclassified' stamp: 'MG 11/4/2021 02:11:37' prior: 50341678!
+ find: aPrefixString in: aStack
+
+	|anAuxiliarStack collectionWithFindedElements |
+	
+	anAuxiliarStack := OOStack new.
+	collectionWithFindedElements := OrderedCollection new.
+	
+	SentenceFinderErrors subclasses do: [: errorSubClass |  (errorSubClass verifiedAnErrorWith: aPrefixString or: aStack) ifTrue: [^errorSubClass new signalError]].
+		
+	self copy: aStack in: anAuxiliarStack doing: [:currentElement | (currentElement beginsWith: aPrefixString) ifTrue: [collectionWithFindedElements add: currentElement]].
+	
+	self copy: anAuxiliarStack in: aStack doing: [:aux | "No hace nada"].
+		
+	(collectionWithFindedElements isEmpty) ifTrue: [^self signalNotFound ].
+	^collectionWithFindedElements. 
+! !
+
+!methodRemoval: SentenceFinderByPrefix #copy:using:doing: stamp: 'MG 11/4/2021 02:11:37'!
+copy: aStack using: anAuxiliarStack doing: aAction
+	
+	[aStack isEmpty not] whileTrue: [ | anAuxiliarElement |
+		anAuxiliarElement := aStack top.
+		anAuxiliarStack push: anAuxiliarElement.
+		aAction value: anAuxiliarElement.
+		aStack pop.
+ 	].
+	!
+
+!testRun: #SentenceFinderByPrefixTest #test01APrefixHasASentenceToFind stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test02APrefixDoesNotHaveASentenceToFind stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test03APrefixCanNotBeEmpty stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test04ASentenceToFindIsCaseSensitive stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test05CanNotFindASentenceWithEmptyStack stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test06APrefixShouldNotContainSpaces stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test07OriginalStackShouldNotBeModifiedWhenASentenceIsFounded stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test08DoNotReturnTheFirstSentenceThatMatchWithPrefix stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #SentenceFinderByPrefixTest #test09APrefixIsPartOfASentenceButNotTheBeginning stamp: 'MG 11/4/2021 02:18:44'!
+PASSED!
+
+!testRun: #OOStackTest #test01StackShouldBeEmptyWhenCreated stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test02PushAddElementsToTheStack stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test03PopRemovesElementsFromTheStack stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test04PopReturnsLastPushedObject stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test05StackBehavesLIFO stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test06TopReturnsLastPushedObject stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test07TopDoesNotRemoveObjectFromStack stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test08CanNotPopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test09CanNotPopWhenThereAreNoObjectsInTheStackAndTheStackHadObjects stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+!testRun: #OOStackTest #test10CanNotTopWhenThereAreNoObjectsInTheStack stamp: 'MG 11/4/2021 02:18:46'!
+PASSED!
+
+----QUIT----(4 November 2021 02:18:50) Ejercicio4.image priorSource: 185743!
