@@ -1,0 +1,1738 @@
+
+
+----STARTUP---- (13 November 2021 17:37:34) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+
+Object subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classDefinition: #TestXXX category: 'Ejercicio-MarsRover' stamp: 'tg 11/13/2021 17:38:47'!
+Object subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+(1 @ 1)!
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'tg 11/13/2021 18:05:03'!
+Object subclass: #MarsRover
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!TestXXX methodsFor: 'nil' stamp: 'tg 11/13/2021 18:04:45'!
+       test01
+
+	self assert: (MarsRover position: (0 @ 0)).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:05:34' prior: 50331675!
+            test01
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (MarsRover position: (0 @ 0)).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:05:44' prior: 50331680!
+                               test01
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position: (0 @ 0)).! !
+
+TestCase subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classDefinition: #TestXXX category: 'Ejercicio-MarsRover' stamp: 'tg 11/13/2021 18:06:19'!
+TestCase subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:06:25'!
+ERROR!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:06:25'!
+ERROR!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:06:35'!
+                         position: aPoint 
+	self shouldBeImplemented.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:06:58' prior: 50331709!
+                  position: aPoint 
+	^(0@0).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:07:48' prior: 50331687!
+      test01
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position = (0 @ 0)).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:07:57'!
+ERROR!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:07:57'!
+ERROR!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:08:05'!
+    position
+	self shouldBeImplemented.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:08:20' prior: 50331728!
+                           position
+	^(0@0).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:08:29'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:08:32'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:09:09'!
+                     test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self deny: (marsRover position = (1 @ 1)).! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:09:11'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:09:15'!
+PASSED!
+
+!methodRemoval: MarsRover #position: stamp: 'tg 11/13/2021 18:09:29'!
+position: aPoint 
+	^(0@0).!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:09:31'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:09:31'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:10:03' prior: 50331741!
+         test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position = (1 @ 1)).! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:10:05'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:10:05'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:11:04' prior: 50331759!
+                  test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self deny: (marsRover position == (1 @ 1)).! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:11:05'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:11:05'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:11:05'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:11:23' prior: 50331770!
+                test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self deny: (marsRover position value = (1 @ 1)).! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:11:26'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:11:26'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:11:26'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:12:12' prior: 50331783!
+           test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self deny: (marsRover position = (1 @ 1)).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:12:22' prior: 50331718!
+test01
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position value = (0 @ 0)).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:12:23'!
+PASSED!
+
+marsRover position!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:15:42' prior: 50331796!
+                              test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self deny: (marsRover position = (1 @ 1)).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:15:57' prior: 50331812!
+test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position = (1 @ 1)).! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:15:58'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:16:18' prior: 50331818!
+                        test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position) equals: (1 @ 1).! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:16:19'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:17:10' prior: 50331802!
+                  test01
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position = (0 @ 0)).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:17:23'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:21:15' prior: 50331827!
+                         test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover direction = 'N').! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:21:26'!
+ERROR!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:21:26'!
+ERROR!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:21:40'!
+       direction
+	self shouldBeImplemented.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:21:57' prior: 50331855!
+                          direction
+	^'N'.! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:22:00'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:22:03'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:22:03'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:28:32'!
+                 test03
+	|marsRover instruction finalPosition|
+	
+	marsRover := MarsRover new.
+	
+	instruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover xxx: instruction.
+	self assert: (marsRover  position = finalPosition).! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:28:36'!
+ERROR!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:28:36'!
+ERROR!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:28:44'!
+                      xxx: aString 
+	self shouldBeImplemented.! !
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'tg 11/13/2021 18:31:23'!
+Object subclass: #MarsRover
+	instanceVariableNames: 'position'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:31:21' prior: 50331884!
+        xxx: aString 
+	^position := (0 @ 1). ! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:31:32'!
+FAILURE!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:31:32'!
+FAILURE!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:32:04'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:32:06'!
+FAILURE!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:32:06'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:32:52' prior: 50331733!
+                            position
+	^position. ! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:32:56'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:32:56'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:32:56'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:32:56'!
+FAILURE!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:33:00'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:33:03'!
+FAILURE!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:33:03'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:33:58' overrides: 16896425!
+                              initialize
+	position := (0 @ 0).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:34:07'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:34:07'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:34:07'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:34:16' prior: 50331870!
+                 test03
+	|marsRover instruction finalPosition|
+	
+	marsRover := MarsRover new.
+	
+	instruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover xxx: instruction.
+	
+	self assert: (marsRover  position = finalPosition).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:34:24' prior: 50331943!
+              test03
+	|marsRover instruction finalPosition|
+	
+	marsRover := MarsRover new.
+	instruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover xxx: instruction.
+	
+	self assert: (marsRover  position = finalPosition).! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:35:28'!
+                              execute: aString 
+	^position := (0 @ 1). ! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:35:29' prior: 50331953!
+                       test03
+	|marsRover instruction finalPosition|
+	
+	marsRover := MarsRover new.
+	instruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover execute: instruction.
+	
+	self assert: (marsRover  position = finalPosition).! !
+
+!methodRemoval: MarsRover #xxx: stamp: 'tg 11/13/2021 18:35:29'!
+xxx: aString 
+	^position := (0 @ 1). !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:35:37' prior: 50331963!
+ execute: anInstruction 
+	^position := (0 @ 1). ! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:36:01' prior: 50331968!
+                 test03
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:38:41'!
+                      test04
+	|marsRover anInstruction finalPosition xxxx |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	xxxx := 'E'.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  direction = xxxx).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:38:54' prior: 50331996!
+                          test04
+	|marsRover anInstruction xxxx |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	xxxx := 'E'.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  direction = xxxx).! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:38:56'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:38:56'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:44:05' prior: 50331981!
+                     execute: anInstruction 
+	^position := (0 @ 1).
+	! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:44:57' prior: 50332007!
+                test04
+	
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:45:30' prior: 50332026!
+                     test04
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).
+	
+! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:45:33'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:45:33'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:45:48'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:45:54'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:45:54'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:48:33' prior: 50332021!
+   execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (0 @ 1).
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (0 @ -1)
+		].
+	! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:48:41'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:48:46'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:48:46'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:48:46'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:48:46'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:49:34' prior: 50332030!
+                   test04
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).
+	
+! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:49:45'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:49:45'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:50:00' prior: 50332070!
+                   test04
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).
+	
+! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:50:01'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:50:01'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:50:01'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:50:01'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:50:01'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:50:15'!
+                         test05
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).
+	
+! !
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 18:50:18'!
+FAILURE!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 18:50:18'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:51:52' prior: 50332051!
+                 execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (0 @ 1) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := ((0 @ -1) + (0 @ -1))
+		].
+	! !
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 18:51:56'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:51:59'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:51:59'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:51:59'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:51:59'!
+FAILURE!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 18:51:59'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:51:59'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:52:36' prior: 50332123!
+                       execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (0 @ 1) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1))
+		].
+	! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:52:46' prior: 50332147!
+                            execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (0 @ 1) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:52:48'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:52:48'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:52:48'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:52:48'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 18:52:48'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:55:00'!
+                    test06
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).
+	
+! !
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 18:55:02'!
+FAILURE!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 18:55:02'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:55:29' prior: 50332156!
+                  execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (position + (0 @ 1)) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/13/2021 18:55:32'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:55:32'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:55:32'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:55:32'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 18:55:32'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 18:55:32'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:58:56'!
+  test01MarsRoverComienzaEnElPuntoInicialEsperado
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position = (0 @ 0)).! !
+
+!methodRemoval: TestXXX #test01 stamp: 'tg 11/13/2021 18:58:56'!
+test01
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover position = (0 @ 0)).!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:59:37' prior: 50332212!
+               test01MarsRoverComienzaEnElPuntoInicialEsperado
+	|marsRover puntoInicial |
+	
+	marsRover := MarsRover new.
+	puntoInicial := (0 @ 0).
+	
+	self assert: (marsRover position = puntoInicial).! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 18:59:40'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 18:59:40'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 18:59:40'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 18:59:40'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 18:59:40'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 18:59:40'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 18:59:40'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 18:59:54' prior: 50331845!
+                   test02
+	|marsRover|
+	
+	marsRover := MarsRover new.
+	
+	
+	self assert: (marsRover direction = 'N').! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:00:47' prior: 50332225!
+                               test01MarsRoverComienzaEnElPuntoInicialEsperado
+	|marsRover initialPoint |
+	
+	marsRover := MarsRover new.
+	initialPoint := (0 @ 0).
+	
+	self assert: (marsRover position = initialPoint).! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:00:52'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:00:52'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 19:00:52'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 19:00:52'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:00:52'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 19:00:52'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 19:00:52'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:01:29' prior: 50332252!
+                   test02
+	|marsRover initialDirection |
+	
+	marsRover := MarsRover new.
+	initialDirection := 'N'.
+	
+	self assert: (marsRover direction = initialDirection).! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 19:01:33'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:01:33'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/13/2021 19:01:33'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/13/2021 19:01:33'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:01:33'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 19:01:33'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 19:01:33'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:02:43'!
+            test02MarsRoverComienzaConLaDireccionEsperada
+	|marsRover initialDirection |
+	
+	marsRover := MarsRover new.
+	initialDirection := 'N'.
+	
+	self assert: (marsRover direction = initialDirection).! !
+
+!methodRemoval: TestXXX #test02 stamp: 'tg 11/13/2021 19:02:43'!
+test02
+	|marsRover initialDirection |
+	
+	marsRover := MarsRover new.
+	initialDirection := 'N'.
+	
+	self assert: (marsRover direction = initialDirection).!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:10:31'!
+                     test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).! !
+
+!methodRemoval: TestXXX #test03 stamp: 'tg 11/13/2021 19:10:31'!
+test03
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:12:52' prior: 50332326!
+                  test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position = finalPosition).
+	self assert: (marsRover  direction) equals: initialDirection.! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:13:07' prior: 50332348!
+                     test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.! !
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:13:09'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:13:09'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:13:09'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:13:09'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:13:09'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 19:13:09'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 19:13:09'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:13:27' prior: 50332086!
+                test04
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+
+	
+! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:13:28'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:13:28'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:13:28'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:13:28'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:13:28'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 19:13:28'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 19:13:28'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:13:46' prior: 50332405!
+                  test04
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:14:03' prior: 50332436!
+          test04
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:14:04'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:14:04'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:14:04'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:14:04'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:14:04'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 19:14:04'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 19:14:04'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:14:23' prior: 50332107!
+                       test05
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals:  finalPosition.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:14:42' prior: 50332175!
+                        test06
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:15:03' prior: 50332259!
+                          test01MarsRoverComienzaEnElPuntoInicialEsperado
+	|marsRover initialPoint |
+	
+	marsRover := MarsRover new.
+	initialPoint := (0 @ 0).
+	
+	self assert: (marsRover position) equals: initialPoint.! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:15:19' prior: 50332508!
+  test01MarsRoverComienzaEnElPuntoInicialEsperado
+	|marsRover initialPosition |
+	
+	marsRover := MarsRover new.
+	initialPosition := (0 @ 0).
+	
+	self assert: (marsRover position) equals: initialPosition.! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:15:21'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:15:21'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:15:21'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:15:21'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:15:21'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 19:15:21'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 19:15:21'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:15:39' prior: 50332310!
+       test02MarsRoverComienzaConLaDireccionEsperada
+	|marsRover initialDirection |
+	
+	marsRover := MarsRover new.
+	initialDirection := 'N'.
+	
+	self assert: (marsRover direction) equals: initialDirection.! !
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:15:40'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:15:40'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:15:40'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:15:40'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/13/2021 19:15:40'!
+PASSED!
+
+!testRun: #TestXXX #test05 stamp: 'tg 11/13/2021 19:15:40'!
+PASSED!
+
+!testRun: #TestXXX #test06 stamp: 'tg 11/13/2021 19:15:40'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:17:26'!
+                           test04test03MarsRoverRecibeUnaInstruccionDeBackguardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+! !
+
+!methodRemoval: TestXXX #test04 stamp: 'tg 11/13/2021 19:17:26'!
+test04
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:17:40'!
+              test04MarsRoverRecibeUnaInstruccionDeBackguardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+! !
+
+!methodRemoval: TestXXX #test04test03MarsRoverRecibeUnaInstruccionDeBackguardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:17:40'!
+test04test03MarsRoverRecibeUnaInstruccionDeBackguardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:18:13'!
+                        test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+! !
+
+!methodRemoval: TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackguardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:18:13'!
+test04MarsRoverRecibeUnaInstruccionDeBackguardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	initialDirection := marsRover direction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover  direction) equals: initialDirection.
+
+	
+!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:19:43'!
+     test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals:  finalPosition.
+	
+! !
+
+!methodRemoval: TestXXX #test05 stamp: 'tg 11/13/2021 19:19:50'!
+test05
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals:  finalPosition.
+	
+!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:20:15'!
+                  test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada
+
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+
+!methodRemoval: TestXXX #test06 stamp: 'tg 11/13/2021 19:20:18'!
+test06
+	|marsRover anInstruction finalPosition|
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:20:20'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:20:20'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:20:20'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:20:20'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:20:20'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:20:20'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:23:15'!
+        test07
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'E'
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:23:31' prior: 50332753!
+                     test07
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'E'.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:24:35' prior: 50332765!
+                    test07
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'E'.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:24:37'!
+FAILURE!
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'tg 11/13/2021 19:25:23'!
+Object subclass: #MarsRover
+	instanceVariableNames: 'position direction'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:25:20' prior: 50331860!
+                        direction
+	^direction.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:25:49' prior: 50331932 overrides: 16896425!
+                    initialize
+	position := (0 @ 0).
+	direction := 'N'.! !
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:26:57'!
+FAILURE!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:26:57'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:27:42' prior: 50332191!
+                               execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (position + (0 @ 1)) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	(anInstruction = 'l') ifTrue: [
+		^direction := 'E'.
+		]
+	! !
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:27:47'!
+PASSED!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:27:51'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:27:51'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:27:51'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:27:51'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:27:51'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:27:51'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:27:51'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:28:10' prior: 50332777!
+                              test07
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'r'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'S'.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:28:26'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:29:06' prior: 50332816!
+                execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (position + (0 @ 1)) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	(anInstruction = 'l') ifTrue: [
+		^direction := 'E'.
+		].
+	(anInstruction = 'r') ifTrue: [
+		^direction := 'S'.
+		].
+		
+		
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:29:09'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:29:09'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:29:09'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:29:09'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:29:09'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:29:09'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:29:09'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:29:27'!
+                 test08
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'E'.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 19:29:30'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:30:14' prior: 50332913!
+test08
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'E'.
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:30:23'!
+  test09
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'E'.
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:30:43' prior: 50332970!
+                  test09
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'S'.
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:30:56' prior: 50332857!
+                  test07
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'r'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'O'.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:31:04' prior: 50332873!
+                      execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (position + (0 @ 1)) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	(anInstruction = 'l') ifTrue: [
+		^direction := 'E'.
+		].
+	(anInstruction = 'r') ifTrue: [
+		^direction := 'O'.
+		].
+		
+		
+	! !
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:31:08'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 19:31:10'!
+PASSED!
+
+!testRun: #TestXXX #test09 stamp: 'tg 11/13/2021 19:31:16'!
+FAILURE!
+
+!testRun: #TestXXX #test09 stamp: 'tg 11/13/2021 19:31:16'!
+FAILURE!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:33:45' prior: 50333014!
+                            execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (position + (0 @ 1)) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	(anInstruction = 'l') ifTrue: [
+		(direction := 'E') ifTrue: [
+			^direction := 'S'
+			].
+		].
+	(anInstruction = 'r') ifTrue: [
+		^direction := 'O'.
+		].
+		
+		
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:34:22'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:34:22'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:34:22'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:34:22'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:34:22'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:34:22'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:34:22'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 19:34:22'!
+ERROR!
+
+!testRun: #TestXXX #test09 stamp: 'tg 11/13/2021 19:34:22'!
+ERROR!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:35:52' prior: 50333036!
+                  execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (position + (0 @ 1)) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	(anInstruction = 'l') ifTrue: [
+		(direction = 'N') ifTrue: [
+			^direction := 'E'
+			].
+		(direction = 'E') ifTrue: [
+			^direction := 'S'
+			].
+		].
+	(anInstruction = 'r') ifTrue: [
+		^direction := 'O'.
+		].
+		
+		
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 19:35:54'!
+FAILURE!
+
+!testRun: #TestXXX #test09 stamp: 'tg 11/13/2021 19:35:54'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 19:35:54'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:36:33' prior: 50332956!
+                   test08
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'E'.
+	
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 19:36:38' prior: 50333000!
+                      test07
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'r'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'O'.
+	
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+!testRun: #TestXXX #test09 stamp: 'tg 11/13/2021 19:36:44'!
+PASSED!
+
+----QUIT----(13 November 2021 20:07:59) Ejercicio5.image priorSource: 325!
+
+----STARTUP---- (13 November 2021 20:09:14) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 20:15:05' prior: 50332985!
+         test09
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'S'.
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/13/2021 20:21:36' prior: 50333082!
+                 execute: anInstruction
+	(anInstruction = 'f') ifTrue: [
+		^position := (position + (0 @ 1)) .
+		].
+	(anInstruction = 'b') ifTrue: [
+		^position := (position + (0 @ -1)).
+		].
+	(anInstruction = 'l') ifTrue: [
+		^direction := 'E'
+		].
+	(anInstruction = 'r') ifTrue: [
+		^direction := 'O'.
+		].
+		
+		
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 20:21:38'!
+PASSED!
+
+!testRun: #TestXXX #test09 stamp: 'tg 11/13/2021 20:21:38'!
+FAILURE!
+
+!testRun: #TestXXX #test09 stamp: 'tg 11/13/2021 20:21:38'!
+FAILURE!
+
+!methodRemoval: TestXXX #test09 stamp: 'tg 11/13/2021 20:21:46'!
+test09
+
+	|marsRover anInstruction finalPosition finalDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'l'.
+	finalPosition := (0 @ 0).
+	finalDirection := 'S'.
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	self assert: (marsRover direction) equals: finalDirection.
+	
+!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+!testRun: #TestXXX #test07 stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+!testRun: #TestXXX #test08 stamp: 'tg 11/13/2021 20:21:49'!
+PASSED!
+
+----QUIT----(13 November 2021 20:21:55) Ejercicio5.image priorSource: 49290!
