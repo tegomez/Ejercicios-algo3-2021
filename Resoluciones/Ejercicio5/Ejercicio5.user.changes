@@ -7886,3 +7886,1013 @@ PASSED!
 PASSED!
 
 ----QUIT----(17 November 2021 02:02:14) Ejercicio5.image priorSource: 52923!
+
+----STARTUP---- (17 November 2021 19:11:12) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:11:20'!
+PASSED!
+!EastOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:12:54'!
+backwardToAPositionFrom: anInitialPosition
+	^anInitialPosition + (-1 @ 0).! !
+!NorthOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:13:12'!
+backwardToAPositionFrom: anInitialPosition
+	^anInitialPosition +(0 @ -1).! !
+!NorthOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:13:14' prior: 50340255!
+backwardToAPositionFrom: anInitialPosition
+	^anInitialPosition + (0 @ -1).! !
+!SouthOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:13:37'!
+backwardToAPositionFrom: anInitialPosition
+	^anInitialPosition + (0 @ 1).! !
+!WestOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:13:52'!
+backwardToAPositionFrom: anInitialPosition
+	^anInitialPosition +  (1 @ 0).! !
+!MarsRoverCompass methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:14:08'!
+backwardToAPositionFrom: anInitialPosition
+	self subclassResponsibility.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:14:47' prior: 50339097!
+moveBackward
+
+	(direction = EastOrientation)ifTrue:[
+		^position := (position + (-1 @ 0)) .
+	].
+	(direction = SouthOrientation )ifTrue:[
+		^position := (position + (0 @ 1)) .
+	].
+	(direction = WestOrientation )ifTrue:[
+		^position := (position + (1 @ 0)).
+	].
+	(direction = NorthOrientation )ifTrue:[
+		^position := (position + (0 @ -1)).
+	].
+	! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:15:51' prior: 50340285!
+moveBackward
+
+	(direction = EastOrientation)ifTrue:[
+		^position := EastOrientation new backwardToAPositionFrom: position.
+	].
+	(direction = SouthOrientation )ifTrue:[
+		^position := (position + (0 @ 1)) .
+	].
+	(direction = WestOrientation )ifTrue:[
+		^position := (position + (1 @ 0)).
+	].
+	(direction = NorthOrientation )ifTrue:[
+		^position := (position + (0 @ -1)).
+	].
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:15:53'!
+PASSED!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:16:23' prior: 50340299!
+moveBackward
+
+	(direction = EastOrientation)ifTrue:[
+		^position := EastOrientation new backwardToAPositionFrom: position.
+	].
+	(direction = SouthOrientation )ifTrue:[
+		^position :=SouthOrientation new backwardToAPositionFrom: position .
+	].
+	(direction = WestOrientation )ifTrue:[
+		^position := WestOrientation new backwardToAPositionFrom: position.
+	].
+	(direction = NorthOrientation )ifTrue:[
+		^position := NorthOrientation new backwardToAPositionFrom: position.
+	].
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:16:24'!
+PASSED!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:17:41' prior: 50340394!
+moveBackward
+
+	^direction = direction forwardToAPositionFrom: position.
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:17:42'!
+ERROR!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:17:42'!
+ERROR!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:17:42'!
+ERROR!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:17:42'!
+ERROR!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:17:42'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:17:42'!
+ERROR!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:19:33' prior: 50340492!
+moveBackward
+
+	(direction = EastOrientation)ifTrue:[
+		^position := EastOrientation new backwardToAPositionFrom: position.
+	].
+	(direction = SouthOrientation )ifTrue:[
+		^position :=SouthOrientation new backwardToAPositionFrom: position .
+	].
+	(direction = WestOrientation )ifTrue:[
+		^position := WestOrientation new backwardToAPositionFrom: position.
+	].
+	(direction = NorthOrientation )ifTrue:[
+		^position := NorthOrientation new backwardToAPositionFrom: position.
+	].
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:19:35'!
+PASSED!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:20:00' prior: 50340577!
+moveBackward
+
+	^ position:= direction backwardToAPositionFrom: position! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:20:03' prior: 50340675!
+moveBackward
+
+	^ position:= direction backwardToAPositionFrom: position.! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:20:04'!
+PASSED!
+!EastOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:21:18'!
+rotateLeftToADirectionFrom: anInitialPosition
+	^NorthOrientation new.! !
+!EastOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:21:33' prior: 50340766!
+rotateLeftToADirectionFrom: anInitialDirection
+	^NorthOrientation new.! !
+!NorthOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:21:54'!
+rotateLeftToADirectionFrom: anInitialDirection
+	^WestOrientation new.! !
+!SouthOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:22:06'!
+rotateLeftToADirectionFrom: anInitialDirection
+	^EastOrientation new.! !
+!WestOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:22:26'!
+rotateLeftToADirectionFrom: anInitialDirection
+	^SouthOrientation new.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:22:47' prior: 50339144!
+rotateToLeft
+
+	(direction = WestOrientation ) ifTrue:[
+		^direction := WestOrientation new rotateLeftToADirectionFrom: direction.
+	].
+	(direction = SouthOrientation ) ifTrue:[
+		^direction := EastOrientation new.
+	].
+	(direction = EastOrientation) ifTrue:[
+		^direction := NorthOrientation new.
+	].
+	(direction = NorthOrientation) ifTrue:[
+		^direction := WestOrientation new.
+	].
+	! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:22:49'!
+PASSED!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:23:14' prior: 50340793!
+rotateToLeft
+
+	(direction = WestOrientation ) ifTrue:[
+		^direction := WestOrientation new rotateLeftToADirectionFrom: direction.
+	].
+	(direction = SouthOrientation ) ifTrue:[
+		^direction := SouthOrientation new rotateLeftToADirectionFrom: direction.
+	].
+	(direction = EastOrientation) ifTrue:[
+		^direction := EastOrientation new rotateLeftToADirectionFrom: direction.
+	].
+	(direction = NorthOrientation) ifTrue:[
+		^direction := NorthOrientation new rotateLeftToADirectionFrom: direction.
+	].
+	! !
+!MarsRoverCompass methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:23:28'!
+rotateLeftToADirectionFrom: anInitialDirection
+	self subclassResponsibility.! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:23:31'!
+PASSED!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:24:26' prior: 50340888!
+rotateToLeft
+	^direction := direction rotateLeftToADirectionFrom: direction.! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:24:27'!
+PASSED!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:24:31' prior: 50340992!
+rotateToLeft
+
+	^direction := direction rotateLeftToADirectionFrom: direction.! !
+!MarsRoverCompass methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:24:59'!
+rotateRightToADirectionFrom: anInitialDirection
+	self subclassResponsibility.! !
+!EastOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:25:15' overrides: 50341083!
+rotateRightToADirectionFrom: anInitialDirection
+	^SouthOrientation new.! !
+!NorthOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:25:34' overrides: 50341083!
+rotateRightToADirectionFrom: anInitialDirection
+	^EastOrientation new.! !
+!SouthOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:25:49' overrides: 50341083!
+rotateRightToADirectionFrom: anInitialDirection
+	^WestOrientation new.! !
+!WestOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:26:08' overrides: 50341083!
+rotateRightToADirectionFrom: anInitialDirection
+	^NorthOrientation new.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:26:26' prior: 50339158!
+rotateToRight
+
+	^direction := direction rotateRightToADirectionFrom: direction.! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:26:27'!
+PASSED!
+
+!methodRemoval: MarsRoverCompass class #pertenece: stamp: 'tg 11/17/2021 19:26:43'!
+pertenece: unPuntoCardinal
+	self subclassResponsibility.!
+
+!methodRemoval: EastOrientation class #pertenece: stamp: 'tg 11/17/2021 19:26:48'!
+pertenece: unPuntoCardinal
+	^unPuntoCardinal = 'E'.!
+!WestOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:27:15' prior: 50341107 overrides: 50341083!
+rotateRightToADirectionFrom: anInitialDirection
+	^NorthOrientation new.
+	
+	 "pertenece: unPuntoCardinal
+	^unPuntoCardinal  = 'N'."! !
+
+!methodRemoval: SouthOrientation class #pertenece: stamp: 'tg 11/17/2021 19:27:24'!
+pertenece: unPuntoCardinal
+	^unPuntoCardinal = 'S'.!
+
+!methodRemoval: WestOrientation class #pertenece: stamp: 'tg 11/17/2021 19:27:28'!
+pertenece: unPuntoCardinal
+	^unPuntoCardinal = 'O'.!
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:27:33'!
+PASSED!
+!WestOrientation methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:27:38' prior: 50341208 overrides: 50341083!
+rotateRightToADirectionFrom: anInitialDirection
+	^NorthOrientation new.
+! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:28:00' prior: 50340681!
+moveBackward
+
+	^ position := direction backwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:28:07' prior: 50340077!
+moveForward
+
+	^ position := direction forwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:28:13' prior: 50341310!
+moveBackward
+
+	^position := direction backwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'tg 11/17/2021 19:28:19' prior: 50341316!
+moveForward
+
+	^position := direction forwardToAPositionFrom: position.! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'tg 11/17/2021 19:28:35'!
+PASSED!
+
+----QUIT----(17 November 2021 19:28:41) Ejercicio5.image priorSource: 272337!
