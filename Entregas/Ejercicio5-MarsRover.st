@@ -1,9 +1,9 @@
-!classDefinition: #TestMarsRover category: 'Ejercicio-MarsRover'!
+!classDefinition: #TestMarsRover category: 'Ejercicio5-MarsRover'!
 TestCase subclass: #TestMarsRover
 	instanceVariableNames: 'marsRover'
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Ejercicio-MarsRover'!
+	category: 'Ejercicio5-MarsRover'!
 
 !TestMarsRover methodsFor: 'test - initialization' stamp: 'MG 11/18/2021 00:24:20'!
 test01MarsRoverComienzaEnElPuntoInicialEsperado
@@ -331,12 +331,12 @@ setUp
 	marsRover := MarsRover landingIn: self initialPosition lookingAt: self initialOrientation .! !
 
 
-!classDefinition: #MarsRover category: 'Ejercicio-MarsRover'!
+!classDefinition: #MarsRover category: 'Ejercicio5-MarsRover'!
 Object subclass: #MarsRover
 	instanceVariableNames: 'currentPosition compassOrientation'
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Ejercicio-MarsRover'!
+	category: 'Ejercicio5-MarsRover'!
 
 !MarsRover methodsFor: 'accesing' stamp: 'MG 11/18/2021 12:46:58'!
 orientation
@@ -415,7 +415,7 @@ moveForward
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'MarsRover class' category: 'Ejercicio-MarsRover'!
+!classDefinition: 'MarsRover class' category: 'Ejercicio5-MarsRover'!
 MarsRover class
 	instanceVariableNames: ''!
 
@@ -433,12 +433,12 @@ instructionIsEmpty
 	^'No se puede enviar una instruccion vacía'! !
 
 
-!classDefinition: #MarsRoverCompass category: 'Ejercicio-MarsRover'!
+!classDefinition: #MarsRoverCompass category: 'Ejercicio5-MarsRover'!
 Object subclass: #MarsRoverCompass
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Ejercicio-MarsRover'!
+	category: 'Ejercicio5-MarsRover'!
 
 !MarsRoverCompass methodsFor: 'comparing' stamp: 'MG 11/18/2021 00:37:58'!
 = otherPotentialOrientation
@@ -463,12 +463,12 @@ forwardDirection
 	self subclassResponsibility.! !
 
 
-!classDefinition: #EastOrientation category: 'Ejercicio-MarsRover'!
+!classDefinition: #EastOrientation category: 'Ejercicio5-MarsRover'!
 MarsRoverCompass subclass: #EastOrientation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Ejercicio-MarsRover'!
+	category: 'Ejercicio5-MarsRover'!
 
 !EastOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
 rotateToLeft
@@ -488,12 +488,12 @@ forwardDirection
 	^(1 @ 0)! !
 
 
-!classDefinition: #NorthOrientation category: 'Ejercicio-MarsRover'!
+!classDefinition: #NorthOrientation category: 'Ejercicio5-MarsRover'!
 MarsRoverCompass subclass: #NorthOrientation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Ejercicio-MarsRover'!
+	category: 'Ejercicio5-MarsRover'!
 
 !NorthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
 rotateToLeft
@@ -514,7 +514,7 @@ forwardDirection
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
-!classDefinition: 'NorthOrientation class' category: 'Ejercicio-MarsRover'!
+!classDefinition: 'NorthOrientation class' category: 'Ejercicio5-MarsRover'!
 NorthOrientation class
 	instanceVariableNames: ''!
 
@@ -523,12 +523,12 @@ pertenece: unPuntoCardinal
 	^unPuntoCardinal  = 'N'.! !
 
 
-!classDefinition: #SouthOrientation category: 'Ejercicio-MarsRover'!
+!classDefinition: #SouthOrientation category: 'Ejercicio5-MarsRover'!
 MarsRoverCompass subclass: #SouthOrientation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Ejercicio-MarsRover'!
+	category: 'Ejercicio5-MarsRover'!
 
 !SouthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
 rotateToLeft
@@ -548,12 +548,12 @@ forwardDirection
 	^(0 @ -1)! !
 
 
-!classDefinition: #WestOrientation category: 'Ejercicio-MarsRover'!
+!classDefinition: #WestOrientation category: 'Ejercicio5-MarsRover'!
 MarsRoverCompass subclass: #WestOrientation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
-	category: 'Ejercicio-MarsRover'!
+	category: 'Ejercicio5-MarsRover'!
 
 !WestOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
 rotateToLeft
