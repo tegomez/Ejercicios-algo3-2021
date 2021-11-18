@@ -333,18 +333,18 @@ setUp
 
 !classDefinition: #MarsRover category: 'Ejercicio-MarsRover'!
 Object subclass: #MarsRover
-	instanceVariableNames: 'position orientation'
+	instanceVariableNames: 'currentPosition compassOrientation'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'Ejercicio-MarsRover'!
 
-!MarsRover methodsFor: 'accesing' stamp: 'MG 11/18/2021 00:03:43'!
+!MarsRover methodsFor: 'accesing' stamp: 'MG 11/18/2021 12:46:58'!
 orientation
-	^orientation.! !
+	^compassOrientation.! !
 
-!MarsRover methodsFor: 'accesing' stamp: 'tg 11/13/2021 18:32:52'!
+!MarsRover methodsFor: 'accesing' stamp: 'MG 11/18/2021 12:46:43'!
 position
-	^position. ! !
+	^currentPosition. ! !
 
 
 !MarsRover methodsFor: 'executions' stamp: 'MG 11/18/2021 01:15:22'!
@@ -372,20 +372,20 @@ executeAnInstruction: anInstruction
 		! !
 
 
-!MarsRover methodsFor: 'initialization - private' stamp: 'MG 11/18/2021 01:10:05'!
+!MarsRover methodsFor: 'initialization - private' stamp: 'MG 11/18/2021 12:46:58'!
 initializeWith: anInitialPosition and: anInitialOrientation
 
-	position := anInitialPosition.
-	orientation := anInitialOrientation.! !
+	currentPosition := anInitialPosition.
+	compassOrientation := anInitialOrientation.! !
 
 
-!MarsRover methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
+!MarsRover methodsFor: 'rotations' stamp: 'MG 11/18/2021 12:46:58'!
 rotateToLeft
-	^orientation := orientation rotateToLeft.! !
+	^compassOrientation := compassOrientation rotateToLeft.! !
 
-!MarsRover methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:55'!
+!MarsRover methodsFor: 'rotations' stamp: 'MG 11/18/2021 12:46:58'!
 rotateToRight
-	^orientation := orientation rotateToRight.! !
+	^compassOrientation := compassOrientation rotateToRight.! !
 
 
 !MarsRover methodsFor: 'commands' stamp: 'MG 11/17/2021 23:45:52'!
@@ -405,13 +405,13 @@ rightCommand
 	^$r! !
 
 
-!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:37'!
+!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 12:46:58'!
 moveBackward
-	^position :=  position + orientation backwardDirection.! !
+	^currentPosition :=  currentPosition + compassOrientation backwardDirection.! !
 
-!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:34'!
+!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 12:46:58'!
 moveForward
-	^position := position + orientation forwardDirection.! !
+	^currentPosition := currentPosition + compassOrientation forwardDirection.! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 

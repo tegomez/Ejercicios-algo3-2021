@@ -13499,3 +13499,125 @@ PASSED!
 
 
 ----QUIT----(18 November 2021 01:28:13) Ejercicio5.image priorSource: 502372!
+
+----STARTUP---- (18 November 2021 12:46:21) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 12:46:43'!
+Object subclass: #MarsRover
+	instanceVariableNames: 'currentPosition orientation'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:43' prior: 50331912!
+position
+	^currentPosition. ! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:43' prior: 50347152!
+moveBackward
+	^currentPosition :=  currentPosition + orientation backwardDirection.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:43' prior: 50347147!
+moveForward
+	^currentPosition := currentPosition + orientation forwardDirection.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:43' prior: 50346128!
+initializeWith: anInitialPosition and: anInitialOrientation
+
+	currentPosition := anInitialPosition.
+	orientation := anInitialOrientation.! !
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 12:46:58'!
+Object subclass: #MarsRover
+	instanceVariableNames: 'currentPosition compassOrientation'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:58' prior: 50347377!
+moveBackward
+	^currentPosition :=  currentPosition + compassOrientation backwardDirection.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:58' prior: 50347383!
+moveForward
+	^currentPosition := currentPosition + compassOrientation forwardDirection.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:58' prior: 50342083!
+orientation
+	^compassOrientation.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:58' prior: 50347389!
+initializeWith: anInitialPosition and: anInitialOrientation
+
+	currentPosition := anInitialPosition.
+	compassOrientation := anInitialOrientation.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:58' prior: 50346779!
+rotateToRight
+	^compassOrientation := compassOrientation rotateToRight.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 12:46:58' prior: 50346727!
+rotateToLeft
+	^compassOrientation := compassOrientation rotateToLeft.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 12:47:50'!
+PASSED!
+
+----QUIT----(18 November 2021 12:51:29) Ejercicio5.image priorSource: 502605!
