@@ -8896,3 +8896,4606 @@ PASSED!
 PASSED!
 
 ----QUIT----(17 November 2021 19:28:41) Ejercicio5.image priorSource: 272337!
+
+----STARTUP---- (17 November 2021 23:27:58) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'MG 11/17/2021 23:39:22'!
+PASSED!
+!MarsRover methodsFor: 'commands' stamp: 'MG 11/17/2021 23:45:43'!
+                          forwardCommand
+	^$f! !
+!MarsRover methodsFor: 'commands' stamp: 'MG 11/17/2021 23:45:52'!
+      backwardCommand
+	^$b! !
+!MarsRover methodsFor: 'commands' stamp: 'MG 11/17/2021 23:45:59'!
+     leftCommand
+	^$l! !
+!MarsRover methodsFor: 'commands' stamp: 'MG 11/17/2021 23:46:04'!
+         rightCommand
+	^$r! !
+
+	^$r!
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/17/2021 23:46:37' prior: 50338027!
+               executeAnInstruction: anInstruction
+
+	(anInstruction = self forwardCommand ) ifTrue: [
+		^self moveForward.
+		].
+	(anInstruction = self backwardCommand ) ifTrue: [
+		^self moveBackward.
+		].
+	(anInstruction = self leftCommand ) ifTrue: [
+		^self rotateToLeft.
+		].
+	(anInstruction = self rightCommand ) ifTrue: [
+		^self rotateToRight.
+		].
+	
+	self error: 'No reconoció la instruccion'
+		
+		! !
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/17/2021 23:47:10' prior: 50341512!
+executeAnInstruction: anInstruction
+
+	(anInstruction = self forwardCommand ) ifTrue: [	^self moveForward.].
+	(anInstruction = self backwardCommand ) ifTrue: [^self moveBackward.].
+	(anInstruction = self leftCommand ) ifTrue: [^self rotateToLeft.].
+	(anInstruction = self rightCommand ) ifTrue: [ ^self rotateToRight.].
+	
+	self error: 'No reconoció la instruccion'
+		
+		! !
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/17/2021 23:47:26' prior: 50341527!
+                      executeAnInstruction: anInstruction
+
+	(anInstruction = self forwardCommand ) ifTrue: [	^self moveForward.].
+	(anInstruction = self backwardCommand ) ifTrue: [^self moveBackward.].
+	(anInstruction = self leftCommand ) ifTrue: [^self rotateToLeft.].
+	(anInstruction = self rightCommand ) ifTrue: [ ^self rotateToRight.].
+	
+	self error: self class notFoundError.
+		
+		! !
+!MarsRover class methodsFor: 'no messages' stamp: 'MG 11/17/2021 23:48:41'!
+   instructionDontUndertood
+	^'No reconoció la instruccion'! !
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/17/2021 23:49:25' prior: 50341542!
+               executeAnInstruction: anInstruction
+
+	(anInstruction = self forwardCommand ) ifTrue: [	^self moveForward.].
+	(anInstruction = self backwardCommand ) ifTrue: [^self moveBackward.].
+	(anInstruction = self leftCommand ) ifTrue: [^self rotateToLeft.].
+	(anInstruction = self rightCommand ) ifTrue: [ ^self rotateToRight.].
+	
+	self error: self class instructionDontUndertood.
+		
+		! !
+
+!testRun: #TestXXX #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test17 stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test18 stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test19 stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test20 stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test21 stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!testRun: #TestXXX #test22 stamp: 'MG 11/17/2021 23:49:30'!
+PASSED!
+
+!classRenamed: #TestXXX as: #TestMarsRover stamp: 'MG 11/17/2021 23:49:55'!
+Smalltalk renameClassNamed: #TestXXX as: #TestMarsRover!
+!TestMarsRover methodsFor: 'test - mixed instruction' stamp: 'MG 11/17/2021 23:53:17'!
+                               test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rf'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+
+!methodRemoval: TestMarsRover #test17 stamp: 'MG 11/17/2021 23:53:17'!
+test17
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rf'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.!
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/17/2021 23:56:23'!
+  test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rb'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+
+!methodRemoval: TestMarsRover #test18 stamp: 'MG 11/17/2021 23:56:23'!
+test18
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rb'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.!
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/17/2021 23:56:38'!
+                             test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrf'.
+	finalPosition:= (0@-1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+
+!methodRemoval: TestMarsRover #test19 stamp: 'MG 11/17/2021 23:56:38'!
+test19
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrf'.
+	finalPosition:= (0@-1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .!
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/17/2021 23:57:05'!
+                           test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrb'.
+	finalPosition:= (0@1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+
+!methodRemoval: TestMarsRover #test20 stamp: 'MG 11/17/2021 23:57:05'!
+test20
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrb'.
+	finalPosition:= (0@1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .!
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/17/2021 23:57:37'!
+                          test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrrb'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+
+!methodRemoval: TestMarsRover #test22 stamp: 'MG 11/17/2021 23:57:37'!
+test22
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrrb'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .!
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/17/2021 23:57:43'!
+                        test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrrf'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+
+!methodRemoval: TestMarsRover #test21 stamp: 'MG 11/17/2021 23:57:43'!
+test21
+	
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrrf'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .!
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/17/2021 23:58:18'!
+Object subclass: #MarsRover
+	instanceVariableNames: 'position orientation'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/17/2021 23:58:18' prior: 50332801!
+           direction
+	^orientation.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/17/2021 23:58:18' prior: 50341322!
+      moveBackward
+
+	^position := orientation backwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/17/2021 23:58:18' prior: 50341328!
+                    moveForward
+
+	^position := orientation forwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/17/2021 23:58:18' prior: 50339072 overrides: 16896425!
+  initialize
+	position := (0 @ 0).
+	orientation := NorthOrientation new.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/17/2021 23:58:18' prior: 50341113!
+                        rotateToRight
+
+	^orientation := orientation rotateRightToADirectionFrom: orientation.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/17/2021 23:58:18' prior: 50341077!
+         rotateToLeft
+
+	^orientation := orientation rotateLeftToADirectionFrom: orientation.! !
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 00:00:08'!
+Object subclass: #MarsRover
+	instanceVariableNames: 'position direction'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:08' prior: 50341810!
+                   direction
+	^direction.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:08' prior: 50341814!
+        moveBackward
+
+	^position := direction backwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:08' prior: 50341820!
+                      moveForward
+
+	^position := direction forwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:08' prior: 50341826 overrides: 16896425!
+    initialize
+	position := (0 @ 0).
+	direction := NorthOrientation new.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:08' prior: 50341832!
+                          rotateToRight
+
+	^direction := direction rotateRightToADirectionFrom: direction.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:08' prior: 50341838!
+               rotateToLeft
+
+	^direction := direction rotateLeftToADirectionFrom: direction.! !
+
+!classRenamed: #EastOrientation as: #EastDirection stamp: 'MG 11/18/2021 00:00:21'!
+Smalltalk renameClassNamed: #EastOrientation as: #EastDirection!
+!NorthOrientation methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:21' prior: 50341095 overrides: 50341083!
+rotateRightToADirectionFrom: anInitialDirection
+	^EastDirection new.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:21' prior: 50339632!
+                      east
+	^ EastDirection.! !
+!SouthOrientation methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:00:21' prior: 50340782 overrides: 50340907!
+             rotateLeftToADirectionFrom: anInitialDirection
+	^EastDirection new.! !
+
+MarsRoverCompass subclass: #EastOrientation
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classDefinition: #EastOrientation category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 00:02:49'!
+MarsRoverCompass subclass: #EastOrientation
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classRemoval: #EastOrientation stamp: 'MG 11/18/2021 00:02:55'!
+MarsRoverCompass subclass: #EastOrientation
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classRenamed: #EastDirection as: #EastOrientation stamp: 'MG 11/18/2021 00:03:06'!
+Smalltalk renameClassNamed: #EastDirection as: #EastOrientation!
+!NorthOrientation methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:06' prior: 50341891 overrides: 50341083!
+                             rotateRightToADirectionFrom: anInitialDirection
+	^EastOrientation new.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:06' prior: 50341897!
+                    east
+	^ EastOrientation.! !
+!SouthOrientation methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:06' prior: 50341902 overrides: 50340907!
+           rotateLeftToADirectionFrom: anInitialDirection
+	^EastOrientation new.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:03:16'!
+PASSED!
+
+!classDefinition: #MarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 00:03:27'!
+Object subclass: #MarsRover
+	instanceVariableNames: 'position orientation'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:27' prior: 50341852!
+                      direction
+	^orientation.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:27' prior: 50341856!
+      moveBackward
+
+	^position := orientation backwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:27' prior: 50341862!
+                    moveForward
+
+	^position := orientation forwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:27' prior: 50341868 overrides: 16896425!
+  initialize
+	position := (0 @ 0).
+	orientation := NorthOrientation new.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:27' prior: 50341874!
+                        rotateToRight
+
+	^orientation := orientation rotateRightToADirectionFrom: orientation.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:27' prior: 50341880!
+         rotateToLeft
+
+	^orientation := orientation rotateLeftToADirectionFrom: orientation.! !
+!MarsRover methodsFor: 'accesing' stamp: 'MG 11/18/2021 00:03:43'!
+      orientation
+	^orientation.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:43' prior: 50339623!
+asegurarQue: aMarsRover SeEncuentraEn: aPosition YApuntaHacia: aDirection
+
+	self assert: (aMarsRover  position) equals: aPosition.
+	self assert: (aMarsRover  orientation = aDirection).! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:43' prior: 50339903!
+  initialDirection
+	^(MarsRover new) orientation class.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:03:43' prior: 50339728!
+     test02MarsRoverComienzaConLaDireccionEsperada
+	|marsRover |
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover orientation = self initialDirection).! !
+
+!methodRemoval: MarsRover #direction stamp: 'MG 11/18/2021 00:03:43'!
+direction
+	^orientation.!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:03:57'!
+PASSED!
+!TestMarsRover methodsFor: 'toolbox' stamp: 'MG 11/18/2021 00:04:54' prior: 50342087!
+ asegurarQue: aMarsRover SeEncuentraEn: aPosition YApuntaHacia: aOrientation
+
+	self assert: (aMarsRover  position) equals: aPosition.
+	self assert: (aMarsRover  orientation = aOrientation).! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:05:25'!
+                        initialOrientation
+	^(MarsRover new) orientation class.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:05:25' prior: 50335840!
+   test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial
+	|marsRover anInstruction |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'llll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:05:25' prior: 50342101!
+ test02MarsRoverComienzaConLaDireccionEsperada
+	|marsRover |
+	
+	marsRover := MarsRover new.
+	
+	self assert: (marsRover orientation = self initialOrientation).! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:05:25' prior: 50335432!
+                             test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+
+	
+! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:05:25' prior: 50335827!
+                       test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial
+	|marsRover anInstruction |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'rrrr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:05:25' prior: 50335417!
+test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|marsRover anInstruction finalPosition initialDirection |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:05:25' prior: 50335794!
+            test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado
+
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'ff'.
+	finalPosition := (0 @ 2).
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+! !
+!TestMarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 00:05:25' prior: 50335808!
+   test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla
+
+	|marsRover anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'ffx'.
+	finalPosition := (0 @ 2).
+	
+	self
+		should: [marsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = 'No reconoció la instruccion'.
+		].
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+
+!methodRemoval: TestMarsRover #initialDirection stamp: 'MG 11/18/2021 00:05:25'!
+initialDirection
+	^(MarsRover new) orientation class.!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:05:32'!
+PASSED!
+
+TestCase subclass: #TestMarsRover
+	instanceVariableNames: 'marsRover'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+TestCase subclass: #TestMarsRover
+	instanceVariableNames: 'MarsRover'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classDefinition: #TestMarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 00:06:48'!
+TestCase subclass: #TestMarsRover
+	instanceVariableNames: 'MarsRover'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!TestMarsRover methodsFor: 'setup' stamp: 'MG 11/18/2021 00:07:17'!
+                         setup! !
+
+TestCase subclass: #TestMarsRover
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classDefinition: #TestMarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 00:07:58'!
+TestCase subclass: #TestMarsRover
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:08:00'!
+PASSED!
+!TestMarsRover methodsFor: 'test - initialization' stamp: 'MG 11/18/2021 00:08:22' prior: 50335377!
+            test01MarsRoverComienzaEnElPuntoInicialEsperado
+	|aMarsRover |
+	
+	aMarsRover := MarsRover new.
+	
+	self assert: (aMarsRover position) equals: self initialPosition.! !
+!TestMarsRover methodsFor: 'test - initialization' stamp: 'MG 11/18/2021 00:08:33' prior: 50342230!
+                      test02MarsRoverComienzaConLaDireccionEsperada
+	|aMarsRover |
+	
+	aMarsRover := MarsRover new.
+	
+	self assert: (aMarsRover orientation = self initialOrientation).! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:08:50' prior: 50342266!
+                    test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:09:23' prior: 50342239!
+                   test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+
+	
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:09:33' prior: 50335945!
+             test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'r'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self east .
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:09:44' prior: 50335977!
+ test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'l'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self west.
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:09:56' prior: 50334630!
+                              test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	aMarsRover execute: anInstruction.
+	aMarsRover execute: anInstruction.
+	
+	self assert: (aMarsRover  position) equals: finalPosition.
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:10:06' prior: 50334616!
+                          test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada
+
+	|aMarsRover anInstruction finalPosition|
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	aMarsRover execute: anInstruction.
+	aMarsRover execute: anInstruction.
+	
+	self assert: (aMarsRover  position) equals: finalPosition.
+	
+! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:10:21' prior: 50342281!
+test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado
+
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'ff'.
+	finalPosition := (0 @ 2).
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:10:28' prior: 50342295!
+                          test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla
+
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'ffx'.
+	finalPosition := (0 @ 2).
+	
+	self
+		should: [aMarsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = 'No reconoció la instruccion'.
+		].
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:10:52' prior: 50342654!
+           test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla
+
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'ffx'.
+	finalPosition := (0 @ 2).
+	
+	self
+		should: [aMarsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionDontUndertood .
+		].
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:10:54'!
+PASSED!
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:11:16' prior: 50335990!
+  test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rr'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:11:36' prior: 50336016!
+                            test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rrr'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:12:00' prior: 50342254!
+                            test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rrrr'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:12:07' prior: 50336116!
+                   test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'll'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:12:13' prior: 50336145!
+                             test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'lll'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self east .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:12:22' prior: 50342218!
+                             test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'llll'.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:12:34' prior: 50341660!
+     test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente
+	
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rf'.
+	finalPosition:= (1@0).	
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:12:44' prior: 50341683!
+                    test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente
+	
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rb'.
+	finalPosition:= (-1@0).	
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:12:51' prior: 50341707!
+                test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente
+	
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rrf'.
+	finalPosition:= (0@-1).	
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:12:58' prior: 50341731!
+                 test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente
+	
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rrb'.
+	finalPosition:= (0@1).	
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:13:06' prior: 50341779!
+               test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente
+	
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rrrf'.
+	finalPosition:= (-1@0).	
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:13:11' prior: 50341755!
+               test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente
+	
+	|aMarsRover anInstruction finalPosition |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := 'rrrb'.
+	finalPosition:= (1@0).	
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+
+TestCase subclass: #TestMarsRover
+	instanceVariableNames: 'marsRover'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+
+!classDefinition: #TestMarsRover category: 'Ejercicio-MarsRover' stamp: 'MG 11/18/2021 00:13:37'!
+TestCase subclass: #TestMarsRover
+	instanceVariableNames: 'marsRover'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'Ejercicio-MarsRover'!
+!TestMarsRover methodsFor: 'setup' stamp: 'MG 11/18/2021 00:13:57' prior: 50342427!
+   setup
+	marsRover := MarsRover new.! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:15:08'!
+   test23
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := ''.
+	
+	self
+		should: [aMarsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionDontUndertood .
+		].
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:15:35' prior: 50342966!
+                     test23
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := ''.
+	
+	aMarsRover execute: anInstruction.
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:15:39'!
+PASSED!
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:15:48' prior: 50342982!
+      test23
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := ''.
+	
+	self
+		should: [aMarsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionDontUndertood .
+		].
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:15:49'!
+FAILURE!
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/18/2021 00:18:33' prior: 50333527!
+                           execute: aGroupOfInstructions
+
+	aGroupOfInstructions ifEmpty: [
+		^self class instructionDontUndertood 
+	] ifNotEmpty: [
+		aGroupOfInstructions do: [:anInstruction | self executeAnInstruction: anInstruction ].
+	].
+	
+	
+		
+	! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:18:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:18:36'!
+FAILURE!
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:18:36'!
+FAILURE!
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/18/2021 00:18:57' prior: 50343108!
+        execute: aGroupOfInstructions
+
+	aGroupOfInstructions ifEmpty: [
+		^self error: self class instructionDontUndertood 
+	] ifNotEmpty: [
+		aGroupOfInstructions do: [:anInstruction | self executeAnInstruction: anInstruction ].
+	].
+	
+	
+		
+	! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:18:59'!
+PASSED!
+!MarsRover class methodsFor: 'error description' stamp: 'MG 11/18/2021 00:19:47'!
+            instructionIsEmpty
+	^'No se puede enviar una instruccion vacía'! !
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/18/2021 00:19:59' prior: 50343215!
+        execute: aGroupOfInstructions
+
+	aGroupOfInstructions ifEmpty: [
+		^self error: self class instructionIsEmpty. 
+	] ifNotEmpty: [
+		aGroupOfInstructions do: [:anInstruction | self executeAnInstruction: anInstruction ].
+	].
+	
+	
+		
+	! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:20:07' prior: 50343090!
+                test23
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := ''.
+	
+	self
+		should: [aMarsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionIsEmpty .
+		].
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+
+!testRun: #TestMarsRover #test23 stamp: 'MG 11/18/2021 00:20:09'!
+PASSED!
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:20:56'!
+            test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := ''.
+	
+	self
+		should: [aMarsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionIsEmpty .
+		].
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+
+!methodRemoval: TestMarsRover #test23 stamp: 'MG 11/18/2021 00:20:56'!
+test23
+
+	|aMarsRover anInstruction |
+	
+	aMarsRover := MarsRover new.
+	anInstruction := ''.
+	
+	self
+		should: [aMarsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionIsEmpty .
+		].
+	
+	self asegurarQue: aMarsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+!
+!TestMarsRover methodsFor: 'test - initialization' stamp: 'MG 11/18/2021 00:24:20' prior: 50342535!
+test01MarsRoverComienzaEnElPuntoInicialEsperado
+	
+	self assert: (marsRover position) equals: self initialPosition.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:24:22'!
+ERROR!
+!TestMarsRover methodsFor: 'setup' stamp: 'MG 11/18/2021 00:24:57' overrides: 16927572!
+                               setUp
+	marsRover := MarsRover new.! !
+
+!methodRemoval: TestMarsRover #setup stamp: 'MG 11/18/2021 00:24:57'!
+setup
+	marsRover := MarsRover new.!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:25:01'!
+PASSED!
+!TestMarsRover methodsFor: 'test - initialization' stamp: 'MG 11/18/2021 00:25:10' prior: 50342544!
+                             test02MarsRoverComienzaConLaDireccionEsperada
+	
+	self assert: (marsRover orientation = self initialOrientation).! !
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:25:11'!
+PASSED!
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:25:32' prior: 50342553!
+    test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	| anInstruction finalPosition |
+
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.! !
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:25:34'!
+PASSED!
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:26:00' prior: 50342568!
+               test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|anInstruction finalPosition |
+	
+	marsRover := MarsRover new.
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+
+	
+! !
+!MarsRover class methodsFor: 'initialization' stamp: 'MG 11/18/2021 00:27:17'!
+                    landindIn: anInitialPosition lookingAt: anInitialOrientation! !
+!MarsRover class methodsFor: 'initialization' stamp: 'MG 11/18/2021 00:27:42'!
+                 landingIn: anInitialPosition lookingAt: anInitialOrientation! !
+
+!methodRemoval: MarsRover class #landindIn:lookingAt: stamp: 'MG 11/18/2021 00:27:42'!
+landindIn: anInitialPosition lookingAt: anInitialOrientation!
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:28:05' prior: 50343817!
+  test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+	|anInstruction finalPosition |
+	
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:28:23' prior: 50342610!
+                     test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada
+	|anInstruction finalPosition |
+	
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:28:25'!
+PASSED!
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:28:38' prior: 50342625!
+   test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada
+
+	|anInstruction finalPosition|
+	
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:28:55' prior: 50342789!
+        test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada
+	|anInstruction |
+	
+	anInstruction := 'rr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:29:00'!
+PASSED!
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:29:09' prior: 50342802!
+                         test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada
+	|anInstruction |
+	
+	anInstruction := 'rrr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:29:18' prior: 50342815!
+       test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial
+	|anInstruction |
+	
+	anInstruction := 'rrrr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:29:26' prior: 50342828!
+                              test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada
+	|anInstruction |
+	
+	anInstruction := 'll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:29:34' prior: 50342841!
+        test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada
+	|anInstruction |
+	
+	anInstruction := 'lll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self east .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:29:42' prior: 50342854!
+        test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial
+	|anInstruction |
+	
+	anInstruction := 'llll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:29:48'!
+PASSED!
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:29:59' prior: 50342867!
+        test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente
+	
+	|anInstruction finalPosition |
+	
+	anInstruction := 'rf'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:30:10' prior: 50342881!
+                               test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente
+	
+	|anInstruction finalPosition |
+	
+	anInstruction := 'rb'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:30:20' prior: 50342895!
+                           test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente
+	
+	|anInstruction finalPosition |
+	
+	anInstruction := 'rrf'.
+	finalPosition:= (0@-1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:30:28' prior: 50342909!
+                            test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente
+	
+	|anInstruction finalPosition |
+	
+	anInstruction := 'rrb'.
+	finalPosition:= (0@1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:30:43' prior: 50342923!
+                          test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente
+	
+	|anInstruction finalPosition |
+	
+	anInstruction := 'rrrf'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 00:30:52' prior: 50342937!
+                          test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente
+	
+	|anInstruction finalPosition |
+	
+	anInstruction := 'rrrb'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:31:06' prior: 50343448!
+           test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError
+
+	|anInstruction |
+	
+	anInstruction := ''.
+	
+	self
+		should: [marsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionIsEmpty .
+		].
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:31:10'!
+PASSED!
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:31:21' prior: 50342673!
+                         test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla
+
+	|anInstruction finalPosition |
+	
+	anInstruction := 'ffx'.
+	finalPosition := (0 @ 2).
+	
+	self
+		should: [marsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionDontUndertood .
+		].
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 00:31:29' prior: 50342639!
+                test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado
+
+	|anInstruction finalPosition |
+	
+	anInstruction := 'ff'.
+	finalPosition := (0 @ 2).
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:31:44' prior: 50343702!
+    test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+
+	| anInstruction finalPosition |
+
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:32:01' prior: 50342583!
+                             test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion
+
+	|anInstruction |
+	
+	anInstruction := 'r'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self east .
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:32:11' prior: 50342596!
+            test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion
+
+	|anInstruction |
+	
+	anInstruction := 'l'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self west.
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:32:34' prior: 50344144!
+         test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial
+
+	|anInstruction |
+	
+	anInstruction := 'llll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:32:39' prior: 50344133!
+                              test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada
+
+	|anInstruction |
+	
+	anInstruction := 'lll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self east .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:32:44' prior: 50344122!
+       test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada
+
+	|anInstruction |
+	
+	anInstruction := 'll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:32:48' prior: 50344099!
+       test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada
+
+	|anInstruction |
+	
+	anInstruction := 'rrr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:32:51' prior: 50343987!
+      test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada
+
+	|anInstruction |
+	
+	anInstruction := 'rr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:32:57' prior: 50343860!
+      test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada
+
+	|anInstruction finalPosition |
+	
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 00:33:04' prior: 50343846!
+        test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+
+	|anInstruction finalPosition |
+	
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 00:33:19' prior: 50344110!
+                    test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial
+
+	|anInstruction |
+	
+	anInstruction := 'rrrr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+
+----QUIT----(18 November 2021 00:34:03) Ejercicio5.image priorSource: 312369!
+
+----STARTUP---- (18 November 2021 00:34:16) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+!MarsRover class methodsFor: 'initialization' stamp: 'MG 11/18/2021 00:35:18' prior: 50343836!
+landingIn: anInitialPosition lookingAt: anInitialOrientation
+	self new initializeWith: anInitialPosition and: anInitialOrientation.! !
+!MarsRover class methodsFor: 'initialization' stamp: 'MG 11/18/2021 00:35:24' prior: 50344620!
+                          landingIn: anInitialPosition lookingAt: anInitialOrientation
+	^self new initializeWith: anInitialPosition and: anInitialOrientation.! !
+!MarsRover methodsFor: 'initialization' stamp: 'MG 11/18/2021 00:35:40'!
+               initializeWith: anInitialPosition and: anInitialOrientation! !
+!MarsRover methodsFor: 'initialization' stamp: 'MG 11/18/2021 00:36:01' prior: 50344635!
+        initializeWith: anInitialPosition and: anInitialOrientation
+	position := anInitialPosition.
+	orientation := anInitialOrientation.! !
+!TestMarsRover methodsFor: 'setup' stamp: 'MG 11/18/2021 00:36:30' prior: 50343490 overrides: 16927572!
+                   setUp
+	marsRover := MarsRover landingIn:  self initialPosition lookingAt: self initialOrientation.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:36:31'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:36:31'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:36:31'!
+FAILURE!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:36:31'!
+ERROR!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:36:31'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:36:50'!
+ERROR!
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:37:40' prior: 50342213!
+      initialOrientation
+	^(MarsRover new) orientation.! !
+!MarsRoverCompass methodsFor: 'comparing' stamp: 'MG 11/18/2021 00:37:58' prior: 50339091 overrides: 16881029!
+                            = otherPotentialOrientation
+	^self class = otherPotentialOrientation class.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:38:00'!
+FAILURE!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:38:00'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:38:02'!
+FAILURE!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:38:28'!
+FAILURE!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:38:28'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:38:33'!
+FAILURE!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:40:17'!
+PASSED!
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:40:35' prior: 50341939!
+             east
+	^ EastOrientation new.! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:40:39' prior: 50339636!
+        north
+	^ NorthOrientation new.! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:40:42' prior: 50339640!
+      south
+	^ SouthOrientation new.! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:40:46' prior: 50339644!
+      west
+	^ WestOrientation new.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:40:49'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:40:59'!
+PASSED!
+
+!methodRemoval: MarsRover #initialize stamp: 'MG 11/18/2021 00:41:05'!
+initialize
+	position := (0 @ 0).
+	orientation := NorthOrientation new.!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:41:08'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:41:08'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:41:08'!
+FAILURE!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:41:08'!
+ERROR!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:41:08'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:41:18'!
+ERROR!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:42:22'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:42:22'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:42:22'!
+FAILURE!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:42:22'!
+ERROR!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:42:22'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:42:37'!
+ERROR!
+
+MarsRover landingIn:  self initialPosition lookingAt: self initialOrientation.!
+!TestMarsRover methodsFor: 'setup' stamp: 'MG 11/18/2021 00:44:14' prior: 50344648 overrides: 16927572!
+   setUp
+	marsRover := MarsRover landingIn: (0@0) lookingAt: NorthOrientation new.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:44:17'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:44:17'!
+FAILURE!
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:45:00' prior: 50335405!
+                        initialPosition
+	^(0 @ 0).! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 00:45:40' prior: 50344755!
+          initialOrientation
+	^NorthOrientation new.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:45:51'!
+PASSED!
+!TestMarsRover methodsFor: 'setup' stamp: 'MG 11/18/2021 00:46:20' prior: 50345485 overrides: 16927572!
+                            setUp
+	marsRover := MarsRover landingIn: self initialPosition lookingAt: self initialOrientation .! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:46:23'!
+PASSED!
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/18/2021 00:48:29' prior: 50343325!
+                       execute: aGroupOfInstructions
+
+	aGroupOfInstructions ifNotEmpty: [
+		aGroupOfInstructions do: [:anInstruction | self executeAnInstruction: anInstruction ].
+	].
+	^self error: self class instructionIsEmpty. 
+	
+	
+		
+	! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:48:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:48:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:48:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:48:33'!
+ERROR!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:48:33'!
+PASSED!
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/18/2021 00:49:18' prior: 50345797!
+                      execute: aGroupOfInstructions
+
+	aGroupOfInstructions ifEmpty: [
+		^self error: self class instructionIsEmpty.
+	].
+	aGroupOfInstructions do: [:anInstruction | self executeAnInstruction: anInstruction ].
+	
+	
+		
+	! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:49:20'!
+PASSED!
+
+----QUIT----(18 November 2021 00:49:33) Ejercicio5.image priorSource: 414775!
+
+----STARTUP---- (18 November 2021 00:49:36) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 00:53:33'!
+PASSED!
+
+----QUIT----(18 November 2021 00:54:04) Ejercicio5.image priorSource: 459459!
+
+----STARTUP---- (18 November 2021 00:54:07) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+
+----QUIT----(18 November 2021 00:54:25) Ejercicio5.image priorSource: 462778!
+
+----STARTUP---- (18 November 2021 00:57:50) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+!MarsRover methodsFor: 'initialization - private' stamp: 'MG 11/18/2021 01:10:05' prior: 50344640!
+                initializeWith: anInitialPosition and: anInitialOrientation
+
+	position := anInitialPosition.
+	orientation := anInitialOrientation.! !
+!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:10:24' prior: 50342054!
+  moveBackward
+	^position := orientation backwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:10:27' prior: 50342060!
+                           moveForward
+	^position := orientation forwardToAPositionFrom: position.! !
+!MarsRover methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:10:33' prior: 50342078!
+ rotateToLeft
+	^orientation := orientation rotateLeftToADirectionFrom: orientation.! !
+!MarsRover methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:10:37' prior: 50342072!
+                      rotateToRight
+	^orientation := orientation rotateRightToADirectionFrom: orientation.! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 01:11:27' prior: 50345067!
+                east
+	^EastOrientation new.! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 01:11:32' prior: 50345071!
+         north
+	^NorthOrientation new.! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 01:11:37' prior: 50345075!
+       south
+	^SouthOrientation new.! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 01:11:48' prior: 50345592!
+       initialOrientation
+	^self north .! !
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 01:11:49' prior: 50346170!
+   initialOrientation
+	^self north.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 01:11:51'!
+PASSED!
+!TestMarsRover methodsFor: 'variables' stamp: 'MG 11/18/2021 01:12:01' prior: 50345079!
+                      west
+	^WestOrientation new.! !
+!TestMarsRover methodsFor: 'setup' stamp: 'MG 11/18/2021 01:12:06' prior: 50345694 overrides: 16927572!
+                         setUp
+
+	marsRover := MarsRover landingIn: self initialPosition lookingAt: self initialOrientation .! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 01:12:25' prior: 50344588!
+                 test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+
+	| anInstruction finalPosition |
+	
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+
+	
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 01:12:35' prior: 50344481!
+                      test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+
+	| anInstruction finalPosition |
+
+	anInstruction := 'f'.
+	finalPosition := (0 @ 1).
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 01:12:40' prior: 50346287!
+                           test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion
+
+	| anInstruction finalPosition |
+	
+	anInstruction := 'b'.
+	finalPosition := (0 @ -1).
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+
+	
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 01:12:47' prior: 50344495!
+                    test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion
+
+	| anInstruction |
+	
+	anInstruction := 'r'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self east .
+! !
+!TestMarsRover methodsFor: 'test - simple instruction' stamp: 'MG 11/18/2021 01:12:50' prior: 50344507!
+           test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion
+
+	| anInstruction |
+	
+	anInstruction := 'l'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self west.
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:00' prior: 50344575!
+        test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada
+
+	| anInstruction finalPosition |
+	
+	anInstruction := 'b'.
+	finalPosition := (0 @ -2).
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:08' prior: 50343974!
+  test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada
+
+	| anInstruction finalPosition|
+	
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:13' prior: 50344564!
+     test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada
+
+	| anInstruction |
+	
+	anInstruction := 'rr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:16' prior: 50344553!
+     test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada
+
+	| anInstruction |
+	
+	anInstruction := 'rrr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:19' prior: 50344602!
+     test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial
+
+	| anInstruction |
+	
+	anInstruction := 'rrrr'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:23' prior: 50344542!
+                            test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada
+
+	| anInstruction |
+	
+	anInstruction := 'll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:26' prior: 50344531!
+      test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada
+
+	| anInstruction |
+	
+	anInstruction := 'lll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self east .! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:13:29' prior: 50344519!
+      test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial
+
+	| anInstruction |
+	
+	anInstruction := 'llll'.
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 01:13:34' prior: 50344256!
+              test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente
+	
+	| anInstruction finalPosition |
+	
+	anInstruction := 'rf'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 01:13:37' prior: 50344269!
+                              test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente
+	
+	| anInstruction finalPosition |
+	
+	anInstruction := 'rb'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self east.! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 01:13:39' prior: 50344282!
+                          test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente
+	
+	| anInstruction finalPosition |
+	
+	anInstruction := 'rrf'.
+	finalPosition:= (0@-1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 01:13:45' prior: 50344308!
+                           test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente
+	
+	| anInstruction finalPosition |
+	
+	anInstruction := 'rrrf'.
+	finalPosition:= (-1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 01:13:48' prior: 50344295!
+                         test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente
+	
+	| anInstruction finalPosition |
+	
+	anInstruction := 'rrb'.
+	finalPosition:= (0@1).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self south .! !
+!TestMarsRover methodsFor: 'test - movements with different orientation' stamp: 'MG 11/18/2021 01:13:52' prior: 50344321!
+                         test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente
+	
+	| anInstruction finalPosition |
+	
+	anInstruction := 'rrrb'.
+	finalPosition:= (1@0).	
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self west .! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 01:13:56' prior: 50344468!
+          test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado
+
+	| anInstruction finalPosition |
+	
+	anInstruction := 'ff'.
+	finalPosition := (0 @ 2).
+	
+	marsRover execute: anInstruction.
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 01:14:10' prior: 50344450!
+    test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla
+
+	| anInstruction finalPosition |
+	
+	anInstruction := 'ffx'.
+	finalPosition := (0 @ 2).
+	
+	self
+		should: [marsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionDontUndertood .
+		].
+	
+	self asegurarQue: marsRover SeEncuentraEn: finalPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+!TestMarsRover methodsFor: 'test - intruction format' stamp: 'MG 11/18/2021 01:14:13' prior: 50344333!
+               test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError
+
+	| anInstruction |
+	
+	anInstruction := ''.
+	
+	self
+		should: [marsRover execute: anInstruction]
+		raise: Error 
+		withExceptionDo: [ :anError |
+			self assert: anError messageText = MarsRover instructionIsEmpty .
+		].
+	
+	self asegurarQue: marsRover SeEncuentraEn: self initialPosition YApuntaHacia: self initialOrientation.
+	
+	
+! !
+!TestMarsRover methodsFor: 'test - multiple instructions' stamp: 'MG 11/18/2021 01:14:33' prior: 50346366!
+       test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada
+
+	| anInstruction finalPosition |
+	
+	anInstruction := 'f'.
+	finalPosition := (0 @ 2).
+	
+	marsRover execute: anInstruction.
+	marsRover execute: anInstruction.
+	
+	self assert: (marsRover  position) equals: finalPosition.
+	
+! !
+!MarsRover methodsFor: 'executions' stamp: 'MG 11/18/2021 01:15:22' prior: 50345903!
+                          execute: aGroupOfInstructions
+
+	aGroupOfInstructions ifEmpty: [
+		^self error: self class instructionIsEmpty.
+	].
+	aGroupOfInstructions do: [:anSingleInstruction | self executeAnInstruction: anSingleInstruction ].
+	
+	
+		
+	! !
+!NorthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:07'!
+                   rotateLeftToADirectionFrom
+	^WestOrientation new.! !
+!SouthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:07'!
+rotateLeftToADirectionFrom
+	^EastOrientation new.! !
+!WestOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:07'!
+ rotateLeftToADirectionFrom
+	^SouthOrientation new.! !
+!EastOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:07'!
+rotateLeftToADirectionFrom
+	^NorthOrientation new.! !
+!MarsRoverCompass methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:07'!
+                               rotateLeftToADirectionFrom
+	self subclassResponsibility.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:18:07' prior: 50346146!
+      rotateToLeft
+	^orientation := orientation rotateLeftToADirectionFrom.! !
+
+!methodRemoval: NorthOrientation #rotateLeftToADirectionFrom: stamp: 'MG 11/18/2021 01:18:07'!
+rotateLeftToADirectionFrom: anInitialDirection
+	^WestOrientation new.!
+
+!methodRemoval: SouthOrientation #rotateLeftToADirectionFrom: stamp: 'MG 11/18/2021 01:18:07'!
+rotateLeftToADirectionFrom: anInitialDirection
+	^EastOrientation new.!
+
+!methodRemoval: WestOrientation #rotateLeftToADirectionFrom: stamp: 'MG 11/18/2021 01:18:07'!
+rotateLeftToADirectionFrom: anInitialDirection
+	^SouthOrientation new.!
+
+!methodRemoval: EastOrientation #rotateLeftToADirectionFrom: stamp: 'MG 11/18/2021 01:18:07'!
+rotateLeftToADirectionFrom: anInitialDirection
+	^NorthOrientation new.!
+
+!methodRemoval: MarsRoverCompass #rotateLeftToADirectionFrom: stamp: 'MG 11/18/2021 01:18:07'!
+rotateLeftToADirectionFrom: anInitialDirection
+	self subclassResponsibility.!
+!EastOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:24'!
+   rotateRightToADirectionFrom
+	^SouthOrientation new.! !
+!MarsRoverCompass methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:24'!
+                              rotateRightToADirectionFrom
+	self subclassResponsibility.! !
+!NorthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:24' overrides: 50346652!
+    rotateRightToADirectionFrom
+	^EastOrientation new.! !
+!SouthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:24' overrides: 50346652!
+           rotateRightToADirectionFrom
+	^WestOrientation new.! !
+!WestOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:24' overrides: 50346652!
+            rotateRightToADirectionFrom
+	^NorthOrientation new.
+! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:18:24' prior: 50346152!
+          rotateToRight
+	^orientation := orientation rotateRightToADirectionFrom.! !
+
+!methodRemoval: EastOrientation #rotateRightToADirectionFrom: stamp: 'MG 11/18/2021 01:18:24'!
+rotateRightToADirectionFrom: anInitialDirection
+	^SouthOrientation new.!
+
+!methodRemoval: MarsRoverCompass #rotateRightToADirectionFrom: stamp: 'MG 11/18/2021 01:18:24'!
+rotateRightToADirectionFrom: anInitialDirection
+	self subclassResponsibility.!
+
+!methodRemoval: NorthOrientation #rotateRightToADirectionFrom: stamp: 'MG 11/18/2021 01:18:24'!
+rotateRightToADirectionFrom: anInitialDirection
+	^EastOrientation new.!
+
+!methodRemoval: SouthOrientation #rotateRightToADirectionFrom: stamp: 'MG 11/18/2021 01:18:24'!
+rotateRightToADirectionFrom: anInitialDirection
+	^WestOrientation new.!
+
+!methodRemoval: WestOrientation #rotateRightToADirectionFrom: stamp: 'MG 11/18/2021 01:18:24'!
+rotateRightToADirectionFrom: anInitialDirection
+	^NorthOrientation new.
+!
+!WestOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
+                      rotateToLeft
+	^SouthOrientation new.! !
+!SouthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
+             rotateToLeft
+	^EastOrientation new.! !
+!MarsRoverCompass methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42'!
+              rotateToLeft
+	self subclassResponsibility.! !
+!NorthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42' overrides: 50346712!
+                   rotateToLeft
+	^WestOrientation new.! !
+!EastOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:42' overrides: 50346712!
+                           rotateToLeft
+	^NorthOrientation new.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:18:42' prior: 50346616!
+                          rotateToLeft
+	^orientation := orientation rotateToLeft.! !
+
+!methodRemoval: WestOrientation #rotateLeftToADirectionFrom stamp: 'MG 11/18/2021 01:18:42'!
+rotateLeftToADirectionFrom
+	^SouthOrientation new.!
+
+!methodRemoval: SouthOrientation #rotateLeftToADirectionFrom stamp: 'MG 11/18/2021 01:18:42'!
+rotateLeftToADirectionFrom
+	^EastOrientation new.!
+
+!methodRemoval: MarsRoverCompass #rotateLeftToADirectionFrom stamp: 'MG 11/18/2021 01:18:42'!
+rotateLeftToADirectionFrom
+	self subclassResponsibility.!
+
+!methodRemoval: NorthOrientation #rotateLeftToADirectionFrom stamp: 'MG 11/18/2021 01:18:42'!
+rotateLeftToADirectionFrom
+	^WestOrientation new.!
+
+!methodRemoval: EastOrientation #rotateLeftToADirectionFrom stamp: 'MG 11/18/2021 01:18:42'!
+rotateLeftToADirectionFrom
+	^NorthOrientation new.!
+!SouthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:55'!
+                         rotateToRight
+	^WestOrientation new.! !
+!MarsRoverCompass methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:55'!
+             rotateToRight
+	self subclassResponsibility.! !
+!WestOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:55' overrides: 50346759!
+                   rotateToRight
+	^NorthOrientation new.
+! !
+!NorthOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:55' overrides: 50346759!
+                       rotateToRight
+	^EastOrientation new.! !
+!EastOrientation methodsFor: 'rotations' stamp: 'MG 11/18/2021 01:18:55' overrides: 50346759!
+                          rotateToRight
+	^SouthOrientation new.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:18:55' prior: 50346672!
+                         rotateToRight
+	^orientation := orientation rotateToRight.! !
+
+!methodRemoval: SouthOrientation #rotateRightToADirectionFrom stamp: 'MG 11/18/2021 01:18:55'!
+rotateRightToADirectionFrom
+	^WestOrientation new.!
+
+!methodRemoval: MarsRoverCompass #rotateRightToADirectionFrom stamp: 'MG 11/18/2021 01:18:55'!
+rotateRightToADirectionFrom
+	self subclassResponsibility.!
+
+!methodRemoval: WestOrientation #rotateRightToADirectionFrom stamp: 'MG 11/18/2021 01:18:55'!
+rotateRightToADirectionFrom
+	^NorthOrientation new.
+!
+
+!methodRemoval: NorthOrientation #rotateRightToADirectionFrom stamp: 'MG 11/18/2021 01:18:55'!
+rotateRightToADirectionFrom
+	^EastOrientation new.!
+
+!methodRemoval: EastOrientation #rotateRightToADirectionFrom stamp: 'MG 11/18/2021 01:18:55'!
+rotateRightToADirectionFrom
+	^SouthOrientation new.!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 01:19:27'!
+PASSED!
+!NorthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:06' prior: 50340261 overrides: 50340279!
+                      backwardToAPositionFrom: anInitialPosition
+	^(0 @ -1).! !
+!SouthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:11' prior: 50340267 overrides: 50340279!
+                   backwardToAPositionFrom: anInitialPosition
+	^(0 @ 1).! !
+!WestOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:17' prior: 50340273 overrides: 50340279!
+                     backwardToAPositionFrom: anInitialPosition
+	^(1 @ 0).! !
+!EastOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:22' prior: 50340249 overrides: 50340279!
+                     backwardToAPositionFrom: anInitialPosition
+	^(-1 @ 0).! !
+!NorthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:23'!
+                       backwardToAPositionFrom
+	^(0 @ -1).! !
+!SouthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:23'!
+          backwardToAPositionFrom
+	^(0 @ 1).! !
+!MarsRoverCompass methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:23'!
+           backwardToAPositionFrom
+	self subclassResponsibility.! !
+!WestOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:23' overrides: 50346936!
+     backwardToAPositionFrom
+	^(1 @ 0).! !
+!EastOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:23' overrides: 50346936!
+                        backwardToAPositionFrom
+	^(-1 @ 0).! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:21:23' prior: 50346135!
+                           moveBackward
+	^position := orientation backwardToAPositionFrom.! !
+
+!methodRemoval: NorthOrientation #backwardToAPositionFrom: stamp: 'MG 11/18/2021 01:21:23'!
+backwardToAPositionFrom: anInitialPosition
+	^(0 @ -1).!
+
+!methodRemoval: SouthOrientation #backwardToAPositionFrom: stamp: 'MG 11/18/2021 01:21:23'!
+backwardToAPositionFrom: anInitialPosition
+	^(0 @ 1).!
+
+!methodRemoval: MarsRoverCompass #backwardToAPositionFrom: stamp: 'MG 11/18/2021 01:21:23'!
+backwardToAPositionFrom: anInitialPosition
+	self subclassResponsibility.!
+
+!methodRemoval: WestOrientation #backwardToAPositionFrom: stamp: 'MG 11/18/2021 01:21:23'!
+backwardToAPositionFrom: anInitialPosition
+	^(1 @ 0).!
+
+!methodRemoval: EastOrientation #backwardToAPositionFrom: stamp: 'MG 11/18/2021 01:21:23'!
+backwardToAPositionFrom: anInitialPosition
+	^(-1 @ 0).!
+!NorthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:42' prior: 50338882 overrides: 50338868!
+                   forwardToAPositionFrom: anInitialPosition
+	^(0 @ 1)! !
+!SouthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:48' prior: 50338889 overrides: 50338868!
+                      forwardToAPositionFrom: anInitialPosition
+	^(0 @ -1)! !
+!WestOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:54' prior: 50338896 overrides: 50338868!
+                      forwardToAPositionFrom: anInitialPosition
+	^(-1 @ 0)! !
+!EastOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:21:58' prior: 50338875 overrides: 50338868!
+                      forwardToAPositionFrom: anInitialPosition
+	^(1 @ 0)! !
+!NorthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:22:14'!
+                          forwardToAPositionFrom
+	^(0 @ 1)! !
+!SouthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:22:14'!
+             forwardToAPositionFrom
+	^(0 @ -1)! !
+!WestOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:22:14'!
+             forwardToAPositionFrom
+	^(-1 @ 0)! !
+!MarsRoverCompass methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:22:14'!
+            forwardToAPositionFrom
+	self subclassResponsibility.! !
+!EastOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:22:14' overrides: 50347016!
+      forwardToAPositionFrom
+	^(1 @ 0)! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:22:14' prior: 50346141!
+                              moveForward
+	^position := orientation forwardToAPositionFrom.! !
+
+!methodRemoval: NorthOrientation #forwardToAPositionFrom: stamp: 'MG 11/18/2021 01:22:14'!
+forwardToAPositionFrom: anInitialPosition
+	^(0 @ 1)!
+
+!methodRemoval: SouthOrientation #forwardToAPositionFrom: stamp: 'MG 11/18/2021 01:22:14'!
+forwardToAPositionFrom: anInitialPosition
+	^(0 @ -1)!
+
+!methodRemoval: WestOrientation #forwardToAPositionFrom: stamp: 'MG 11/18/2021 01:22:14'!
+forwardToAPositionFrom: anInitialPosition
+	^(-1 @ 0)!
+
+!methodRemoval: MarsRoverCompass #forwardToAPositionFrom: stamp: 'MG 11/18/2021 01:22:14'!
+forwardToAPositionFrom: anInitialPosition
+	self subclassResponsibility.!
+
+!methodRemoval: EastOrientation #forwardToAPositionFrom: stamp: 'MG 11/18/2021 01:22:14'!
+forwardToAPositionFrom: anInitialPosition
+	^(1 @ 0)!
+!SouthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:00'!
+       backwardDirection
+	^(0 @ 1).! !
+!EastOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:00'!
+                  backwardDirection
+	^(-1 @ 0).! !
+!NorthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:00'!
+                backwardDirection
+	^(0 @ -1).! !
+!WestOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:00'!
+                 backwardDirection
+	^(1 @ 0).! !
+!MarsRoverCompass methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:00'!
+                 backwardDirection
+	self subclassResponsibility.! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:23:00' prior: 50346951!
+               moveBackward
+	^position := orientation backwardDirection.! !
+
+!methodRemoval: SouthOrientation #backwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:00'!
+backwardToAPositionFrom
+	^(0 @ 1).!
+
+!methodRemoval: EastOrientation #backwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:00'!
+backwardToAPositionFrom
+	^(-1 @ 0).!
+
+!methodRemoval: NorthOrientation #backwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:00'!
+backwardToAPositionFrom
+	^(0 @ -1).!
+
+!methodRemoval: WestOrientation #backwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:00'!
+backwardToAPositionFrom
+	^(1 @ 0).!
+
+!methodRemoval: MarsRoverCompass #backwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:00'!
+backwardToAPositionFrom
+	self subclassResponsibility.!
+!NorthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:12'!
+ forwardDirection
+	^(0 @ 1)! !
+!SouthOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:12'!
+                   forwardDirection
+	^(0 @ -1)! !
+!MarsRoverCompass methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:12'!
+                  forwardDirection
+	self subclassResponsibility.! !
+!WestOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:12' overrides: 50347108!
+            forwardDirection
+	^(-1 @ 0)! !
+!EastOrientation methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:12' overrides: 50347108!
+                               forwardDirection
+	^(1 @ 0)! !
+!MarsRover methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 01:23:12' prior: 50347026!
+    moveForward
+	^position := orientation forwardDirection.! !
+
+!methodRemoval: NorthOrientation #forwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:12'!
+forwardToAPositionFrom
+	^(0 @ 1)!
+
+!methodRemoval: SouthOrientation #forwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:12'!
+forwardToAPositionFrom
+	^(0 @ -1)!
+
+!methodRemoval: MarsRoverCompass #forwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:12'!
+forwardToAPositionFrom
+	self subclassResponsibility.!
+
+!methodRemoval: WestOrientation #forwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:12'!
+forwardToAPositionFrom
+	^(-1 @ 0)!
+
+!methodRemoval: EastOrientation #forwardToAPositionFrom stamp: 'MG 11/18/2021 01:23:12'!
+forwardToAPositionFrom
+	^(1 @ 0)!
+!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:34' prior: 50347122!
+        moveForward
+	^position := position + orientation forwardDirection.! !
+!MarsRover methodsFor: 'displacements' stamp: 'MG 11/18/2021 01:23:37' prior: 50347075!
+  moveBackward
+	^position :=  position + orientation backwardDirection.! !
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 01:23:40'!
+PASSED!
+
+!testRun: #TestMarsRover #test01MarsRoverComienzaEnElPuntoInicialEsperado stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test02MarsRoverComienzaConLaDireccionEsperada stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test03MarsRoverRecibeUnaInstruccionDeForwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test04MarsRoverRecibeUnaInstruccionDeBackwardYSeMueveALaPosicionEsperadaSinCambiarDeDireccion stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test05MarsRoverRecibeMultiplesInstruccionesDeBackwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test06MarsRoverRecibeMultiplesInstruccionesDeForwardYSeMueveALaPosicionEsperada stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test07MarsRoverRecibeUnaInstruccionDeRightYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test08MarsRoverRecibeUnaInstruccionDeLeftYCambiaALaDireccionEsperadaSinMoverseDePosicion stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test09MarsRoverRecibeUnStringConVariasInstruccionesYRealizaElMovimientoEsperado stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test10MarsRoverRecibeUnStringConUnaInstruccionDesconocidaYEjecutaHastaEncontrarla stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test11MarsRoverRecibe2RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test12MarsRoverRecibe3RightsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test13MarsRoverRecibe4RightsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test14MarsRoverRecibe2LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test15MarsRoverRecibe3LeftsYApuntaHaciaLaDireccionEsperada stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test16MarsRoverRecibe4LeftsYVuelveALaDireccionInicial stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test17MarsRoverApuntaHaciaElEsteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test18MarsRoverApuntaHaciaElEsteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test19MarsRoverApuntaHaciaElSurYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test20MarsRoverApuntaHaciaElSurYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test21MarsRoverApuntaHaciaElOesteYAvanzaCorrectamente stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test22MarsRoverApuntaHaciaElOesteYRetrocedeCorrectamente stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+!testRun: #TestMarsRover #test23MarsRoverRecibeUnStringVacioComoInstruccionYTerminaEnError stamp: 'MG 11/18/2021 01:25:36'!
+PASSED!
+
+----QUIT----(18 November 2021 01:25:41) Ejercicio5.image priorSource: 463011!
+
+----STARTUP---- (18 November 2021 01:26:12) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio5/Ejercicio5.image!
+
+
+----QUIT----(18 November 2021 01:28:13) Ejercicio5.image priorSource: 502372!
