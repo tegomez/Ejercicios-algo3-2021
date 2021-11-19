@@ -1,0 +1,336 @@
+
+
+----STARTUP---- (18 November 2021 21:22:20) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio7/Ejercicio7.image!
+
+
+----End fileIn of /home/martin/Documentos/facultad/trabajos_practicos/algo3/consignas/07-ServiciosFinancieros/ServiciosFinancieros-Ejercicio.st----!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/18/2021 21:22:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:22:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:22:58'!
+FAILURE!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/18/2021 21:22:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/18/2021 21:22:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/18/2021 21:22:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/18/2021 21:22:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:22:58'!
+FAILURE!
+!Withdraw methodsFor: 'value' stamp: 'MG 11/18/2021 21:29:44' prior: 50331830 overrides: 50331755!
+value
+
+	^ value negative.! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:29:49'!
+ERROR!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:29:56'!
+ERROR!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:29:56'!
+ERROR!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:29:59'!
+ERROR!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:29:59'!
+ERROR!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/18/2021 21:30:08'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:30:13'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:30:16'!
+ERROR!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:30:16'!
+ERROR!
+!Withdraw methodsFor: 'value' stamp: 'MG 11/18/2021 21:30:31' prior: 50331923 overrides: 50331755!
+value
+
+	^ value.! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:30:36'!
+FAILURE!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:30:36'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:34:39' prior: 50331866!
+balance
+	|balance|
+	balance := 0 * peso.
+	transactions ifEmpty: [ ^balance ].
+	transactions do: [ :aTransaction | 
+		aTransaction class = Deposit ifTrue: [
+			balance:= balance + aTransaction value].
+		aTransaction class = Withdraw ifTrue:[
+			balance:= balance - aTransaction value
+		] 
+	].! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:34:43'!
+FAILURE!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:34:43'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:35:04' prior: 50331974!
+balance
+	|balance|
+	balance := 0 * peso.
+	transactions ifEmpty: [ ^balance ].
+	transactions do: [ :aTransaction | 
+		aTransaction class = Deposit ifTrue: [
+			balance:= balance + aTransaction value].
+		aTransaction class = Withdraw ifTrue:[
+			balance:= balance - aTransaction value
+		] 
+	].
+	^balance.! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:35:08'!
+PASSED!
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:35:19' prior: 50331994!
+balance
+	|balance|
+	balance := 0 * peso.
+	transactions do: [ :aTransaction | 
+		aTransaction class = Deposit ifTrue: [
+			balance:= balance + aTransaction value].
+		aTransaction class = Withdraw ifTrue:[
+			balance:= balance - aTransaction value
+		] 
+	].
+	^balance.! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:35:21'!
+PASSED!
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:36:58' prior: 50332011!
+balance
+	|balance|
+	balance := 0 * peso.
+	self makeTransactionSummay: balance.
+	^balance.! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:37:08'!
+ERROR!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:37:08'!
+ERROR!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 21:37:26'!
+makeTransactionSummay: aSimpleMeasure 
+	self shouldBeImplemented.! !
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'MG 11/18/2021 21:39:20' prior: 50332041!
+makeTransactionSummay: theBalance 
+	! !
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:39:34' prior: 50332027!
+balance
+	|balance|
+	balance := 0 * peso.
+	transactions do: [ :aTransaction | 
+		aTransaction class = Deposit ifTrue: [
+			balance := balance + aTransaction value].
+		aTransaction class = Withdraw ifTrue:[
+			balance := balance - aTransaction value
+		] 
+	].
+	^balance.
+	! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:39:38'!
+PASSED!
+
+!methodRemoval: ReceptiveAccount #makeTransactionSummay: stamp: 'MG 11/18/2021 21:39:43'!
+makeTransactionSummay: theBalance 
+	!
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:42:33' prior: 50332052!
+balance
+	|balance|
+	balance := 0 * peso.
+	transactions do: [ :aTransaction | 
+		 balance := aTransaction sumValueIn: balance.
+	].
+	^balance.
+	! !
+!AccountTransaction methodsFor: 'nil' stamp: 'MG 11/18/2021 21:43:10'!
+sumValueIn: theBalance
+	self subclassResponsibility. ! !
+!Deposit methodsFor: 'nil' stamp: 'MG 11/18/2021 21:43:35' overrides: 50332079!
+sumValueIn: theBalance
+	^theBalance + self value.! !
+!Withdraw methodsFor: 'nil' stamp: 'MG 11/18/2021 21:43:43' overrides: 50332079!
+sumValueIn: theBalance
+	^theBalance - self value.! !
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:43:46'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/18/2021 21:44:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:44:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:44:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/18/2021 21:44:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/18/2021 21:44:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/18/2021 21:44:58'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/18/2021 21:44:58'!
+PASSED!
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:49:42' prior: 50332072!
+balance
+	|balance|
+	balance := 0 * peso.
+	transactions do: [ :aTransaction | balance := aTransaction sumValueIn: balance. ].
+	^balance.
+	! !
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:49:54' prior: 50332124!
+balance
+
+	|balance|
+	balance := 0 * peso.
+	transactions do: [ :aTransaction | balance := aTransaction sumValueIn: balance. ].
+	^balance.
+	! !
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:49:58' prior: 50332132!
+balance
+
+	| balance |
+	balance := 0 * peso.
+	transactions do: [ :aTransaction | balance := aTransaction sumValueIn: balance. ].
+	^balance.
+	! !
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:54:35' prior: 50332140!
+balance
+
+	^transactions sum: [ :aTransaction | aTransaction value ] ifEmpty: [0]
+	! !
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/18/2021 21:54:37'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:54:37'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:54:37'!
+FAILURE!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/18/2021 21:54:37'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/18/2021 21:54:37'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/18/2021 21:54:37'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/18/2021 21:54:37'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:54:37'!
+FAILURE!
+!Withdraw methodsFor: 'value' stamp: 'MG 11/18/2021 21:54:47' prior: 50331962 overrides: 50331755!
+value
+
+	^ value negated.! !
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/18/2021 21:54:49'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:54:49'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:54:49'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/18/2021 21:54:49'!
+FAILURE!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/18/2021 21:54:49'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/18/2021 21:54:49'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/18/2021 21:54:49'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/18/2021 21:54:49'!
+FAILURE!
+!Withdraw methodsFor: 'value' stamp: 'MG 11/18/2021 21:55:26' prior: 50332185 overrides: 50331755!
+value
+
+	^ value.! !
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'MG 11/18/2021 21:49:58' prior: 50332148!
+balance
+
+	| balance |
+	balance := 0 * peso.
+	transactions do: [ :aTransaction | balance := aTransaction sumValueIn: balance. ].
+	^balance.
+	! !
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/18/2021 21:55:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:55:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/18/2021 21:55:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/18/2021 21:55:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/18/2021 21:55:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/18/2021 21:55:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/18/2021 21:55:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/19/2021 00:55:17'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/19/2021 00:55:17'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/19/2021 00:55:17'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/19/2021 00:55:17'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/19/2021 00:55:17'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/19/2021 00:55:17'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/19/2021 00:55:17'!
+PASSED!
+
+----QUIT----(19 November 2021 00:55:25) Ejercicio7.image priorSource: 135!
