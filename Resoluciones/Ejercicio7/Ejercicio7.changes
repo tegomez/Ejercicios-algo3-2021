@@ -561,3 +561,523 @@ PASSED!
 PASSED!
 
 ----QUIT----(19 November 2021 00:55:25) Ejercicio7.image priorSource: 135!
+
+----STARTUP---- (24 November 2021 23:30:15) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio7/Ejercicio7.image!
+
+
+TestCase subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #TestXXX category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/24/2021 23:32:34'!
+TestCase subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #Transfer category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/24/2021 23:37:51'!
+Object subclass: #Transfer
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+!TestXXX methodsFor: 'nil' stamp: 'tg 11/24/2021 23:37:42'!
+                             test01
+	|originAccount destinationAccount|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: -50 * peso equals: (originAccount balance).
+	self assert: 50 * peso equals: (destinationAccount balance).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/24/2021 23:37:55'!
+ERROR!
+!Transfer class methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:38:15'!
+  from: aReceptiveAccount to: aReceptiveAccount2 for: aSimpleMeasure 
+	self shouldBeImplemented.! !
+!Transfer class methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:43:48' prior: 50332327!
+                           from: anOriginAccount to: aDestinationAccount for: anAmount 
+	Deposit register: anAmount on: aDestinationAccount.
+	Withdraw register: anAmount on: anOriginAccount.! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/24/2021 23:44:16'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/24/2021 23:44:16'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:45:30'!
+   test02
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: 50 * peso equals: aTransfer value.
+! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:45:46'!
+FAILURE!
+
+Object subclass: #Transfer
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #Transfer category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/24/2021 23:46:10'!
+Object subclass: #Transfer
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+!Transfer methodsFor: 'nil' stamp: 'tg 11/24/2021 23:46:28' overrides: 16896425!
+                           initialize
+	value := 50 * peso.! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/24/2021 23:46:31'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:46:31'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:46:31'!
+FAILURE!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:47:07' overrides: 16881508!
+           value
+	^50 * peso.
+	! !
+
+!methodRemoval: Transfer #initialize stamp: 'tg 11/24/2021 23:47:10'!
+initialize
+	value := 50 * peso.!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/24/2021 23:47:19'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:47:19'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:47:19'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:48:13' prior: 50332346!
+                   test02
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: 50 * peso equals: (aTransfer value).
+! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:48:14'!
+FAILURE!
+!Transfer class methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:49:24' prior: 50332334!
+                             from: anOriginAccount to: aDestinationAccount for: anAmount 
+	
+	Deposit register: anAmount on: aDestinationAccount.
+	Withdraw register: anAmount on: anOriginAccount.
+	
+	^self new.
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/24/2021 23:49:26'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:49:26'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:49:34'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:50:16' prior: 50332398!
+                             test02
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: 50 * peso equals: (aTransfer value).
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:53:06'!
+                          test03
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: -50 * peso equals: aTransfer withdraw.! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:54:05' prior: 50332441!
+         test03
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: 50 * peso equals: aTransfer withdrawAmount.! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/24/2021 23:54:21'!
+ERROR!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:54:35'!
+               withdrawAmount
+	self shouldBeImplemented.! !
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:54:52' prior: 50332467!
+                      withdrawAmount
+	^50 * peso.! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/24/2021 23:54:55'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/24/2021 23:54:55'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/24/2021 23:54:55'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/24/2021 23:54:55'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/24/2021 23:55:26'!
+ test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: 50 * peso equals: aTransfer depositAmount.! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:00:34' prior: 50332484!
+     test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: 50 * peso equals: aTransfer depositAmount.
+	
+	"deposit withdrawOrigin"! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:03:56' prior: 50332496!
+         test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+		
+! !
+!Transfer class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:05:25' prior: 50332413!
+                     from: anOriginAccount to: aDestinationAccount for: anAmount 
+	
+	Deposit register: anAmount on: aDestinationAccount.
+	Withdraw register: anAmount on: anOriginAccount.
+	
+	^self new.
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 00:05:32'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/25/2021 00:05:32'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:06:55' prior: 50332509!
+                        test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+		
+	! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/25/2021 00:07:07'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 00:07:07'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 00:07:07'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 00:07:07'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/25/2021 00:07:07'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:07:30' prior: 50332538!
+  test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	
+		
+	! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:24:08' prior: 50332559!
+                       test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	destinationAccount originOf: aTransfer.
+		
+	! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:25:04' prior: 50332570!
+                test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: originAccount equals: (destinationAccount orginiOf: aTransfer).
+		
+	! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:25:16' prior: 50332582!
+           test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: originAccount equals: (destinationAccount originOf: aTransfer).
+		
+	! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/25/2021 00:25:21'!
+ERROR!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:25:42'!
+              originOf: aTransfer 
+	self shouldBeImplemented.! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:30:36' prior: 50332595!
+                 test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: originAccount equals:  (destinationAccount originOf: aTransfer).
+		
+	! !
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:30:58' prior: 50332610!
+ originOf: aTransfer 
+	^aTransfer depositAccount.! !
+
+!methodRemoval: Transfer #withdrawAmount stamp: 'tg 11/25/2021 00:31:20'!
+withdrawAmount
+	^50 * peso.!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'tg 11/25/2021 00:31:23'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'tg 11/25/2021 00:31:23'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'tg 11/25/2021 00:31:23'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'tg 11/25/2021 00:31:23'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'tg 11/25/2021 00:31:23'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'tg 11/25/2021 00:31:23'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'tg 11/25/2021 00:31:23'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 00:31:26'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 00:31:26'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 00:31:26'!
+ERROR!
+
+!testRun: #TestXXX #test04 stamp: 'tg 11/25/2021 00:31:26'!
+ERROR!
+
+!methodRemoval: TestXXX #test03 stamp: 'tg 11/25/2021 00:31:35'!
+test03
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: 50 * peso equals: aTransfer withdrawAmount.!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:32:38'!
+                     depositAccount
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:34:37'!
+ test03
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: originAccount equals:  (destinationAccount originOf: aTransfer).
+		
+	! !
+
+!methodRemoval: TestXXX #test04 stamp: 'tg 11/25/2021 00:34:37'!
+test04
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: originAccount equals:  (destinationAccount originOf: aTransfer).
+		
+	!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:35:39' prior: 50332685!
+                test03
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: destinationAccount equals:  (originAccount originOf: aTransfer).
+		
+	! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:35:56' prior: 50332710!
+          test03
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: destinationAccount equals:  (originAccount originOf: aTransfer).
+		
+	self assert: originAccount equals:  (destinationAccount originOf: aTransfer).
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:37:20' prior: 50332723!
+                            test03
+	|originAccount destinationAccount aTransfer|
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	self assert: destinationAccount equals:  (originAccount destinationOf: aTransfer).
+		
+	self assert: originAccount equals:  (destinationAccount originOf: aTransfer).
+! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 00:37:31'!
+ERROR!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:37:38'!
+                          destinationOf: aTransfer 
+	self shouldBeImplemented.! !
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:37:55' prior: 50332757!
+   destinationOf: aTransfer 
+	^aTransfer destinationAccount.! !
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:38:09'!
+                      destinationAccount
+! !
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:38:35'!
+                            withdrawAccount
+! !
+
+!methodRemoval: Transfer #destinationAccount stamp: 'tg 11/25/2021 00:38:35'!
+destinationAccount
+!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:39:00' prior: 50332762!
+   destinationOf: aTransfer 
+	^aTransfer withdrawAccount.! !
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:39:31' prior: 50332384 overrides: 16881508!
+                     value
+	^value.
+	! !
+!Transfer class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:42:15' prior: 50332520!
+         from: anOriginAccount to: aDestinationAccount for: anAmount 
+	
+	self new from: anOriginAccount to: aDestinationAccount for: anAmount.
+	
+	
+! !
+!Transfer class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:42:21' prior: 50332788!
+               from: anOriginAccount to: aDestinationAccount for: anAmount 
+	
+	^self new from: anOriginAccount to: aDestinationAccount for: anAmount.
+	
+	
+! !
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:43:57'!
+    from: anOriginAccount to: aDestinationAccount for: 	anAmount
+	
+	Deposit register: anAmount on: aDestinationAccount.
+	Withdraw register: anAmount on: anOriginAccount.
+	
+! !
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 00:44:11' prior: 50332803!
+                       from: anOriginAccount to: aDestinationAccount for: 	anAmount
+	
+	Deposit register: anAmount on: aDestinationAccount.
+	Withdraw register: anAmount on: anOriginAccount.
+	value := anAmount.
+	
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 00:44:16'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 00:44:16'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 00:44:16'!
+FAILURE!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 00:44:16'!
+FAILURE!
+
+----SNAPSHOT----(25 November 2021 00:47:43) Ejercicio7.image priorSource: 20239!
+
+----QUIT----(25 November 2021 00:50:27) Ejercicio7.image priorSource: 37717!
