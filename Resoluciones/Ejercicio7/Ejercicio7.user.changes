@@ -878,3 +878,514 @@ FAILURE!
 ----SNAPSHOT----(25 November 2021 00:47:43) Ejercicio7.image priorSource: 20239!
 
 ----QUIT----(25 November 2021 00:50:27) Ejercicio7.image priorSource: 37717!
+
+----STARTUP---- (25 November 2021 18:51:02) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio7/Ejercicio7.image!
+
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:26:59' prior: 50332739!
+test03
+	|originAccount destinationAccount aTransfer depositLegOfTheTransaction withrawLegOfTheTransaction |
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	withrawLegOfTheTransaction := aTransfer transferWithdrawLeg.
+	depositLegOfTheTransaction := aTransfer transferDepositLeg.
+	
+	self assert: withrawLegOfTheTransaction xxxx equals:  depositLegOfTheTransaction.
+		
+	self assert: depositLegOfTheTransaction xxxx equals: withrawLegOfTheTransaction.
+! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:28:09'!
+ERROR!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:28:37' prior: 50332841!
+test03
+	|originAccount destinationAccount aTransfer depositLegOfTheTransaction withrawLegOfTheTransfer |
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	withrawLegOfTheTransfer := aTransfer transferWithdrawLeg.
+	depositLegOfTheTransaction := aTransfer transferDepositLeg.
+	
+	self assert: withrawLegOfTheTransfer xxxx equals:  depositLegOfTheTransaction.
+		
+	self assert: depositLegOfTheTransaction xxxx equals: withrawLegOfTheTransfer.
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:28:49' prior: 50332865!
+test03
+	|originAccount destinationAccount aTransfer depositLegOfTheTransfer withrawLegOfTheTransfer |
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	withrawLegOfTheTransfer := aTransfer transferWithdrawLeg.
+	depositLegOfTheTransfer := aTransfer transferDepositLeg.
+	
+	self assert: withrawLegOfTheTransfer xxxx equals:  depositLegOfTheTransfer.
+		
+	self assert: depositLegOfTheTransfer xxxx equals: withrawLegOfTheTransfer.
+! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:28:52'!
+ERROR!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:29:04'!
+transferWithdrawLeg
+	self shouldBeImplemented.! !
+
+!classDefinition: #Transfer category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 20:30:12'!
+Object subclass: #Transfer
+	instanceVariableNames: 'value withdrawLeg'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:30:11' prior: 50332908!
+transferWithdrawLeg
+	^withdrawLeg.! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:30:16'!
+ERROR!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:30:21'!
+transferDepositLeg
+	self shouldBeImplemented.! !
+
+!classDefinition: #Transfer category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 20:30:35'!
+Object subclass: #Transfer
+	instanceVariableNames: 'value withdrawLeg depositLeg'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:30:33' prior: 50332927!
+transferDepositLeg
+	^depositLeg! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:30:38'!
+ERROR!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:32:37' prior: 50332886!
+test03
+	|originAccount destinationAccount aTransfer depositLegOfTheTransfer withrawLegOfTheTransfer |
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	withrawLegOfTheTransfer := aTransfer transferWithdrawLeg.
+	depositLegOfTheTransfer := aTransfer transferDepositLeg.
+	
+	self assert: (withrawLegOfTheTransfer xxxx: aTransfer) equals:  depositLegOfTheTransfer.
+		
+	self assert: (depositLegOfTheTransfer xxxx: aTransfer) equals: withrawLegOfTheTransfer.
+! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:32:49'!
+ERROR!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:33:28' prior: 50332948!
+test03
+	|originAccount destinationAccount aTransfer depositLegOfTheTransfer withrawLegOfTheTransfer |
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	withrawLegOfTheTransfer := aTransfer transferWithdrawLeg.
+	depositLegOfTheTransfer := aTransfer transferDepositLeg.
+	
+	self assert: (withrawLegOfTheTransfer xxxx: aTransfer) equals:  depositLegOfTheTransfer.
+		
+	self assert: (depositLegOfTheTransfer xxxx: aTransfer) equals: withrawLegOfTheTransfer.
+! !
+
+Object subclass: #XXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #XXX category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 20:33:56'!
+Object subclass: #XXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+XXX subclass: #WithdrawLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #WithdrawLeg category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 20:34:19'!
+XXX subclass: #WithdrawLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+XXX subclass: #DepositLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #DepositLeg category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 20:34:26'!
+XXX subclass: #DepositLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classRenamed: #XXX as: #TransferLegs stamp: 'tg 11/25/2021 20:34:39'!
+Smalltalk renameClassNamed: #XXX as: #TransferLegs!
+!DepositLeg methodsFor: 'no messages' stamp: 'tg 11/25/2021 20:35:24'!
+xxxx: aTransfer
+	! !
+!DepositLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:36:55' prior: 50333033!
+xxxx: aTransfer
+	^aTransfer transferWithdrawLeg.
+	! !
+!WithdrawLeg methodsFor: 'nil' stamp: 'tg 11/25/2021 20:37:08'!
+xxxx: aTransfer
+	^aTransfer transferDepositLeg.
+	! !
+!TransferLegs methodsFor: 'nil' stamp: 'tg 11/25/2021 20:37:22'!
+xxxx: aTransfer
+	self subclassResponsibility.
+! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:37:28'!
+ERROR!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:39:11' prior: 50332812!
+from: anOriginAccount to: aDestinationAccount for: 	anAmount
+	
+	Deposit register: anAmount on: aDestinationAccount.
+	Withdraw register: anAmount on: anOriginAccount.
+	value := anAmount.
+	withdrawLeg :=  WithdrawLeg register: anAmount on: anOriginAccount.
+	depositLeg := 	DepositLeg register: anAmount on: aDestinationAccount.
+
+	
+! !
+!DepositLeg class methodsFor: 'nil' stamp: 'tg 11/25/2021 20:47:28'!
+register: aValue on: account
+
+	| transaction |
+	
+	transaction := Deposit for: aValue.
+	account register: transaction.
+		
+	^ transaction! !
+!WithdrawLeg class methodsFor: 'nil' stamp: 'tg 11/25/2021 20:47:45'!
+register: aValue on: account
+
+	| transaction |
+	
+	transaction := Withdraw for: aValue.
+	account register: transaction.
+		
+	^ transaction! !
+!WithdrawLeg class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:48:03' prior: 50333072!
+register: aValue on: account
+
+	| transaction |
+	
+	transaction := Withdraw for: aValue.
+	account register: transaction.
+		
+	^self new.! !
+!DepositLeg class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:48:10' prior: 50333065!
+register: aValue on: account
+
+	| transaction |
+	
+	transaction := Deposit for: aValue.
+	account register: transaction.
+		
+	^ self new.! !
+!TransferLegs class methodsFor: 'nil' stamp: 'tg 11/25/2021 20:48:49'!
+register: aValue on: account
+	self subclassResponsibility.
+! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:48:56'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:48:58'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 20:48:58'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:48:58'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:48:58'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 20:49:03'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:49:07'!
+FAILURE!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:49:07'!
+FAILURE!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:51:12'!
+FAILURE!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:51:34'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 20:51:34'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:51:34'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:51:34'!
+FAILURE!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:51:53'!
+FAILURE!
+!Transfer methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:52:35' prior: 50333052!
+from: anOriginAccount to: aDestinationAccount for: 	anAmount
+	
+	value := anAmount.
+	withdrawLeg :=  WithdrawLeg register: anAmount on: anOriginAccount.
+	depositLeg := 	DepositLeg register: anAmount on: aDestinationAccount.
+
+	
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:52:46'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 20:52:46'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:52:46'!
+PASSED!
+!TransferLegs methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:53:17'!
+partnerOf: aTransfer
+	self subclassResponsibility.
+! !
+!DepositLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:53:17' overrides: 50333148!
+partnerOf: aTransfer
+	^aTransfer transferWithdrawLeg.
+	! !
+!WithdrawLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:53:17' overrides: 50333148!
+partnerOf: aTransfer
+	^aTransfer transferDepositLeg.
+	! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:53:18' prior: 50332972!
+test03
+	|originAccount destinationAccount aTransfer depositLegOfTheTransfer withrawLegOfTheTransfer |
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	withrawLegOfTheTransfer := aTransfer transferWithdrawLeg.
+	depositLegOfTheTransfer := aTransfer transferDepositLeg.
+	
+	self assert: (withrawLegOfTheTransfer partnerOf: aTransfer) equals:  depositLegOfTheTransfer.
+		
+	self assert: (depositLegOfTheTransfer partnerOf: aTransfer) equals: withrawLegOfTheTransfer.
+! !
+
+!methodRemoval: TransferLegs #xxxx: stamp: 'tg 11/25/2021 20:53:18'!
+xxxx: aTransfer
+	self subclassResponsibility.
+!
+
+!methodRemoval: DepositLeg #xxxx: stamp: 'tg 11/25/2021 20:53:18'!
+xxxx: aTransfer
+	^aTransfer transferWithdrawLeg.
+	!
+
+!methodRemoval: WithdrawLeg #xxxx: stamp: 'tg 11/25/2021 20:53:18'!
+xxxx: aTransfer
+	^aTransfer transferDepositLeg.
+	!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 20:53:27'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 20:53:27'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 20:53:27'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:54:50' prior: 50333163!
+test03
+	|originAccount destinationAccount aTransfer depositLegOfTheTransfer withrawLegOfTheTransfer |
+	
+	originAccount := ReceptiveAccount new. 
+	destinationAccount := ReceptiveAccount new.
+	
+	aTransfer := Transfer from: originAccount to: destinationAccount for: 50 * peso.
+	
+	withrawLegOfTheTransfer := aTransfer transferWithdrawLeg.
+	depositLegOfTheTransfer := aTransfer transferDepositLeg.
+	
+	self assert: (withrawLegOfTheTransfer partnerOf: aTransfer) equals: depositLegOfTheTransfer.
+		
+	self assert: (depositLegOfTheTransfer partnerOf: aTransfer) equals: withrawLegOfTheTransfer.
+! !
+!DepositLeg class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:58:51'!
+for: aValue! !
+
+!methodRemoval: DepositLeg class #register:on: stamp: 'tg 11/25/2021 20:58:56'!
+register: aValue on: account
+
+	| transaction |
+	
+	transaction := Deposit for: aValue.
+	account register: transaction.
+		
+	^ self new.!
+!DepositLeg class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:59:12' prior: 50333224!
+for: aValue
+	^ self new initializeFor: aValue.! !
+!WithdrawLeg class methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 20:59:28'!
+for: aValue
+	^ self new initializeFor: aValue ! !
+
+!methodRemoval: WithdrawLeg class #register:on: stamp: 'tg 11/25/2021 20:59:31'!
+register: aValue on: account
+
+	| transaction |
+	
+	transaction := Withdraw for: aValue.
+	account register: transaction.
+		
+	^self new.!
+
+AccountTransaction subclass: #DepositLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #DepositLeg category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 20:59:43'!
+AccountTransaction subclass: #DepositLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+AccountTransaction subclass: #WithdrawLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #WithdrawLeg category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 20:59:51'!
+AccountTransaction subclass: #WithdrawLeg
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classRemoval: #TransferLegs stamp: 'tg 11/25/2021 21:00:33'!
+Object subclass: #TransferLegs
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #DepositLeg category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 21:01:07'!
+AccountTransaction subclass: #DepositLeg
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+!DepositLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 21:01:04'!
+initializeFor: aValue
+
+	value := aValue ! !
+
+!classDefinition: #WithdrawLeg category: 'ServiciosFinancieros-Ejercicio' stamp: 'tg 11/25/2021 21:01:18'!
+AccountTransaction subclass: #WithdrawLeg
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+!WithdrawLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 21:01:16'!
+initializeFor: aValue
+
+	value := aValue ! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 21:02:58'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:03:01'!
+ERROR!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 21:03:01'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 21:03:01'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:03:01'!
+ERROR!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 21:03:11'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:03:15'!
+ERROR!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:03:15'!
+ERROR!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:05:19'!
+ERROR!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:05:19'!
+ERROR!
+!DepositLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 21:07:51' overrides: 50332079!
+sumValueIn: theBalance
+	^theBalance + self value.! !
+!WithdrawLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 21:08:05' overrides: 50332079!
+sumValueIn: theBalance
+	^theBalance - self value.! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:08:13'!
+ERROR!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 21:08:13'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 21:08:13'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:08:13'!
+ERROR!
+!DepositLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 21:08:46' prior: 50333332 overrides: 50332079!
+sumValueIn: theBalance
+	^theBalance + value.! !
+!WithdrawLeg methodsFor: 'as yet unclassified' stamp: 'tg 11/25/2021 21:08:54' prior: 50333337 overrides: 50332079!
+sumValueIn: theBalance
+	^theBalance - value.! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/25/2021 21:09:22'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 11/25/2021 21:09:22'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 11/25/2021 21:09:22'!
+PASSED!
+
+----QUIT----(25 November 2021 21:13:18) Ejercicio7.image priorSource: 37799!
