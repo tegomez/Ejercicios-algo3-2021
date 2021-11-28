@@ -7695,3 +7695,607 @@ PASSED!
 PASSED!
 
 ----QUIT----(27 November 2021 20:09:57) Ejercicio7.image priorSource: 206291!
+
+----STARTUP---- (28 November 2021 18:17:05) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio7/Ejercicio7.image!
+
+!BriefcaseAccount methodsFor: 'main protocol' stamp: 'MG 11/28/2021 18:18:13'!
+                         hasRegistered: anTransaction
+	
+	| hasTransactions |
+	hasTransactions := false.
+	wallet do:[:anAccount | anAccount hasRegisterOfTransactions ifTrue:[ ^ hasTransactions := true ] ].
+	^hasTransactions.! !
+!BriefcaseAccount methodsFor: 'main protocol' stamp: 'MG 11/28/2021 18:18:32' prior: 50340380!
+                       hasRegistered: anTransaction
+	
+	| hasTransactions |
+	hasTransactions := false.
+	wallet do:[:anAccount | (anAccount hasRegistered: anTransaction) ifTrue:[ ^ hasTransactions := true ] ].
+	^hasTransactions.! !
+
+!testRun: #BriefcaseAccountTest #test01UnPortfolioSinCuentasTienenBalance0 stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test02UnPortfolioConUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test03UnPortfolioConMasDeUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test06UnPortFolioConUnaCuentaSinTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test07UnPortFolioConUnaCuentaConTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test08UnPortfolioVacioNoObtieneNingunaTransaccion stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test09UnPortfolioNoObtieneLasTransaccionesDeUnaCuentaNoIncluidaEnElMismo stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test11UnPortFolioConUnPortFolioConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test13UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test14UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada stamp: 'MG 11/28/2021 18:19:03'!
+PASSED!
+!BriefcaseAccountTest methodsFor: 'test - has transactions' stamp: 'MG 11/28/2021 18:20:45' prior: 50339752!
+                              test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna
+
+	| aDeposit aWithdraw |
+	aDeposit :=  Deposit for: 100 * peso.
+	aWithdraw := Withdraw for: 50 * peso.
+		
+	self deny: (mainBriefcase hasRegistered: aDeposit).
+	self deny: (mainBriefcase hasRegistered: aWithdraw).! !
+
+!testRun: #BriefcaseAccountTest #test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna stamp: 'MG 11/28/2021 18:20:50'!
+PASSED!
+!BriefcaseAccountTest methodsFor: 'test - has transactions' stamp: 'MG 11/28/2021 18:23:46' prior: 50340006!
+                  test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra
+
+	| aDeposit aWithdraw anAccount |
+	
+	anAccount := ReceptiveAccount new.
+	aDeposit :=  Deposit register:  100 * peso on:  anAccount.
+	aWithdraw := Withdraw register:  50 * peso on:  anAccount.
+	
+	mainBriefcase addAccount: anAccount.
+	 
+	self assert: (mainBriefcase hasRegistered: aDeposit).
+	self assert: (mainBriefcase hasRegistered: aWithdraw).
+	! !
+
+!testRun: #BriefcaseAccountTest #test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:23:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna stamp: 'MG 11/28/2021 18:23:54'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:23:55'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test01UnPortfolioSinCuentasTienenBalance0 stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test02UnPortfolioConUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test03UnPortfolioConMasDeUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test06UnPortFolioConUnaCuentaSinTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test07UnPortFolioConUnaCuentaConTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test08UnPortfolioVacioNoObtieneNingunaTransaccion stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test09UnPortfolioNoObtieneLasTransaccionesDeUnaCuentaNoIncluidaEnElMismo stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test11UnPortFolioConUnPortFolioConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test13UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test14UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada stamp: 'MG 11/28/2021 18:23:57'!
+PASSED!
+!BriefcaseAccountTest methodsFor: 'test - has transactions' stamp: 'MG 11/28/2021 18:24:27' prior: 50339269!
+  test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion
+	
+	| aBriefcase |
+	
+	aBriefcase := BriefcaseAccount new.
+	
+	mainBriefcase addAccount: aBriefcase.
+	
+	self deny: mainBriefcase hasRegisterOfTransactions. ! !
+!BriefcaseAccountTest methodsFor: 'test - has transactions' stamp: 'MG 11/28/2021 18:25:41' prior: 50340567!
+                test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion
+	
+	| aDeposit aWithdraw aBriefcase |
+	
+	aDeposit :=  Deposit for: 100 * peso.
+	aWithdraw := Withdraw for: 50 * peso.
+	
+	aBriefcase := BriefcaseAccount new.
+	
+	mainBriefcase addAccount: aBriefcase.
+		
+	self deny: (mainBriefcase hasRegistered: aDeposit).
+	self deny: (mainBriefcase hasRegistered: aWithdraw).! !
+!BriefcaseAccountTest methodsFor: 'test - has transactions' stamp: 'MG 11/28/2021 18:26:38' prior: 50339534!
+                       test11UnPortFolioConUnPortFolioConTransaccionesLasRegistra
+	
+	| aDeposit aWithdraw anAccount aBriefcase |
+	
+	aBriefcase := BriefcaseAccount new.
+	
+	anAccount := ReceptiveAccount new.
+	aDeposit :=  Deposit register:  100 * peso on:  anAccount.
+	aWithdraw := Withdraw register:  50 * peso on:  anAccount.
+	
+	aBriefcase addAccount: anAccount.
+	mainBriefcase addAccount: aBriefcase.
+	
+	self assert: (mainBriefcase hasRegistered: aDeposit).
+	self assert: (mainBriefcase hasRegistered: aWithdraw).
+	! !
+
+!testRun: #BriefcaseAccountTest #test11UnPortFolioConUnPortFolioConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:26:42'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion stamp: 'MG 11/28/2021 18:26:44'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test01UnPortfolioSinCuentasTienenBalance0 stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test02UnPortfolioConUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test03UnPortfolioConMasDeUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test06UnPortFolioConUnaCuentaSinTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test07UnPortFolioConUnaCuentaConTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test08UnPortfolioVacioNoObtieneNingunaTransaccion stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test09UnPortfolioNoObtieneLasTransaccionesDeUnaCuentaNoIncluidaEnElMismo stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test11UnPortFolioConUnPortFolioConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test13UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test14UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada stamp: 'MG 11/28/2021 18:27:24'!
+PASSED!
+
+!methodRemoval: BriefcaseAccountTest #test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion stamp: 'MG 11/28/2021 18:27:29'!
+test10UnPortFolioConUnPortfolioSinCuentasNoRegistraNingunaTransaccion
+	
+	| aDeposit aWithdraw aBriefcase |
+	
+	aDeposit :=  Deposit for: 100 * peso.
+	aWithdraw := Withdraw for: 50 * peso.
+	
+	aBriefcase := BriefcaseAccount new.
+	
+	mainBriefcase addAccount: aBriefcase.
+		
+	self deny: (mainBriefcase hasRegistered: aDeposit).
+	self deny: (mainBriefcase hasRegistered: aWithdraw).!
+!BriefcaseAccountTest methodsFor: 'test - has transactions' stamp: 'MG 11/28/2021 18:27:43'!
+             test10UnPortFolioConUnPortFolioConTransaccionesLasRegistra
+	
+	| aDeposit aWithdraw anAccount aBriefcase |
+	
+	aBriefcase := BriefcaseAccount new.
+	
+	anAccount := ReceptiveAccount new.
+	aDeposit :=  Deposit register:  100 * peso on:  anAccount.
+	aWithdraw := Withdraw register:  50 * peso on:  anAccount.
+	
+	aBriefcase addAccount: anAccount.
+	mainBriefcase addAccount: aBriefcase.
+	
+	self assert: (mainBriefcase hasRegistered: aDeposit).
+	self assert: (mainBriefcase hasRegistered: aWithdraw).
+	! !
+
+!methodRemoval: BriefcaseAccountTest #test11UnPortFolioConUnPortFolioConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:27:43'!
+test11UnPortFolioConUnPortFolioConTransaccionesLasRegistra
+	
+	| aDeposit aWithdraw anAccount aBriefcase |
+	
+	aBriefcase := BriefcaseAccount new.
+	
+	anAccount := ReceptiveAccount new.
+	aDeposit :=  Deposit register:  100 * peso on:  anAccount.
+	aWithdraw := Withdraw register:  50 * peso on:  anAccount.
+	
+	aBriefcase addAccount: anAccount.
+	mainBriefcase addAccount: aBriefcase.
+	
+	self assert: (mainBriefcase hasRegistered: aDeposit).
+	self assert: (mainBriefcase hasRegistered: aWithdraw).
+	!
+!BriefcaseAccountTest methodsFor: 'test - get transactions' stamp: 'MG 11/28/2021 18:28:08'!
+test11UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones
+	
+	| aBriefcase anAccountInBriefcase theTransactionOnABriefcase aAccountTransactions  |
+
+	anAccountInBriefcase := ReceptiveAccount new.	
+	theTransactionOnABriefcase := Withdraw register: 50*  peso  on: 	anAccountInBriefcase.
+	
+	aBriefcase := BriefcaseAccount new.
+	aBriefcase addAccount: anAccountInBriefcase.
+	
+	mainBriefcase addAccount: aBriefcase.
+	
+	aAccountTransactions := mainBriefcase getTransactionsOf: aBriefcase.
+	
+	self assert: aAccountTransactions includes: theTransactionOnABriefcase. ! !
+
+!methodRemoval: BriefcaseAccountTest #test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones stamp: 'MG 11/28/2021 18:28:09'!
+test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones
+	
+	| aBriefcase anAccountInBriefcase theTransactionOnABriefcase aAccountTransactions  |
+
+	anAccountInBriefcase := ReceptiveAccount new.	
+	theTransactionOnABriefcase := Withdraw register: 50*  peso  on: 	anAccountInBriefcase.
+	
+	aBriefcase := BriefcaseAccount new.
+	aBriefcase addAccount: anAccountInBriefcase.
+	
+	mainBriefcase addAccount: aBriefcase.
+	
+	aAccountTransactions := mainBriefcase getTransactionsOf: aBriefcase.
+	
+	self assert: aAccountTransactions includes: theTransactionOnABriefcase. !
+!BriefcaseAccountTest methodsFor: 'test - get transactions' stamp: 'MG 11/28/2021 18:28:15'!
+    test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones
+	
+	| aBriefcase aAccountTransactions  |
+	
+	aBriefcase := BriefcaseAccount new.
+	aBriefcase addAccount: accountWithoutTransaction.
+	
+	mainBriefcase addAccount: aBriefcase.
+	
+	aAccountTransactions := mainBriefcase getTransactionsOf: aBriefcase.
+	
+	self assert:  aAccountTransactions isEmpty. ! !
+
+!methodRemoval: BriefcaseAccountTest #test13UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones stamp: 'MG 11/28/2021 18:28:15'!
+test13UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones
+	
+	| aBriefcase aAccountTransactions  |
+	
+	aBriefcase := BriefcaseAccount new.
+	aBriefcase addAccount: accountWithoutTransaction.
+	
+	mainBriefcase addAccount: aBriefcase.
+	
+	aAccountTransactions := mainBriefcase getTransactionsOf: aBriefcase.
+	
+	self assert:  aAccountTransactions isEmpty. !
+!BriefcaseAccountTest methodsFor: 'test - extra' stamp: 'MG 11/28/2021 18:28:22'!
+               test13UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada
+	
+	|anAccount|
+	
+	anAccount := ReceptiveAccount new.
+	
+	mainBriefcase addAccount: anAccount.
+	
+	self should: [mainBriefcase addAccount: anAccount] raise:  Error withExceptionDo: [: anError |
+		self assert: anError messageText equals: BriefcaseAccount accountAlredyIncluded.
+	].
+
+	! !
+
+!methodRemoval: BriefcaseAccountTest #test14UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada stamp: 'MG 11/28/2021 18:28:22'!
+test14UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada
+	
+	|anAccount|
+	
+	anAccount := ReceptiveAccount new.
+	
+	mainBriefcase addAccount: anAccount.
+	
+	self should: [mainBriefcase addAccount: anAccount] raise:  Error withExceptionDo: [: anError |
+		self assert: anError messageText equals: BriefcaseAccount accountAlredyIncluded.
+	].
+
+	!
+
+!methodRemoval: BriefcaseAccount #hasRegisterOfTransactions stamp: 'MG 11/28/2021 18:29:00'!
+hasRegisterOfTransactions
+	
+	| hasTransactions |
+	hasTransactions := false.
+	wallet do:[:anAccount | anAccount hasRegisterOfTransactions ifTrue:[ ^ hasTransactions := true ] ].
+	^hasTransactions.!
+
+!methodRemoval: ReceptiveAccount #hasRegisterOfTransactions stamp: 'MG 11/28/2021 18:29:05'!
+hasRegisterOfTransactions
+	^(transactions isEmpty) not.!
+
+!testRun: #BriefcaseAccountTest #test01UnPortfolioSinCuentasTienenBalance0 stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test02UnPortfolioConUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test03UnPortfolioConMasDeUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test06UnPortFolioConUnaCuentaSinTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test07UnPortFolioConUnaCuentaConTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test08UnPortfolioVacioNoObtieneNingunaTransaccion stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test09UnPortfolioNoObtieneLasTransaccionesDeUnaCuentaNoIncluidaEnElMismo stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test10UnPortFolioConUnPortFolioConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test11UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test13UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada stamp: 'MG 11/28/2021 18:29:09'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/28/2021 18:29:11'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/28/2021 18:29:11'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/28/2021 18:29:11'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/28/2021 18:29:11'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/28/2021 18:29:11'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/28/2021 18:29:11'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/28/2021 18:29:11'!
+PASSED!
+
+!testRun: #TransferTest #test01UnaTrasferenciaEntreDosCuentasSeRealizaCorrectamente stamp: 'MG 11/28/2021 18:29:12'!
+PASSED!
+
+!testRun: #TransferTest #test02DespuesDeUnaTrasferenciaSeDevuelveElValorDeLaMisma stamp: 'MG 11/28/2021 18:29:12'!
+PASSED!
+
+!testRun: #TransferTest #test03CadaPataDeLaTransferenciaConoceSuContraparte stamp: 'MG 11/28/2021 18:29:12'!
+PASSED!
+
+!testRun: #TransferTest #test04UnaTransferenciaNoPuedeRealizarseConMontoCero stamp: 'MG 11/28/2021 18:29:12'!
+PASSED!
+
+!testRun: #TransferTest #test05UnaTransferenciaNoPuedeRealizarseConMontoNegativo stamp: 'MG 11/28/2021 18:29:12'!
+PASSED!
+
+Object subclass: #BackAccount
+	instanceVariableNames: 'wallet'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #BackAccount category: 'ServiciosFinancieros-Ejercicio' stamp: 'MG 11/28/2021 18:29:34'!
+Object subclass: #BackAccount
+	instanceVariableNames: 'wallet'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classRenamed: #BackAccount as: #BankAccount stamp: 'MG 11/28/2021 18:29:50'!
+Smalltalk renameClassNamed: #BackAccount as: #BankAccount!
+
+BankAccount subclass: #BriefcaseAccount
+	instanceVariableNames: 'wallet'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+Object subclass: #BankAccount
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #BankAccount category: 'ServiciosFinancieros-Ejercicio' stamp: 'MG 11/28/2021 18:30:30'!
+Object subclass: #BankAccount
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+BankAccount subclass: #BriefcaseAccount
+	instanceVariableNames: 'wallet'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #BriefcaseAccount category: 'ServiciosFinancieros-Ejercicio' stamp: 'MG 11/28/2021 18:31:18'!
+BankAccount subclass: #BriefcaseAccount
+	instanceVariableNames: 'wallet'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+BankAccount subclass: #ReceptiveAccount
+	instanceVariableNames: 'transactions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+
+!classDefinition: #ReceptiveAccount category: 'ServiciosFinancieros-Ejercicio' stamp: 'MG 11/28/2021 18:31:23'!
+BankAccount subclass: #ReceptiveAccount
+	instanceVariableNames: 'transactions'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Ejercicio'!
+!BankAccount methodsFor: 'no messages' stamp: 'MG 11/28/2021 18:33:47'!
+                           balance
+	self subclassResponsibility.! !
+!BankAccount methodsFor: 'as yet unclassified' stamp: 'MG 11/28/2021 18:33:53'!
+       hasRegistered: aTransaction
+	self subclassResponsibility.! !
+!BankAccount methodsFor: 'as yet unclassified' stamp: 'MG 11/28/2021 18:34:02'!
+                   transactions
+	self subclassResponsibility.! !
+
+!testRun: #BriefcaseAccountTest #test01UnPortfolioSinCuentasTienenBalance0 stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test02UnPortfolioConUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test03UnPortfolioConMasDeUnaCuentaConTransaccionesPoseeElBalanceCorrecto stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test04UnPortFolioConUnaCuentaSinTransaccionesNoRegistraNinguna stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test05UnPortFolioConUnaCuentaConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test06UnPortFolioConUnaCuentaSinTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test07UnPortFolioConUnaCuentaConTransaccionesLasObtiene stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test08UnPortfolioVacioNoObtieneNingunaTransaccion stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test09UnPortfolioNoObtieneLasTransaccionesDeUnaCuentaNoIncluidaEnElMismo stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test10UnPortFolioConUnPortFolioConTransaccionesLasRegistra stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test11UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYConTransacciones stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test12UnPortfolioObtieneLasTransaccionesDeUnPortfolioIncluidoYSinTransacciones stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #BriefcaseAccountTest #test13UnPortfolioNoPuedeAgregarUnaCuentaYaAgregada stamp: 'MG 11/28/2021 18:34:51'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 11/28/2021 18:34:53'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 11/28/2021 18:34:53'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 11/28/2021 18:34:53'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 11/28/2021 18:34:53'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 11/28/2021 18:34:53'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 11/28/2021 18:34:53'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 11/28/2021 18:34:53'!
+PASSED!
+
+!testRun: #TransferTest #test01UnaTrasferenciaEntreDosCuentasSeRealizaCorrectamente stamp: 'MG 11/28/2021 18:34:54'!
+PASSED!
+
+!testRun: #TransferTest #test02DespuesDeUnaTrasferenciaSeDevuelveElValorDeLaMisma stamp: 'MG 11/28/2021 18:34:54'!
+PASSED!
+
+!testRun: #TransferTest #test03CadaPataDeLaTransferenciaConoceSuContraparte stamp: 'MG 11/28/2021 18:34:54'!
+PASSED!
+
+!testRun: #TransferTest #test04UnaTransferenciaNoPuedeRealizarseConMontoCero stamp: 'MG 11/28/2021 18:34:54'!
+PASSED!
+
+!testRun: #TransferTest #test05UnaTransferenciaNoPuedeRealizarseConMontoNegativo stamp: 'MG 11/28/2021 18:34:54'!
+PASSED!
+
+!classRenamed: #BankAccount as: #BankServicies stamp: 'MG 11/28/2021 18:35:20'!
+Smalltalk renameClassNamed: #BankAccount as: #BankServicies!
+
+!classRenamed: #BankServicies as: #BankServices stamp: 'MG 11/28/2021 18:35:29'!
+Smalltalk renameClassNamed: #BankServicies as: #BankServices!
+
+----QUIT----(28 November 2021 18:37:28) Ejercicio7.image priorSource: 279086!
