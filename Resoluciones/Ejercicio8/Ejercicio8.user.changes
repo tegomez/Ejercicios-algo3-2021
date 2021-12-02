@@ -1,0 +1,647 @@
+
+
+----STARTUP---- (29 November 2021 21:02:20) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio8/Ejercicio8.image!
+
+
+----End fileIn of /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Entregas/Ejercicio7-ServiciosFinancieros.st----!
+
+TestCase subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Parte2'!
+
+!classDefinition: #TestXXX category: 'ServiciosFinancieros-Parte2' stamp: 'tg 11/29/2021 21:04:47'!
+TestCase subclass: #TestXXX
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Parte2'!
+!TestXXX methodsFor: 'nil' stamp: 'tg 11/29/2021 21:06:05'!
+test01
+	! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:07:54' prior: 50332543!
+test01
+	
+	|anAccount|
+	
+	anAccount := ReceptiveAccount new.
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:12:10' prior: 50332547!
+test01
+	
+	|anAccount firsrTransfer secondTransfer aDeposit aWithdraw|
+	
+	anAccount := ReceptiveAccount new.
+
+	aDeposit := Deposit register: 100*peso on: anAccount.
+	aWithdraw := Withdraw register: 50*peso  on: anAccount.
+	firsrTransfer := Withdraw register: 20*peso  on: anAccount.
+	secondTransfer := Deposit register: 30*peso on: anAccount! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:15:31' prior: 50332552!
+test01
+	
+	|anAccount firsrTransfer secondTransfer aDeposit aWithdraw|
+	
+	anAccount := ReceptiveAccount new.
+
+	aDeposit := Deposit register: 100*peso on: anAccount.
+	aWithdraw := Withdraw register: 50*peso  on: anAccount.
+	firsrTransfer := Withdraw register: 20*peso  on: anAccount.
+	secondTransfer := Deposit register: 30*peso on: anAccount.
+	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:23:44' prior: 50332566!
+test01
+	
+	|anAccount firsrTransfer secondTransfer aDeposit aWithdraw  aDestinationAccount |
+	
+	anAccount := ReceptiveAccount new.
+
+	aDeposit := Deposit register: 100*peso on: anAccount.
+	aWithdraw := Withdraw register: 50*peso  on: anAccount.
+	firsrTransfer := Transfer from: anAccount to: aDestinationAccount for: 20*peso.
+	secondTransfer := Transfer from: aDestinationAccount to: anAccount for: 30*peso.
+
+! !
+
+!classDefinition: #AccountSumary category: 'ServiciosFinancieros-Parte2' stamp: 'tg 11/29/2021 21:30:01'!
+Object subclass: #AccountSumary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Parte2'!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:29:55' prior: 50332580!
+test01
+	
+	|anAccount firsrTransfer secondTransfer aDeposit aWithdraw  aDestinationAccount |
+	
+	anAccount := ReceptiveAccount new.
+	aDestinationAccount := ReceptiveAccount new.
+
+	aDeposit := Deposit register: 100*peso on: anAccount.
+	aWithdraw := Withdraw register: 50*peso  on: anAccount.
+	firsrTransfer := Transfer from: anAccount to: aDestinationAccount for: 20*peso.
+	secondTransfer := Transfer from: aDestinationAccount to: anAccount for: 30*peso.
+
+	self assert: AccountSumary new equals: 'Depósito por 100 pesos
+									Extracción por 50 pesos
+									Salida por transferencia de 20 pesos
+									Entrada por transferencia de 30 pesos
+									Balance = 60 pesos'.! !
+
+!methodRemoval: TestXXX #test01 stamp: 'tg 11/29/2021 21:52:25'!
+test01
+	
+	|anAccount firsrTransfer secondTransfer aDeposit aWithdraw  aDestinationAccount |
+	
+	anAccount := ReceptiveAccount new.
+	aDestinationAccount := ReceptiveAccount new.
+
+	aDeposit := Deposit register: 100*peso on: anAccount.
+	aWithdraw := Withdraw register: 50*peso  on: anAccount.
+	firsrTransfer := Transfer from: anAccount to: aDestinationAccount for: 20*peso.
+	secondTransfer := Transfer from: aDestinationAccount to: anAccount for: 30*peso.
+
+	self assert: AccountSumary new equals: 'Depósito por 100 pesos
+									Extracción por 50 pesos
+									Salida por transferencia de 20 pesos
+									Entrada por transferencia de 30 pesos
+									Balance = 60 pesos'.!
+!TestXXX methodsFor: 'nil' stamp: 'tg 11/29/2021 21:56:19'!
+test01
+	|anAccount anAccountSummary |
+	
+	anAccount := ReceptiveAccount  new.
+	
+	anAccountSummary := (OrderedCollection with: 'Balance = 0').
+	self assert: anAccountSummary equals: anAccount summary.! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:58:45' prior: 50332651!
+test01
+	|anAccount anAccountSummary |
+	
+	anAccount := ReceptiveAccount  new.
+	
+	anAccountSummary := (OrderedCollection with: 'Balance = 0').
+	self assert: anAccountSummary equals: ((anAccount summary) at: 1).! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:58:54' prior: 50332661!
+test01
+	|anAccount anAccountSummary |
+	
+	anAccount := ReceptiveAccount  new.
+	
+	anAccountSummary :=  'Balance = 0'.
+	
+	self assert: anAccountSummary equals: ((anAccount summary) at: 1).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 21:58:59'!
+ERROR!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 21:59:07'!
+summary
+	self shouldBeImplemented.! !
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 22:00:10' prior: 50332682!
+summary
+	transactions ifEmpty: [^'Balance = 0 pesos'].! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 22:00:32' prior: 50332671!
+test01
+	|anAccount anAccountSummary |
+	
+	anAccount := ReceptiveAccount  new.
+	
+	anAccountSummary := (OrderedCollection with: 'Balance = 0 pesos').
+	
+	self assert: anAccountSummary equals: ((anAccount summary) at: 1).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 22:00:33'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 22:00:48' prior: 50332692!
+test01
+	|anAccount anAccountSummary |
+	
+	anAccount := ReceptiveAccount  new.
+	
+	anAccountSummary := (OrderedCollection with: 'Balance = 0 pesos').
+	
+	self assert: anAccountSummary equals: (anAccount summary).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 22:00:48'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 22:01:51' prior: 50332687!
+summary
+	(transactions isEmpty) ifTrue: [^'Balance = 0 pesos'].! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 22:01:57'!
+FAILURE!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 22:01:57'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 22:02:51' prior: 50332716!
+summary
+	|summary|
+summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 22:02:54'!
+FAILURE!
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 22:02:54'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 11/29/2021 22:04:18' prior: 50332726!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	^summary ! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 11/29/2021 22:04:23'!
+PASSED!
+
+----QUIT----(29 November 2021 22:04:45) Ejercicio8.image priorSource: 135!
+
+----STARTUP---- (1 December 2021 15:15:49) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio8/Ejercicio8.image!
+
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:26:45' prior: 50332704!
+test01
+	|anAccount anAccountSummary |
+	
+	anAccount := ReceptiveAccount  new.
+		
+	self assert: anAccount summary equals: (anAccount summary).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:26:50'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:26:50'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:26:55' prior: 50332756!
+test01
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+		
+	self assert: anAccount summary equals: (anAccount summary).! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:26:56'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:26:56'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:31:23'!
+test02
+	|anAccount aDeposit |
+	
+	anAccount := ReceptiveAccount  new.
+	aDeposit := Deposit register: 100* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Depósito por 100 pesos'.	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:31:50' prior: 50332779!
+test02
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+	Deposit register: 100* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Depósito por 100 pesos'.	
+! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:31:52'!
+ERROR!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:36:04' prior: 50332738!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por 100 pesos'].
+			
+		].
+	^summary ! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:36:09'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:36:09'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:36:09'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:36:18' prior: 50332789!
+test02
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+	Deposit register: 100* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Deposito por 100 pesos'.	
+! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:36:19'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:36:19'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:36:19'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:37:56'!
+test03
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+	Withdraw register: 100* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Extraccion por 100 pesos'.	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:38:07' prior: 50332834!
+test03
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+	Withdraw register: 50* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Extraccion por 50 pesos'.	
+! !
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:38:54' prior: 50332801!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por 100 pesos'].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		].
+	^summary 
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:38:56'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:38:56'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:38:56'!
+PASSED!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:39:34'!
+test04
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+	Transfer register: 50* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Extraccion por 50 pesos'.	
+! !
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:41:53' prior: 50332873!
+test04
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer from: originAccount to: destinationAccount  for:  20* peso.
+		
+	self assert: ((originAccount summary) at: 1) equals: 'Salida por transferencia de 20 pesos'.	
+! !
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:43:14'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:44:47' prior: 50332853!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por 100 pesos'].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		(aTransaction isKindOf: DepositLeg ) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:44:51'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:44:51'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:44:51'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:44:51'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:44:51'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:44:58'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:44:58'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:45:18' prior: 50332897!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por 100 pesos'].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		(aTransaction isKindOf: Transfer) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:47:13' prior: 50332930!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por 100 pesos'].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		(aTransaction isKindOf: Transfer) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:48:53' prior: 50332948!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por 100 pesos'].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		(aTransaction isKindOf: WithdrawLeg ) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'tg 12/1/2021 15:48:54'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'tg 12/1/2021 15:48:54'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'tg 12/1/2021 15:48:54'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'tg 12/1/2021 15:48:54'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'tg 12/1/2021 15:48:54'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'tg 12/1/2021 15:48:54'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'tg 12/1/2021 15:48:54'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:48:58'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:48:58'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:48:58'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:48:58'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:48:58'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:49:14'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:49:14'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:51:26' prior: 50332966!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por 100 pesos'].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		(aTransaction isKindOf: Transfer) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:51:29'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:51:29'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:51:29'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:51:29'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:51:29'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:53:02' prior: 50333025!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por ', aTransaction value asString].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		(aTransaction isKindOf: Transfer) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'tg 12/1/2021 15:53:03'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'tg 12/1/2021 15:53:03'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'tg 12/1/2021 15:53:03'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'tg 12/1/2021 15:53:03'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'tg 12/1/2021 15:53:03'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'tg 12/1/2021 15:53:03'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'tg 12/1/2021 15:53:03'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:53:06'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:53:06'!
+FAILURE!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:53:06'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:53:06'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:54:24' prior: 50333054!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por ', (aTransaction value) asString].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por 50 pesos'].
+		(aTransaction isKindOf: Transfer) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:54:28'!
+FAILURE!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:54:28'!
+FAILURE!
+
+!classRemoval: #AccountSumary stamp: 'tg 12/1/2021 15:55:17'!
+Object subclass: #AccountSumary
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-Parte2'!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:56:05' prior: 50332819!
+test02
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+	Deposit register: 100* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Deposito por 100 * pesos'.	
+! !
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:56:06'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:56:06'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:56:06'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:56:06'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:56:06'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:56:06'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:56:36' prior: 50333107!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por ', (aTransaction value) asString].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por ', (aTransaction value) asString].
+		(aTransaction isKindOf: Transfer) ifTrue:[ summary add:  'Salida por transferencia de 20 pesos'].
+		].
+	^summary 
+! !
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:56:39'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:56:39'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:56:39'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:56:39'!
+FAILURE!
+!TestXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:56:46' prior: 50332843!
+test03
+	|anAccount |
+	
+	anAccount := ReceptiveAccount  new.
+	Withdraw register: 50* peso  on: anAccount.
+		
+	self assert: ((anAccount summary) at: 1) equals: 'Extraccion por 50 * pesos'.	
+! !
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:56:47'!
+PASSED!
+
+!testRun: #TestXXX #test01 stamp: 'tg 12/1/2021 15:56:47'!
+PASSED!
+
+!testRun: #TestXXX #test02 stamp: 'tg 12/1/2021 15:56:47'!
+PASSED!
+
+!testRun: #TestXXX #test03 stamp: 'tg 12/1/2021 15:56:47'!
+PASSED!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:56:47'!
+FAILURE!
+
+!testRun: #TestXXX #test04 stamp: 'tg 12/1/2021 15:56:47'!
+FAILURE!
+!ReceptiveAccount methodsFor: 'as yet unclassified' stamp: 'tg 12/1/2021 15:59:43' prior: 50333158!
+summary
+	|summary|
+	summary := OrderedCollection new.
+	(transactions isEmpty) ifTrue: [summary add: 'Balance = 0 pesos'].
+	self transactions do: [: aTransaction | 
+		(aTransaction isKindOf: Deposit) ifTrue:[ summary add: 'Deposito por ', (aTransaction value) asString].
+		(aTransaction isKindOf: Withdraw ) ifTrue:[ summary add: 	'Extraccion por ', (aTransaction value) asString].
+		(aTransaction isKindOf: Transfer) ifTrue:[ summary add:  'Salida por transferencia de ', (aTransaction value) asString].
+		].
+	^summary 
+! !
+
+----QUIT----(1 December 2021 16:15:12) Ejercicio8.image priorSource: 35084!
