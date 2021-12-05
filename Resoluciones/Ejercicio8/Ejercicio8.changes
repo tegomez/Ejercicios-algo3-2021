@@ -6422,3 +6422,1269 @@ PASSED!
 PASSED!
 
 ----QUIT----(5 December 2021 17:37:34) Ejercicio8.image priorSource: 135!
+
+----STARTUP---- (5 December 2021 17:40:28) as /home/thiago/Documentos/Thiago/Algoritmos y Programacion III/Ejercicios-Algo3-2021/Ejercicios-algo3-2021/Resoluciones/Ejercicio8/Ejercicio8.image!
+
+
+!testRun: #TransferNetTest #test01 stamp: 'tg 12/5/2021 17:40:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test02 stamp: 'tg 12/5/2021 17:40:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test03 stamp: 'tg 12/5/2021 17:40:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test04 stamp: 'tg 12/5/2021 17:40:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test05 stamp: 'tg 12/5/2021 17:40:41'!
+PASSED!
+!TransferNetTest methodsFor: 'as yet unclassified' stamp: 'tg 12/5/2021 18:35:40' prior: 50338961!
+                               test05
+
+	| firstAccount secondAccount |
+	
+	firstAccount := ReceptiveAccount new.
+	secondAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: firstAccount to: secondAccount.
+	Transfer amount:  30 * peso from: secondAccount to: firstAccount.
+	self assert: 'Balance = 10 * pesos' equals: firstAccount transferNet .! !
+!TransferNetTest methodsFor: 'as yet unclassified' stamp: 'tg 12/5/2021 18:36:40' prior: 50338645!
+                 test02
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	self assert:'Balance = -20 * pesos'   equals: originAccount transferNet.! !
+
+!testRun: #TransferNetTest #test02 stamp: 'tg 12/5/2021 18:36:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test01 stamp: 'tg 12/5/2021 18:36:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test02 stamp: 'tg 12/5/2021 18:36:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test03 stamp: 'tg 12/5/2021 18:36:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test04 stamp: 'tg 12/5/2021 18:36:41'!
+PASSED!
+
+!testRun: #TransferNetTest #test05 stamp: 'tg 12/5/2021 18:36:41'!
+PASSED!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:38:24'!
+   test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado
+
+	self assert: mainReceptiveAccount transferNet equals: 'Balance = 0 * pesos'.! !
+
+!methodRemoval: TransferNetTest #test01 stamp: 'tg 12/5/2021 18:38:24'!
+test01
+
+	self assert: mainReceptiveAccount transferNet equals: 'Balance = 0 * pesos'.!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:39:00'!
+                         test02UnaCuentaConUnaTransaccionDevuelveElTransferNetEsperado
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	self assert:'Balance = -20 * pesos'   equals: originAccount transferNet.! !
+
+!methodRemoval: TransferNetTest #test02 stamp: 'tg 12/5/2021 18:39:00'!
+test02
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	self assert:'Balance = -20 * pesos'   equals: originAccount transferNet.!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:40:20'!
+                test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	Deposit register: 50*peso  on: originAccount.
+	self assert: 'Balance = -20 * pesos' equals: originAccount transferNet .! !
+
+!methodRemoval: TransferNetTest #test03 stamp: 'tg 12/5/2021 18:40:20'!
+test03
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	Deposit register: 50*peso  on: originAccount.
+	self assert: 'Balance = -20 * pesos' equals: originAccount transferNet .!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:41:18'!
+ test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	self assert:'Balance = -20 * pesos'   equals: originAccount transferNet.! !
+
+!methodRemoval: TransferNetTest #test02UnaCuentaConUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:41:18'!
+test02UnaCuentaConUnaTransaccionDevuelveElTransferNetEsperado
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	self assert:'Balance = -20 * pesos'   equals: originAccount transferNet.!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:41:43'!
+                   test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	self assert: 'Balance = 20 * pesos' equals: destinationAccount transferNet .! !
+
+!methodRemoval: TransferNetTest #test04 stamp: 'tg 12/5/2021 18:41:43'!
+test04
+
+	| destinationAccount originAccount |
+	
+	originAccount := ReceptiveAccount new.
+	destinationAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: originAccount to: destinationAccount.
+	self assert: 'Balance = 20 * pesos' equals: destinationAccount transferNet .!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:42:24'!
+                          test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado
+
+	| firstAccount secondAccount |
+	
+	firstAccount := ReceptiveAccount new.
+	secondAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: firstAccount to: secondAccount.
+	Transfer amount:  30 * peso from: secondAccount to: firstAccount.
+	self assert: 'Balance = 10 * pesos' equals: firstAccount transferNet .! !
+
+!methodRemoval: TransferNetTest #test05 stamp: 'tg 12/5/2021 18:42:24'!
+test05
+
+	| firstAccount secondAccount |
+	
+	firstAccount := ReceptiveAccount new.
+	secondAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: firstAccount to: secondAccount.
+	Transfer amount:  30 * peso from: secondAccount to: firstAccount.
+	self assert: 'Balance = 10 * pesos' equals: firstAccount transferNet .!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:43:56'!
+           test06
+
+	self assert: mainPortfolio transferNet equals: 'Balance = 0 * pesos'.! !
+
+!testRun: #TransferNetTest #test06 stamp: 'tg 12/5/2021 18:43:58'!
+ERROR!
+!Portfolio methodsFor: 'main protocol' stamp: 'tg 12/5/2021 18:44:32' overrides: 50338328!
+        transferNet
+	^'Balance = 0 * pesos'.! !
+
+!testRun: #TransferNetTest #test06 stamp: 'tg 12/5/2021 18:44:35'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:44:35'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:44:35'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:44:35'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:44:35'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:44:35'!
+PASSED!
+
+!testRun: #TransferNetTest #test06 stamp: 'tg 12/5/2021 18:44:35'!
+PASSED!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:46:59'!
+     test07
+
+	| aReceptiveAccount destinationAccount |
+	aReceptiveAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: aReceptiveAccount to: destinationAccount.
+	
+	mainPortfolio add: aReceptiveAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Deposito por 100 * pesos'.	! !
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:47:54' prior: 50339238!
+                 test07
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = 100 * pesos'.	! !
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:48:12' prior: 50339251!
+                    test07
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!testRun: #TransferNetTest #test07 stamp: 'tg 12/5/2021 18:48:15'!
+FAILURE!
+!Portfolio methodsFor: 'main protocol' stamp: 'tg 12/5/2021 18:51:10' prior: 50339207 overrides: 50338328!
+   transferNet
+	self transactions isEmpty  ifTrue:[
+		^'Balance = 0 * pesos'.
+	].
+	
+	^'Balance = ', (self balance) asString.
+	
+! !
+
+!testRun: #TransferNetTest #test07 stamp: 'tg 12/5/2021 18:51:16'!
+PASSED!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:51:45'!
+                            test08
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	Deposit register: 100* peso  on: originAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!testRun: #TransferNetTest #test08 stamp: 'tg 12/5/2021 18:52:11'!
+FAILURE!
+!Portfolio methodsFor: 'main protocol' stamp: 'tg 12/5/2021 18:52:46' prior: 50339281 overrides: 50338328!
+                  transferNet
+	self transactions isEmpty  ifTrue:[
+		^'Balance = 0 * pesos'.
+	].
+
+	^'Balance = ', (self transferBalance) asString.
+	
+! !
+!Portfolio methodsFor: 'main protocol' stamp: 'tg 12/5/2021 18:53:28'!
+                  transferBalance
+	
+	| balance |
+	balance := 0 * peso.
+	self transactions do: [ :aTransaction | 
+		balance := aTransaction affectTransferBalance: balance 
+	].
+	^balance.
+	! !
+
+!testRun: #TransferNetTest #test08 stamp: 'tg 12/5/2021 18:53:35'!
+PASSED!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:54:47' prior: 50339291!
+                               test08
+
+	| originAccount aPortfolioAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	aPortfolioAccount := Portfolio new.
+	aPortfolioAccount add: originAccount .
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:55:03' prior: 50339328!
+                test08
+
+	| originAccount aPortfolioAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	aPortfolioAccount := Portfolio new.
+	aPortfolioAccount add: originAccount .
+	
+	mainPortfolio add: aPortfolioAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!testRun: #TransferNetTest #test08 stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test06 stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test07 stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test08 stamp: 'tg 12/5/2021 18:55:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+
+!testRun: #TransferNetTest #test06 stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+
+!testRun: #TransferNetTest #test07 stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+
+!testRun: #TransferNetTest #test08 stamp: 'tg 12/5/2021 18:55:27'!
+PASSED!
+!TransferNetTest methodsFor: 'test - receptive account' stamp: 'tg 12/5/2021 18:51:45' prior: 50339345!
+                  test08
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	Deposit register: 100* peso  on: originAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!testRun: #TransferNetTest #test08 stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test06 stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test07 stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+
+!testRun: #TransferNetTest #test08 stamp: 'tg 12/5/2021 18:55:56'!
+PASSED!
+!TransferNetTest methodsFor: 'test - Portfolio' stamp: 'tg 12/5/2021 18:57:15'!
+       test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado
+
+	self assert: mainPortfolio transferNet equals: 'Balance = 0 * pesos'.! !
+
+!methodRemoval: TransferNetTest #test06 stamp: 'tg 12/5/2021 18:57:15'!
+test06
+
+	self assert: mainPortfolio transferNet equals: 'Balance = 0 * pesos'.!
+!TransferNetTest methodsFor: 'test - Portfolio' stamp: 'tg 12/5/2021 18:58:11'!
+                   test07UnPortfolioConUnaCuentaConTransferenciasDevuelveElTransferNetEsperado
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!methodRemoval: TransferNetTest #test07 stamp: 'tg 12/5/2021 18:58:11'!
+test07
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	!
+!TransferNetTest methodsFor: 'test - Portfolio' stamp: 'tg 12/5/2021 18:58:25'!
+                          test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!methodRemoval: TransferNetTest #test07UnPortfolioConUnaCuentaConTransferenciasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 18:58:25'!
+test07UnPortfolioConUnaCuentaConTransferenciasDevuelveElTransferNetEsperado
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	!
+!TransferNetTest methodsFor: 'test - Portfolio' stamp: 'tg 12/5/2021 18:58:57'!
+              test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	Deposit register: 100* peso  on: originAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!methodRemoval: TransferNetTest #test08 stamp: 'tg 12/5/2021 18:58:57'!
+test08
+
+	| originAccount destinationAccount |
+	
+	originAccount := ReceptiveAccount  new.
+	destinationAccount := ReceptiveAccount  new.
+	Transfer amount: 100 * peso from: originAccount to: destinationAccount.
+	Deposit register: 100* peso  on: originAccount.
+	
+	mainPortfolio add: originAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	!
+
+Object subclass: #XXXX
+	instanceVariableNames: 'account'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #XXXX category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:01:44'!
+Object subclass: #XXXX
+	instanceVariableNames: 'account'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+!XXXX class methodsFor: 'nil' stamp: 'tg 12/5/2021 19:02:18'!
+      for: anAccount
+	^ self new initializeWith: anAccount.! !
+!XXXX methodsFor: 'nil' stamp: 'tg 12/5/2021 19:02:32'!
+               initializeWith: anAccount
+	account := anAccount.! !
+!XXXX methodsFor: 'as yet unclassified' stamp: 'tg 12/5/2021 19:03:24'!
+    compute
+
+	account transactions isEmpty  ifTrue:[
+		^'Balance = 0 * pesos'.
+	].
+
+	^'Balance = ', (account transferBalance) asString.
+	
+! !
+!Portfolio methodsFor: 'main protocol' stamp: 'tg 12/5/2021 19:04:01' prior: 50339309 overrides: 50338328!
+           transferNet
+	^(XXXX for: self ) compute.! !
+
+!testRun: #TransferTest #test01ATransferDecreasesBalanceFromOriginAccountAndIncreasesItForDestinationAccount stamp: 'tg 12/5/2021 19:04:05'!
+PASSED!
+
+!testRun: #TransferTest #test02ATransferKnowsItsValue stamp: 'tg 12/5/2021 19:04:05'!
+PASSED!
+
+!testRun: #TransferTest #test03DepositLegKnowsItsWithdrawCounterpart stamp: 'tg 12/5/2021 19:04:05'!
+PASSED!
+
+!testRun: #TransferTest #test04WithdrawLegKnowsItsDepositCounterpart stamp: 'tg 12/5/2021 19:04:05'!
+PASSED!
+
+!testRun: #TransferTest #test05OriginAndDestinationAccountsCannotBeTheSame stamp: 'tg 12/5/2021 19:04:05'!
+PASSED!
+
+!testRun: #TransferTest #test06CannotTransferAZeroAmount stamp: 'tg 12/5/2021 19:04:05'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:04:10'!
+PASSED!
+
+!classRenamed: #XXXX as: #EmitTransferNet stamp: 'tg 12/5/2021 19:07:00'!
+Smalltalk renameClassNamed: #XXXX as: #EmitTransferNet!
+!Portfolio methodsFor: 'as yet unclassified' stamp: 'tg 12/5/2021 19:07:01' prior: 50339600 overrides: 50338328!
+               transferNet
+	^(EmitTransferNet for: self ) compute.! !
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:07:11'!
+PASSED!
+!ReceptiveAccount methodsFor: 'main protocol' stamp: 'tg 12/5/2021 19:08:56' prior: 50338686 overrides: 50338328!
+             transferNet
+	
+	^(EmitTransferNet for: self) compute.
+! !
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:08:58'!
+PASSED!
+
+TestCase subclass: #ServiciosFinancierosTests
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #ServiciosFinancierosTests category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:10:19'!
+TestCase subclass: #ServiciosFinancierosTests
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+ServiciosFinancierosTests subclass: #SummaryTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #SummaryTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:10:33'!
+ServiciosFinancierosTests subclass: #SummaryTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+ServiciosFinancierosTests subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #TransferNetTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:10:39'!
+ServiciosFinancierosTests subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+ServiciosFinancierosTests subclass: #TransferTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #TransferTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:10:43'!
+ServiciosFinancierosTests subclass: #TransferTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+ServiciosFinancierosTests subclass: #PortfolioTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #PortfolioTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:10:48'!
+ServiciosFinancierosTests subclass: #PortfolioTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+ServiciosFinancierosTests subclass: #ReceptiveAccountTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #ReceptiveAccountTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:10:55'!
+ServiciosFinancierosTests subclass: #ReceptiveAccountTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!testRun: #PortfolioTest #test01BalanceOfPortfolioWithoutAccountsIsZero stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test02BalanceOfPortfolioWithOneAccountIsAccountBalance stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test03BalanceOfPortfolioIsCalculatedRecursivelyOnPortfolios stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test04PortfolioWithoutAccountsHasNoRegisteredTransaction stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test05PortfolioHasRegisteredItsAccountsTransactions stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test06PortfolioLooksForRegisteredTransactionsRecursively stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test07PortfolioHasNoTransactionWhenHasNoAccounts stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test08PortfolioTransactionsIncludesAllItsAccountsTransactions stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test09PortfolioTransactionsAreCalculatedRecursively stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test10PortfolioCanNotIncludeTheSameAccountMoreThanOnce stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test11PortfolioCanNotIncludeAccountOfItsPortfolios stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test12PortfolioCanNotIncludeItself stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test13ComposedPortfolioCanNotHaveParentPortfolioAccount stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test14ComposedPortfolioCanNotHaveAccountOfAnyRootParentRecursively stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #PortfolioTest #test15PortfolioCanNotIncludeAnyOfTheComposedAccountOfPortfolioToAdd stamp: 'tg 12/5/2021 19:11:39'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'tg 12/5/2021 19:11:42'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'tg 12/5/2021 19:11:42'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'tg 12/5/2021 19:11:42'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'tg 12/5/2021 19:11:42'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'tg 12/5/2021 19:11:42'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'tg 12/5/2021 19:11:42'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'tg 12/5/2021 19:11:42'!
+PASSED!
+
+!testRun: #SummaryTest #test01UnaCuentaVaciaTieneUnSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test02UnaCuentaConUnDepositoDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test03UnaCuentaConUnaExtraccionDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test04LaCuentaOrigenDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test05LaCuentaDestinoDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test06UnPortfolioSinCuentasTieneUnSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test08UnPortfolioConMasDeUnaCuentaDevuelveUnSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #SummaryTest #test11UnPortfolioConUnPortfolioVacioDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:11:44'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:11:47'!
+PASSED!
+
+!testRun: #TransferTest #test01ATransferDecreasesBalanceFromOriginAccountAndIncreasesItForDestinationAccount stamp: 'tg 12/5/2021 19:11:49'!
+PASSED!
+
+!testRun: #TransferTest #test02ATransferKnowsItsValue stamp: 'tg 12/5/2021 19:11:49'!
+PASSED!
+
+!testRun: #TransferTest #test03DepositLegKnowsItsWithdrawCounterpart stamp: 'tg 12/5/2021 19:11:49'!
+PASSED!
+
+!testRun: #TransferTest #test04WithdrawLegKnowsItsDepositCounterpart stamp: 'tg 12/5/2021 19:11:49'!
+PASSED!
+
+!testRun: #TransferTest #test05OriginAndDestinationAccountsCannotBeTheSame stamp: 'tg 12/5/2021 19:11:49'!
+PASSED!
+
+!testRun: #TransferTest #test06CannotTransferAZeroAmount stamp: 'tg 12/5/2021 19:11:49'!
+PASSED!
+
+TestCase subclass: #PortfolioTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #PortfolioTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:12:22'!
+TestCase subclass: #PortfolioTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+TestCase subclass: #ReceptiveAccountTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #ReceptiveAccountTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:12:27'!
+TestCase subclass: #ReceptiveAccountTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+TestCase subclass: #SummaryTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #SummaryTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:12:31'!
+TestCase subclass: #SummaryTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+TestCase subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #TransferNetTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:12:36'!
+TestCase subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+TestCase subclass: #TransferTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #TransferTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:12:41'!
+TestCase subclass: #TransferTest
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classRemoval: #ServiciosFinancierosTests stamp: 'tg 12/5/2021 19:12:47'!
+TestCase subclass: #ServiciosFinancierosTests
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!testRun: #TransferTest #test01ATransferDecreasesBalanceFromOriginAccountAndIncreasesItForDestinationAccount stamp: 'tg 12/5/2021 19:12:50'!
+PASSED!
+
+!testRun: #TransferTest #test02ATransferKnowsItsValue stamp: 'tg 12/5/2021 19:12:50'!
+PASSED!
+
+!testRun: #TransferTest #test03DepositLegKnowsItsWithdrawCounterpart stamp: 'tg 12/5/2021 19:12:50'!
+PASSED!
+
+!testRun: #TransferTest #test04WithdrawLegKnowsItsDepositCounterpart stamp: 'tg 12/5/2021 19:12:50'!
+PASSED!
+
+!testRun: #TransferTest #test05OriginAndDestinationAccountsCannotBeTheSame stamp: 'tg 12/5/2021 19:12:50'!
+PASSED!
+
+!testRun: #TransferTest #test06CannotTransferAZeroAmount stamp: 'tg 12/5/2021 19:12:50'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:12:52'!
+PASSED!
+
+!testRun: #SummaryTest #test01UnaCuentaVaciaTieneUnSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test02UnaCuentaConUnDepositoDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test03UnaCuentaConUnaExtraccionDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test04LaCuentaOrigenDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test05LaCuentaDestinoDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test06UnPortfolioSinCuentasTieneUnSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test08UnPortfolioConMasDeUnaCuentaDevuelveUnSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #SummaryTest #test11UnPortfolioConUnPortfolioVacioDevuelveElSumarioCorrecto stamp: 'tg 12/5/2021 19:12:55'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'tg 12/5/2021 19:12:57'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'tg 12/5/2021 19:12:57'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'tg 12/5/2021 19:12:57'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'tg 12/5/2021 19:12:57'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'tg 12/5/2021 19:12:57'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'tg 12/5/2021 19:12:57'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'tg 12/5/2021 19:12:57'!
+PASSED!
+
+!testRun: #PortfolioTest #test01BalanceOfPortfolioWithoutAccountsIsZero stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test02BalanceOfPortfolioWithOneAccountIsAccountBalance stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test03BalanceOfPortfolioIsCalculatedRecursivelyOnPortfolios stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test04PortfolioWithoutAccountsHasNoRegisteredTransaction stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test05PortfolioHasRegisteredItsAccountsTransactions stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test06PortfolioLooksForRegisteredTransactionsRecursively stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test07PortfolioHasNoTransactionWhenHasNoAccounts stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test08PortfolioTransactionsIncludesAllItsAccountsTransactions stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test09PortfolioTransactionsAreCalculatedRecursively stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test10PortfolioCanNotIncludeTheSameAccountMoreThanOnce stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test11PortfolioCanNotIncludeAccountOfItsPortfolios stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test12PortfolioCanNotIncludeItself stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test13ComposedPortfolioCanNotHaveParentPortfolioAccount stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test14ComposedPortfolioCanNotHaveAccountOfAnyRootParentRecursively stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+
+!testRun: #PortfolioTest #test15PortfolioCanNotIncludeAnyOfTheComposedAccountOfPortfolioToAdd stamp: 'tg 12/5/2021 19:13:01'!
+PASSED!
+!Portfolio methodsFor: 'main protocol' stamp: 'tg 12/5/2021 19:13:29' prior: 50339666 overrides: 50338328!
+ transferNet
+	^(EmitTransferNet for: self) compute.! !
+!TransferNetTest methodsFor: 'set up' stamp: 'tg 12/5/2021 19:23:30' prior: 50338310 overrides: 16927572!
+setUp
+	mainReceptiveAccount := ReceptiveAccount new.
+	mainPortfolio := Portfolio new.! !
+
+TestCase subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio originAccount'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+TestCase subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #TransferNetTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:24:17'!
+TestCase subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #TransferNetTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:24:54'!
+TestCase subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio anOriginAccount'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+
+!classDefinition: #TransferNetTest category: 'ServiciosFinancieros-SolucionCatedra' stamp: 'tg 12/5/2021 19:24:55'!
+TestCase subclass: #TransferNetTest
+	instanceVariableNames: 'mainReceptiveAccount mainPortfolio anOriginAccount aDestinationAccount'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'ServiciosFinancieros-SolucionCatedra'!
+!TransferNetTest methodsFor: 'set up' stamp: 'tg 12/5/2021 19:24:52' prior: 50340289 overrides: 16927572!
+                setUp
+	mainReceptiveAccount := ReceptiveAccount new.
+	mainPortfolio := Portfolio new.
+	anOriginAccount := ReceptiveAccount new.
+	aDestinationAccount := ReceptiveAccount new.! !
+!TransferNetTest methodsFor: 'test - Receptive Account' stamp: 'tg 12/5/2021 19:25:31' prior: 50339116!
+       test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado
+	
+	Transfer amount:  20 * peso from: anOriginAccount to: aDestinationAccount.
+	self assert:'Balance = -20 * pesos'   equals: anOriginAccount transferNet.! !
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:32'!
+PASSED!
+!TransferNetTest methodsFor: 'test - Receptive Account' stamp: 'tg 12/5/2021 19:25:58' prior: 50339088!
+                  test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado
+	
+	Transfer amount:  20 * peso from: anOriginAccount to: aDestinationAccount.
+	Deposit register: 50*peso  on: anOriginAccount.
+	self assert: 'Balance = -20 * pesos' equals: anOriginAccount transferNet .! !
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:25:58'!
+PASSED!
+!TransferNetTest methodsFor: 'test - Receptive Account' stamp: 'tg 12/5/2021 19:26:15' prior: 50339145!
+                             test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado
+
+	Transfer amount:  20 * peso from: anOriginAccount to: aDestinationAccount.
+	self assert: 'Balance = 20 * pesos' equals: aDestinationAccount transferNet .! !
+!TransferNetTest methodsFor: 'test - Receptive Account' stamp: 'tg 12/5/2021 19:26:30' prior: 50339171!
+             test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado
+
+	| firstAccount secondAccount |
+	
+	firstAccount := ReceptiveAccount new.
+	secondAccount := ReceptiveAccount new.
+	
+	Transfer amount:  20 * peso from: firstAccount to: secondAccount.
+	Transfer amount:  30 * peso from: secondAccount to: firstAccount.
+	self assert: 'Balance = 10 * pesos' equals: firstAccount transferNet .! !
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:26:36'!
+PASSED!
+!TransferNetTest methodsFor: 'test - Portfolio' stamp: 'tg 12/5/2021 19:26:59' prior: 50339509!
+            test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado
+
+	Transfer amount: 100 * peso from: anOriginAccount to: aDestinationAccount.
+	
+	mainPortfolio add: anOriginAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+!TransferNetTest methodsFor: 'test - Portfolio' stamp: 'tg 12/5/2021 19:27:18' prior: 50339541!
+              test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado
+
+	Transfer amount: 100 * peso from: anOriginAccount to: aDestinationAccount.
+	Deposit register: 100* peso  on: anOriginAccount.
+	
+	mainPortfolio add: anOriginAccount.
+	
+	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'tg 12/5/2021 19:27:21'!
+PASSED!
+!TransferNetTest methodsFor: 'test - Receptive Account' stamp: 'tg 12/5/2021 19:28:46' prior: 50340348!
+      test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado
+	
+	Transfer amount:  20 * peso from: anOriginAccount to: aDestinationAccount.
+	self assert: 'Balance = -20 * pesos'   equals: anOriginAccount transferNet.! !
+
+----QUIT----(5 December 2021 19:38:04) Ejercicio8.image priorSource: 234803!
