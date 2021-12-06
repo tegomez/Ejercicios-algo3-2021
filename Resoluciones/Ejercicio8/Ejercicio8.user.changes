@@ -6723,3 +6723,355 @@ test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado
 	self assert: 'Balance = -20 * pesos'   equals: anOriginAccount transferNet.! !
 
 ----QUIT----(5 December 2021 19:38:04) Ejercicio8.image priorSource: 234803!
+
+----STARTUP---- (6 December 2021 00:44:28) as /home/martin/Documentos/facultad/trabajos_practicos/algo3/repo/Resoluciones/Ejercicio8/Ejercicio8.image!
+
+
+!testRun: #TransferTest #test01ATransferDecreasesBalanceFromOriginAccountAndIncreasesItForDestinationAccount stamp: 'MG 12/6/2021 00:47:06'!
+PASSED!
+
+!testRun: #TransferTest #test02ATransferKnowsItsValue stamp: 'MG 12/6/2021 00:47:06'!
+PASSED!
+
+!testRun: #TransferTest #test03DepositLegKnowsItsWithdrawCounterpart stamp: 'MG 12/6/2021 00:47:06'!
+PASSED!
+
+!testRun: #TransferTest #test04WithdrawLegKnowsItsDepositCounterpart stamp: 'MG 12/6/2021 00:47:06'!
+PASSED!
+
+!testRun: #TransferTest #test05OriginAndDestinationAccountsCannotBeTheSame stamp: 'MG 12/6/2021 00:47:06'!
+PASSED!
+
+!testRun: #TransferTest #test06CannotTransferAZeroAmount stamp: 'MG 12/6/2021 00:47:06'!
+PASSED!
+
+!testRun: #TransferNetTest #test01UnaCuentaSinTransaccionesDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #TransferNetTest #test02UnaCuentaConUnaTransferenciaDeTransaccionDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #TransferNetTest #test03UnaCuentaConUnaTransaccionYUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #TransferNetTest #test04UnaCuentaConUnaTransferenciaDeUnDepositoDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #TransferNetTest #test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #TransferNetTest #test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #TransferNetTest #test07UnPortfolioConUnaCuentaConUnaTransferenciaDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #TransferNetTest #test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado stamp: 'MG 12/6/2021 00:47:07'!
+PASSED!
+
+!testRun: #SummaryTest #test01UnaCuentaVaciaTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test02UnaCuentaConUnDepositoDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test03UnaCuentaConUnaExtraccionDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test04LaCuentaOrigenDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test05LaCuentaDestinoDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test06UnPortfolioSinCuentasTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test08UnPortfolioConMasDeUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #SummaryTest #test11UnPortfolioConUnPortfolioVacioDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:47:09'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 12/6/2021 00:47:10'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 12/6/2021 00:47:10'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 12/6/2021 00:47:10'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 12/6/2021 00:47:10'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 12/6/2021 00:47:10'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 12/6/2021 00:47:10'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 12/6/2021 00:47:10'!
+PASSED!
+
+!testRun: #PortfolioTest #test01BalanceOfPortfolioWithoutAccountsIsZero stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test02BalanceOfPortfolioWithOneAccountIsAccountBalance stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test03BalanceOfPortfolioIsCalculatedRecursivelyOnPortfolios stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test04PortfolioWithoutAccountsHasNoRegisteredTransaction stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test05PortfolioHasRegisteredItsAccountsTransactions stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test06PortfolioLooksForRegisteredTransactionsRecursively stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test07PortfolioHasNoTransactionWhenHasNoAccounts stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test08PortfolioTransactionsIncludesAllItsAccountsTransactions stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test09PortfolioTransactionsAreCalculatedRecursively stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test10PortfolioCanNotIncludeTheSameAccountMoreThanOnce stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test11PortfolioCanNotIncludeAccountOfItsPortfolios stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test12PortfolioCanNotIncludeItself stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test13ComposedPortfolioCanNotHaveParentPortfolioAccount stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test14ComposedPortfolioCanNotHaveAccountOfAnyRootParentRecursively stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+
+!testRun: #PortfolioTest #test15PortfolioCanNotIncludeAnyOfTheComposedAccountOfPortfolioToAdd stamp: 'MG 12/6/2021 00:47:11'!
+PASSED!
+!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/6/2021 00:58:45' prior: 50338196!
+test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto
+
+	Deposit register: 100* peso  on: mainReceptiveAccount .
+	
+	mainPortfolio add: mainReceptiveAccount.
+	
+	self assert: ((mainPortfolio summary) at: 1) equals: 'Deposito por 100 * pesos'.	
+	self assert: ((mainPortfolio summary) at: 2) equals: 'Balance = 100 * pesos'.! !
+
+!testRun: #SummaryTest #test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test01UnaCuentaVaciaTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test02UnaCuentaConUnDepositoDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test03UnaCuentaConUnaExtraccionDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test04LaCuentaOrigenDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test05LaCuentaDestinoDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test06UnPortfolioSinCuentasTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test08UnPortfolioConMasDeUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+
+!testRun: #SummaryTest #test11UnPortfolioConUnPortfolioVacioDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:58:47'!
+PASSED!
+!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/6/2021 00:59:11' prior: 50337013!
+test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto
+	
+	mainPortfolio add: mainReceptiveAccount.
+	
+	self assert: (mainPortfolio summary at: 1) equals: 'Balance = 0 * pesos'.! !
+
+!testRun: #SummaryTest #test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test01UnaCuentaVaciaTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test02UnaCuentaConUnDepositoDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test03UnaCuentaConUnaExtraccionDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test04LaCuentaOrigenDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test05LaCuentaDestinoDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test06UnPortfolioSinCuentasTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test08UnPortfolioConMasDeUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+
+!testRun: #SummaryTest #test11UnPortfolioConUnPortfolioVacioDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:13'!
+PASSED!
+!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/6/2021 00:59:37' prior: 50338211!
+test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto
+
+	|aPortfolioAccount |
+	
+	Withdraw register: 50* peso  on: mainReceptiveAccount .
+	
+	aPortfolioAccount := Portfolio new.
+	aPortfolioAccount add: mainReceptiveAccount.
+	
+	mainPortfolio add: aPortfolioAccount.
+	
+	self assert: ((mainPortfolio summary) at: 1) equals: 'Extraccion por 50 * pesos'.	
+	self assert: ((mainPortfolio summary) at: 2) equals: 'Balance = -50 * pesos'.! !
+
+!testRun: #SummaryTest #test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:41'!
+PASSED!
+
+!testRun: #SummaryTest #test11UnPortfolioConUnPortfolioVacioDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:44'!
+PASSED!
+
+!testRun: #SummaryTest #test01UnaCuentaVaciaTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test02UnaCuentaConUnDepositoDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test03UnaCuentaConUnaExtraccionDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test04LaCuentaOrigenDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test05LaCuentaDestinoDeUnaTransfereciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test06UnPortfolioSinCuentasTieneUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test08UnPortfolioConMasDeUnaCuentaDevuelveUnSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #SummaryTest #test11UnPortfolioConUnPortfolioVacioDevuelveElSumarioCorrecto stamp: 'MG 12/6/2021 00:59:46'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test01ReceptiveAccountHaveZeroAsBalanceWhenCreated stamp: 'MG 12/6/2021 00:59:50'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test02DepositIncreasesBalanceOnTransactionValue stamp: 'MG 12/6/2021 00:59:50'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test03WithdrawDecreasesBalanceOnTransactionValue stamp: 'MG 12/6/2021 00:59:50'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test04WithdrawValueMustBePositive stamp: 'MG 12/6/2021 00:59:50'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test05ReceptiveAccountKnowsRegisteredTransactions stamp: 'MG 12/6/2021 00:59:50'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test06ReceptiveAccountDoNotKnowNotRegisteredTransactions stamp: 'MG 12/6/2021 00:59:50'!
+PASSED!
+
+!testRun: #ReceptiveAccountTest #test07AccountKnowsItsTransactions stamp: 'MG 12/6/2021 00:59:50'!
+PASSED!
+
+!testRun: #PortfolioTest #test01BalanceOfPortfolioWithoutAccountsIsZero stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test02BalanceOfPortfolioWithOneAccountIsAccountBalance stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test03BalanceOfPortfolioIsCalculatedRecursivelyOnPortfolios stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test04PortfolioWithoutAccountsHasNoRegisteredTransaction stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test05PortfolioHasRegisteredItsAccountsTransactions stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test06PortfolioLooksForRegisteredTransactionsRecursively stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test07PortfolioHasNoTransactionWhenHasNoAccounts stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test08PortfolioTransactionsIncludesAllItsAccountsTransactions stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test09PortfolioTransactionsAreCalculatedRecursively stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test10PortfolioCanNotIncludeTheSameAccountMoreThanOnce stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test11PortfolioCanNotIncludeAccountOfItsPortfolios stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test12PortfolioCanNotIncludeItself stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test13ComposedPortfolioCanNotHaveParentPortfolioAccount stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test14ComposedPortfolioCanNotHaveAccountOfAnyRootParentRecursively stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+!testRun: #PortfolioTest #test15PortfolioCanNotIncludeAnyOfTheComposedAccountOfPortfolioToAdd stamp: 'MG 12/6/2021 00:59:52'!
+PASSED!
+
+----QUIT----(6 December 2021 01:00:27) Ejercicio8.image priorSource: 285898!

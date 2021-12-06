@@ -365,15 +365,12 @@ test06UnPortfolioSinCuentasTieneUnSumarioCorrecto
 		
 	self assert: (mainPortfolio summary at: 1) equals: 'Balance = 0 * pesos'.! !
 
-!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/5/2021 16:44:36'!
+!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/6/2021 00:58:45'!
 test07UnPortfolioConUnaCuentaDevuelveUnSumarioCorrecto
 
-	|aReceptiveAccount |
+	Deposit register: 100* peso  on: mainReceptiveAccount .
 	
-	aReceptiveAccount := ReceptiveAccount  new.
-	Deposit register: 100* peso  on: aReceptiveAccount.
-	
-	mainPortfolio add: aReceptiveAccount.
+	mainPortfolio add: mainReceptiveAccount.
 	
 	self assert: ((mainPortfolio summary) at: 1) equals: 'Deposito por 100 * pesos'.	
 	self assert: ((mainPortfolio summary) at: 2) equals: 'Balance = 100 * pesos'.! !
@@ -396,27 +393,22 @@ test08UnPortfolioConMasDeUnaCuentaDevuelveUnSumarioCorrecto
 	self assert: 'Extraccion por 50 * pesos' equals: ((mainPortfolio summary) at: 2).	
 	self assert: 'Balance = 50 * pesos' equals:  ((mainPortfolio summary) at: 3).! !
 
-!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/5/2021 15:54:38'!
+!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/6/2021 00:59:11'!
 test09UnPortfolioConUnaCuentaVaciaDevuelveElSumarioCorrecto
-
-	|aReceptiveAccount |
 	
-	aReceptiveAccount := ReceptiveAccount  new.
-	
-	mainPortfolio add: aReceptiveAccount.
+	mainPortfolio add: mainReceptiveAccount.
 	
 	self assert: (mainPortfolio summary at: 1) equals: 'Balance = 0 * pesos'.! !
 
-!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/5/2021 16:44:42'!
+!SummaryTest methodsFor: 'test - Portfolio' stamp: 'MG 12/6/2021 00:59:37'!
 test10UnPortfolioConUnPortfolioConUnaCuentaDevuelveElSumarioCorrecto
 
-	|aPortfolioAccount aReceptiveAccount |
+	|aPortfolioAccount |
 	
-	aReceptiveAccount := ReceptiveAccount  new.
-	Withdraw register: 50* peso  on: aReceptiveAccount.
+	Withdraw register: 50* peso  on: mainReceptiveAccount .
 	
 	aPortfolioAccount := Portfolio new.
-	aPortfolioAccount add: aReceptiveAccount.
+	aPortfolioAccount add: mainReceptiveAccount.
 	
 	mainPortfolio add: aPortfolioAccount.
 	
@@ -486,14 +478,6 @@ test05UnaCuentaConMasDeUnaTransferenciaDevuelveElTransferNetEsperado
 	self assert: 'Balance = 10 * pesos' equals: firstAccount transferNet .! !
 
 
-!TransferNetTest methodsFor: 'set up' stamp: 'tg 12/5/2021 19:24:52'!
-setUp
-	mainReceptiveAccount := ReceptiveAccount new.
-	mainPortfolio := Portfolio new.
-	anOriginAccount := ReceptiveAccount new.
-	aDestinationAccount := ReceptiveAccount new.! !
-
-
 !TransferNetTest methodsFor: 'test - Portfolio' stamp: 'tg 12/5/2021 18:57:15'!
 test06UnPortfolioSinCuentasDevuelveElTransferNetEsperado
 
@@ -518,6 +502,14 @@ test08UnPortfolioConUnaTransferenciaYUnaTransaccionDevuelveElTransferNetEsperado
 	
 	self assert: mainPortfolio transferNet equals: 'Balance = -100 * pesos'.	! !
 
+
+!TransferNetTest methodsFor: 'set up' stamp: 'tg 12/5/2021 19:24:52'!
+setUp
+	mainReceptiveAccount := ReceptiveAccount new.
+	mainPortfolio := Portfolio new.
+	anOriginAccount := ReceptiveAccount new.
+	aDestinationAccount := ReceptiveAccount new.! !
+
 
 !classDefinition: #TransferTest category: 'ServiciosFinancieros-SolucionCatedra'!
 TestCase subclass: #TransferTest
@@ -526,7 +518,7 @@ TestCase subclass: #TransferTest
 	poolDictionaries: ''
 	category: 'ServiciosFinancieros-SolucionCatedra'!
 
-!TransferTest methodsFor: 'as yet unclassified' stamp: 'LL 9/20/2020 21:07:03'!
+!TransferTest methodsFor: 'test' stamp: 'LL 9/20/2020 21:07:03'!
 test01ATransferDecreasesBalanceFromOriginAccountAndIncreasesItForDestinationAccount
 
 	| destinationAccount originAccount |
@@ -542,7 +534,7 @@ test01ATransferDecreasesBalanceFromOriginAccountAndIncreasesItForDestinationAcco
 	self assert: 8 * peso equals: originAccount balance.
 	self assert: 12 * peso equals: destinationAccount balance.! !
 
-!TransferTest methodsFor: 'as yet unclassified' stamp: 'LL 9/20/2020 21:12:28'!
+!TransferTest methodsFor: 'test' stamp: 'LL 9/20/2020 21:12:28'!
 test02ATransferKnowsItsValue
 
 	| destinationAccount originAccount transfer |
@@ -557,7 +549,7 @@ test02ATransferKnowsItsValue
 	
 	self assert: 2 * peso equals: transfer value.! !
 
-!TransferTest methodsFor: 'as yet unclassified' stamp: 'LL 9/20/2020 23:01:44'!
+!TransferTest methodsFor: 'test' stamp: 'LL 9/20/2020 23:01:44'!
 test03DepositLegKnowsItsWithdrawCounterpart
 
 	| destinationAccount originAccount transfer |
@@ -572,7 +564,7 @@ test03DepositLegKnowsItsWithdrawCounterpart
 	
 	self assert: transfer withdrawLeg equals: transfer depositLeg withdrawLeg! !
 
-!TransferTest methodsFor: 'as yet unclassified' stamp: 'LL 9/20/2020 23:01:51'!
+!TransferTest methodsFor: 'test' stamp: 'LL 9/20/2020 23:01:51'!
 test04WithdrawLegKnowsItsDepositCounterpart
 
 	| destinationAccount originAccount transfer |
@@ -587,7 +579,7 @@ test04WithdrawLegKnowsItsDepositCounterpart
 	
 	self assert: transfer depositLeg equals: transfer withdrawLeg depositLeg! !
 
-!TransferTest methodsFor: 'as yet unclassified' stamp: 'LL 9/20/2020 23:02:36'!
+!TransferTest methodsFor: 'test' stamp: 'LL 9/20/2020 23:02:36'!
 test05OriginAndDestinationAccountsCannotBeTheSame
 
 	| originAccount |
@@ -603,7 +595,7 @@ test05OriginAndDestinationAccountsCannotBeTheSame
 		]
 ! !
 
-!TransferTest methodsFor: 'as yet unclassified' stamp: 'LL 9/20/2020 23:02:44'!
+!TransferTest methodsFor: 'test' stamp: 'LL 9/20/2020 23:02:44'!
 test06CannotTransferAZeroAmount
 
 	| originAccount destinationAccount |
@@ -922,14 +914,13 @@ affectBalance: aBalance
 
 	self subclassResponsibility ! !
 
-
-!AccountTransaction methodsFor: 'summary emition' stamp: 'MG 12/5/2021 17:01:35'!
-summaryMessageTo: EmitSummary
+!AccountTransaction methodsFor: 'balance' stamp: 'MG 12/5/2021 17:29:12'!
+affectTransferBalance: aBalance
 	self subclassResponsibility.! !
 
 
-!AccountTransaction methodsFor: 'as yet unclassified' stamp: 'MG 12/5/2021 17:29:12'!
-affectTransferBalance: aBalance
+!AccountTransaction methodsFor: 'summary emition' stamp: 'MG 12/5/2021 17:01:35'!
+summaryMessageTo: EmitSummary
 	self subclassResponsibility.! !
 
 
@@ -957,15 +948,14 @@ affectBalance: aBalance
 
 	^aBalance + value ! !
 
+!Deposit methodsFor: 'balance' stamp: 'MG 12/5/2021 17:34:36'!
+affectTransferBalance: aBalance
+	^aBalance.! !
+
 
 !Deposit methodsFor: 'summary emition' stamp: 'MG 12/5/2021 17:10:22'!
 summaryMessageTo: EmitSummary
 	^EmitSummary depositMessage: (self value).! !
-
-
-!Deposit methodsFor: 'as yet unclassified' stamp: 'MG 12/5/2021 17:34:36'!
-affectTransferBalance: aBalance
-	^aBalance.! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
@@ -1048,15 +1038,14 @@ affectBalance: aBalance
 
 	^aBalance + self value! !
 
+!TransferDepositLeg methodsFor: 'balance' stamp: 'MG 12/5/2021 17:29:53'!
+affectTransferBalance: aBalance
+	^self affectBalance: aBalance! !
+
 
 !TransferDepositLeg methodsFor: 'summary emition' stamp: 'MG 12/5/2021 17:09:14'!
 summaryMessageTo: EmitSummary
 	^EmitSummary transferDepositMessage: (self value).! !
-
-
-!TransferDepositLeg methodsFor: 'as yet unclassified' stamp: 'MG 12/5/2021 17:29:53'!
-affectTransferBalance: aBalance
-	^self affectBalance: aBalance! !
 
 
 !classDefinition: #TransferWithdrawLeg category: 'ServiciosFinancieros-SolucionCatedra'!
@@ -1077,15 +1066,14 @@ affectBalance: aBalance
 
 	^aBalance - self value! !
 
+!TransferWithdrawLeg methodsFor: 'balance' stamp: 'MG 12/5/2021 17:30:00'!
+affectTransferBalance: aBalance
+	^self affectBalance: aBalance! !
+
 
 !TransferWithdrawLeg methodsFor: 'summary emition' stamp: 'MG 12/5/2021 17:08:17'!
 summaryMessageTo: EmitSummary
 	^EmitSummary transferWithdrawMessage: (self value).! !
-
-
-!TransferWithdrawLeg methodsFor: 'as yet unclassified' stamp: 'MG 12/5/2021 17:30:00'!
-affectTransferBalance: aBalance
-	^self affectBalance: aBalance! !
 
 
 !classDefinition: #Withdraw category: 'ServiciosFinancieros-SolucionCatedra'!
@@ -1112,15 +1100,14 @@ affectBalance: aBalance
 
 	^aBalance - value! !
 
+!Withdraw methodsFor: 'balance' stamp: 'MG 12/5/2021 17:34:42'!
+affectTransferBalance: aBalance
+	^aBalance! !
+
 
 !Withdraw methodsFor: 'summary emition' stamp: 'MG 12/5/2021 17:06:52'!
 summaryMessageTo: EmitSummary
 	^EmitSummary withdrawMessage: (self value).! !
-
-
-!Withdraw methodsFor: 'as yet unclassified' stamp: 'MG 12/5/2021 17:34:42'!
-affectTransferBalance: aBalance
-	^aBalance! !
 
 "-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- "!
 
@@ -1206,7 +1193,7 @@ Object subclass: #EmitTransferNet
 	poolDictionaries: ''
 	category: 'ServiciosFinancieros-SolucionCatedra'!
 
-!EmitTransferNet methodsFor: 'as yet unclassified' stamp: 'tg 12/5/2021 19:03:24'!
+!EmitTransferNet methodsFor: 'execution' stamp: 'tg 12/5/2021 19:03:24'!
 compute
 
 	account transactions isEmpty  ifTrue:[
@@ -1217,7 +1204,8 @@ compute
 	
 ! !
 
-!EmitTransferNet methodsFor: 'as yet unclassified' stamp: 'tg 12/5/2021 19:02:32'!
+
+!EmitTransferNet methodsFor: 'initialization' stamp: 'tg 12/5/2021 19:02:32'!
 initializeWith: anAccount
 	account := anAccount.! !
 
